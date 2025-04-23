@@ -146,8 +146,7 @@ if __name__ == "__main__":
 For each problem, ensure your refactored solution still passes all tests:
 
 ```bash
-cd problems/problem_id
-./run.sh
+bash problems/problem_id/run.sh
 ```
 
 If a solution fails, debug and fix it while still using the library components.

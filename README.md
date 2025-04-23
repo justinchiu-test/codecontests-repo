@@ -19,7 +19,7 @@ The project is organized into three main components:
 
 2. **Formatted Problems**: The actual competitive programming problems, each with a problem description (PROBLEM.md), initial solution (main.py), test script (run.sh), and test cases.
 
-3. **Shared Library**: Reusable components that solutions can import to reduce duplicate code. Initially empty for an Agent to populate.
+3. **Shared Library**: Reusable components that solutions can import to reduce duplicate code. Initially empty for an Agent to populate following the instructions in [INSTRUCTIONS.md](INSTRUCTIONS.md).
 
 
 ## Structure
@@ -118,15 +118,16 @@ uv run python test/validate_models.py
 - ✅ Pydantic models for dataset and problem representation
 - ✅ Evaluation tools implementation
 - ✅ Dataset processing for 100 graph problems
-- 🔄 Analysis of common patterns (in progress)
-- 🔄 Library implementation (next steps)
+- ✅ Created [INSTRUCTIONS.md](INSTRUCTIONS.md) for agents performing the compression task
+- 🔄 Library implementation by compression agents (next steps)
 
-For the detailed refactoring approach and roadmap, see [PLAN.md](PLAN.md).
+For the detailed benchmark plan and implementation roadmap, see [PLAN.md](PLAN.md).
 
 ## Additional Documentation
 
+- [INSTRUCTIONS.md](INSTRUCTIONS.md): Detailed instructions for agents performing code compression
 - [CLAUDE.md](CLAUDE.md): Guidelines for working with Claude on this repository
-- [PLAN.md](PLAN.md): Detailed refactoring plan and implementation roadmap
+- [PLAN.md](PLAN.md): Detailed benchmark plan and implementation roadmap
 
 ## License
 

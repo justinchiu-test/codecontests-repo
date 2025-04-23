@@ -180,7 +180,8 @@ The benchmark will evaluate compression success using:
 8. ✅ Addition of Codeforces tags for each problem
 
 ### Next Steps
-1. Develop instructions for an agent to perform the compression task
-2. Define evaluation criteria for comparing different compression approaches
-3. Create a baseline implementation of the shared library
-4. Develop automated testing to verify correctness after refactoring
+1. ✅ Develop instructions for an agent to perform the compression task (INSTRUCTIONS.md)
+2. Test the compression task with different agents
+3. Define evaluation criteria for comparing different compression approaches
+4. Create a baseline implementation of the shared library
+5. Develop automated testing to verify correctness after refactoring
