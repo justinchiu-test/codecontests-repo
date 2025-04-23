@@ -10,16 +10,27 @@ codecontests-repo/
 ├── tools/                  # Repository creation tools
 │   ├── dataset/            # For processing the code_contests dataset
 │   ├── formatter/          # For formatting problems
-│   └── models/             # Pydantic models for problems/solutions
+│   ├── models/             # Pydantic models for problems/solutions
+│   │   ├── dataset.py      # Models for code_contests dataset (DatasetProblem, TestSet, Solution)
+│   │   ├── problem.py      # Models for our internal representation (Problem, TestCase)
+│   │   └── solution.py     # Models for solution tracking
+│   │
+│   └── eval/               # Evaluation tools
+│       ├── loc.py          # Count logical lines of code
+│       ├── log_prob.py     # Calculate log probabilities using TogetherAI API
+│       └── metrics.py      # Track metrics for comparing solutions
 │
 ├── library/                # Shared library (will be populated during refactoring)
 │
-├── problems/               # Formatted problems from code_contests
+├── problems/               # Formatted problems from code_contests (100 graph problems currently)
 │   └── problem_id/
 │       ├── PROBLEM.md      # Problem description
 │       ├── main.py         # Python 3 solution
 │       ├── run.sh          # Test script
 │       └── tests/          # Test cases
+│
+├── test/                   # Testing utilities
+│   └── validate_models.py  # Validation for Pydantic models
 ```
 
 ## Common Commands
@@ -60,7 +71,26 @@ uv run -m tools.dataset.process
 
 ```bash
 uv run -m ruff check .
-uv run -m pyright .
+uv run -m ruff format .
+uv run pyright .
+```
+
+### Evaluation Tools
+
+To count logical lines of code in a Python file:
+```bash
+uv run -m tools.eval.loc /path/to/file.py
+```
+
+To get log probability scores (requires TogetherAI API key):
+```bash
+TOGETHER_API_KEY=your_api_key uv run -m tools.eval.log_prob /path/to/file.py
+```
+
+### Running Model Validation Tests
+
+```bash
+uv run python test/validate_models.py
 ```
 
 ## Workflow Tips

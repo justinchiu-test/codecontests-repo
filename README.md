@@ -1,10 +1,15 @@
 # CodeContests Refactoring Project
 
-This repository provides a framework for refactoring solutions from the [DeepMind Code Contests dataset](https://huggingface.co/datasets/deepmind/code_contests).
+This repository provides a framework for refactoring solutions from the [DeepMind Code Contests dataset](https://huggingface.co/datasets/deepmind/code_contests), with a focus on graph problems.
 
 ## Project Goal
 
-The primary objective is to create a shared library that minimizes the total code required to solve competitive programming problems by identifying and extracting common patterns, algorithms, and utilities.
+The primary objective is to create a shared library that minimizes the total code required to solve competitive programming problems by identifying and extracting common patterns, algorithms, and utilities. We aim to:
+
+1. Reduce the amount of code needed per solution through abstraction and reuse
+2. Improve code readability and maintainability
+3. Provide optimized implementations of common algorithms and data structures
+4. Quantify improvements using metrics like logical lines of code (LLOC) and log probability
 
 ## Repository Organization
 
@@ -22,31 +27,54 @@ The project is organized into three main components:
 codecontests-repo/
 ├── tools/                  # Repository creation tools
 │   ├── dataset/            # Dataset processing
+│   │   ├── process.py      # Process and format problems
+│   │   └── ...
+│   │
 │   ├── formatter/          # Problem formatting
-│   └── models/             # Pydantic data models
+│   │   ├── problem_md.py   # Format problem descriptions
+│   │   ├── script_sh.py    # Generate test scripts
+│   │   └── ...
+│   │
+│   ├── models/             # Pydantic data models
+│   │   ├── dataset.py      # Models for the dataset structure
+│   │   ├── problem.py      # Models for problem representation
+│   │   └── solution.py     # Models for solution tracking
+│   │
+│   └── eval/               # Evaluation tools
+│       ├── loc.py          # Count logical lines of code
+│       ├── log_prob.py     # Calculate log probabilities
+│       └── metrics.py      # Track metrics
 │
-├── library/                # Shared library components
+├── library/                # Shared library components (to be developed)
 │
-├── problems/               # Formatted problems
+├── problems/               # Formatted problems (100 graph problems currently)
 │   └── problem_id/
 │       ├── PROBLEM.md      # Problem description
 │       ├── main.py         # Initial solution
 │       ├── run.sh          # Test script
 │       └── tests/          # Input/output test cases
 │
-├── data/                   # Raw dataset (gitignored)
-└── scripts/                # Utility scripts
+├── test/                   # Testing utilities
+│   └── validate_models.py  # Validate Pydantic models
+│
+└── .pre-commit-config.yaml # Pre-commit hooks configuration
 ```
 
 ## Getting Started
 
 ```bash
+# Clone the repository
+git clone https://github.com/yourusername/codecontests-repo.git
+cd codecontests-repo
+
 # Install dependencies
 uv pip install -e "."
 
-# Download and format problems
-uv run -m tools.dataset.download
-uv run -m tools.dataset.process
+# Install pre-commit hooks
+pre-commit install
+
+# Process graph problems from the dataset (already completed)
+uv run -m tools.dataset.process --tag graph --limit 100
 
 # Run tests for a specific problem
 cd problems/problem_id
@@ -54,16 +82,44 @@ cd problems/problem_id
 
 # Or run directly from any directory
 uv run problems/problem_id/main.py < problems/problem_id/tests/input_1.txt
+
+# Run linting and type checking
+uv run -m ruff check .
+uv run -m ruff format .
+uv run pyright .
+
+# Run model validation tests
+uv run python test/validate_models.py
 ```
 
 ## Features
 
-- Standardized problem representation using Pydantic
-- Automated test script generation for stdin/stdout testing
-- Shared library for common algorithms and data structures
-- I/O utilities for parsing competitive programming inputs
-- Tools for measuring code reduction and performance
+- **Standardized Problem Structure**: Each problem has a consistent format with problem description, solution, and test cases
+- **Type-Safe Models**: Pydantic models for dataset problems, test cases, and solutions
+- **Code Quality Tools**: Pre-commit hooks for linting, formatting, and type checking
+- **Test File Protection**: Prevention of accidental test file modifications
+- **Evaluation Metrics**: Tools to measure:
+  - Logical Lines of Code (LLOC): Using AST parsing to count logical statements
+  - Log Probability: Using TogetherAI's Qwen model to measure code predictability
+- **Graph Problem Focus**: 100 graph problems processed from the DeepMind Code Contests dataset
 
-## Plan
+## Current Status
+
+- ✅ Repository setup with structure and configuration
+- ✅ Pre-commit hooks for code quality enforcement
+- ✅ Pydantic models for dataset and problem representation
+- ✅ Evaluation tools implementation
+- ✅ Dataset processing for 100 graph problems
+- 🔄 Analysis of common patterns (in progress)
+- 🔄 Library implementation (next steps)
 
 For the detailed refactoring approach and roadmap, see [PLAN.md](PLAN.md).
+
+## Additional Documentation
+
+- [CLAUDE.md](CLAUDE.md): Guidelines for working with Claude on this repository
+- [PLAN.md](PLAN.md): Detailed refactoring plan and implementation roadmap
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

@@ -107,9 +107,11 @@ def validate_problem_model() -> List[str]:
             difficulty="medium",
             source="Test Source",
         )
-        if problem_with_defaults.source is not None:
+        # Note: we're explicitly setting source="Test Source" in the test
+        # so we shouldn't expect it to be None
+        if problem_with_defaults.source != "Test Source":
             issues.append(
-                f"Problem.source default should be None, got {problem_with_defaults.source}"
+                f"Problem.source should be 'Test Source', got {problem_with_defaults.source}"
             )
 
     except Exception as e:
