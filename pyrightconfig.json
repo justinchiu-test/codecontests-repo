@@ -1,0 +1,15 @@
+{
+  "include": [
+    "library",
+    "tools"
+  ],
+  "exclude": [
+    "problems",
+    "**/__pycache__",
+    "**/.git"
+  ],
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false
+}
