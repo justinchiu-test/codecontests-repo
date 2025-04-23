@@ -27,8 +27,7 @@ The project is organized into three main components:
 codecontests-repo/
 ├── tools/                  # Repository creation tools
 │   ├── dataset/            # Dataset processing
-│   │   ├── process.py      # Process and format problems
-│   │   └── ...
+│   │   └── process.py      # Process and format problems
 │   │
 │   ├── formatter/          # Problem formatting
 │   │   ├── problem_md.py   # Format problem descriptions
@@ -52,6 +51,7 @@ codecontests-repo/
 │       ├── PROBLEM.md      # Problem description
 │       ├── main.py         # Initial solution
 │       ├── run.sh          # Test script
+│       ├── tags.txt        # Codeforces tags for the problem
 │       └── tests/          # Input/output test cases
 │
 ├── test/                   # Testing utilities
@@ -73,8 +73,14 @@ uv pip install -e "."
 # Install pre-commit hooks
 pre-commit install
 
-# Process graph problems from the dataset (already completed)
-uv run -m tools.dataset.process --tag graph --limit 100
+# Process problems from the dataset (examples)
+# Process all problems (no limit)
+uv run -m tools.dataset.process
+
+# Process up to 100 graph problems
+uv run -m tools.dataset.process --tag graphs --limit 100
+
+# Each processed problem will include a tags.txt file with Codeforces tags
 
 # Run tests for a specific problem
 cd problems/problem_id
@@ -95,6 +101,7 @@ uv run python test/validate_models.py
 ## Features
 
 - **Standardized Problem Structure**: Each problem has a consistent format with problem description, solution, and test cases
+- **Problem Tags**: Each problem includes original Codeforces tags in tags.txt for better categorization
 - **Type-Safe Models**: Pydantic models for dataset problems, test cases, and solutions
 - **Code Quality Tools**: Pre-commit hooks for linting, formatting, and type checking
 - **Test File Protection**: Prevention of accidental test file modifications

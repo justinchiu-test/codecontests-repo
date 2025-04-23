@@ -128,6 +128,7 @@ Create a shared library for code_contests problems to minimize the total code re
    │   │   ├── PROBLEM.md      # Problem description
    │   │   ├── main.py         # Initial solution
    │   │   ├── run.sh          # Test script
+   │   │   ├── tags.txt        # Codeforces tags for the problem
    │   │   └── tests/          # Test cases
    │   │       ├── input_1.txt # Test inputs
    │   │       └── output_1.txt # Expected outputs
@@ -241,6 +242,7 @@ Create a shared library for code_contests problems to minimize the total code re
    - Processed 100 graph-labeled problems
    - Added test file protection to prevent accidental edits
    - Cleaned up empty directories
+   - Added Codeforces tags (tags.txt) to each problem
 
 ### Next Steps
 1. Analyze extracted graph problems to identify common patterns and utilities

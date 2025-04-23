@@ -197,8 +197,14 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
         return False
 
 
-def main():
-    """Main entry point for processing problems."""
+def main(tag: str = None, limit: int = None):
+    """
+    Main entry point for processing problems.
+
+    Args:
+        tag: Optional tag to filter problems by (e.g., "graphs")
+        limit: Optional maximum number of problems to process
+    """
     # Ensure problems directory exists and it's empty
     PROBLEMS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -210,19 +216,30 @@ def main():
     # We need to type-ignore this because the Dataset class doesn't have proper type annotations
     train_dataset = dataset["train"]  # type: ignore
 
-    # Set target for graph problems
-    target_problems = 100  # Target number of graph problems to process
+    # Set target for problems
+    target_problems = limit  # Use the provided limit or None for no limit
+    tag_filter = tag  # Use the provided tag or None for no tag filtering
 
-    logger.info("Searching for graph problems with Python 3 solutions")
-    logger.info(f"Target: {target_problems} graph problems with Python 3 solutions")
+    if tag_filter:
+        logger.info(
+            f"Searching for problems with tag '{tag_filter}' and Python 3 solutions"
+        )
+    else:
+        logger.info("Searching for all problems with Python 3 solutions")
+
+    if target_problems:
+        logger.info(f"Target: up to {target_problems} problems")
+    else:
+        logger.info("No limit on number of problems to process")
 
     successful = 0
     attempted = 0
     processed_ids = set()  # Track processed problem IDs to avoid duplicates
 
-    # Process all problems looking for those with "graph" tag
+    # Process problems with optional filtering
     for i, raw_problem in enumerate(train_dataset):
-        if successful >= target_problems:
+        # If we've reached the limit, stop processing
+        if target_problems is not None and successful >= target_problems:
             break
 
         # Convert to Pydantic model for better type safety
@@ -232,15 +249,20 @@ def main():
             logger.warning(f"Error parsing problem at index {i}: {e}")
             continue
 
-        # Check if problem has "graph" tag
-        if "graphs" not in dataset_problem.cf_tags:
+        # Apply tag filter if specified
+        if tag_filter and tag_filter not in dataset_problem.cf_tags:
             continue
 
         attempted += 1
 
-        logger.info(
-            f"Processing graph problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
-        )
+        if tag_filter:
+            logger.info(
+                f"Processing {tag_filter} problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
+            )
+        else:
+            logger.info(
+                f"Processing problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
+            )
 
         # Check if this problem might be a duplicate by name
         problem_id = get_problem_id(dataset_problem.name, i)
@@ -260,4 +282,17 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    import argparse
+
+    parser = argparse.ArgumentParser(
+        description="Process problems from the code_contests dataset"
+    )
+    parser.add_argument(
+        "--tag", type=str, help="Tag to filter problems (e.g., 'graphs')", default=None
+    )
+    parser.add_argument(
+        "--limit", type=int, help="Maximum number of problems to process", default=None
+    )
+
+    args = parser.parse_args()
+    main(tag=args.tag, limit=args.limit)
