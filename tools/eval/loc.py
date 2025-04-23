@@ -183,7 +183,7 @@ def count_lloc_directory(
 
 def summarize_lloc(
     lloc_counts: Dict[str, int], group_by_directory: bool = True
-) -> Dict[str, int]:
+) -> Dict[str, Union[int, Dict[str, int]]]:
     """
     Summarize LLOC counts, optionally grouping by directory.
 
@@ -194,10 +194,13 @@ def summarize_lloc(
     Returns:
         Dictionary with summary statistics
     """
-    summary = {"total_lloc": sum(lloc_counts.values()), "file_count": len(lloc_counts)}
+    summary: Dict[str, Union[int, Dict[str, int]]] = {
+        "total_lloc": sum(lloc_counts.values()),
+        "file_count": len(lloc_counts),
+    }
 
     if group_by_directory:
-        directories = {}
+        directories: Dict[str, int] = {}
         for file_path, lloc in lloc_counts.items():
             directory = os.path.dirname(file_path) or "."
             directories.setdefault(directory, 0)
@@ -229,8 +232,10 @@ if __name__ == "__main__":
             print(f"Total LLOC: {summary['total_lloc']}")
             print(f"Files processed: {summary['file_count']}")
             print("\nDirectory breakdown:")
-            for dir_name, lloc in sorted(summary["directories"].items()):
-                print(f"  {dir_name}: {lloc}")
+            directories = summary.get("directories", {})
+            if isinstance(directories, dict):
+                for dir_name, lloc in sorted(directories.items()):
+                    print(f"  {dir_name}: {lloc}")
 
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

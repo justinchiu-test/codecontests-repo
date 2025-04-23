@@ -11,7 +11,7 @@ import sys
 import time
 from functools import lru_cache
 from pathlib import Path
-from typing import Dict, List, Optional, Set, Tuple, Union
+from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
 # Optional imports for API-based scoring
 # These will be dynamically imported when needed
@@ -182,7 +182,7 @@ def get_log_prob_for_directory(
 
 def summarize_log_probs(
     log_probs: Dict[str, Tuple[float, int]], group_by_directory: bool = True
-) -> Dict[str, Union[float, int, Dict]]:
+) -> Dict[str, Union[float, int, Dict[str, Dict[str, Union[float, int]]]]]:
     """
     Summarize log probability results, optionally grouping by directory.
 
@@ -196,7 +196,7 @@ def summarize_log_probs(
     total_log_prob = sum(lp for lp, _ in log_probs.values())
     total_tokens = sum(tc for _, tc in log_probs.values())
 
-    summary = {
+    summary: Dict[str, Union[float, int, Dict[str, Dict[str, Union[float, int]]]]] = {
         "total_log_prob": total_log_prob,
         "total_tokens": total_tokens,
         "average_log_prob_per_token": total_log_prob / total_tokens
@@ -206,22 +206,26 @@ def summarize_log_probs(
     }
 
     if group_by_directory:
-        directories = {}
+        directories: Dict[str, Dict[str, Union[float, int]]] = {}
         for file_path, (log_prob, token_count) in log_probs.items():
             directory = os.path.dirname(file_path) or "."
 
             if directory not in directories:
-                directories[directory] = {"log_prob": 0, "tokens": 0}
+                directories[directory] = {"log_prob": 0.0, "tokens": 0}
 
-            directories[directory]["log_prob"] += log_prob
-            directories[directory]["tokens"] += token_count
+            directories[directory]["log_prob"] = (
+                directories[directory]["log_prob"] + log_prob
+            )
+            directories[directory]["tokens"] = (
+                directories[directory]["tokens"] + token_count
+            )
 
         # Calculate average log prob per token for each directory
         for dir_data in directories.values():
+            log_prob_val = float(dir_data["log_prob"])
+            token_count_val = int(dir_data["tokens"])
             dir_data["avg_log_prob_per_token"] = (
-                dir_data["log_prob"] / dir_data["tokens"]
-                if dir_data["tokens"] > 0
-                else 0
+                log_prob_val / token_count_val if token_count_val > 0 else 0.0
             )
 
         summary["directories"] = directories
@@ -233,7 +237,7 @@ def compare_solutions(
     original_dir: Union[str, Path],
     refactored_dir: Union[str, Path],
     api_key: Optional[str] = None,
-) -> Dict[str, Dict]:
+) -> Dict[str, Any]:
     """
     Compare log probabilities between original and refactored solutions.
 
@@ -251,22 +255,40 @@ def compare_solutions(
     original_summary = summarize_log_probs(original_log_probs)
     refactored_summary = summarize_log_probs(refactored_log_probs)
 
+    # Extract values safely
+    orig_log_prob = 0.0
+    if isinstance(original_summary.get("total_log_prob"), (int, float)):
+        orig_log_prob = float(original_summary["total_log_prob"])  # type: ignore
+
+    refact_log_prob = 0.0
+    if isinstance(refactored_summary.get("total_log_prob"), (int, float)):
+        refact_log_prob = float(refactored_summary["total_log_prob"])  # type: ignore
+
+    orig_avg_log_prob = 0.0
+    if isinstance(original_summary.get("average_log_prob_per_token"), (int, float)):
+        orig_avg_log_prob = float(original_summary["average_log_prob_per_token"])  # type: ignore
+
+    refact_avg_log_prob = 0.0
+    if isinstance(refactored_summary.get("average_log_prob_per_token"), (int, float)):
+        refact_avg_log_prob = float(refactored_summary["average_log_prob_per_token"])  # type: ignore
+
+    orig_tokens = 0
+    if isinstance(original_summary.get("total_tokens"), (int, float)):
+        orig_tokens = int(original_summary["total_tokens"])  # type: ignore
+
+    refact_tokens = 0
+    if isinstance(refactored_summary.get("total_tokens"), (int, float)):
+        refact_tokens = int(refactored_summary["total_tokens"])  # type: ignore
+
     # Calculate improvement metrics
-    improvement = {
-        "total_log_prob_change": refactored_summary["total_log_prob"]
-        - original_summary["total_log_prob"],
-        "avg_log_prob_per_token_change": (
-            refactored_summary["average_log_prob_per_token"]
-            - original_summary["average_log_prob_per_token"]
-        ),
-        "total_tokens_change": refactored_summary["total_tokens"]
-        - original_summary["total_tokens"],
+    improvement: Dict[str, Union[float, int]] = {
+        "total_log_prob_change": refact_log_prob - orig_log_prob,
+        "avg_log_prob_per_token_change": refact_avg_log_prob - orig_avg_log_prob,
+        "total_tokens_change": refact_tokens - orig_tokens,
         "token_reduction_percentage": (
-            (original_summary["total_tokens"] - refactored_summary["total_tokens"])
-            / original_summary["total_tokens"]
-            * 100
-            if original_summary["total_tokens"] > 0
-            else 0
+            (orig_tokens - refact_tokens) / orig_tokens * 100
+            if orig_tokens > 0
+            else 0.0
         ),
     }
 
@@ -353,13 +375,16 @@ if __name__ == "__main__":
 
                 if "directories" in summary:
                     print("\nDirectory breakdown:")
-                    for dir_name, data in sorted(summary["directories"].items()):
-                        print(f"  {dir_name}:")
-                        print(f"    Log prob: {data['log_prob']}")
-                        print(f"    Tokens: {data['tokens']}")
-                        print(
-                            f"    Avg log prob per token: {data['avg_log_prob_per_token']}"
-                        )
+                    directories = summary["directories"]
+                    if isinstance(directories, dict):
+                        for dir_name, data in sorted(directories.items()):
+                            if isinstance(data, dict):
+                                print(f"  {dir_name}:")
+                                print(f"    Log prob: {data.get('log_prob', 'N/A')}")
+                                print(f"    Tokens: {data.get('tokens', 'N/A')}")
+                                print(
+                                    f"    Avg log prob per token: {data.get('avg_log_prob_per_token', 'N/A')}"
+                                )
 
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)
