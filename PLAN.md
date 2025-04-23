@@ -1,290 +1,186 @@
-# CodeContests Library Refactoring Plan
+# CodeContests Compression Benchmark Plan
 
 ## Objective
-Create a shared library for code_contests problems to minimize the total code required across all solutions.
+Create a benchmark for measuring how well an agent can compress competitive programming solutions by identifying and extracting common patterns into a shared library.
 
-## Repository Design
-1. **Single Repository Approach** (Recommended)
-   - Central shared library with all reusable components
-   - Solutions organized in a standardized directory structure
-   - Benefits:
-     - Easier maintenance of shared code
-     - Simplified dependency management
-     - Better code reuse across problems
-     - Simpler testing and CI/CD setup
+## Overview
+This benchmark consists of three main components:
 
-2. **Standard I/O Handling**
-   - Create dedicated I/O utilities for:
-     - Parsing various input formats from stdin
-     - Formatting output correctly to stdout
-     - Supporting common input patterns (integers, arrays, graphs)
-     - Optimized reading of large inputs
+1. **Repository Creation Tools**: Scripts to process the DeepMind Code Contests dataset and format problems in a standardized way.
+2. **Problem Benchmark**: 100 graph problems (currently) formatted into a consistent structure with tests.
+3. **Compression Task**: Instructions for an agent to create a shared library that minimizes total code across solutions.
 
-## Analysis Phase
-1. **Dataset Exploration**
-   - Download and explore the deepmind/code_contests dataset
-   - Analyze solution patterns across different problems
-   - Identify common algorithms, data structures, and utilities
+## Part 1: Repository Creation Tools
 
-2. **Pattern Identification**
-   - Group solutions by algorithmic techniques (e.g., graphs, dynamic programming)
-   - Extract common helper functions and utility code
-   - Identify language-specific optimizations (focusing on Python initially)
+The tools directory contains utilities to process the DeepMind Code Contests dataset into a standardized format:
 
-## Implementation Phase
-1. **Core Library Structure**
-   - Create modular components for:
-     - Data structures (graphs, trees, priority queues)
-     - Algorithm templates (dynamic programming, graph traversal)
-     - Input/output handling
-     - Math utilities
-     - String processing
+```
+tools/
+├── dataset/             # Dataset processing utilities
+│   └── process.py       # Process and format problems with filtering options
+│
+├── formatter/           # Problem formatting utilities
+│   ├── problem_md.py    # Generate PROBLEM.md files
+│   └── script_sh.py     # Generate run.sh test scripts
+│
+├── models/              # Pydantic data models
+│   ├── dataset.py       # Models for the dataset structure
+│   ├── problem.py       # Models for problem representation
+│   └── solution.py      # Models for solution tracking
+│
+└── eval/                # Evaluation tools
+    ├── loc.py           # Count logical lines of code in solutions
+    ├── log_prob.py      # Calculate log probabilities using TogetherAI
+    └── metrics.py       # Track code reduction metrics
+```
 
-2. **Problem Representation with Pydantic**
-   - Use Pydantic models to represent:
-     ```python
-     class TestCase(BaseModel):
-         input: str
-         output: str
-         time_limit_ms: Optional[int] = 30000
-         memory_limit_mb: Optional[int] = 512
+### Problem Processing Flow
 
-     class Problem(BaseModel):
-         id: str
-         name: str
-         description: str
-         category: List[str]
-         difficulty: str
-         test_cases: List[TestCase]
-         source: Optional[str] = None
+1. Download problems from the DeepMind Code Contests dataset
+2. Filter problems by tag (if specified) and convert to Pydantic models
+3. Extract Python 3 solutions and test cases
+4. Generate standardized problem files (PROBLEM.md, main.py, run.sh, tags.txt)
+5. Create test cases in a structured format
 
-     class Solution(BaseModel):
-         problem_id: str
-         code: str
-         language: str = "python"
-         uses_shared_lib: bool = True
-         original_code: Optional[str] = None  # For comparison
-         metrics: Optional[Dict[str, Any]] = None
+### Command Line Interface
 
-     class ExecutionResult(BaseModel):
-         passed: List[bool]
-         test_inputs: List[str]
-         test_outputs: List[str]
-         predicted_outputs: List[str]
-         stderrs: List[str]
-         execution_times_ms: Optional[List[float]] = None
-         memory_usage_mb: Optional[List[float]] = None
-     ```
-   - Benefits:
-     - Type validation and documentation
-     - Serialization/deserialization for API and storage
-     - Schema evolution with backward compatibility
-     - Integration with IDE tools for autocompletion
+The dataset processing tool supports:
+- Optional tag filtering (e.g., `--tag graphs`)
+- Optional limit on number of problems (e.g., `--limit 100`)
 
-2. **Directory Structure**
-   ```
-   codecontests-repo/
-   ├── tools/                  # Repository creation tools (Part 1)
-   │   ├── dataset/            # Dataset processing utilities
-   │   │   ├── download.py     # Download/extract codecontests dataset
-   │   │   ├── process.py      # Process and format problems
-   │   │   └── validate.py     # Validate processed problems
-   │   │
-   │   ├── formatter/          # Problem formatting utilities
-   │   │   ├── problem_md.py   # Generate PROBLEM.md files
-   │   │   ├── solution_py.py  # Extract initial main.py solutions
-   │   │   └── script_sh.py    # Generate run.sh test scripts
-   │   │
-   │   ├── models/             # Pydantic data models
-   │   │   ├── problem.py      # Problem, TestCase models
-   │   │   └── solution.py     # Solution, ExecutionResult models
-   │   │
-   │   └── eval/               # Evaluation tools
-   │       ├── log_prob.py     # Calculate log probabilities of library and solutions
-   │       ├── loc.py          # Count logical lines of code in library and solutions
-   │       └── metrics.py      # Track code reduction and other metrics
-   │
-   ├── library/                # Shared library components (Part 2)
-   │   ├── io/                 # Input/output utilities
-   │   │   ├── parser.py       # Input parsing utilities
-   │   │   └── formatter.py    # Output formatting utilities
-   │   │
-   │   ├── ds/                 # Data structures
-   │   │   ├── graph.py        # Graph representations
-   │   │   ├── tree.py         # Tree structures
-   │   │   └── heap.py         # Priority queue implementations
-   │   │
-   │   ├── algo/               # Algorithm templates
-   │   │   ├── dp.py           # Dynamic programming templates
-   │   │   ├── graph.py        # Graph algorithms
-   │   │   └── search.py       # Search algorithms
-   │   │
-   │   └── math/               # Math utilities
-   │       ├── number.py       # Number theory functions
-   │       └── geometry.py     # Computational geometry
-   │
-   ├── problems/               # Formatted problems (Part 3)
-   │   ├── problem_1/          # Each problem in its own directory
-   │   │   ├── PROBLEM.md      # Problem description
-   │   │   ├── main.py         # Initial solution
-   │   │   ├── run.sh          # Test script
-   │   │   ├── tags.txt        # Codeforces tags for the problem
-   │   │   └── tests/          # Test cases
-   │   │       ├── input_1.txt # Test inputs
-   │   │       └── output_1.txt # Expected outputs
-   │   │
-   │   ├── problem_2/
-   │   └── ...
-   │
-   ├── data/                   # Raw data storage (gitignored)
-   │   └── raw/                # Raw data from code_contests
-   │
-   └── scripts/                # Utility scripts
-       ├── setup.sh            # Set up the repository
-       ├── test_all.sh         # Run all tests
-       └── analyze.py          # Analyze code reduction
-   ```
+Example usage:
+```bash
+# Process all problems
+uv run -m tools.dataset.process
 
-3. **Code Execution Integration**
-   - Leverage the existing code-execution server (github.com/justinchiu/code-execution)
-   - Integration benefits:
-     - Standardized execution environment for all problems
-     - Consistent measurement of runtime performance
-     - Ability to test against problem test cases
-     - Support for input/output validation
+# Process only graph problems, up to 100
+uv run -m tools.dataset.process --tag graphs --limit 100
+```
 
-4. **Refactoring Process**
-   - Select representative problems from each category
-   - Refactor solutions to use the shared library
-   - Measure code reduction and performance impact
-   - Iterate on the library design based on findings
+## Part 2: Problem Benchmark
 
-5. **Testing Framework**
-   - Ensure refactored solutions pass all original test cases
-   - Create regression tests for library components
-   - Implement utility to run solutions against problem test cases
-   - Compare performance before and after refactoring
-   - Use code-execution server for consistent evaluation
+The benchmark currently contains 100 graph problems formatted in a consistent structure:
 
-6. **Problem Testing Workflow**
-   - **Test Case Format**:
-     - Store test cases for each problem in standardized JSON format
-     - Each test case contains input data and expected output
-     - Include time and memory limits for each problem
+```
+problems/
+└── problem_id/          # Each problem in its own directory
+    ├── PROBLEM.md       # Problem description in Markdown
+    ├── main.py          # Original Python solution
+    ├── run.sh           # Test script to run the solution
+    ├── tags.txt         # Original Codeforces tags
+    └── tests/           # Input/output test pairs
+        ├── input_1.txt  # Test inputs
+        └── output_1.txt # Expected outputs
+```
 
-   - **Testing Process**:
-     1. **Execution Engine**:
-        - Leverage the provided execution code which:
-          ```python
-          # Main execution function that:
-          # 1. Writes the program to a temporary file
-          # 2. Runs the program for each test input using subprocess
-          # 3. Captures stdout and stderr
-          # 4. Compares outputs with expected results
-          # 5. Handles timeouts (30 seconds per test)
-          # 6. Returns detailed execution results
-          ```
-        - Add parallelization for performance with `concurrent.futures`
-        - Implement additional metrics collection (memory usage, execution time)
+Each problem directory includes:
+- A consistent problem description format
+- The original solution from the dataset
+- Test cases with inputs and expected outputs
+- A shell script to run tests automatically
+- The original problem tags from Codeforces
 
-     2. **Local Testing**:
-        - Create a test runner script that:
-          - Loads test cases for a specific problem
-          - Uses the execution engine to run solutions
-          - Reports pass/fail status and execution metrics
-          - Support batch testing across multiple problems
-        - Helper methods to test a single solution or all solutions
+### Testing
 
-     3. **Code Execution Server Integration**:
-        - Configure API client to connect to code-execution server
-        - Submit solution code with test cases
-        - Receive execution results (pass/fail, runtime metrics)
-        - Log results for performance comparison
-        - Fallback to local execution when server unavailable
+Solutions can be tested using:
+```bash
+# Test a specific problem
+cd problems/problem_id
+./run.sh
 
-   - **Continuous Integration**:
-     - Automated testing of all solutions with GitHub Actions
-     - Regression testing of shared library components
-     - Performance benchmarking to detect optimization impacts
-     - Track code reduction metrics over time
+# Or from any directory
+uv run problems/problem_id/main.py < problems/problem_id/tests/input_1.txt
+```
 
-## Evaluation
-1. **Metrics**
-   - Total lines of code (original vs. refactored)
-   - Logical lines of code (LLOC) - counts actual code statements, excluding comments and blank lines
-   - Code reuse percentage
-   - Log probability - measure how "predictable" the code is from a language model perspective
-   - Execution time comparison
-   - Maintainability score
+### Scale
 
-2. **Documentation**
-   - Library API documentation
-   - Usage examples for each component
-   - Patterns and best practices
+The benchmark is designed to scale:
+- Currently contains 100 graph problems
+- Can be expanded to include more problems of different types
+- The dataset processing tool allows filtering by any tag
 
-## Progress Summary
+## Part 3: Compression Task (Instructions for Agents)
 
-### Completed Tasks
-1. Repository setup with proper structure and configuration
-2. Pre-commit hooks for code quality enforcement
-   - Ruff for linting and formatting
-   - Protection against test file modifications
-   - Type checking with pyright
-3. Pydantic models for dataset and problem representation
-   - DatasetProblem, TestSet, Solution models in tools/models/dataset.py
-   - Problem, TestCase models in tools/models/problem.py
-   - Model validation tests in test/validate_models.py
-4. Evaluation tools implementation
-   - LLOC counter using AST parsing (tools/eval/loc.py)
-   - Log probability calculator using TogetherAI API (tools/eval/log_prob.py)
-   - Metrics tracking framework (tools/eval/metrics.py)
-5. Dataset processing for graph problems
-   - Processed 100 graph-labeled problems
-   - Added test file protection to prevent accidental edits
-   - Cleaned up empty directories
-   - Added Codeforces tags (tags.txt) to each problem
+This is the core benchmark task: create a shared library in the `library/` directory that minimizes the total amount of code needed across all problems.
+
+### Task Description for Agents
+
+1. **Analyze Problem Set**:
+   - Examine the 100 graph problems in the `problems/` directory
+   - Identify common patterns, algorithms, data structures, and I/O operations
+   - Look for opportunities to abstract and reuse code
+
+2. **Create Library Components**:
+   - Implement data structure abstractions (graphs, trees, heaps, etc.)
+   - Create algorithm templates (search, traversal, shortest path, etc.)
+   - Build I/O utilities for common input/output patterns
+   - Develop math utilities for recurring calculations
+
+3. **Refactor Solutions**:
+   - Update each problem's `main.py` to use the shared library
+   - Ensure all tests still pass after refactoring
+   - Maintain solution correctness while reducing code duplication
+
+4. **Measure Improvement**:
+   - Calculate logical lines of code (LLOC) before and after refactoring
+   - Compute log probability as a measure of code predictability
+   - Track code reuse percentage across problems
+   - Compare execution time to ensure no significant performance degradation
+
+### Specific Library Components to Consider
+
+1. **Input/Output Utilities**:
+   - Parsing integers, arrays, strings, and nested structures
+   - Parsing graph representations (adjacency lists, matrices)
+   - Formatting outputs according to problem requirements
+
+2. **Graph Algorithm Templates**:
+   - Graph representations (directed, undirected, weighted)
+   - Search algorithms (DFS, BFS)
+   - Shortest path algorithms (Dijkstra's, Bellman-Ford)
+   - Connected components and cycle detection
+   - Minimum spanning trees
+   - Topological sorting
+
+3. **Data Structures**:
+   - Priority queues and custom heaps
+   - Union-find / Disjoint-set data structures
+   - Tree representations and traversals
+   - Special purpose graph structures
+
+4. **Math Utilities**:
+   - Number theory functions
+   - Combinatorial calculations
+   - Modular arithmetic
+
+## Evaluation Metrics
+
+The benchmark will evaluate compression success using:
+
+1. **Code Reduction**:
+   - Total Lines of Code (LOC) reduction
+   - Logical Lines of Code (LLOC) reduction using AST parsing
+   - Code reuse percentage across the problem set
+
+2. **Code Quality**:
+   - Log probability: How "predictable" the code is from a language model perspective
+   - Execution time: Performance impact of refactoring
+   - Maintainability metrics
+
+## Current Progress
+
+### Completed
+1. ✅ Repository structure and configuration
+2. ✅ Dataset processing tools implementation
+3. ✅ Problem formatting with standardized structure
+4. ✅ Test script generation and execution
+5. ✅ Pydantic models for dataset, problems, and solutions
+6. ✅ Evaluation tools for measuring code metrics
+7. ✅ Processing of 100 graph-labeled problems
+8. ✅ Addition of Codeforces tags for each problem
 
 ### Next Steps
-1. Analyze extracted graph problems to identify common patterns and utilities
-2. Start implementing the core library components for graph algorithms
-   - Graph representations (adjacency list, matrix, weighted)
-   - Common graph algorithms (DFS, BFS, Dijkstra, etc.)
-   - Input parsing utilities for graph problems
-3. Select a few representative graph problems for initial refactoring
-4. Measure the impact of the library on code size and complexity
-
-## Roadmap
-1. ✅ Set up project structure and development environment
-2. ✅ Download the code_contests dataset
-3. ✅ Format problems into standardized structure in problems/ directory
-   - ✅ Parse problem descriptions into PROBLEM.md
-   - ✅ Extract initial Python solutions into main.py
-   - ✅ Generate test cases from dataset
-   - ✅ Create run.sh scripts for each problem
-   - ✅ Add protection against test file modifications
-   - ✅ Process 100 graph-related problems
-4. ✅ Set up pre-commit hooks for code quality enforcement
-   - ✅ Add ruff for linting and formatting
-   - ✅ Add protection against test file modifications
-   - ✅ Configure proper exclusion patterns
-5. ✅ Implement Pydantic models for structured data
-   - ✅ Create models for Dataset problems and test cases
-   - ✅ Add validation and utility methods
-   - ✅ Create model validation tests
-6. ✅ Implement evaluation tools
-   - ✅ Add tools to calculate log probability scores for code using TogetherAI's API
-   - ✅ Create logical lines of code (LLOC) counters using AST parsing
-   - ✅ Add metrics tracking for code reduction and model probability
-7. Analyze common patterns across all problems
-   - Focus on graph problems first
-   - Identify repeated algorithms and utilities
-8. Implement shared components in the library directory
-   - Input/output utilities for handling stdin/stdout
-   - Common data structures and algorithms
-   - Math utilities
-9. Refactor solutions to use the shared library
-   - Start with representative problems from each category
-   - Measure code reduction, LLOC, and log probability scores
-   - Track metrics to ensure improvements across refactoring
-10. Iterate on library design based on findings
-11. Finalize library and comprehensive documentation
+1. Develop instructions for an agent to perform the compression task
+2. Define evaluation criteria for comparing different compression approaches
+3. Create a baseline implementation of the shared library
+4. Develop automated testing to verify correctness after refactoring

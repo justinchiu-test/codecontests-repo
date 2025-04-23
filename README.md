@@ -1,10 +1,10 @@
-# CodeContests Refactoring Project
+# CodeContests Compression Benchmark
 
-This repository provides a framework for refactoring solutions from the [DeepMind Code Contests dataset](https://huggingface.co/datasets/deepmind/code_contests), with a focus on graph problems.
+This repository provides a benchmark compression solutions to the [DeepMind Code Contests dataset](https://huggingface.co/datasets/deepmind/code_contests).
 
 ## Project Goal
 
-The primary objective is to create a shared library that minimizes the total code required to solve competitive programming problems by identifying and extracting common patterns, algorithms, and utilities. We aim to:
+The primary objective is to create a shared library that minimizes the total code required to jointly solve competitive programming problems by identifying and extracting common patterns, algorithms, and utilities. We aim to:
 
 1. Reduce the amount of code needed per solution through abstraction and reuse
 2. Improve code readability and maintainability
@@ -17,9 +17,10 @@ The project is organized into three main components:
 
 1. **Tools for Repository Creation**: Utilities to download and format problems from the code_contests dataset, creating standardized problem descriptions, initial solutions, and test scripts.
 
-2. **Shared Library**: Reusable components that solutions can import to reduce duplicate code, including I/O utilities, data structures, algorithms, and math functions.
+2. **Formatted Problems**: The actual competitive programming problems, each with a problem description (PROBLEM.md), initial solution (main.py), test script (run.sh), and test cases.
 
-3. **Formatted Problems**: The actual competitive programming problems, each with a problem description (PROBLEM.md), initial solution (main.py), test script (run.sh), and test cases.
+3. **Shared Library**: Reusable components that solutions can import to reduce duplicate code. Initially empty for an Agent to populate.
+
 
 ## Structure
 
