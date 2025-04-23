@@ -11,13 +11,16 @@ repos:
     rev: v0.1.14
     hooks:
     -   id: ruff
-        args: [--fix]
+        args: [--fix, --line-length=120]
         exclude: ^problems/
     -   id: ruff-format
         exclude: ^problems/
 
--   repo: https://github.com/RobertCraigie/pyright-python
-    rev: v1.1.350
+-   repo: local
     hooks:
-    -   id: pyright
-        exclude: ^problems/
+    -   id: prevent-test-edits
+        name: Prevent edits to test files
+        entry: ./prevent_test_edits.py
+        language: script
+        pass_filenames: false
+        stages: [commit]

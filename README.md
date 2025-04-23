@@ -22,7 +22,7 @@ The project is organized into three main components:
 codecontests-repo/
 ├── tools/                  # Repository creation tools
 │   ├── dataset/            # Dataset processing
-│   ├── formatter/          # Problem formatting 
+│   ├── formatter/          # Problem formatting
 │   └── models/             # Pydantic data models
 │
 ├── library/                # Shared library components

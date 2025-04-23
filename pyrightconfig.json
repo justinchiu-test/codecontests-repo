@@ -11,5 +11,8 @@
   "typeCheckingMode": "basic",
   "useLibraryCodeForTypes": true,
   "reportMissingImports": true,
-  "reportMissingTypeStubs": false
+  "reportMissingTypeStubs": false,
+  "pythonPath": ".venv/bin/python",
+  "venvPath": ".",
+  "venv": ".venv"
 }

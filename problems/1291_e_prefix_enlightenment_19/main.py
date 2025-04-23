@@ -6,7 +6,7 @@ input = stdin.readline
 n , k = [int(i) for i in input().split()]
 pairs = [i + k for i in range(k)] + [i for i in range(k)]
 initial_condition = list(map(lambda x: x == '1',input().strip()))
-data = [i for i in range(2*k)] 
+data = [i for i in range(2*k)]
 constrain = [-1] * (2*k)
 h = [0] * (2*k)
 L = [1] * k + [0] * k

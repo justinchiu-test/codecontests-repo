@@ -1,0 +1,135 @@
+# 888_F. Connecting Vertices
+
+**ID:** 888_f_connecting_vertices_1940
+**Difficulty:** 12
+
+## Description
+
+There are n points marked on the plane. The points are situated in such a way that they form a regular polygon (marked points are its vertices, and they are numbered in counter-clockwise order). You can draw n - 1 segments, each connecting any two marked points, in such a way that all points have to be connected with each other (directly or indirectly).
+
+But there are some restrictions. Firstly, some pairs of points cannot be connected directly and have to be connected undirectly. Secondly, the segments you draw must not intersect in any point apart from the marked points (that is, if any two segments intersect and their intersection is not a marked point, then the picture you have drawn is invalid).
+
+How many ways are there to connect all vertices with n - 1 segments? Two ways are considered different iff there exist some pair of points such that a segment is drawn between them in the first way of connection, but it is not drawn between these points in the second one. Since the answer might be large, output it modulo 109 + 7.
+
+Input
+
+The first line contains one number n (3 ≤ n ≤ 500) — the number of marked points.
+
+Then n lines follow, each containing n elements. ai, j (j-th element of line i) is equal to 1 iff you can connect points i and j directly (otherwise ai, j = 0). It is guaranteed that for any pair of points ai, j = aj, i, and for any point ai, i = 0.
+
+Output
+
+Print the number of ways to connect points modulo 109 + 7.
+
+Examples
+
+Input
+
+3
+0 0 1
+0 0 1
+1 1 0
+
+
+Output
+
+1
+
+
+Input
+
+4
+0 1 1 1
+1 0 1 1
+1 1 0 1
+1 1 1 0
+
+
+Output
+
+12
+
+
+Input
+
+3
+0 0 0
+0 0 1
+0 1 0
+
+
+Output
+
+0
+
+## Categories
+
+- dp
+- graphs
+
+## Source
+
+Codeforces
+
+## Examples
+
+### Example 1
+
+**Input**:
+```
+3
+0 0 1
+0 0 1
+1 1 0
+```
+
+**Output**:
+```
+1
+```
+
+### Example 2
+
+**Input**:
+```
+4
+0 1 1 1
+1 0 1 1
+1 1 0 1
+1 1 1 0
+```
+
+**Output**:
+```
+12
+```
+
+### Example 3
+
+**Input**:
+```
+3
+0 0 0
+0 0 1
+0 1 0
+```
+
+**Output**:
+```
+0
+```
+
+
+## Testing
+
+Run the solution with:
+
+```bash
+./run.sh
+```
+
+Or test with a specific input file:
+
+```bash
+uv run main.py < tests/input_1.txt
+```

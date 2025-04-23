@@ -29,31 +29,31 @@ run_test() {{
     local test_num=$1
     local input_file="$PROBLEM_DIR/tests/input_${{test_num}}.txt"
     local expected_file="$PROBLEM_DIR/tests/output_${{test_num}}.txt"
-    
+
     if [ ! -f "$input_file" ]; then
         echo "Test #$test_num: Input file not found!"
         return 1
     fi
-    
+
     if [ ! -f "$expected_file" ]; then
         echo "Test #$test_num: Expected output file not found!"
         return 1
     fi
-    
+
     echo "Running test #$test_num..."
-    
+
     # Run the solution with the test input using uv
     OUTPUT=$(uv run "$SOLUTION_FILE" < "$input_file")
     EXIT_CODE=$?
-    
+
     if [ $EXIT_CODE -ne 0 ]; then
         echo "Test #$test_num: Error running solution! Exit code: $EXIT_CODE"
         return 1
     fi
-    
+
     # Read expected output
     EXPECTED=$(cat "$expected_file")
-    
+
     # Compare outputs (ignoring trailing whitespace)
     if [ "$(echo "$OUTPUT" | sed -e 's/[ \\t]*$//')" = "$(echo "$EXPECTED" | sed -e 's/[ \\t]*$//')" ]; then
         echo "Test #$test_num: PASSED ✅"
@@ -99,40 +99,44 @@ fi
 def generate_run_script(problem_id: str, output_dir: Path) -> Path:
     """
     Generate a run.sh script for testing a specific problem.
-    
+
     Args:
         problem_id: The ID of the problem
         output_dir: The problem directory where the script will be written
-        
+
     Returns:
         Path to the generated script
     """
     # Customize for the problem
     script_content = SCRIPT_TEMPLATE.format(problem_id=problem_id)
-    
+
     # Write the script
     script_path = output_dir / "run.sh"
     with open(script_path, "w") as f:
         f.write(script_content)
-    
+
     # Make the script executable
-    os.chmod(script_path, os.stat(script_path).st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
-    
+    os.chmod(
+        script_path,
+        os.stat(script_path).st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH,
+    )
+
     return script_path
 
 
 if __name__ == "__main__":
     # Example usage
     import sys
+
     if len(sys.argv) != 3:
         print("Usage: python script_sh.py problem_id output_dir")
         sys.exit(1)
-        
+
     problem_id = sys.argv[1]
     output_dir = Path(sys.argv[2])
-    
+
     if not output_dir.exists():
         output_dir.mkdir(parents=True)
-        
+
     script_path = generate_run_script(problem_id, output_dir)
     print(f"Generated test script at: {script_path}")

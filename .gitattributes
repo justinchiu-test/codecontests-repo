@@ -1,0 +1,3 @@
+# Mark all test files as frozen to prevent accidental edits
+problems/*/tests/* linguist-generated=true
+problems/*/tests/* -diff

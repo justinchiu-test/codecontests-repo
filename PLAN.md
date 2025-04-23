@@ -48,7 +48,7 @@ Create a shared library for code_contests problems to minimize the total code re
          output: str
          time_limit_ms: Optional[int] = 30000
          memory_limit_mb: Optional[int] = 512
-     
+
      class Problem(BaseModel):
          id: str
          name: str
@@ -57,7 +57,7 @@ Create a shared library for code_contests problems to minimize the total code re
          difficulty: str
          test_cases: List[TestCase]
          source: Optional[str] = None
-         
+
      class Solution(BaseModel):
          problem_id: str
          code: str
@@ -65,7 +65,7 @@ Create a shared library for code_contests problems to minimize the total code re
          uses_shared_lib: bool = True
          original_code: Optional[str] = None  # For comparison
          metrics: Optional[Dict[str, Any]] = None
-     
+
      class ExecutionResult(BaseModel):
          passed: List[bool]
          test_inputs: List[str]

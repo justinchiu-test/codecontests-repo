@@ -37,6 +37,18 @@ Or from any directory:
 uv run problems/problem_id/main.py < problems/problem_id/tests/input_1.txt
 ```
 
+### Important: Test Files Protection
+
+The test files in `problems/*/tests/` are considered ground truth and should NOT be modified.
+These files are protected by:
+
+1. Git attributes marking them as generated files
+2. A pre-commit hook that prevents committing changes to these files
+3. Special handling in the codebase
+
+When evaluating solutions, always use the original test files. If you need different test cases for debugging,
+create them in a separate location.
+
 ### Adding More Problems
 
 To process more problems from the code_contests dataset:

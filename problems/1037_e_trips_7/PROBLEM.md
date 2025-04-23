@@ -7,10 +7,10 @@
 
 There are n persons who initially don't know each other. On each morning, two of them, who were not friends before, become friends.
 
-We want to plan a trip for every evening of m days. On each trip, you have to select a group of people that will go on the trip. For every person, one of the following should hold: 
+We want to plan a trip for every evening of m days. On each trip, you have to select a group of people that will go on the trip. For every person, one of the following should hold:
 
-  * Either this person does not go on the trip, 
-  * Or at least k of his friends also go on the trip. 
+  * Either this person does not go on the trip,
+  * Or at least k of his friends also go on the trip.
 
 
 
@@ -96,24 +96,24 @@ Output
 
 Note
 
-In the first example, 
+In the first example,
 
-  * 1,2,3 can go on day 3 and 4. 
-
-
-
-In the second example, 
-
-  * 2,4,5 can go on day 4 and 5. 
-  * 1,2,4,5 can go on day 6 and 7. 
-  * 1,2,3,4,5 can go on day 8. 
+  * 1,2,3 can go on day 3 and 4.
 
 
 
-In the third example, 
+In the second example,
 
-  * 1,2,5 can go on day 5. 
-  * 1,2,3,5 can go on day 6 and 7. 
+  * 2,4,5 can go on day 4 and 5.
+  * 1,2,4,5 can go on day 6 and 7.
+  * 1,2,3,4,5 can go on day 8.
+
+
+
+In the third example,
+
+  * 1,2,5 can go on day 5.
+  * 1,2,3,5 can go on day 6 and 7.
 
 ## Categories
 

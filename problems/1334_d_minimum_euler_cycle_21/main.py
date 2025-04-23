@@ -24,7 +24,7 @@ def solve(n, l, r):
     # ...
     # n-1, n
     # 1
-    
+
     lo, hi = 1, n
     while lo <= hi:
         k = (lo + hi) // 2
@@ -33,12 +33,12 @@ def solve(n, l, r):
             lo = k + 1
         else:
             hi = k - 1
-    
+
     k = lo
     s = k * (2*n-1-k)
     b = k
-    
-    
+
+
     # [b, b+1, b, b+2, ..., b, n]
     row = []
     for i in range(b+1, n+1):
@@ -48,7 +48,7 @@ def solve(n, l, r):
     d = r-l+1
     if len(ans) >= d:
         return ans[:d]
-    
+
     while len(ans) < d:
         b += 1
         row = []
@@ -58,11 +58,11 @@ def solve(n, l, r):
         if not row:
             break
         ans += row
-    
+
     ans.append(1)
     # print(ans[:d])
     return ans[:d]
-    
+
 
 if __name__ == '__main__':
     T = int(input())

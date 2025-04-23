@@ -27,10 +27,10 @@ The first line of the description contains a single integer c (1 ≤ c ≤ n) �
 
 The second line of the description contains c distinct integers x_1, …, x_c (1 ≤ x_i ≤ n) — the elements of the subset.
 
-It is guaranteed that: 
+It is guaranteed that:
 
-  * The intersection of any three subsets is empty; 
-  * It's possible to make all lamps be simultaneously on using some operations. 
+  * The intersection of any three subsets is empty;
+  * It's possible to make all lamps be simultaneously on using some operations.
 
 Output
 
@@ -160,18 +160,18 @@ Output
 
 Note
 
-In the first example: 
+In the first example:
 
-  * For i = 1, we can just apply one operation on A_1, the final states will be 1010110; 
-  * For i = 2, we can apply operations on A_1 and A_3, the final states will be 1100110; 
-  * For i ≥ 3, we can apply operations on A_1, A_2 and A_3, the final states will be 1111111. 
+  * For i = 1, we can just apply one operation on A_1, the final states will be 1010110;
+  * For i = 2, we can apply operations on A_1 and A_3, the final states will be 1100110;
+  * For i ≥ 3, we can apply operations on A_1, A_2 and A_3, the final states will be 1111111.
 
 
 
-In the second example: 
+In the second example:
 
-  * For i ≤ 6, we can just apply one operation on A_2, the final states will be 11111101; 
-  * For i ≥ 7, we can apply operations on A_1, A_3, A_4, A_6, the final states will be 11111111. 
+  * For i ≤ 6, we can just apply one operation on A_2, the final states will be 11111101;
+  * For i ≥ 7, we can apply operations on A_1, A_3, A_4, A_6, the final states will be 11111111.
 
 ## Categories
 

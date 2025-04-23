@@ -16,31 +16,31 @@ run_test() {
     local test_num=$1
     local input_file="$PROBLEM_DIR/tests/input_${test_num}.txt"
     local expected_file="$PROBLEM_DIR/tests/output_${test_num}.txt"
-    
+
     if [ ! -f "$input_file" ]; then
         echo "Test #$test_num: Input file not found!"
         return 1
     fi
-    
+
     if [ ! -f "$expected_file" ]; then
         echo "Test #$test_num: Expected output file not found!"
         return 1
     fi
-    
+
     echo "Running test #$test_num..."
-    
+
     # Run the solution with the test input using uv
     OUTPUT=$(uv run "$SOLUTION_FILE" < "$input_file")
     EXIT_CODE=$?
-    
+
     if [ $EXIT_CODE -ne 0 ]; then
         echo "Test #$test_num: Error running solution! Exit code: $EXIT_CODE"
         return 1
     fi
-    
+
     # Read expected output
     EXPECTED=$(cat "$expected_file")
-    
+
     # Compare outputs (ignoring trailing whitespace)
     if [ "$(echo "$OUTPUT" | sed -e 's/[ \t]*$//')" = "$(echo "$EXPECTED" | sed -e 's/[ \t]*$//')" ]; then
         echo "Test #$test_num: PASSED ✅"
