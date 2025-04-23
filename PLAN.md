@@ -95,9 +95,14 @@ Create a shared library for code_contests problems to minimize the total code re
    │   │   ├── solution_py.py  # Extract initial main.py solutions
    │   │   └── script_sh.py    # Generate run.sh test scripts
    │   │
-   │   └── models/             # Pydantic data models
-   │       ├── problem.py      # Problem, TestCase models
-   │       └── solution.py     # Solution, ExecutionResult models
+   │   ├── models/             # Pydantic data models
+   │   │   ├── problem.py      # Problem, TestCase models
+   │   │   └── solution.py     # Solution, ExecutionResult models
+   │   │
+   │   └── eval/               # Evaluation tools
+   │       ├── log_prob.py     # Calculate log probabilities of library and solutions
+   │       ├── loc.py          # Count logical lines of code in library and solutions
+   │       └── metrics.py      # Track code reduction and other metrics
    │
    ├── library/                # Shared library components (Part 2)
    │   ├── io/                 # Input/output utilities
@@ -205,7 +210,9 @@ Create a shared library for code_contests problems to minimize the total code re
 ## Evaluation
 1. **Metrics**
    - Total lines of code (original vs. refactored)
+   - Logical lines of code (LLOC) - counts actual code statements, excluding comments and blank lines
    - Code reuse percentage
+   - Log probability - measure how "predictable" the code is from a language model perspective
    - Execution time comparison
    - Maintainability score
 
@@ -224,12 +231,17 @@ Create a shared library for code_contests problems to minimize the total code re
    - Create run.sh scripts for each problem
    - Ensure all test cases can be run with uv
 4. Analyze common patterns across all problems
-5. Implement shared components in the library directory
+5. Implement evaluation tools
+   - Tools to calculate log probability scores for code
+   - Logical lines of code (LLOC) counters
+   - Metrics tracking for code reduction and model probability
+6. Implement shared components in the library directory
    - Input/output utilities for handling stdin/stdout
    - Common data structures and algorithms
    - Math utilities
-6. Refactor solutions to use the shared library
+7. Refactor solutions to use the shared library
    - Start with representative problems from each category
-   - Measure code reduction and performance
-7. Iterate on library design based on findings
-8. Finalize library and comprehensive documentation
+   - Measure code reduction, LLOC, and log probability scores
+   - Track metrics to ensure improvements across refactoring
+8. Iterate on library design based on findings
+9. Finalize library and comprehensive documentation
