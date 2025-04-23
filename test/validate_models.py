@@ -35,7 +35,9 @@ def validate_testcase_model() -> List[str]:
             issues.append("TestCase.memory_limit_mb field not working correctly")
 
         # Check default values
-        default_test_case = TestCase(input="test", output="test")
+        default_test_case = TestCase(
+            input="test", output="test", time_limit_ms=30000, memory_limit_mb=512
+        )
         if default_test_case.time_limit_ms != 30000:
             issues.append(
                 f"TestCase.time_limit_ms default should be 30000, got {default_test_case.time_limit_ms}"
@@ -64,8 +66,12 @@ def validate_problem_model() -> List[str]:
             category=["math", "implementation"],
             difficulty="medium",
             test_cases=[
-                TestCase(input="1 2", output="3"),
-                TestCase(input="4 5", output="9"),
+                TestCase(
+                    input="1 2", output="3", time_limit_ms=30000, memory_limit_mb=512
+                ),
+                TestCase(
+                    input="4 5", output="9", time_limit_ms=30000, memory_limit_mb=512
+                ),
             ],
             source="Test Source",
         )
@@ -90,7 +96,16 @@ def validate_problem_model() -> List[str]:
             id="test_defaults",
             name="Test Defaults",
             description="Testing defaults",
-            test_cases=[TestCase(input="test", output="test")],
+            test_cases=[
+                TestCase(
+                    input="test",
+                    output="test",
+                    time_limit_ms=30000,
+                    memory_limit_mb=512,
+                )
+            ],
+            difficulty="medium",
+            source="Test Source",
         )
         if problem_with_defaults.source is not None:
             issues.append(
@@ -135,6 +150,12 @@ def validate_dataset_models() -> List[str]:
             difficulty=4,  # medium
             source=2,  # Codeforces
             cf_tags=["graphs", "dfs and similar"],
+            generated_tests=TestSet(input=["9 10"], output=["19"]),
+            cf_contest_id=1234,
+            cf_index="A",
+            cf_points=500,
+            cf_rating=1600,
+            url="https://codeforces.com/contest/1234/problem/A",
         )
 
         # Check that fields are accessible
