@@ -10,6 +10,9 @@ Your task is to minimize the total amount of code needed to solve all problems b
 3. Refactoring each problem solution to use this library
 
 ## Rules and Constraints
+You are free to use any bash commands to navigate the repo, such as grep or find.
+You are allowed to create files in `library/`, to be used in `problems/*/main.py`.
+However, those are the only files you can edit.
 
 ### What You Can Modify
 - **Library Directory (`library/`)**: You can create, modify, or delete any files in this directory.
