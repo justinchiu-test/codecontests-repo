@@ -9,14 +9,16 @@ This script:
 """
 import logging
 from pathlib import Path
-from typing import Any, Dict, List, Optional
+from typing import List, Optional
 
 from datasets import load_dataset
+from pydantic import ValidationError
 
 from tools.formatter.problem_md import generate_problem_md
 from tools.formatter.script_sh import generate_run_script
+from tools.models.dataset import DatasetProblem
 
-# Import the models correctly using absolute imports
+# Import the models
 from tools.models.problem import Problem, TestCase
 
 logging.basicConfig(
@@ -49,41 +51,26 @@ def get_problem_id(name: str, index: int) -> str:
     return f"{sanitized}_{index}"
 
 
-def extract_python_solution(problem: Dict[str, Any]) -> Optional[str]:
+def extract_python_solution(problem: DatasetProblem) -> Optional[str]:
     """
     Extract a Python 3 solution from the problem's solutions.
     Only returns Python 3 solutions, skipping Python 2 solutions.
 
     Args:
-        problem: Problem dictionary from the dataset
+        problem: Problem from the dataset as a Pydantic model
 
     Returns:
         Python 3 solution code or None if not found
     """
-    # The dataset structure has 'solutions' as a dict with 'language' and 'solution' lists
-    solutions_dict = problem.get("solutions", {})
+    # Get Python 3 solution from the model
+    python3_solution = problem.get_python3_solution()
 
-    if not isinstance(solutions_dict, dict):
-        logger.warning(f"Solutions is not a dictionary: {type(solutions_dict)}")
-        return None
-
-    languages = solutions_dict.get("language", [])
-    solution_codes = solutions_dict.get("solution", [])
-
-    # Find Python 3 solutions only (language code 3 is Python 3)
-    python3_solutions = []
-    for i, lang in enumerate(languages):
-        if lang == 3 and i < len(solution_codes):  # 3 is the code for Python 3
-            python3_solutions.append(solution_codes[i])
-
-    if python3_solutions:
-        logger.info(f"Found Python 3 solution for problem: {problem.get('name')}")
-        return python3_solutions[0]  # Return the first Python 3 solution
+    if python3_solution:
+        logger.info(f"Found Python 3 solution for problem: {problem.name}")
+        return python3_solution
 
     # If no Python 3 solution, skip this problem
-    logger.warning(
-        f"No Python 3 solution found for problem: {problem.get('name')}, skipping"
-    )
+    logger.warning(f"No Python 3 solution found for problem: {problem.name}, skipping")
     return None
 
 
@@ -118,19 +105,19 @@ def create_test_files(
     return min(len(test_inputs), len(test_outputs))
 
 
-def process_problem(problem: Dict[str, Any], index: int) -> bool:
+def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
     """
     Process a single problem and create its directory structure.
 
     Args:
-        problem: Problem dictionary from the dataset
+        dataset_problem: Problem from the dataset as a Pydantic model
         index: Problem index for unique ID generation
 
     Returns:
         True if processing succeeded, False otherwise
     """
     try:
-        name = problem.get("name", f"Unknown_{index}")
+        name = dataset_problem.name
         problem_id = get_problem_id(name, index)
 
         # Create problem directory
@@ -138,7 +125,7 @@ def process_problem(problem: Dict[str, Any], index: int) -> bool:
         problem_dir.mkdir(parents=True, exist_ok=True)
 
         # Extract Python solution
-        solution_code = extract_python_solution(problem)
+        solution_code = extract_python_solution(dataset_problem)
         if not solution_code:
             # Skip problems without Python solutions
             logger.warning(f"Skipping problem {name} due to missing Python solution")
@@ -151,83 +138,36 @@ def process_problem(problem: Dict[str, Any], index: int) -> bool:
             # Write the Python 3 solution directly
             f.write(solution_code)
 
-        # Collect test cases from public, private, and generated tests
-        all_inputs = []
-        all_outputs = []
-
-        # Add public tests
-        public_tests = problem.get("public_tests", {})
-        if isinstance(public_tests, dict):
-            all_inputs.extend(public_tests.get("input", []))
-            all_outputs.extend(public_tests.get("output", []))
-
-        # Add private tests if available
-        private_tests = problem.get("private_tests", {})
-        if isinstance(private_tests, dict):
-            all_inputs.extend(private_tests.get("input", []))
-            all_outputs.extend(private_tests.get("output", []))
-
-        # Add generated tests if available and if we need more tests
-        if len(all_inputs) < 3:
-            generated_tests = problem.get("generated_tests", {})
-            if isinstance(generated_tests, dict):
-                gen_inputs = generated_tests.get("input", [])
-                gen_outputs = generated_tests.get("output", [])
-                if len(gen_inputs) == len(gen_outputs):
-                    all_inputs.extend(gen_inputs)
-                    all_outputs.extend(gen_outputs)
-
-        # Make sure we have the same number of inputs and outputs
-        min_count = min(len(all_inputs), len(all_outputs))
-        all_inputs = all_inputs[:min_count]
-        all_outputs = all_outputs[:min_count]
+        # Get all test cases
+        test_case_dicts = dataset_problem.get_all_test_cases(min_test_cases=3)
 
         # Skip if no test cases
-        if not all_inputs:
+        if not test_case_dicts:
             logger.warning(f"Skipping problem {name} due to missing test cases")
             return False
 
+        # Prepare input and output lists for test file creation
+        all_inputs = [tc["input"] for tc in test_case_dicts]
+        all_outputs = [tc["output"] for tc in test_case_dicts]
+
         # Create test cases for the problem model
         test_cases = [
-            TestCase(input=inp, output=out) for inp, out in zip(all_inputs, all_outputs)
+            TestCase(input=inp, output=out, time_limit_ms=30000, memory_limit_mb=512)
+            for inp, out in zip(all_inputs, all_outputs)
         ]
 
-        # Get difficulty as string
-        difficulty_level = problem.get("difficulty")
-        if isinstance(difficulty_level, int):
-            difficulty_str = {
-                1: "very easy",
-                2: "easy",
-                3: "easy-medium",
-                4: "medium",
-                5: "medium-hard",
-                6: "hard",
-                7: "very hard",
-            }.get(difficulty_level, str(difficulty_level))
-        else:
-            difficulty_str = str(difficulty_level) if difficulty_level else "Unknown"
-
-        # Get source
-        source_id = problem.get("source")
-        source_name = (
-            {
-                1: "CodeChef",
-                2: "Codeforces",
-                3: "AtCoder",
-                4: "HackerEarth",
-                5: "Aizu",
-            }.get(source_id, "Unknown")
-            if isinstance(source_id, int)
-            else "Unknown"
-        )
+        # Get difficulty and source as strings
+        difficulty_str = dataset_problem.get_difficulty_name()
+        source_name = dataset_problem.get_source_name()
 
         # Get tags/categories
-        tags = problem.get("cf_tags", [])
+        tags = dataset_problem.cf_tags
 
+        # Create Problem model for our system
         problem_model = Problem(
             id=problem_id,
             name=name,
-            description=problem.get("description", "No description available"),
+            description=dataset_problem.description,
             category=tags,
             difficulty=difficulty_str,
             test_cases=test_cases,
@@ -261,7 +201,8 @@ def main():
     dataset = load_dataset(DATASET_NAME)
 
     # Get problems from training set
-    train_problems = dataset["train"]
+    # We need to type-ignore this because the Dataset class doesn't have proper type annotations
+    train_dataset = dataset["train"]  # type: ignore
 
     # Set target for graph problems
     target_problems = 100  # Target number of graph problems to process
@@ -274,31 +215,36 @@ def main():
     processed_ids = set()  # Track processed problem IDs to avoid duplicates
 
     # Process all problems looking for those with "graph" tag
-    for i in range(len(train_problems)):
+    for i, raw_problem in enumerate(train_dataset):
         if successful >= target_problems:
             break
 
-        problem = train_problems[i]
+        # Convert to Pydantic model for better type safety
+        try:
+            dataset_problem = DatasetProblem.parse_obj(raw_problem)
+        except ValidationError as e:
+            logger.warning(f"Error parsing problem at index {i}: {e}")
+            continue
 
         # Check if problem has "graph" tag
-        tags = problem.get("cf_tags", [])
-        if "graphs" not in tags:
+        if "graphs" not in dataset_problem.cf_tags:
             continue
 
         attempted += 1
 
-        problem_name = problem.get("name", "Unknown")
         logger.info(
-            f"Processing graph problem {attempted} (successful so far: {successful}): {problem_name}"
+            f"Processing graph problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
         )
 
         # Check if this problem might be a duplicate by name
-        problem_id = get_problem_id(problem_name, i)
+        problem_id = get_problem_id(dataset_problem.name, i)
         if problem_id in processed_ids:
-            logger.warning(f"Skipping potential duplicate problem: {problem_name}")
+            logger.warning(
+                f"Skipping potential duplicate problem: {dataset_problem.name}"
+            )
             continue
 
-        if process_problem(problem, i):
+        if process_problem(dataset_problem, i):
             successful += 1
             processed_ids.add(problem_id)
 

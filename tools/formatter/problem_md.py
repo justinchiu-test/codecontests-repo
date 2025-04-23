@@ -6,7 +6,7 @@ formatted in a standardized way.
 """
 from pathlib import Path
 
-from ..models.problem import Problem
+from ..models.problem import Problem, TestCase
 
 
 def generate_problem_md(problem: Problem, output_dir: Path) -> Path:
@@ -71,7 +71,12 @@ if __name__ == "__main__":
         description="This is an example problem description.\n\nWrite a function that adds two numbers.",
         category=["math", "implementation"],
         difficulty="easy",
-        test_cases=[{"input": "1 2", "output": "3"}, {"input": "5 7", "output": "12"}],
+        test_cases=[
+            TestCase(input="1 2", output="3", time_limit_ms=30000, memory_limit_mb=512),
+            TestCase(
+                input="5 7", output="12", time_limit_ms=30000, memory_limit_mb=512
+            ),
+        ],
         source="Example Source",
     )
 
