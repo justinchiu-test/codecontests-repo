@@ -120,16 +120,16 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
         name = dataset_problem.name
         problem_id = get_problem_id(name, index)
 
-        # Create problem directory
-        problem_dir = PROBLEMS_DIR / problem_id
-        problem_dir.mkdir(parents=True, exist_ok=True)
-
-        # Extract Python solution
+        # Extract Python solution first
         solution_code = extract_python_solution(dataset_problem)
         if not solution_code:
             # Skip problems without Python solutions
             logger.warning(f"Skipping problem {name} due to missing Python solution")
             return False
+
+        # Create problem directory only if we have a Python solution
+        problem_dir = PROBLEMS_DIR / problem_id
+        problem_dir.mkdir(parents=True, exist_ok=True)
 
         # Write main.py with solution code
         with open(problem_dir / "main.py", "w") as f:
@@ -182,6 +182,12 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
 
         # Generate run.sh script
         generate_run_script(problem_id, problem_dir)
+
+        # Save CF tags to tags.txt
+        if tags:
+            with open(problem_dir / "tags.txt", "w") as f:
+                f.write("\n".join(tags))
+            logger.info(f"Saved {len(tags)} CF tags to tags.txt")
 
         logger.info(f"Processed problem: {problem_id} with {num_tests} test cases")
         return True
