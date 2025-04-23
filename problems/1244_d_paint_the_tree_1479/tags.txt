@@ -1,0 +1,6 @@
+brute force
+constructive algorithms
+dp
+graphs
+implementation
+trees

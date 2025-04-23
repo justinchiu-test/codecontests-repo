@@ -1,0 +1,7 @@
+bitmasks
+dfs and similar
+dsu
+graphs
+greedy
+math
+sortings

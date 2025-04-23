@@ -1,0 +1,5 @@
+constructive algorithms
+data structures
+graphs
+greedy
+sortings
