@@ -29,8 +29,7 @@ However, those are the only files you can edit.
 ### 1. Analyze Problems
 
 Begin by examining the problems to identify common patterns:
-- Look for similar data structures (graphs, trees, etc.)
-- Identify recurring algorithms (BFS, DFS, shortest path, etc.)
+- Look for similar data structures, algorithms, and techniques
 - Note common input/output patterns
 - Find repeated utility functions or helpers
 
@@ -49,62 +48,11 @@ cat problems/problem_id/PROBLEM.md
 cat problems/problem_id/main.py
 ```
 
-### 2. Design Library Structure
+### 2. Design and Implement Library
 
-Based on your analysis, design a modular library with components like:
+Based on your analysis, design and implement a library of reusable components that can be used across multiple problems. The structure and organization of the library is entirely up to you.
 
-```
-library/
-├── __init__.py
-├── io/              # Input/output utilities
-│   ├── __init__.py
-│   ├── parser.py    # Functions to parse common input formats
-│   └── formatter.py # Functions to format output
-│
-├── ds/              # Data structures
-│   ├── __init__.py
-│   ├── graph.py     # Graph representations
-│   └── ...
-│
-├── algo/            # Algorithms
-│   ├── __init__.py
-│   ├── search.py    # Search algorithms (BFS, DFS)
-│   ├── path.py      # Path-finding algorithms
-│   └── ...
-│
-└── utils/           # Utility functions
-    ├── __init__.py
-    └── ...
-```
-
-### 3. Implement Library Components
-
-Create reusable components in the library directory. Focus on:
-
-- **Input/Output Utilities**:
-  - Functions to parse integers, arrays, matrices
-  - Functions to parse graph representations
-  - Output formatting helpers
-
-- **Data Structures**:
-  - Graph representations (adjacency list, matrix)
-  - Tree structures
-  - Union-find / Disjoint-set
-  - Priority queues / Heaps
-
-- **Algorithms**:
-  - Graph traversals (BFS, DFS)
-  - Shortest path algorithms (Dijkstra's, Bellman-Ford)
-  - Minimum spanning tree algorithms
-  - Topological sorting
-  - Connected components
-
-- **Math Utilities**:
-  - Number theory functions
-  - Combinatorial calculations
-  - Modular arithmetic
-
-### 4. Refactor Problem Solutions
+### 3. Refactor Problem Solutions
 
 For each problem in the `problems/` directory:
 
@@ -113,38 +61,7 @@ For each problem in the `problems/` directory:
 3. Refactor the solution to use your library components
 4. Test the refactored solution to ensure it still passes all tests
 
-Example of a refactored solution:
-
-```python
-#!/usr/bin/env python3
-
-from library.io.parser import read_graph
-from library.ds.graph import AdjacencyList
-from library.algo.search import bfs
-
-# Original solution had its own graph parsing, representation, and BFS
-# Now we just use the library components
-
-def solve():
-    # Parse the input using library function
-    n, m, edges = read_graph()
-
-    # Create graph using library data structure
-    graph = AdjacencyList(n, directed=False)
-    for u, v in edges:
-        graph.add_edge(u, v)
-
-    # Run BFS using library algorithm
-    distances = bfs(graph, start=0)
-
-    # Output result
-    print(max(distances))
-
-if __name__ == "__main__":
-    solve()
-```
-
-### 5. Test Your Refactored Solutions
+### 4. Test Your Refactored Solutions
 
 For each problem, ensure your refactored solution still passes all tests:
 
@@ -154,7 +71,7 @@ bash problems/problem_id/run.sh
 
 If a solution fails, debug and fix it while still using the library components.
 
-### 6. Evaluate Your Compression
+### 5. Evaluate Your Compression
 
 Use the provided evaluation tools to measure your compression success:
 
@@ -172,17 +89,11 @@ TOGETHER_API_KEY=your_api_key uv run -m tools.eval.log_prob problems/*/main.py
 
 2. **Be Consistent**: Use consistent naming conventions and function signatures across your library.
 
-3. **Design for Flexibility**: Make your components adaptable to different problem variations.
+3. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific may not reduce code.
 
-4. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific may not reduce code.
+4. **Document Your Library**: Add docstrings explaining parameters, return values, and examples.
 
-5. **Document Your Library**: Add docstrings explaining parameters, return values, and examples.
-
-6. **Import Efficiently**: Import only what you need in each problem solution.
-
-7. **Preserve Functionality**: Ensure refactored solutions maintain the exact same functionality and output format.
-
-8. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
+5. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
 
 ## Evaluation Criteria
 
