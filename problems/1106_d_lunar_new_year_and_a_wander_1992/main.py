@@ -1,31 +1,39 @@
 #!/usr/bin/env python3
 
 from heapq import heappush, heappop
-n,m = map(int,input().split())
+from library.io import read_int_pair
+from library.graphs.graph import Graph
 
-adj = [[] for _ in range(n)]
+def main():
+    n, m = read_int_pair()
 
-for _ in range(m):
-    a,b = map(int,input().split())
-    a-=1
-    b-=1
-    adj[a].append(b)
-    adj[b].append(a)
+    # Build graph
+    g = Graph(n)
 
-st = set()
-hp = []
-v = [False for _ in range(n)]
-heappush(hp,0)
-v[0] = True
-ans = []
+    for _ in range(m):
+        a, b = map(int, input().split())
+        a -= 1  # Convert to 0-indexed
+        b -= 1
+        g.add_edge(a, b)
 
-while hp:
-    x = heappop(hp)
-    ans += [x]
-    for i in adj[x]:
-        if v[i]:
-            continue
-        v[i] = True
-        heappush(hp,i)
+    # Modified BFS with priority queue to visit vertices in ascending order
+    visited = [False] * n
+    pq = [0]  # Start from vertex 0
+    ans = []
 
-print(*[i+1 for i in ans])
+    visited[0] = True
+
+    while pq:
+        v = heappop(pq)
+        ans.append(v)
+
+        for neighbor in sorted(g.adj[v]):  # Sort neighbors to visit in ascending order
+            if not visited[neighbor]:
+                visited[neighbor] = True
+                heappush(pq, neighbor)
+
+    # Print result (convert back to 1-indexed)
+    print(*[v + 1 for v in ans])
+
+if __name__ == "__main__":
+    main()

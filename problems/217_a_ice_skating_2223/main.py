@@ -1,21 +1,30 @@
 #!/usr/bin/env python3
 
-n = int(input())
-g = []
-for i in range(n):
-    t = input().split()
-    g.append([ int(t[0]), int(t[1]), False ])
+from library.io import read_int
+from library.graphs.graph import Graph
 
-def visita(i):
-    g[i][2] = True
-    for j in range(n):
-        if g[j][2] == False and (g[i][0] == g[j][0] or g[i][1] == g[j][1]):
-            visita(j)
+def main():
+    n = read_int()
 
-cnt = -1
-for i in range(n):
-    if g[i][2] == False:
-        cnt += 1
-        visita(i)
+    # Read coordinates
+    points = []
+    for _ in range(n):
+        x, y = map(int, input().split())
+        points.append((x, y))
 
-print(cnt)
+    # Build graph - connect points that share x or y coordinate
+    g = Graph(n)
+
+    for i in range(n):
+        for j in range(i+1, n):
+            if points[i][0] == points[j][0] or points[i][1] == points[j][1]:
+                g.add_edge(i, j)
+
+    # Count connected components
+    components = g.components()
+
+    # Answer is (number of components - 1)
+    print(len(components) - 1)
+
+if __name__ == "__main__":
+    main()
