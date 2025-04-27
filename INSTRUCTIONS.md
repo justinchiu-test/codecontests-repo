@@ -60,6 +60,8 @@ For each problem in the `problems/` directory:
 2. Identify which library components can replace parts of the solution
 3. Refactor the solution to use your library components
 4. Test the refactored solution to ensure it still passes all tests
+5. Continue editing the library as you refactor solutions
+6. Ensure all solutions using any changed library functions still pass tests
 
 ### 4. Test Your Refactored Solutions
 
@@ -69,7 +71,8 @@ For each problem, ensure your refactored solution still passes all tests:
 bash problems/problem_id/run.sh
 ```
 
-If a solution fails, debug and fix it while still using the library components.
+If a solution fails, debug and fix it while using the library components.
+You may edit the library, but ensure that any downstream solutions still pass tests.
 
 ### 5. Evaluate Your Compression
 
