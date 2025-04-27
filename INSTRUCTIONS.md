@@ -28,7 +28,7 @@ However, those are the only files you can edit.
 
 ### 1. Analyze Problems
 
-Begin by examining the problems to identify common patterns:
+Begin by examining every problem to identify common patterns:
 - Look for similar data structures, algorithms, and techniques
 - Note common input/output patterns
 - Find repeated utility functions or helpers
@@ -48,9 +48,13 @@ cat problems/problem_id/PROBLEM.md
 cat problems/problem_id/main.py
 ```
 
+Be sure to examine every problem to get a good idea of what the library should contain.
+
 ### 2. Design and Implement Library
 
 Based on your analysis, design and implement a library of reusable components that can be used across multiple problems. The structure and organization of the library is entirely up to you.
+
+You will continue to edit this library as refactor problem solutions. The goal is to maximize reuse and minimize code.
 
 ### 3. Refactor Problem Solutions
 
