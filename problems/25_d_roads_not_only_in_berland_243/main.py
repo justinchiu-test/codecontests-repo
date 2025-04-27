@@ -1,116 +1,68 @@
 #!/usr/bin/env python3
 
-'''
-    Auther: ghoshashis545 Ashis Ghosh
-    College: jalpaiguri Govt Enggineering College
+from library.io import read_int
 
-'''
-from os import path
-import sys
-from heapq import heappush,heappop
-from functools import cmp_to_key as ctk
-from collections import deque,defaultdict as dd
-from bisect import bisect,bisect_left,bisect_right,insort,insort_left,insort_right
-from itertools import permutations
-from datetime import datetime
-from math import ceil,sqrt,log,gcd
-def ii():return int(input())
-def si():return input().rstrip()
-def mi():return map(int,input().split())
-def li():return list(mi())
-abc='abcdefghijklmnopqrstuvwxyz'
-mod=1000000007
-# mod=998244353
-inf = float("inf")
-vow=['a','e','i','o','u']
-dx,dy=[-1,1,0,0],[0,0,1,-1]
+def main():
+    n = read_int()
 
-def bo(i):
-    return ord(i)-ord('a')
+    # Initialize DSU
+    parent = list(range(n+1))
 
-file=1
+    def find(x):
+        if parent[x] != x:
+            parent[x] = find(parent[x])
+        return parent[x]
 
+    def union(x, y):
+        parent[find(x)] = find(y)
 
+    # Read edges
+    edges = []
+    for _ in range(n-1):
+        x, y = map(int, input().split())
+        edges.append((x, y))
 
-
-
-def solve():
-
-
-
-
-    n = ii()
-
-    par = [i for i in range(n+1)]
-
-    freq = [1 for i in range(n+1)]
-    def find(i):
-        if i==par[i]:
-            return i
-
-        par[i] = find(par[i])
-        return par[i]
-
-    def union(x,y):
-        x = find(x)
-        y = find(y)
-        if x==y:
-            return 0
-        if freq[x] < freq[y]:
-            par[x] = y
-            freq[y] += 1
-        else:
-            par[y] = x
-            freq[x] += 1
-        return 1
-
-
-
+    # Find redundant edges
     erase = []
-    for i in range(n-1):
+    for x, y in edges:
+        if find(x) == find(y):
+            erase.append((x, y))
+        else:
+            union(x, y)
 
-        x,y = mi()
+    # Reset DSU for connecting components
+    parent = list(range(n+1))
 
-        x1 = find(x)
-        y1 = find(y)
+    # Apply all non-redundant edges
+    for x, y in edges:
+        if (x, y) not in erase and (y, x) not in erase:
+            union(x, y)
 
-        if x1==y1:
-            erase.append([x,y])
-            continue
-        union(x,y)
+    # Find disjoint components
+    components = {}
+    for i in range(1, n+1):
+        root = find(i)
+        if root not in components:
+            components[root] = []
+        components[root].append(i)
 
+    # Add new edges to connect components
+    roots = list(components.keys())
     add = []
 
-    x = list(set(par[1:]))
+    for i in range(1, len(roots)):
+        # Connect a vertex from first component to a vertex from other component
+        add.append((components[roots[0]][0], components[roots[i]][0]))
 
-    for i in range(1,len(x)):
-        if(union(x[0],x[i])):
-            add.append([x[0],x[i]])
+    # Print results
+    print(len(erase))
 
-    print(len(add))
-    for i in range(len(add)):
-        print(*erase[i],end=" ")
-        print(*add[i],end=" ")
-        print()
+    # For each redundant edge, output both the redundant edge and a new edge
+    output_parts = []
+    for i in range(len(erase)):
+        output_parts.append(f"{erase[i][0]} {erase[i][1]} {add[i][0]} {add[i][1]}")
 
+    print(" ".join(output_parts))
 
-
-
-
-
-
-
-
-
-
-
-if __name__ =="__main__":
-
-    if(file):
-
-        if path.exists('input.txt'):
-            sys.stdin=open('input.txt', 'r')
-            sys.stdout=open('output.txt','w')
-        else:
-            input=sys.stdin.readline
-    solve()
+if __name__ == "__main__":
+    main()
