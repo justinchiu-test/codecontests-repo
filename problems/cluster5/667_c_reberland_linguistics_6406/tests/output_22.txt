@@ -1,6 +1,0 @@
-5
-xy
-yxy
-yzx
-zx
-zxy

@@ -1,7 +1,0 @@
-3
-acabb
-abcba
-efced
-defed
-ababcfeded
-abcdebafed

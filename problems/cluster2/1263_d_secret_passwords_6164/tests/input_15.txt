@@ -1,6 +1,0 @@
-5
-aaa
-bbb
-ccc
-ddd
-ab

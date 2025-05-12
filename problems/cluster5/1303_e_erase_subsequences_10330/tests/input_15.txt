@@ -1,9 +1,0 @@
-4
-ababcd
-aacba
-a
-b
-defi
-ffd
-xyy
-x

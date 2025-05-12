@@ -1,3 +1,0 @@
-12 7 6
-aabbccaccbcb
-cabcccc
