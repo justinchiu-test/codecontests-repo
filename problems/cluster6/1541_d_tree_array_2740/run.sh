@@ -3,10 +3,12 @@
 
 # Get the absolute path to the problem directory
 PROBLEM_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CLUSTER_DIR="$(cd "$PROBLEM_DIR/.." && pwd)"
 REPO_ROOT="$(cd "$PROBLEM_DIR/../.." && pwd)"
 
-# Import paths
-export PYTHONPATH="$REPO_ROOT:$PYTHONPATH"
+# Import paths - include both repo root and cluster directory
+# This allows importing from problems/cluster{i}/library.py with: from library import *
+export PYTHONPATH="$REPO_ROOT:$CLUSTER_DIR:$PYTHONPATH"
 
 # Default to main.py if no specific file is provided
 SOLUTION_FILE=${1:-"$PROBLEM_DIR/main.py"}

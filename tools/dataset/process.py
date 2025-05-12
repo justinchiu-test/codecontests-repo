@@ -117,7 +117,7 @@ def create_test_files(problem_dir: Path, test_inputs: List[str], test_outputs: L
     return min(len(test_inputs), len(test_outputs))
 
 
-def process_problem(dataset_problem: DatasetProblem, index: int, cluster_id: str) -> bool:
+def process_problem(dataset_problem: DatasetProblem, index: int, cluster_id: str):
     """
     Process a single problem and create its directory structure inside a cluster.
 
@@ -129,86 +129,80 @@ def process_problem(dataset_problem: DatasetProblem, index: int, cluster_id: str
     Returns:
         True if processing succeeded, False otherwise
     """
-    try:
-        name = dataset_problem.name
-        problem_id = get_problem_id(name, index)
+    name = dataset_problem.name
+    problem_id = get_problem_id(name, index)
 
-        # Extract Python solution first
-        solution_code = extract_python_solution(dataset_problem)
-        if not solution_code:
-            # Skip problems without Python solutions
-            logger.warning(f"Skipping problem {name} due to missing Python solution")
-            return False
-
-        # Create cluster directory and problem directory
-        cluster_dir = PROBLEMS_DIR / f"cluster{cluster_id}"
-        problem_dir = cluster_dir / problem_id
-        problem_dir.mkdir(parents=True, exist_ok=True)
-
-        # Write main.py with solution code
-        with open(problem_dir / "main.py", "w") as f:
-            # Add shebang line
-            f.write("#!/usr/bin/env python3\n\n")
-            # Write the Python 3 solution directly
-            f.write(solution_code)
-
-        # Get all test cases
-        test_case_dicts = dataset_problem.get_all_test_cases(min_test_cases=10)
-
-        # Skip if no test cases
-        if not test_case_dicts:
-            logger.warning(f"Skipping problem {name} due to missing test cases")
-            return False
-
-        # Prepare input and output lists for test file creation
-        all_inputs = [tc["input"] for tc in test_case_dicts]
-        all_outputs = [tc["output"] for tc in test_case_dicts]
-
-        # Create test cases for the problem model
-        test_cases = [
-            TestCase(input=inp, output=out, time_limit_ms=30000, memory_limit_mb=512)
-            for inp, out in zip(all_inputs, all_outputs, strict=False)
-        ]
-
-        # Get difficulty and source as strings
-        difficulty_str = dataset_problem.get_difficulty_name()
-        source_name = dataset_problem.get_source_name()
-
-        # Get tags/categories
-        tags = dataset_problem.cf_tags
-
-        # Create Problem model for our system
-        problem_model = Problem(
-            id=problem_id,
-            name=name,
-            description=dataset_problem.description,
-            category=tags,
-            difficulty=difficulty_str,
-            test_cases=test_cases,
-            source=source_name,
-        )
-
-        # Generate PROBLEM.md
-        generate_problem_md(problem_model, problem_dir)
-
-        # Create test files
-        num_tests = create_test_files(problem_dir, all_inputs, all_outputs)
-
-        # Generate run.sh script
-        generate_run_script(problem_id, problem_dir)
-
-        # Save CF tags to tags.txt
-        if tags:
-            with open(problem_dir / "tags.txt", "w") as f:
-                f.write("\n".join(tags))
-            logger.info(f"Saved {len(tags)} CF tags to tags.txt")
-
-        logger.info(f"Processed problem: cluster{cluster_id}/{problem_id} with {num_tests} test cases")
-        return True
-
-    except Exception as e:
-        logger.error(f"Error processing problem {index}: {e}")
+    # Extract Python solution first
+    solution_code = extract_python_solution(dataset_problem)
+    if not solution_code:
+        # Skip problems without Python solutions
+        logger.warning(f"Skipping problem {name} due to missing Python solution")
         return False
+
+    # Create cluster directory and problem directory
+    cluster_dir = PROBLEMS_DIR / f"cluster{cluster_id}"
+    problem_dir = cluster_dir / problem_id
+    problem_dir.mkdir(parents=True, exist_ok=True)
+
+    # Write main.py with solution code
+    with open(problem_dir / "main.py", "w") as f:
+        # Add shebang line
+        f.write("#!/usr/bin/env python3\n\n")
+        # Write the Python 3 solution directly
+        f.write(solution_code)
+
+    # Get all test cases
+    test_case_dicts = dataset_problem.get_all_test_cases(min_test_cases=10)
+
+    # Skip if no test cases
+    if not test_case_dicts:
+        logger.warning(f"Skipping problem {name} due to missing test cases")
+        return False
+
+    # Prepare input and output lists for test file creation
+    all_inputs = [tc["input"] for tc in test_case_dicts]
+    all_outputs = [tc["output"] for tc in test_case_dicts]
+
+    # Create test cases for the problem model
+    test_cases = [
+        TestCase(input=inp, output=out, time_limit_ms=30000, memory_limit_mb=512)
+        for inp, out in zip(all_inputs, all_outputs, strict=False)
+    ]
+
+    # Get difficulty and source as strings
+    difficulty_str = dataset_problem.get_difficulty_name()
+    source_name = dataset_problem.get_source_name()
+
+    # Get tags/categories
+    tags = dataset_problem.cf_tags
+
+    # Create Problem model for our system
+    problem_model = Problem(
+        id=problem_id,
+        name=name,
+        description=dataset_problem.description,
+        category=tags,
+        difficulty=difficulty_str,
+        test_cases=test_cases,
+        source=source_name,
+    )
+
+    # Generate PROBLEM.md
+    generate_problem_md(problem_model, problem_dir)
+
+    # Create test files
+    num_tests = create_test_files(problem_dir, all_inputs, all_outputs)
+
+    # Generate run.sh script
+    generate_run_script(problem_id, problem_dir)
+
+    # Save CF tags to tags.txt
+    if tags:
+        with open(problem_dir / "tags.txt", "w") as f:
+            f.write("\n".join(tags))
+        logger.info(f"Saved {len(tags)} CF tags to tags.txt")
+
+    logger.info(f"Processed problem: cluster{cluster_id}/{problem_id} with {num_tests} test cases")
 
 
 def main():
@@ -259,6 +253,14 @@ def main():
         cluster_dir = PROBLEMS_DIR / f"cluster{cluster_id}"
         cluster_dir.mkdir(parents=True, exist_ok=True)
 
+        # Create a minimal library.py file in the cluster directory
+        library_path = cluster_dir / "library.py"
+        if not library_path.exists():
+            with open(library_path, "w") as f:
+                f.write(
+                    f'"""\nLibrary file for cluster{cluster_id}.\nThis contains shared code that can be imported by problems in this cluster.\n"""\n'  # noqa: E501
+                )
+
         # Process problems in this cluster
         for problem_name in problem_names:
             # Skip if we've already processed this problem
@@ -273,6 +275,7 @@ def main():
 
             dataset_problem = name_to_problem[problem_name]
             index = name_to_index[problem_name]
+            _ = process_problem(dataset_problem, index, cluster_id)
 
             attempted += 1
             logger.info(
@@ -280,9 +283,8 @@ def main():
                 f"{problem_name} in cluster{cluster_id}"
             )
 
-            if process_problem(dataset_problem, index, cluster_id):
-                successful += 1
-                processed_problems.add(problem_name)
+            successful += 1
+            processed_problems.add(problem_name)
 
     logger.info(f"Finished processing. {successful}/{attempted} problems formatted successfully.")
 
