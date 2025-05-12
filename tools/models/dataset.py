@@ -103,7 +103,8 @@ class DatasetProblem(BaseModel):
                 all_outputs.extend(gen_outputs)
 
         # Make sure we have the same number of inputs and outputs
-        min_count = min(len(all_inputs), len(all_outputs))
+        # but also truncate to 10
+        min_count = min(len(all_inputs), len(all_outputs), min_test_cases)
         all_inputs = all_inputs[:min_count]
         all_outputs = all_outputs[:min_count]
 
