@@ -1,37 +1,32 @@
 #!/usr/bin/env python3
 
+import sys
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import read_ints, create_graph, count_connected_components
 
-inp = input().split()
+def is_cthulhu(n, m, graph):
+    """
+    Check if the graph is Cthulhu (single connected component with exactly one cycle).
+    
+    For Cthulhu, we need:
+    1. n vertices and n edges (for exactly one cycle)
+    2. All vertices must be in a single connected component
+    """
+    if n < 3 or n != m:
+        return False
+    
+    # Need exactly one connected component
+    return count_connected_components(graph) == 1
 
-n = int(inp[0])
-m = int(inp[1])
+# Read input
+n, m = read_ints()
+edges = [read_ints() for _ in range(m)]
 
-def dfs(x):
+# Create graph (vertices are 1-indexed in the input)
+graph = create_graph(n, edges, directed=False, one_indexed=True)
 
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
-
-if n >= 3 and n == m:
-
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
-
-    for i in range(m):
-
-        x, y = map(int, input().split())
-
-        e[x].append(y)
-
-        e[y].append(x)
-
-    dfs(1)
-
-    print('FHTAGN!' if len(visited) == n else 'NO')
+# Check if the graph is Cthulhu and print result
+if is_cthulhu(n, m, graph):
+    print("FHTAGN!")
 else:
-    print('NO')
+    print("NO")

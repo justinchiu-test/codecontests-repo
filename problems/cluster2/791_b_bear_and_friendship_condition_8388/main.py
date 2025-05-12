@@ -1,38 +1,42 @@
 #!/usr/bin/env python3
 
+import sys
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import read_ints, create_graph, find_connected_components, yes_no
 
-n , m = map(int,input().split())
-g = [[] for i in range(n + 1 )]
+def check_friendship_condition(graph):
+    """
+    Check if each connected component forms a complete graph.
+    
+    Args:
+        graph: Adjacency list representation
+        
+    Returns:
+        True if condition is satisfied, False otherwise
+    """
+    # Find connected components
+    components = find_connected_components(graph)
+    
+    for component in components:
+        vertices = len(component)
+        edges = sum(len(graph[v]) for v in component) // 2  # Each edge is counted twice
+        
+        # Check if number of edges equals n*(n-1)/2 (complete graph)
+        if edges != (vertices * (vertices - 1)) // 2:
+            return False
+    
+    return True
 
-e = 0
-vx = 0
+# Read input
+n, m = read_ints()
+edges = []
 
-for i in range(m):
-    a , b = map(int,input().split())
-    g[a].append(b)
-    g[b].append(a)
+for _ in range(m):
+    u, v = read_ints()
+    edges.append((u, v))
 
-vis = [False for i in range(n + 1 )]
+# Create graph
+graph = create_graph(n, edges, directed=False, one_indexed=True)
 
-def dfs(node):
-    global vx , e
-    stack = [node]
-    while(stack):
-        node = stack.pop()
-        if not vis[node]:
-            vx +=1
-            vis[node] = True
-            for j in g[node]:
-                e +=1
-                stack.append(j)
-
-ans = 'YES'
-for i in range(1 , n + 1):
-    if not vis[i]:
-        e = vx = 0
-        dfs(i)
-        e //=2
-        if e != vx*(vx - 1)//2:
-            ans = 'NO'
-
-print(ans)
+# Check friendship condition
+print(yes_no(check_friendship_condition(graph), uppercase=False))

@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 
 import sys
-input = sys.stdin.readline
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import read_int, read_array, setup_io
 
-n = int(input())
-a = list(map(int, input().split()))
+input = setup_io()
+
+n = read_int()
+a = read_array()
 adj = [[] for i in range(n)]
 for i in range(n-1):
     u, v, w = map(int, input().split())

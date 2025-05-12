@@ -1,34 +1,30 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-from collections import deque
+import sys
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import create_graph, read_ints, find_connected_components
 
+def count_cyclic_components(graph):
+    """Count components where each vertex has exactly 2 neighbors."""
+    components = find_connected_components(graph)
+    count = 0
+    
+    for component in components:
+        is_cyclic = True
+        
+        # Check if all vertices in this component have exactly 2 neighbors
+        for vertex in component:
+            if len(graph[vertex]) != 2:
+                is_cyclic = False
+                break
+        
+        if is_cyclic:
+            count += 1
+    
+    return count
 
-def bfs(x):
-    vis[x] = True
-    q = deque([x])
-    ans = 1
-    while q:
-        cur = q.popleft()
-        ans &= len(g[cur]) == 2
-        for x in g[cur]:
-            if not vis[x]:
-                vis[x] = True
-                q.append(x)
-    return ans
+n, m = read_ints()
+edges = [read_ints() for _ in range(m)]
 
-
-n, m = map(int, stdin.readline().split())
-g = [[] for _ in range(n)]
-vis = [False]*n
-ans = 0
-for _ in range(m):
-    u, v = map(lambda x: int(x) - 1, stdin.readline().split())
-    g[u].append(v)
-    g[v].append(u)
-
-for x in range(n):
-    if not vis[x]:
-        ans += bfs(x)
-
-print(ans)
+graph = create_graph(n, edges, directed=False, one_indexed=True)
+print(count_cyclic_components(graph))

@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-import math
-n=int(stdin.readline())
-if n<3:
-    k=n
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import read_int, get_unique_prime_factors
+
+n = read_int()
+prime_factors = get_unique_prime_factors(n)
+
+if len(prime_factors) == 0:  # n = 1
+    print(1)
+elif len(prime_factors) == 1:  # n is a prime or prime power
+    print(prime_factors[0])
 else:
-    d=0
-    g=n
-    for i in range(2,int(math.sqrt(n))+1):
-        if n%i==0:
-            d+=1
-            g=math.gcd(g,i)
-            if i*i!=n:
-                d+=1
-                g=math.gcd(g,n//i)
-    if d==0:
-        k=n
-    else:
-        k=g
-print(k)
+    print(1)  # Multiple prime factors, GCD of proper divisors is 1

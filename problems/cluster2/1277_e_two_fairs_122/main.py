@@ -1,70 +1,56 @@
 #!/usr/bin/env python3
 
 import sys
-import threading
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import create_graph, read_ints
 from collections import deque
 
-def func():
-    lines = sys.stdin.readlines()
-    nxt = 0
-    t = int(lines[nxt])
-    nxt += 1
-    ans = []
-    for _ in range(t):
-        n,m,a,b = map(int, lines[nxt].split())
-        nxt += 1
-        g = [[] for _ in range(n)]
-        for _ in range(m):
-            u,v = map(int, lines[nxt].split())
-            nxt += 1
-            g[u-1].append(v-1)
-            g[v-1].append(u-1)
-        a -= 1
-        b -= 1
-        sigs = [0]*n
-        sigs[a] = -1
-        sigs[b] = -1
-        cur_sig = 0
-        inv = {}
-        cnt = {}
-        for i in range(n):
-            if sigs[i]:
-                continue
-            cur_sig += 1
-            cnt[cur_sig] = 1
-            inv[cur_sig] = set()
-            sigs[i] = cur_sig
-            q = deque()
-            q.append(i)
-            while len(q):
-                node = q.popleft()
-                # if node == a:
-                #     inv[cur_sig].add("A")
-                # if node == b:
-                #     inv[cur_sig].add("B")
-                # if sigs[node]:
-                #     continue
-                # sigs[node] = cur_sig
-                # cnt[cur_sig] += 1
-                for v in g[node]:
-                    if v == a:
-                        inv[cur_sig].add("A")
-                    if v == b:
-                        inv[cur_sig].add("B")
-                    if sigs[v]:
-                        continue
-                    sigs[v] = cur_sig
-                    cnt[cur_sig] += 1
-                    q.append(v)
-        A = 0
-        B = 0
-        for k,v in inv.items():
-            if v == {"A"}:
-                A += cnt[k]
-            if v == {"B"}:
-                B += cnt[k]
-        ans.append(str(A*B))
-    print("\n".join(ans))
+def solve_test():
+    n, m, a, b = read_ints()
+    a -= 1  # Convert to 0-indexed
+    b -= 1
+    
+    edges = []
+    for _ in range(m):
+        u, v = read_ints()
+        edges.append((u, v))
+    
+    graph = create_graph(n, edges, directed=False, one_indexed=True)
+    
+    # Count vertices that can reach a but not b
+    def count_reachable_except(start, exclude):
+        """Count vertices reachable from start if we remove exclude."""
+        visited = [False] * n
+        visited[exclude] = True  # Mark the excluded vertex as visited to avoid traversing through it
+        
+        queue = deque([start])
+        visited[start] = True
+        count = 0
+        
+        while queue:
+            node = queue.popleft()
+            count += 1
+            
+            for neighbor in graph[node]:
+                if not visited[neighbor]:
+                    visited[neighbor] = True
+                    queue.append(neighbor)
+        
+        return count
+    
+    # Vertices reachable from a if we remove b
+    count_a = count_reachable_except(a, b)
+    # Vertices reachable from b if we remove a
+    count_b = count_reachable_except(b, a)
+    
+    # Answer is (vertices only reachable from a) * (vertices only reachable from b)
+    return str((n - count_b - 1) * (n - count_a - 1))
 
+# Solve all test cases
+t = read_ints()[0]
+answers = []
 
-func()
+for _ in range(t):
+    answers.append(solve_test())
+
+print("\n".join(answers))

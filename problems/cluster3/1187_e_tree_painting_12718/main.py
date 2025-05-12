@@ -1,63 +1,46 @@
 #!/usr/bin/env python3
 
 import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import setup_io, read_tree, get_subtree_size, read_int, tree_rerooting
 
-input = sys.stdin.readline
+input = setup_io()
 
-n = int(input())
-G = [[] for _ in range(n)]
+n = read_int()
+graph = read_tree(n, indexed_from=0)
 
-for _ in range(n-1):
-    a,b = map(int,input().split())
-    G[a-1].append(b-1)
-    G[b-1].append(a-1)
+# Calculate subtree sizes
+subtree_sizes = get_subtree_size(graph, root=0, parent=None)
 
-F = [0]*n
-stk = [0]
-visited = [0]*n
+# Initial DP value for the root
+dp = [0] * n
+dp[0] = sum(subtree_sizes)
 
-while stk:
-    x = stk[-1]
-    if not visited[x]:
-        visited[x] = 1
-        for y in G[x]:
-            if not visited[y]:
-                stk.append(y)
-    else:
-        x = stk.pop()
-        F[x] = 1
-        for y in G[x]:
-            F[x] += F[y]
+# Get parent pointers
+parents = [0] * n
+visited = [False] * n
+visited[0] = True  # Mark root as visited
+stack = [0]
+while stack:
+    node = stack.pop()
+    for neighbor in graph[node]:
+        if not visited[neighbor]:
+            parents[neighbor] = node
+            visited[neighbor] = True
+            stack.append(neighbor)
 
-DP = [0]*n
-stk = [0]
-visited = [0]*n
+# Re-root to find optimal value
+max_score = dp[0]
+stack = [0]
 
-while stk:
-    x = stk[-1]
-    if not visited[x]:
-        visited[x] = 1
-        for y in G[x]:
-            if not visited[y]:
-                stk.append(y)
-    else:
-        x = stk.pop()
-        DP[x] = F[x]
-        for y in G[x]:
-            DP[x] += DP[y]
+while stack:
+    node = stack.pop()
+    for child in graph[node]:
+        if parents[child] == node:  # Only process children
+            # Re-root DP calculation
+            dp[child] = dp[node] + n - 2 * subtree_sizes[child]
+            max_score = max(max_score, dp[child])
+            stack.append(child)
 
-ans = [0]*n
-ans[0] = DP[0]
-stk = [0]
-Z = DP[0]
-
-while stk:
-    x = stk.pop()
-    for y in G[x]:
-        if not ans[y]:
-            ay = ans[x] + n - 2 * F[y]
-            ans[y] = ay
-            Z = max(Z,ay)
-            stk.append(y)
-
-print(Z)
+print(max_score)
