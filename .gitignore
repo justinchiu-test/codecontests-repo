@@ -36,3 +36,5 @@ ENV/
 /data/
 /temp/
 .DS_Store
+
+results.txt
