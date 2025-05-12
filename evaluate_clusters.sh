@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# This script automates the code compression task with Claude
-# It loops through each cluster directory, runs Claude in that context,
-# and evaluates the pass rates of the problems in each cluster
+# This script evaluates the pass rates of all clusters without running Claude
+# It can be used to generate a report on the current state of the solutions
 
 # Get the base directory
 BASE_DIR=$(pwd)
@@ -80,7 +79,18 @@ evaluate_cluster() {
     for result in "${problem_results[@]}"; do
         echo "  - $result" >> "$BASE_DIR/problems/cluster$cluster_num/evaluation_results.txt"
     done
+
+    # Return the pass rate for summary
+    local pass_rate=$(echo "scale=2; 100*$passed_problems/$total_problems" | bc)
+    echo "$passed_problems|$total_problems|$pass_rate"
 }
+
+# Create a summary file with results from all clusters
+echo "# Cluster Evaluation Summary" > "$BASE_DIR/cluster_evaluation_summary.md"
+echo "Generated on: $(date)" >> "$BASE_DIR/cluster_evaluation_summary.md"
+echo "" >> "$BASE_DIR/cluster_evaluation_summary.md"
+echo "| Cluster | Problems Passed | Total Problems | Pass Rate |" >> "$BASE_DIR/cluster_evaluation_summary.md"
+echo "|---------|----------------|----------------|-----------|" >> "$BASE_DIR/cluster_evaluation_summary.md"
 
 # Loop through all cluster directories
 for i in {0..9}; do
@@ -90,17 +100,16 @@ for i in {0..9}; do
   if [ -d "$CLUSTER_DIR" ]; then
     echo "Processing $CLUSTER_DIR..."
 
-    # Push into the cluster directory
-    pushd "$CLUSTER_DIR" > /dev/null
+    # Evaluate pass rates for this cluster
+    RESULT=$(evaluate_cluster $i)
+    PASS_INFO=$(echo "$RESULT" | tail -n 1)
 
-    # Run Claude with instructions from base directory
-    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Then implement the library in $BASE_DIR/library/ while refactoring the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass."
+    # Extract information for summary table
+    PASSED=$(echo "$PASS_INFO" | cut -d '|' -f1)
+    TOTAL=$(echo "$PASS_INFO" | cut -d '|' -f2)
+    RATE=$(echo "$PASS_INFO" | cut -d '|' -f3)
 
-    # Pop back to the original directory
-    popd > /dev/null
-
-    # Evaluate pass rates after Claude processing
-    evaluate_cluster $i > cluster_${i}_results.txt
+    echo "| Cluster $i | $PASSED | $TOTAL | ${RATE}% |" >> "$BASE_DIR/cluster_evaluation_summary.md"
 
     echo "Completed $CLUSTER_DIR"
   else
@@ -108,20 +117,4 @@ for i in {0..9}; do
   fi
 done
 
-# Create a summary file with results from all clusters
-echo "# Cluster Evaluation Summary" > "$BASE_DIR/cluster_evaluation_summary.md"
-echo "Generated on: $(date)" >> "$BASE_DIR/cluster_evaluation_summary.md"
-echo "" >> "$BASE_DIR/cluster_evaluation_summary.md"
-echo "| Cluster | Problems Passed | Total Problems | Pass Rate |" >> "$BASE_DIR/cluster_evaluation_summary.md"
-echo "|---------|----------------|----------------|-----------|" >> "$BASE_DIR/cluster_evaluation_summary.md"
-
-for i in {0..9}; do
-  CLUSTER_DIR="problems/cluster$i"
-  if [ -d "$CLUSTER_DIR" ] && [ -f "$CLUSTER_DIR/evaluation_results.txt" ]; then
-    PASS_INFO=$(head -n 1 "$CLUSTER_DIR/evaluation_results.txt" | sed -E 's/Cluster [0-9]+ evaluation: ([0-9]+)\/([0-9]+) problems passed/\1|\2/')
-    PASS_RATE=$(head -n 2 "$CLUSTER_DIR/evaluation_results.txt" | tail -n 1 | sed -E 's/Pass rate: ([0-9.]+)%/\1%/')
-    echo "| Cluster $i | ${PASS_INFO} | ${PASS_RATE} |" >> "$BASE_DIR/cluster_evaluation_summary.md"
-  fi
-done
-
-echo "All clusters processed! Summary available in cluster_evaluation_summary.md"
+echo "All clusters evaluated! Results available in cluster_evaluation_summary.md"
