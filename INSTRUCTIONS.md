@@ -11,11 +11,11 @@ Your task is to minimize the total amount of code needed to solve all problems b
 
 ## Rules and Constraints
 You are free to use any bash commands to navigate the repo, such as grep or find.
-You are allowed to create files in `./library/`, to be used in `./*/main.py`.
+You are allowed to edit `./library.py`, to be used in `./*/main.py`.
 However, those are the only files you can edit.
 
 ### What You Can Modify
-- **Library Directory (`./library/`)**: You can create, modify, or delete any files in this directory.
+- **Library file (`./library.py`)**: You can create, modify, or delete any files in this directory.
 - **Problem Solutions (`./*/main.py`)**: You can modify the main.py file in each problem directory to utilize your library. Note that the initial solutions may be incorrect and not pass all tests.
 
 ### What You Cannot Modify
@@ -78,18 +78,6 @@ bash problems/problem_id/run.sh
 If a solution fails, debug and fix it while using the library components.
 You may edit the library, but ensure that any downstream solutions still pass tests.
 
-### 5. Evaluate Your Compression
-
-Use the provided evaluation tools to measure your compression success:
-
-```bash
-# Count logical lines of code (LLOC)
-uv run -m tools.eval.loc problems/*/main.py library/**/*.py
-
-# Calculate log probability (requires TogetherAI API key)
-TOGETHER_API_KEY=your_api_key uv run -m tools.eval.log_prob problems/*/main.py
-```
-
 ## Tips for Success
 
 1. **Start Small**: Begin by implementing a few core components and refactoring a small set of related problems.
@@ -114,5 +102,5 @@ Your solution will be evaluated based on:
 
 - The goal is to minimize the total code required to solve all problems
 - Each solution must still pass all its original tests
-- Only modify `library/` and `problems/*/main.py` files
+- Only modify `library.py` and `problems/*/main.py` files
 - Never modify problem descriptions, tests, or run scripts
