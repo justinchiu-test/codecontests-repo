@@ -11,18 +11,18 @@ Your task is to minimize the total amount of code needed to solve all problems b
 
 ## Rules and Constraints
 You are free to use any bash commands to navigate the repo, such as grep or find.
-You are allowed to create files in `library/`, to be used in `problems/*/main.py`.
+You are allowed to create files in `./library/`, to be used in `./*/main.py`.
 However, those are the only files you can edit.
 
 ### What You Can Modify
-- **Library Directory (`library/`)**: You can create, modify, or delete any files in this directory.
-- **Problem Solutions (`problems/*/main.py`)**: You can modify the main.py file in each problem directory to utilize your library.
+- **Library Directory (`./library/`)**: You can create, modify, or delete any files in this directory.
+- **Problem Solutions (`./*/main.py`)**: You can modify the main.py file in each problem directory to utilize your library. Note that the initial solutions may be incorrect and not pass all tests.
 
 ### What You Cannot Modify
-- **Problem Descriptions (`problems/*/PROBLEM.md`)**: These files describe the problems and must not be changed.
-- **Test Files (`problems/*/tests/`)**: All test files are considered ground truth and must not be modified.
-- **Test Scripts (`problems/*/run.sh`)**: These scripts are used to test solutions and must not be changed.
-- **Problem Tags (`problems/*/tags.txt`)**: These files contain problem categorization and must not be changed.
+- **Problem Descriptions (`./*/PROBLEM.md`)**: These files describe the problems and must not be changed.
+- **Test Files (`./*/tests/`)**: All test files are considered ground truth and must not be modified.
+- **Test Scripts (`./*/run.sh`)**: These scripts are used to test solutions and must not be changed.
+- **Problem Tags (`./*/tags.txt`)**: These files contain problem categorization and must not be changed.
 
 ## Task Steps
 
@@ -36,16 +36,16 @@ Begin by examining every problem to identify common patterns:
 Suggested approach:
 ```bash
 # Get a count of problems
-ls -l problems/ | wc -l
+ls -l . | wc -l
 
 # Check common tags
-cat problems/*/tags.txt | sort | uniq -c | sort -nr
+cat */tags.txt | sort | uniq -c | sort -nr
 
 # Look at a few problem descriptions
-cat problems/problem_id/PROBLEM.md
+cat {problem_id}/PROBLEM.md
 
 # Examine some solutions
-cat problems/problem_id/main.py
+cat {problem_id}/main.py
 ```
 
 Be sure to examine every problem to get a good idea of what the library should contain.
@@ -96,11 +96,9 @@ TOGETHER_API_KEY=your_api_key uv run -m tools.eval.log_prob problems/*/main.py
 
 2. **Be Consistent**: Use consistent naming conventions and function signatures across your library.
 
-3. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific may not reduce code.
+3. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific will not reduce code.
 
-4. **Document Your Library**: Add docstrings explaining parameters, return values, and examples.
-
-5. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
+4. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
 
 ## Evaluation Criteria
 

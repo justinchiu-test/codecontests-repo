@@ -14,17 +14,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Set, Tuple, Union
 
-# Optional imports for API-based scoring
-# These will be dynamically imported when needed
-API_IMPORTS_SUCCEEDED = False
-
-try:
-    import requests
-    from tqdm import tqdm
-
-    API_IMPORTS_SUCCEEDED = True
-except ImportError:
-    pass
+import requests
+from tqdm import tqdm
 
 # Default model
 DEFAULT_MODEL = "Qwen/Qwen2.5-Coder-32B"
@@ -54,10 +45,6 @@ def get_log_prob_for_file(file_path: Union[str, Path], api_key: Optional[str] = 
         api_key = os.environ.get("TOGETHER_API_KEY")
         if api_key is None:
             raise ValueError("API key must be provided or set as TOGETHER_API_KEY environment variable")
-
-    # Check if required packages are installed
-    if not API_IMPORTS_SUCCEEDED:
-        raise ImportError("Required packages for API access not installed. " "Please install 'requests' and 'tqdm'.")
 
     # Calculate log probability using the API
     return _calculate_log_prob_api(content, api_key)
@@ -145,10 +132,7 @@ def get_log_prob_for_directory(
             fp for fp in file_paths if fp.is_file() and not any(exclude_dir in fp.parts for exclude_dir in exclude_dirs)
         ]
 
-        if not API_IMPORTS_SUCCEEDED:
-            file_iterator = file_paths
-        else:
-            file_iterator = tqdm(file_paths, desc="Calculating log probabilities")
+        file_iterator = tqdm(file_paths, desc="Calculating log probabilities")
 
         for file_path in file_iterator:
             try:

@@ -74,6 +74,7 @@ for ((i=1; i<=$NUM_TESTS; i++)); do
 done
 
 echo "Results: $PASSED/$TOTAL tests passed"
+echo "$PASSED/$TOTAL" > $PROBLEM_DIR/results.txt
 
 if [ $PASSED -eq $TOTAL ]; then
     exit 0
