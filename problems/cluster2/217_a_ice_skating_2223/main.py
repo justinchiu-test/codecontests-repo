@@ -1,21 +1,21 @@
 #!/usr/bin/env python3
 
-n = int(input())
-g = []
+import sys
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import DSU, read_int, read_ints
+
+n = read_int()
+points = []
+for _ in range(n):
+    x, y = read_ints()
+    points.append((x, y))
+
+# We connect points that share x or y coordinates
+dsu = DSU(n)
 for i in range(n):
-    t = input().split()
-    g.append([ int(t[0]), int(t[1]), False ])
+    for j in range(i+1, n):
+        if points[i][0] == points[j][0] or points[i][1] == points[j][1]:
+            dsu.union(i, j)
 
-def visita(i):
-    g[i][2] = True
-    for j in range(n):
-        if g[j][2] == False and (g[i][0] == g[j][0] or g[i][1] == g[j][1]):
-            visita(j)
-
-cnt = -1
-for i in range(n):
-    if g[i][2] == False:
-        cnt += 1
-        visita(i)
-
-print(cnt)
+# The answer is the number of components - 1
+print(dsu.get_components_count() - 1)

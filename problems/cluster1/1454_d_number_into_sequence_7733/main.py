@@ -1,33 +1,36 @@
 #!/usr/bin/env python3
 
-import math
-tc = int(input())
-for i in range(tc):
-    integer = int(input())
-    k = integer
-    kamus = dict()
-    while k % 2 == 0:
-        try:
-            kamus[2] += 1
-        except:
-            kamus[2] = 1
-        k /= 2
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import read_test_cases, read_int, get_prime_factor_counts
 
-    for i in range(3,int(math.sqrt(k))+1,2):
-        while k % i == 0:
-            try:
-                kamus[i] += 1
-            except:
-                kamus[i] = 1
-            k /= i
+def solve_case():
+    n = read_int()
+    factor_counts = get_prime_factor_counts(n)
 
-    kamus = sorted(kamus.items(), key = lambda x: x[1], reverse = True)
+    if not factor_counts:
+        # n is a prime number
+        print(1)
+        print(n)
+        return
 
-    if kamus == []:
-        print(f'1\n{integer}')
-    else:
-        banyak, count = kamus[0][0], kamus[0][1]
-        last = integer // (banyak**(count-1))
-        print(count)
-        print(f'{banyak} '*(count-1), end='')
-        print(last)
+    # Find the prime with the highest count
+    max_prime, max_count = max(factor_counts.items(), key=lambda x: x[1])
+
+    # Create the sequence
+    sequence = [max_prime] * (max_count - 1)
+
+    # Calculate the last element
+    last_element = n
+    for p in sequence:
+        last_element //= p
+
+    sequence.append(last_element)
+
+    # Print the result
+    print(len(sequence))
+    print(*sequence)
+
+for _ in range(read_test_cases()):
+    solve_case()

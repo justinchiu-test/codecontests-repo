@@ -1,137 +1,55 @@
 #!/usr/bin/env python3
 
-'''
-Zijian He
-1429876
-'''
-# Import
-from sys import setrecursionlimit
-setrecursionlimit(10**6)
+import sys
+sys.path.append('/home/justinchiu_cohere_com/codecontests-repo/problems/cluster2')
+from library import read_ints, UndirectedGraph
 
+def has_cycle(graph, rows, cols, grid):
+    """Check if the graph has a cycle of the same color."""
+    visited = {}
+    for vertex in graph.vertices():
+        visited[vertex] = False
+    
+    def dfs_cycle(current, parent):
+        visited[current] = True
+        
+        for neighbor in graph.neighbors(current):
+            if not visited[neighbor]:
+                if dfs_cycle(neighbor, current):
+                    return True
+            elif neighbor != parent:
+                return True
+        
+        return False
+    
+    # Run DFS for each unvisited vertex
+    for vertex in graph.vertices():
+        if not visited[vertex]:
+            if dfs_cycle(vertex, -1):
+                return True
+    
+    return False
 
-# Function from class
-class Graph:
-    def __init__ (self):
-        self._alist = {}
+# Process input
+rows, cols = read_ints()
+grid = [input() for _ in range(rows)]
 
-    def add_vertex (self, vertex):
-        if vertex not in self._alist:
-            self._alist[vertex] = set()
+# Create the graph
+graph = UndirectedGraph(rows * cols)
 
-    def add_edge (self, source, destination):
-        self.add_vertex(source)
-        self.add_vertex(destination)
-        self._alist[source].add(destination)
+# Connect cells of the same color if they are adjacent
+for i in range(rows):
+    for j in range(cols):
+        current = i * cols + j
+        color = grid[i][j]
+        
+        # Connect to the right
+        if j + 1 < cols and grid[i][j+1] == color:
+            graph.add_edge(current, i * cols + j + 1)
+        
+        # Connect to the bottom
+        if i + 1 < rows and grid[i+1][j] == color:
+            graph.add_edge(current, (i+1) * cols + j)
 
-    def is_edge (self, source, destination):
-        return (self.is_vertex(source)
-                and destination in self._alist[source])
-
-    def is_vertex (self, vertex):
-        return vertex in self._alist
-
-    def neighbours (self, vertex):
-        return self._alist[vertex]
-
-    def vertices (self):
-        return self._alist.keys()
-
-class UndirectedGraph (Graph):
-    def add_edge (self, a, b):
-        super().add_edge (a, b)
-        super().add_edge (b, a)
-
-def depth_first_search(g, v):
-    reached = {}
-    def do_dfs(curr, prev):
-        if curr in reached:
-            return
-        reached[curr] = prev
-        for succ in g.neighbours(curr):
-            do_dfs(succ, curr)
-    do_dfs(v, v)
-    return reached
-#-----------------------------------------------------------------------
-
-# Declaire the variables for checking the cycle
-Detect = False
-
-vertex = {}
-
-def dfs_v2(g, curr, prev):
-	global Detect
-	global vertex
-
-	if Detect:
-		return
-
-	vertex[curr] = True
-
-	for succ in g.neighbours(curr):
-
-		if vertex[succ] and succ != prev:
-			Detect = True
-			return
-		if not vertex[succ]:
-			dfs_v2(g, succ, curr)
-
-
-def cycle(g):
-	global Detect
-	global vertex
-
-	# Initialize all the node as unmarked
-	for i in g.vertices():
-		vertex[i] = False
-
-	# Check throughout the node
-	for j in g.vertices():
-		if not vertex[j]:
-			dfs_v2(g, j, j)
-		if Detect:
-			break
-	return
-
-# ----------------------------------------------------------------------
-
-
-
-# Process the input
-row, col = map(int, input().split(" "))
-rows = []
-
-for i in range(row):
-	rows.append(input())
-
-# Set node as a dictionary
-node = {}
-
-for i in range(row):
-	for j in range(col):
-		node[i * col + j] = rows[i][j]
-
-# Set up the graph
-result_Graph = UndirectedGraph()
-
-# Connecting the node with same color
-for i in range(row * col):
-
-	result_Graph.add_vertex(i)
-
-	try:
-		if node[i] == node[i + 1] and (i % col) != (col - 1):
-			result_Graph.add_edge(i, i + 1)
-
-		if node[i] == node[i + col]:
-			result_Graph.add_edge(i, i + col)
-	except:
-		continue
-
-# Main function
-cycle(result_Graph)
-
-if Detect:
-	print("Yes")
-
-else:
-	print("No")
+# Check if there's a cycle
+print("Yes" if graph.has_cycle() else "No")
