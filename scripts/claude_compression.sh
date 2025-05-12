@@ -82,6 +82,8 @@ evaluate_cluster() {
     done
 }
 
+mkdir -p results
+
 # Loop through all cluster directories
 for i in {0..9}; do
   CLUSTER_DIR="problems/cluster$i"
@@ -100,7 +102,7 @@ for i in {0..9}; do
     popd > /dev/null
 
     # Evaluate pass rates after Claude processing
-    evaluate_cluster $i > cluster_${i}_results.txt
+    evaluate_cluster $i > results/cluster_${i}_results.txt
 
     echo "Completed $CLUSTER_DIR"
   else
