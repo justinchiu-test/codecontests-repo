@@ -96,7 +96,6 @@ Your solution will be evaluated based on:
 2. **Correctness**: All refactored solutions must pass their original tests
 3. **Reusability**: How well library components are reused across different problems
 4. **Readability**: Clarity and maintainability of both library and refactored solutions
-5. **Log Probability**: How "predictable" the code is from a language model perspective
 
 ## Remember
 
