@@ -95,8 +95,9 @@ for i in {0..3}; do
     # Push into the cluster directory
     pushd "$CLUSTER_DIR" > /dev/null
 
-    # Run Claude with instructions from base directory
-    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Then implement the library in library.py while refactoring the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass."
+    # Run Claude with instructions from cluster directory
+    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Then implement the library in library.py while refactoring the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass. Your goal is to make the library and solutions as compact as possible."
+
 
     # Pop back to the original directory
     popd > /dev/null
