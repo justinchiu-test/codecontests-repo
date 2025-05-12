@@ -5,6 +5,7 @@ This module provides utilities to track and compare various metrics between
 original and refactored solutions, including logical lines of code (LLOC),
 log probabilities, and code reduction.
 """
+
 import json
 import sys
 from pathlib import Path
@@ -43,9 +44,7 @@ def calculate_all_metrics(
 
     if api_key:
         try:
-            log_probs = get_log_prob_for_directory(
-                directory, exclude_dirs=set(exclude_dirs), api_key=api_key
-            )
+            log_probs = get_log_prob_for_directory(directory, exclude_dirs=set(exclude_dirs), api_key=api_key)
             log_prob_summary = summarize_log_probs(log_probs)
         except Exception as e:
             print(f"Warning: Failed to calculate log probabilities: {e}")
@@ -92,12 +91,8 @@ def compare_metrics(
 
     # Log probability improvements (if available)
     if original_metrics["log_prob"] and refactored_metrics["log_prob"]:
-        original_avg_log_prob = original_metrics["log_prob"][
-            "average_log_prob_per_token"
-        ]
-        refactored_avg_log_prob = refactored_metrics["log_prob"][
-            "average_log_prob_per_token"
-        ]
+        original_avg_log_prob = original_metrics["log_prob"]["average_log_prob_per_token"]
+        refactored_avg_log_prob = refactored_metrics["log_prob"]["average_log_prob_per_token"]
 
         log_prob_change = refactored_avg_log_prob - original_avg_log_prob
 
@@ -170,9 +165,7 @@ def print_metrics_summary(metrics: Dict):
     if log_prob:
         print("\nLog Probability:")
         print(f"Total log probability: {log_prob.get('total_log_prob', 'N/A')}")
-        print(
-            f"Average log prob per token: {log_prob.get('average_log_prob_per_token', 'N/A')}"
-        )
+        print(f"Average log prob per token: {log_prob.get('average_log_prob_per_token', 'N/A')}")
         print(f"Total tokens: {log_prob.get('total_tokens', 'N/A')}")
 
 
@@ -206,15 +199,9 @@ def print_comparison_summary(comparison: Dict):
 
     # Log probability improvements (if available)
     if "log_prob" in improvements:
-        original_avg_log_prob = original.get("log_prob", {}).get(
-            "average_log_prob_per_token", "N/A"
-        )
-        refactored_avg_log_prob = refactored.get("log_prob", {}).get(
-            "average_log_prob_per_token", "N/A"
-        )
-        log_prob_change = improvements.get("log_prob", {}).get(
-            "average_log_prob_change", "N/A"
-        )
+        original_avg_log_prob = original.get("log_prob", {}).get("average_log_prob_per_token", "N/A")
+        refactored_avg_log_prob = refactored.get("log_prob", {}).get("average_log_prob_per_token", "N/A")
+        log_prob_change = improvements.get("log_prob", {}).get("average_log_prob_change", "N/A")
 
         print("\nLog Probability (avg per token):")
         print(f"  Original: {original_avg_log_prob}")
@@ -226,14 +213,10 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Usage:")
         print("  Calculate metrics for a single directory:")
-        print(
-            "    python metrics.py analyze <directory> [--api-key KEY] [--output FILE]"
-        )
+        print("    python metrics.py analyze <directory> [--api-key KEY] [--output FILE]")
         print("")
         print("  Compare metrics between original and refactored code:")
-        print(
-            "    python metrics.py compare <original_dir> <refactored_dir> [--api-key KEY] [--output FILE]"
-        )
+        print("    python metrics.py compare <original_dir> <refactored_dir> [--api-key KEY] [--output FILE]")
         print("")
         print("  Load and display metrics from a file:")
         print("    python metrics.py load <metrics_file>")

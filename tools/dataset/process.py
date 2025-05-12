@@ -3,16 +3,18 @@ Process the code_contests dataset and format problems.
 
 This script:
 1. Loads problems from the code_contests dataset
-2. Creates standardized problem directories in problems/
-3. Generates PROBLEM.md, main.py, and test files
-4. Creates run.sh script for each problem
+2. Loads cluster information from data/clusters.json
+3. Creates standardized problem directories in problems/cluster{i}/problem_name/
+4. Generates PROBLEM.md, main.py, and test files
+5. Creates run.sh script for each problem
 """
+
+import json
 import logging
 from pathlib import Path
-from typing import List, Optional
+from typing import Dict, List, Optional
 
 from datasets import load_dataset
-from pydantic import ValidationError
 
 from tools.formatter.problem_md import generate_problem_md
 from tools.formatter.script_sh import generate_run_script
@@ -21,15 +23,27 @@ from tools.models.dataset import DatasetProblem
 # Import the models
 from tools.models.problem import Problem, TestCase
 
-logging.basicConfig(
-    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
-)
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 logger = logging.getLogger(__name__)
 
 # Constants
 DATASET_NAME = "deepmind/code_contests"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROBLEMS_DIR = REPO_ROOT / "problems"
+CLUSTERS_PATH = REPO_ROOT / "data" / "clusters.json"
+
+
+def load_clusters() -> Dict[str, List[str]]:
+    """
+    Load cluster information from the clusters.json file.
+
+    Returns:
+        Dictionary mapping cluster IDs to lists of problem names
+    """
+    with open(CLUSTERS_PATH, "r") as f:
+        clusters = json.load(f)
+    logger.info(f"Loaded {len(clusters)} clusters from {CLUSTERS_PATH}")
+    return clusters
 
 
 def get_problem_id(name: str, index: int) -> str:
@@ -74,9 +88,7 @@ def extract_python_solution(problem: DatasetProblem) -> Optional[str]:
     return None
 
 
-def create_test_files(
-    problem_dir: Path, test_inputs: List[str], test_outputs: List[str]
-) -> int:
+def create_test_files(problem_dir: Path, test_inputs: List[str], test_outputs: List[str]) -> int:
     """
     Create test input and output files in the problem directory.
 
@@ -92,7 +104,7 @@ def create_test_files(
     tests_dir.mkdir(exist_ok=True)
 
     # Create input and output files
-    for i, (input_text, output_text) in enumerate(zip(test_inputs, test_outputs), 1):
+    for i, (input_text, output_text) in enumerate(zip(test_inputs, test_outputs, strict=False), 1):
         input_path = tests_dir / f"input_{i}.txt"
         output_path = tests_dir / f"output_{i}.txt"
 
@@ -105,13 +117,14 @@ def create_test_files(
     return min(len(test_inputs), len(test_outputs))
 
 
-def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
+def process_problem(dataset_problem: DatasetProblem, index: int, cluster_id: str) -> bool:
     """
-    Process a single problem and create its directory structure.
+    Process a single problem and create its directory structure inside a cluster.
 
     Args:
         dataset_problem: Problem from the dataset as a Pydantic model
         index: Problem index for unique ID generation
+        cluster_id: The cluster ID this problem belongs to
 
     Returns:
         True if processing succeeded, False otherwise
@@ -127,8 +140,9 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
             logger.warning(f"Skipping problem {name} due to missing Python solution")
             return False
 
-        # Create problem directory only if we have a Python solution
-        problem_dir = PROBLEMS_DIR / problem_id
+        # Create cluster directory and problem directory
+        cluster_dir = PROBLEMS_DIR / f"cluster{cluster_id}"
+        problem_dir = cluster_dir / problem_id
         problem_dir.mkdir(parents=True, exist_ok=True)
 
         # Write main.py with solution code
@@ -139,7 +153,7 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
             f.write(solution_code)
 
         # Get all test cases
-        test_case_dicts = dataset_problem.get_all_test_cases(min_test_cases=3)
+        test_case_dicts = dataset_problem.get_all_test_cases(min_test_cases=10)
 
         # Skip if no test cases
         if not test_case_dicts:
@@ -153,7 +167,7 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
         # Create test cases for the problem model
         test_cases = [
             TestCase(input=inp, output=out, time_limit_ms=30000, memory_limit_mb=512)
-            for inp, out in zip(all_inputs, all_outputs)
+            for inp, out in zip(all_inputs, all_outputs, strict=False)
         ]
 
         # Get difficulty and source as strings
@@ -189,7 +203,7 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
                 f.write("\n".join(tags))
             logger.info(f"Saved {len(tags)} CF tags to tags.txt")
 
-        logger.info(f"Processed problem: {problem_id} with {num_tests} test cases")
+        logger.info(f"Processed problem: cluster{cluster_id}/{problem_id} with {num_tests} test cases")
         return True
 
     except Exception as e:
@@ -197,16 +211,18 @@ def process_problem(dataset_problem: DatasetProblem, index: int) -> bool:
         return False
 
 
-def main(tag: str = None, limit: int = None):
+def main():
     """
-    Main entry point for processing problems.
-
-    Args:
-        tag: Optional tag to filter problems by (e.g., "graphs")
-        limit: Optional maximum number of problems to process
+    Main entry point for processing problems based on clusters.
     """
-    # Ensure problems directory exists and it's empty
+    # Ensure problems directory exists
     PROBLEMS_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Load clusters
+    clusters = load_clusters()
+    if not clusters:
+        logger.error("Failed to load clusters, aborting")
+        return
 
     # Load dataset
     logger.info(f"Loading dataset: {DATASET_NAME}")
@@ -216,83 +232,65 @@ def main(tag: str = None, limit: int = None):
     # We need to type-ignore this because the Dataset class doesn't have proper type annotations
     train_dataset = dataset["train"]  # type: ignore
 
-    # Set target for problems
-    target_problems = limit  # Use the provided limit or None for no limit
-    tag_filter = tag  # Use the provided tag or None for no tag filtering
+    # Create a mapping from problem names to dataset problems
+    logger.info("Building problem name to object mapping from dataset...")
+    name_to_problem = {}
+    name_to_index = {}  # To keep track of indices for problem_id generation
 
-    if tag_filter:
-        logger.info(
-            f"Searching for problems with tag '{tag_filter}' and Python 3 solutions"
-        )
-    else:
-        logger.info("Searching for all problems with Python 3 solutions")
+    for i, raw_problem in enumerate(train_dataset):
+        dataset_problem = DatasetProblem.model_validate(raw_problem)
 
-    if target_problems:
-        logger.info(f"Target: up to {target_problems} problems")
-    else:
-        logger.info("No limit on number of problems to process")
+        # We use this exact format to match against the clusters.json format
+        problem_key = dataset_problem.name
+        name_to_problem[problem_key] = dataset_problem
+        name_to_index[problem_key] = i
+
+    logger.info(f"Found {len(name_to_problem)} valid problems in the dataset")
 
     successful = 0
     attempted = 0
-    processed_ids = set()  # Track processed problem IDs to avoid duplicates
+    processed_problems = set()  # Track processed problems to avoid duplicates
 
-    # Process problems with optional filtering
-    for i, raw_problem in enumerate(train_dataset):
-        # If we've reached the limit, stop processing
-        if target_problems is not None and successful >= target_problems:
-            break
+    # Process problems by cluster
+    for cluster_id, problem_names in clusters.items():
+        logger.info(f"Processing cluster {cluster_id} with {len(problem_names)} problems")
 
-        # Convert to Pydantic model for better type safety
-        try:
-            dataset_problem = DatasetProblem.parse_obj(raw_problem)
-        except ValidationError as e:
-            logger.warning(f"Error parsing problem at index {i}: {e}")
-            continue
+        # Create cluster directory
+        cluster_dir = PROBLEMS_DIR / f"cluster{cluster_id}"
+        cluster_dir.mkdir(parents=True, exist_ok=True)
 
-        # Apply tag filter if specified
-        if tag_filter and tag_filter not in dataset_problem.cf_tags:
-            continue
+        # Process problems in this cluster
+        for problem_name in problem_names:
+            # Skip if we've already processed this problem
+            if problem_name in processed_problems:
+                logger.warning(f"Skipping duplicate problem: {problem_name}")
+                continue
 
-        attempted += 1
+            # Get the problem from our mapping
+            if problem_name not in name_to_problem:
+                logger.warning(f"Problem not found in dataset: {problem_name}")
+                continue
 
-        if tag_filter:
+            dataset_problem = name_to_problem[problem_name]
+            index = name_to_index[problem_name]
+
+            attempted += 1
             logger.info(
-                f"Processing {tag_filter} problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
-            )
-        else:
-            logger.info(
-                f"Processing problem {attempted} (successful so far: {successful}): {dataset_problem.name}"
+                f"Processing problem {attempted} (successful so far: {successful}): "
+                f"{problem_name} in cluster{cluster_id}"
             )
 
-        # Check if this problem might be a duplicate by name
-        problem_id = get_problem_id(dataset_problem.name, i)
-        if problem_id in processed_ids:
-            logger.warning(
-                f"Skipping potential duplicate problem: {dataset_problem.name}"
-            )
-            continue
+            if process_problem(dataset_problem, index, cluster_id):
+                successful += 1
+                processed_problems.add(problem_name)
 
-        if process_problem(dataset_problem, i):
-            successful += 1
-            processed_ids.add(problem_id)
-
-    logger.info(
-        f"Finished processing. {successful}/{attempted} problems formatted successfully."
-    )
+    logger.info(f"Finished processing. {successful}/{attempted} problems formatted successfully.")
 
 
 if __name__ == "__main__":
     import argparse
 
-    parser = argparse.ArgumentParser(
-        description="Process problems from the code_contests dataset"
-    )
-    parser.add_argument(
-        "--tag", type=str, help="Tag to filter problems (e.g., 'graphs')", default=None
-    )
-    parser.add_argument(
-        "--limit", type=int, help="Maximum number of problems to process", default=None
-    )
+    parser = argparse.ArgumentParser(description="Process problems from the code_contests dataset based on clusters")
 
     args = parser.parse_args()
-    main(tag=args.tag, limit=args.limit)
+    main()

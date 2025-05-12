@@ -5,6 +5,7 @@ This module provides utilities to measure the amount of actual code in files,
 excluding comments, docstrings, and blank lines. This gives a more accurate
 measure of code complexity than raw line counts.
 """
+
 import ast
 import os
 import re
@@ -115,10 +116,7 @@ class LlocCounter(ast.NodeVisitor):
         # Count expressions that are statements
         elif isinstance(node, ast.Expr):
             # Skip docstrings (string literals at the module/class/function level)
-            if not (
-                isinstance(node.value, ast.Constant)
-                and isinstance(node.value.value, str)
-            ):
+            if not (isinstance(node.value, ast.Constant) and isinstance(node.value.value, str)):
                 self.lloc += 1
 
         # Count each clause in try/except blocks separately
@@ -131,9 +129,7 @@ class LlocCounter(ast.NodeVisitor):
                 self.lloc += 1  # Count the else clause
 
         # Count comprehensions
-        elif isinstance(
-            node, (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)
-        ):
+        elif isinstance(node, (ast.ListComp, ast.SetComp, ast.DictComp, ast.GeneratorExp)):
             self.lloc += 1
 
         # Recursively visit all child nodes

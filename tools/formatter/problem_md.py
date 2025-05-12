@@ -4,6 +4,7 @@ Generate PROBLEM.md files for formatted problems.
 This module creates Markdown files with problem descriptions,
 formatted in a standardized way.
 """
+
 from pathlib import Path
 
 from ..models.problem import Problem, TestCase
@@ -73,9 +74,7 @@ if __name__ == "__main__":
         difficulty="easy",
         test_cases=[
             TestCase(input="1 2", output="3", time_limit_ms=30000, memory_limit_mb=512),
-            TestCase(
-                input="5 7", output="12", time_limit_ms=30000, memory_limit_mb=512
-            ),
+            TestCase(input="5 7", output="12", time_limit_ms=30000, memory_limit_mb=512),
         ],
         source="Example Source",
     )

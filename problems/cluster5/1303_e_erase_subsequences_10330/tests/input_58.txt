@@ -1,0 +1,7 @@
+3
+ababb
+abcba
+edded
+defee
+ababafeded
+abddebafed

@@ -1,6 +1,7 @@
 """
 Pydantic models for working with the DeepMind Code Contests dataset.
 """
+
 from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, root_validator
@@ -17,12 +18,8 @@ class TestSet(BaseModel):
     """Test case set (input/output pairs) from the Code Contests dataset."""
 
     input: List[str] = Field(default_factory=list, description="Input test cases")
-    output: List[str] = Field(
-        default_factory=list, description="Expected output for test cases"
-    )
-    explanation: Optional[List[str]] = Field(
-        default=None, description="Explanations for test cases"
-    )
+    output: List[str] = Field(default_factory=list, description="Expected output for test cases")
+    explanation: Optional[List[str]] = Field(default=None, description="Explanations for test cases")
 
 
 class DatasetProblem(BaseModel):
@@ -33,15 +30,9 @@ class DatasetProblem(BaseModel):
 
     name: str = Field(..., description="Problem name")
     description: str = Field("", description="Problem description")
-    solutions: Solution = Field(
-        default_factory=lambda: Solution(), description="Problem solutions"
-    )
-    public_tests: TestSet = Field(
-        default_factory=lambda: TestSet(), description="Public test cases"
-    )
-    private_tests: TestSet = Field(
-        default_factory=lambda: TestSet(), description="Private test cases"
-    )
+    solutions: Solution = Field(default_factory=lambda: Solution(), description="Problem solutions")
+    public_tests: TestSet = Field(default_factory=lambda: TestSet(), description="Public test cases")
+    private_tests: TestSet = Field(default_factory=lambda: TestSet(), description="Private test cases")
     generated_tests: Optional[TestSet] = Field(None, description="Generated test cases")
     difficulty: Optional[int] = Field(None, description="Difficulty level (1-7)")
     source: Optional[int] = Field(None, description="Source platform ID")
@@ -82,7 +73,7 @@ class DatasetProblem(BaseModel):
 
         return python3_solutions[0] if python3_solutions else None
 
-    def get_all_test_cases(self, min_test_cases: int = 3) -> List[Dict[str, str]]:
+    def get_all_test_cases(self, min_test_cases: int = 10) -> List[Dict[str, str]]:
         """
         Get all test cases from public, private, and generated tests.
 
@@ -116,9 +107,7 @@ class DatasetProblem(BaseModel):
         all_inputs = all_inputs[:min_count]
         all_outputs = all_outputs[:min_count]
 
-        return [
-            {"input": inp, "output": out} for inp, out in zip(all_inputs, all_outputs)
-        ]
+        return [{"input": inp, "output": out} for inp, out in zip(all_inputs, all_outputs, strict=False)]
 
     def get_source_name(self) -> str:
         """

@@ -2,6 +2,7 @@
 """
 Pre-commit hook to prevent edits to test files in problems/*/tests/
 """
+
 import re
 import sys
 
@@ -21,9 +22,7 @@ def main():
     test_files = [f for f in modified_files if TEST_FILE_PATTERN.match(f)]
 
     if test_files:
-        print(
-            "ERROR: Attempting to modify test files. These files should not be edited:"
-        )
+        print("ERROR: Attempting to modify test files. These files should not be edited:")
         for f in test_files:
             print(f"  - {f}")
         print("\nTest files are ground truth and should remain unmodified.")

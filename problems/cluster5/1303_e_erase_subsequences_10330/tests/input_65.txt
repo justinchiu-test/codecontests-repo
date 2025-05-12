@@ -1,0 +1,7 @@
+3
+aabac
+abcba
+dedef
+deged
+ababcfeded
+defabeddba

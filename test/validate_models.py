@@ -4,6 +4,7 @@ Validate our models by creating test instances and checking their behavior.
 
 This script attempts to instantiate and use our Pydantic models to ensure they work correctly.
 """
+
 import sys
 from typing import List
 
@@ -35,17 +36,11 @@ def validate_testcase_model() -> List[str]:
             issues.append("TestCase.memory_limit_mb field not working correctly")
 
         # Check default values
-        default_test_case = TestCase(
-            input="test", output="test", time_limit_ms=30000, memory_limit_mb=512
-        )
+        default_test_case = TestCase(input="test", output="test", time_limit_ms=30000, memory_limit_mb=512)
         if default_test_case.time_limit_ms != 30000:
-            issues.append(
-                f"TestCase.time_limit_ms default should be 30000, got {default_test_case.time_limit_ms}"
-            )
+            issues.append(f"TestCase.time_limit_ms default should be 30000, got {default_test_case.time_limit_ms}")
         if default_test_case.memory_limit_mb != 512:
-            issues.append(
-                f"TestCase.memory_limit_mb default should be 512, got {default_test_case.memory_limit_mb}"
-            )
+            issues.append(f"TestCase.memory_limit_mb default should be 512, got {default_test_case.memory_limit_mb}")
 
     except Exception as e:
         issues.append(f"Failed to validate TestCase model: {e}")
@@ -66,12 +61,8 @@ def validate_problem_model() -> List[str]:
             category=["math", "implementation"],
             difficulty="medium",
             test_cases=[
-                TestCase(
-                    input="1 2", output="3", time_limit_ms=30000, memory_limit_mb=512
-                ),
-                TestCase(
-                    input="4 5", output="9", time_limit_ms=30000, memory_limit_mb=512
-                ),
+                TestCase(input="1 2", output="3", time_limit_ms=30000, memory_limit_mb=512),
+                TestCase(input="4 5", output="9", time_limit_ms=30000, memory_limit_mb=512),
             ],
             source="Test Source",
         )
@@ -110,9 +101,7 @@ def validate_problem_model() -> List[str]:
         # Note: we're explicitly setting source="Test Source" in the test
         # so we shouldn't expect it to be None
         if problem_with_defaults.source != "Test Source":
-            issues.append(
-                f"Problem.source should be 'Test Source', got {problem_with_defaults.source}"
-            )
+            issues.append(f"Problem.source should be 'Test Source', got {problem_with_defaults.source}")
 
     except Exception as e:
         issues.append(f"Failed to validate Problem model: {e}")
@@ -169,27 +158,19 @@ def validate_dataset_models() -> List[str]:
         # Check helper methods
         python3_solution = problem.get_python3_solution()
         if python3_solution != "print(1+2)":
-            issues.append(
-                f"DatasetProblem.get_python3_solution() not working correctly, got {python3_solution}"
-            )
+            issues.append(f"DatasetProblem.get_python3_solution() not working correctly, got {python3_solution}")
 
         difficulty_name = problem.get_difficulty_name()
         if difficulty_name != "medium":
-            issues.append(
-                f"DatasetProblem.get_difficulty_name() not working correctly, got {difficulty_name}"
-            )
+            issues.append(f"DatasetProblem.get_difficulty_name() not working correctly, got {difficulty_name}")
 
         source_name = problem.get_source_name()
         if source_name != "Codeforces":
-            issues.append(
-                f"DatasetProblem.get_source_name() not working correctly, got {source_name}"
-            )
+            issues.append(f"DatasetProblem.get_source_name() not working correctly, got {source_name}")
 
         test_cases = problem.get_all_test_cases()
         if len(test_cases) != 4:
-            issues.append(
-                f"DatasetProblem.get_all_test_cases() should return 4 test cases, got {len(test_cases)}"
-            )
+            issues.append(f"DatasetProblem.get_all_test_cases() should return 4 test cases, got {len(test_cases)}")
 
     except Exception as e:
         issues.append(f"Failed to validate dataset models: {e}")

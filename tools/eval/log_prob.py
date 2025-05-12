@@ -5,6 +5,7 @@ This module provides utilities to measure how "predictable" code is from a
 language model perspective. Lower log probability (closer to 0) indicates
 more "natural" or probable code according to the model.
 """
+
 import json
 import os
 import sys
@@ -30,9 +31,7 @@ DEFAULT_MODEL = "Qwen/Qwen2.5-Coder-32B"
 TOGETHER_API_URL = "https://api.together.xyz/v1/completions"
 
 
-def get_log_prob_for_file(
-    file_path: Union[str, Path], api_key: Optional[str] = None
-) -> Tuple[float, int]:
+def get_log_prob_for_file(file_path: Union[str, Path], api_key: Optional[str] = None) -> Tuple[float, int]:
     """
     Calculate log probability for a Python file using TogetherAI API with Qwen 2.5 Coder 32B.
 
@@ -54,16 +53,11 @@ def get_log_prob_for_file(
     if api_key is None:
         api_key = os.environ.get("TOGETHER_API_KEY")
         if api_key is None:
-            raise ValueError(
-                "API key must be provided or set as TOGETHER_API_KEY environment variable"
-            )
+            raise ValueError("API key must be provided or set as TOGETHER_API_KEY environment variable")
 
     # Check if required packages are installed
     if not API_IMPORTS_SUCCEEDED:
-        raise ImportError(
-            "Required packages for API access not installed. "
-            "Please install 'requests' and 'tqdm'."
-        )
+        raise ImportError("Required packages for API access not installed. " "Please install 'requests' and 'tqdm'.")
 
     # Calculate log probability using the API
     return _calculate_log_prob_api(content, api_key)
@@ -95,9 +89,7 @@ def _calculate_log_prob_api(content: str, api_key: str) -> Tuple[float, int]:
     response = requests.post(TOGETHER_API_URL, headers=headers, json=data)
 
     if response.status_code != 200:
-        raise ValueError(
-            f"API request failed with status code {response.status_code}: {response.text}"
-        )
+        raise ValueError(f"API request failed with status code {response.status_code}: {response.text}")
 
     response_data = response.json()
 
@@ -150,10 +142,7 @@ def get_log_prob_for_directory(
 
         # Skip directories in the exclude list
         file_paths = [
-            fp
-            for fp in file_paths
-            if fp.is_file()
-            and not any(exclude_dir in fp.parts for exclude_dir in exclude_dirs)
+            fp for fp in file_paths if fp.is_file() and not any(exclude_dir in fp.parts for exclude_dir in exclude_dirs)
         ]
 
         if not API_IMPORTS_SUCCEEDED:
@@ -199,9 +188,7 @@ def summarize_log_probs(
     summary: Dict[str, Union[float, int, Dict[str, Dict[str, Union[float, int]]]]] = {
         "total_log_prob": total_log_prob,
         "total_tokens": total_tokens,
-        "average_log_prob_per_token": total_log_prob / total_tokens
-        if total_tokens > 0
-        else 0,
+        "average_log_prob_per_token": total_log_prob / total_tokens if total_tokens > 0 else 0,
         "file_count": len(log_probs),
     }
 
@@ -213,20 +200,14 @@ def summarize_log_probs(
             if directory not in directories:
                 directories[directory] = {"log_prob": 0.0, "tokens": 0}
 
-            directories[directory]["log_prob"] = (
-                directories[directory]["log_prob"] + log_prob
-            )
-            directories[directory]["tokens"] = (
-                directories[directory]["tokens"] + token_count
-            )
+            directories[directory]["log_prob"] = directories[directory]["log_prob"] + log_prob
+            directories[directory]["tokens"] = directories[directory]["tokens"] + token_count
 
         # Calculate average log prob per token for each directory
         for dir_data in directories.values():
             log_prob_val = float(dir_data["log_prob"])
             token_count_val = int(dir_data["tokens"])
-            dir_data["avg_log_prob_per_token"] = (
-                log_prob_val / token_count_val if token_count_val > 0 else 0.0
-            )
+            dir_data["avg_log_prob_per_token"] = log_prob_val / token_count_val if token_count_val > 0 else 0.0
 
         summary["directories"] = directories
 
@@ -285,11 +266,7 @@ def compare_solutions(
         "total_log_prob_change": refact_log_prob - orig_log_prob,
         "avg_log_prob_per_token_change": refact_avg_log_prob - orig_avg_log_prob,
         "total_tokens_change": refact_tokens - orig_tokens,
-        "token_reduction_percentage": (
-            (orig_tokens - refact_tokens) / orig_tokens * 100
-            if orig_tokens > 0
-            else 0.0
-        ),
+        "token_reduction_percentage": ((orig_tokens - refact_tokens) / orig_tokens * 100 if orig_tokens > 0 else 0.0),
     }
 
     return {
@@ -301,9 +278,7 @@ def compare_solutions(
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print(
-            "Usage: python log_prob.py <directory> [--json] [--api-key KEY] [--compare REFACTORED_DIR]"
-        )
+        print("Usage: python log_prob.py <directory> [--json] [--api-key KEY] [--compare REFACTORED_DIR]")
         sys.exit(1)
 
     directory = sys.argv[1]
@@ -328,36 +303,20 @@ if __name__ == "__main__":
                 print(json.dumps(results, indent=2))
             else:
                 print("Original solutions:")
-                print(
-                    f"  Total log probability: {results['original']['total_log_prob']}"
-                )
+                print(f"  Total log probability: {results['original']['total_log_prob']}")
                 print(f"  Total tokens: {results['original']['total_tokens']}")
-                print(
-                    f"  Average log prob per token: {results['original']['average_log_prob_per_token']}"
-                )
+                print(f"  Average log prob per token: {results['original']['average_log_prob_per_token']}")
 
                 print("\nRefactored solutions:")
-                print(
-                    f"  Total log probability: {results['refactored']['total_log_prob']}"
-                )
+                print(f"  Total log probability: {results['refactored']['total_log_prob']}")
                 print(f"  Total tokens: {results['refactored']['total_tokens']}")
-                print(
-                    f"  Average log prob per token: {results['refactored']['average_log_prob_per_token']}"
-                )
+                print(f"  Average log prob per token: {results['refactored']['average_log_prob_per_token']}")
 
                 print("\nImprovement:")
-                print(
-                    f"  Log probability change: {results['improvement']['total_log_prob_change']}"
-                )
-                print(
-                    f"  Average log prob per token change: {results['improvement']['avg_log_prob_per_token_change']}"
-                )
-                print(
-                    f"  Token reduction: {results['improvement']['total_tokens_change']} tokens"
-                )
-                print(
-                    f"  Token reduction percentage: {results['improvement']['token_reduction_percentage']:.2f}%"
-                )
+                print(f"  Log probability change: {results['improvement']['total_log_prob_change']}")
+                print(f"  Average log prob per token change: {results['improvement']['avg_log_prob_per_token_change']}")
+                print(f"  Token reduction: {results['improvement']['total_tokens_change']} tokens")
+                print(f"  Token reduction percentage: {results['improvement']['token_reduction_percentage']:.2f}%")
         else:
             # Process a single directory
             log_probs = get_log_prob_for_directory(directory, api_key=api_key)
@@ -368,9 +327,7 @@ if __name__ == "__main__":
             else:
                 print(f"Total log probability: {summary['total_log_prob']}")
                 print(f"Total tokens: {summary['total_tokens']}")
-                print(
-                    f"Average log prob per token: {summary['average_log_prob_per_token']}"
-                )
+                print(f"Average log prob per token: {summary['average_log_prob_per_token']}")
                 print(f"Files processed: {summary['file_count']}")
 
                 if "directories" in summary:
@@ -382,9 +339,7 @@ if __name__ == "__main__":
                                 print(f"  {dir_name}:")
                                 print(f"    Log prob: {data.get('log_prob', 'N/A')}")
                                 print(f"    Tokens: {data.get('tokens', 'N/A')}")
-                                print(
-                                    f"    Avg log prob per token: {data.get('avg_log_prob_per_token', 'N/A')}"
-                                )
+                                print(f"    Avg log prob per token: {data.get('avg_log_prob_per_token', 'N/A')}")
 
     except Exception as e:
         print(f"Error: {e}", file=sys.stderr)

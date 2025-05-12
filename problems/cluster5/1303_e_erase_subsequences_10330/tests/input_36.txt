@@ -1,0 +1,7 @@
+3
+abbba
+bbcba
+ffded
+defed
+ababbffded
+acbdedafed
