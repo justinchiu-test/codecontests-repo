@@ -55,6 +55,7 @@ Be sure to examine every problem to get a good idea of what the library should c
 Based on your analysis, design and implement a library of reusable components that can be used across multiple problems. The structure and organization of the library is entirely up to you.
 
 You will continue to edit this library as refactor problem solutions. The goal is to maximize reuse and minimize code.
+Please clean up any unused library functions.
 
 ### 3. Refactor Problem Solutions
 
@@ -103,3 +104,4 @@ Your solution will be evaluated based on:
 - Each solution must still pass all its original tests
 - Only modify `library.py` and `problems/*/main.py` files
 - Never modify problem descriptions, tests, or run scripts
+- Cleanup unused library functions when finished
