@@ -1,7 +1,0 @@
-binary search
-data structures
-dfs and similar
-graphs
-greedy
-shortest paths
-sortings

@@ -1,4 +1,0 @@
-dfs and similar
-graphs
-math
-number theory

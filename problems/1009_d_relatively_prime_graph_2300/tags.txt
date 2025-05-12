@@ -1,5 +1,0 @@
-brute force
-constructive algorithms
-graphs
-greedy
-math

@@ -1,5 +1,0 @@
-YES
-ABA
-ABB
-ABC
-ABE

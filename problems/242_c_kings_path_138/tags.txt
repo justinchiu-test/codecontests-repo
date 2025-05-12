@@ -1,4 +1,0 @@
-dfs and similar
-graphs
-hashing
-shortest paths

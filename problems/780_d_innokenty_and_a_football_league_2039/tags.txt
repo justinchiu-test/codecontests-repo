@@ -1,6 +1,0 @@
-2-sat
-graphs
-greedy
-implementation
-shortest paths
-strings

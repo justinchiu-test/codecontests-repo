@@ -1,4 +1,0 @@
-combinatorics
-dp
-graphs
-shortest paths

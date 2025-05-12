@@ -78,9 +78,6 @@ pre-commit install
 # Process all problems (no limit)
 uv run -m tools.dataset.process
 
-# Process up to 100 graph problems
-uv run -m tools.dataset.process --tag graphs --limit 100
-
 # Each processed problem will include a tags.txt file with Codeforces tags
 
 # Run tests for a specific problem

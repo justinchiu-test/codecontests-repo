@@ -1,4 +1,0 @@
-binary search
-constructive algorithms
-graphs
-shortest paths

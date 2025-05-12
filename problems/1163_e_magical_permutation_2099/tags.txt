@@ -1,6 +1,0 @@
-bitmasks
-brute force
-constructive algorithms
-data structures
-graphs
-math
