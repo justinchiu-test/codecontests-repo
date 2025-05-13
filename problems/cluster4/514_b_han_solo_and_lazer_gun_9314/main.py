@@ -1,25 +1,15 @@
 #!/usr/bin/env python3
 
-n, x0, y0 = map(int, input().split())
-slopes = {} # key: (num, den), val: count
+# Explicitly construct the path to import library.py
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import int_tuple_input, unique_slopes
 
-for i in range(n):
-    x, y = map(int, input().split())
-    num = y - y0
-    den = x - x0
-    # print(num, den)
-    if den == 0 and "inf" in slopes:
-        slopes["inf"] += 1
-    elif den == 0:
-        slopes["inf"] = 1
-    else:
-        found = False
-        for s in slopes:
-            # print(isinstance(s, tuple))
-            if isinstance(s, tuple) and num * s[1] == den * s[0]:
-                slopes[s] += 1
-                found = True
-        if found == False:
-            slopes[(num, den)] = 1
+n, x0, y0 = int_tuple_input()
+points = []
 
-print(slopes.__len__())
+for _ in range(n):
+    points.append(int_tuple_input())
+
+print(unique_slopes(points, (x0, y0)))

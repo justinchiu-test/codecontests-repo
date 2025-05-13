@@ -85,7 +85,8 @@ evaluate_cluster() {
 mkdir -p results
 
 # Loop through all cluster directories
-for i in {0..3}; do
+#for i in {0..3}; do
+for i in {4..7}; do
   CLUSTER_DIR="problems/cluster$i"
 
   # Check if this cluster directory exists

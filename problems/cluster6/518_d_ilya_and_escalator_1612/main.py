@@ -1,52 +1,44 @@
 #!/usr/bin/env python3
 
 import sys
+import os
 
-n, p, t = map(str, sys.stdin.readline().split())
-n = int(n)
-p = float(p)
-t = int(t)
+# Add parent directory to path to import library
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import read_strs, print_float_exact, dp_array_2d, expected_value
 
-def CC(nn,k):
-    tmp = n
-    t = max(nn - k, k)
-    for i in range(1, min(nn - k, k) + 1):
-        tmp = tmp * (t + i) * (1 - p) / i
-    if k > nn - k:
-        tmp = tmp * pow(1-p,k + k - nn)
-    return tmp
+# Read input
+n, p, t = read_strs()
+n = int(n)   # Number of people
+p = float(p) # Probability of moving forward
+t = int(t)   # Time limit
 
-def C(n, k):
-    tmp = 1
-    if n - k > k:
-        tmp = tmp * pow(1 - p, n - k - k)
-    else:
-        tmp = tmp * pow(p, k + k - n)
-    t = max(n - k, k)
-    for i in range(1, min(n - k, k) + 1):
-        tmp = tmp * (t + i) * p * (1 - p) / i
+# Simple case: p = 0 or p = 1
+if p == 0:
+    print_float_exact(0)
+    exit()
+if p == 1:
+    print_float_exact(min(n, t))
+    exit()
 
-    return tmp
+# Dynamic programming approach
+# dp[i][j] = probability that after i time units, j people have reached the end
+dp = dp_array_2d(t + 1, n + 1, 0.0)
+dp[0][0] = 1.0  # At time 0, probability of 0 people at end is 1
 
+# Fill DP table
+for time in range(t):
+    for people in range(n):
+        # Probability that a person moves
+        dp[time + 1][people + 1] += dp[time][people] * p
+        # Probability that a person doesn't move
+        dp[time + 1][people] += dp[time][people] * (1 - p)
+    # If n people are already at the end, they stay there
+    dp[time + 1][n] += dp[time][n]
 
-if n >= t:
-    print(t * p)
-elif p != 1 and p != 0:
-    a = 0
-    b = 0
-    for i in range(n):
-        q = C(t, i)
-        a = a + q * i
-        b = b + q
-    a = a + (1 - b) * n
-    print(a)
-    b = n
-    for i in range(t - n):
-        b = b + CC(i + 1,n + i)
-    b = b * pow(p,n)
-    #print(a + b)
-else:
-    if p == 1:
-        print(n)
-    else:
-        print(0)
+# Calculate expected value - probability of j people at the escalator's end * j
+probabilities = dp[t]
+values = list(range(n + 1))  # 0, 1, 2, ..., n
+expected = expected_value(probabilities, values)
+
+print_float_exact(expected)

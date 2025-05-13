@@ -1,27 +1,27 @@
 #!/usr/bin/env python3
+import sys
+import os
 
-def sum(x):
-    ans = 0
-    for i in x:
-        ans ^= i
-    return ans
+# Add the parent directory to the path so we can import the library
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from library import read_int_tuple, read_ints, xor_list
 
-i = lambda: [*map(int, input().split())]
-n, m = i()
-a = i()
-b = i()
-if sum(a) != sum(b):
+n, m = read_int_tuple()
+a = read_ints()
+b = read_ints()
+
+if xor_list(a) != xor_list(b):
     print("NO")
     quit()
+
 print("YES")
-one = sum(a[1:]) ^ b[0]
-print(one, end = " ")
+one = xor_list(a[1:]) ^ b[0]
+print(one, end=" ")
 for i in b[1:]:
-    print(i, end = " ")
+    print(i, end=" ")
 print()
-st = ""
-for i in range(m - 1):
-    st += "0 "
+
+st = "0 " * (m - 1)
 for i in a[1:]:
-    print(i, end = " ")
+    print(i, end=" ")
     print(st)

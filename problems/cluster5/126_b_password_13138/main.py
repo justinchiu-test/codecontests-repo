@@ -1,100 +1,41 @@
 #!/usr/bin/env python3
 
-from fractions import Fraction
-import bisect
-import os
-from collections import Counter
-import bisect
-from collections import defaultdict
-import math
-import random
-import heapq as hq
-from math import sqrt
-import sys
-from functools import reduce, cmp_to_key
-from collections import deque
-import threading
-from itertools import combinations
-from io import BytesIO, IOBase
-from itertools import accumulate
+from sys import path
+path.append('..')
+from library import read_str, z_algorithm
 
-
-# sys.setrecursionlimit(200000)
-# input = io.BytesIO(os.read(0, os.fstat(0).st_size)).readline
-
-
-def input():
-    return sys.stdin.readline().strip()
-
-
-def iinput():
-    return int(input())
-
-
-def tinput():
-    return input().split()
-
-
-def rinput():
-    return map(int, tinput())
-
-
-def rlinput():
-    return list(rinput())
-
-
-mod = int(1e9)+7
-
-
-def factors(n):
-    return set(reduce(list.__add__,
-                      ([i, n//i] for i in range(1, int(n**0.5) + 1) if n % i == 0)))
-
-
-# ----------------------------------------------------
-# sys.stdin = open('input.txt', 'r')
-# sys.stdout = open('output.txt', 'w')
-
-
-def zfunction(s):
+def main():
+    s = read_str()
     n = len(s)
-    l, r = 0, 0
-    Z = [0]*n
+    
+    # Compute Z-function for string s
+    Z = z_algorithm(s)
+    
+    # Find strings that are both prefixes and suffixes
+    suffix_prefixes = []
     for i in range(1, n):
-        if i <= r:
-            Z[i] = min(r-i+1, Z[i-l])
-        while i+Z[i] < n and s[Z[i]] == s[i+Z[i]]:
-            Z[i] += 1
-        if i+Z[i]-1 > r:
-            l, r = i, i+Z[i]-1
-    return Z
-
-
-s = input()
-n = len(s)
-Z = zfunction(s)
-# for i in range(n):
-#     Z[i] = min(i,Z[i])
-# print(Z)
-third = []
-for i in range(n):
-    if i+Z[i] == n:
-        third.append(Z[i])
-ll = len(third)
-# flg = False
-# print(Z)
-# print(third)
-ans = ""
-if ll == 0:
-    ans = 'Just a legend'
-elif ll == 1:
-    if Z.count(third[0]) >= 2 or max(Z) > third[0]:
-        ans = s[:third[0]]
+        if i + Z[i] == n:  # If substring matches from i to the end
+            suffix_prefixes.append(Z[i])
+    
+    # Sort by length (descending)
+    suffix_prefixes.sort(reverse=True)
+    
+    # If no suffix and prefix matches found
+    if not suffix_prefixes:
+        print("Just a legend")
+        return
+    
+    # Check if the longest suffix-prefix appears elsewhere in the string
+    longest_suffix_prefix = suffix_prefixes[0]
+    
+    # Check if the longest suffix-prefix appears in the middle of the string
+    if Z.count(longest_suffix_prefix) >= 2 or max(Z) > longest_suffix_prefix:
+        print(s[:longest_suffix_prefix])
+    # If there's a second longest suffix-prefix, use it
+    elif len(suffix_prefixes) > 1:
+        print(s[:suffix_prefixes[1]])
     else:
-        ans = 'Just a legend'
-else:
-    if Z.count(third[0]) >= 2 or max(Z) > third[0]:
-        ans = s[:third[0]]
-    else:
-        ans = s[:third[1]]
-print(ans)
+        print("Just a legend")
+
+if __name__ == "__main__":
+    main()
