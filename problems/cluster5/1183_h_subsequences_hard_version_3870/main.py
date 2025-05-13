@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 def main():
     from sys import stdin
@@ -23,5 +24,5 @@ def main():
         y += i * sum(dp[i])
     else:
         print(-1)
-    
+
 main()

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+from library import *
 R = lambda: map(int, input().split())
 n1, n2, k1, k2 = R()
 k1 = min(k1, n1)

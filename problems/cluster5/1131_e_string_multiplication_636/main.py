@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 ALPH = 'abcdefghijklmnopqrstuvwxyz'
 MAX = 10 ** 9

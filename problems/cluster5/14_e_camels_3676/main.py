@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-
+from library import *
 import sys
 from array import array  # noqa: F401
 

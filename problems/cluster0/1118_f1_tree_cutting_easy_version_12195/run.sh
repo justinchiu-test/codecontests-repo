@@ -31,7 +31,7 @@ run_test() {
     echo "Running test #$test_num..."
 
     # Run the solution with the test input using uv
-    OUTPUT=$(uv run "$SOLUTION_FILE" < "$input_file")
+    OUTPUT=$(python3 "$SOLUTION_FILE" < "$input_file")
     EXIT_CODE=$?
 
     if [ $EXIT_CODE -ne 0 ]; then

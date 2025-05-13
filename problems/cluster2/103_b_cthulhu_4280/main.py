@@ -1,40 +1,16 @@
 #!/usr/bin/env python3
 
 
-inp = input().split()
+from library import readints, dfs, graph
 
-n = int(inp[0])
-m = int(inp[1])
-
-def dfs(x):
-
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
+ n, m = readints()
 
 if n >= 3 and n == m:
 
-    visited = set()
+    edges = [tuple(readints()) for _ in range(m)]
+    e = graph(n, edges, one_indexed=True)
 
-    e = [[] for i in range(n + 1)]
-    
-    for i in range(m):
-    
-        x, y = map(int, input().split())
-    
-        e[x].append(y)
-    
-        e[y].append(x)
-
-    dfs(1)
- 
+    visited = dfs(e, 0)
     print('FHTAGN!' if len(visited) == n else 'NO')
 else:
     print('NO')
-
- 
- 

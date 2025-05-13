@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+import library
 
-n=int(input())
-a=[]
-for i in range(0,n):
-    a.append([int(i) for i in input().split()])
+# number of points
+n = library.ni()
+# read points
+a = [library.na(2) for _ in range(n)]
 ans=0
 for i in range(0,n):
     c1=0

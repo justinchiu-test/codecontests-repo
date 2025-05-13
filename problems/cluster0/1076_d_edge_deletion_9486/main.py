@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-
-import sys
-import io, os
-input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
+from library import *
 
 n,m,k = map(int, input().split())
 g = [[] for i in range(n)]
@@ -45,24 +42,16 @@ G = [[] for i in range(n)]
 for i, p in enumerate(prev):
     if prev[i] != -1:
         G[p].append(i)
-#print(G)
-s = []
-s.append(0)
-order = []
-while s:
-    v = s.pop()
-    order.append(v)
-    for u in G[v]:
-        s.append(u)
-#print(order)
+
+# perform a DFS and record the first k edges we traverse
 ans = []
-for v in order:
-    for u in G[v]:
-        ans.append(toid[(v, u)]+1)
-        if len(ans) == k:
-            break
-    else:
-        continue
-    break
+stack = [(0, -1)]  # (node, parent)
+while stack and len(ans) < k:
+    v, parent = stack.pop()
+    if parent != -1:
+        ans.append(toid[(parent, v)] + 1)
+    for child in reversed(G[v]):
+        stack.append((child, v))
+
 print(len(ans))
 print(*ans)

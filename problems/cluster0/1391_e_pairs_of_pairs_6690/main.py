@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-
+from library import *
 # Fast IO (only use in integer input)
 
-import os,io
-input=io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
 
 t = int(input())
 for _ in range(t):
@@ -54,4 +52,3 @@ for _ in range(t):
         print(len(pair))
         for elem in pair:
             print(str(elem[0] + 1)+" "+str(elem[1] + 1))
-

@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
+from library import *
 
-from collections import  defaultdict
+from collections import defaultdict
 import threading
-from sys import stdin,setrecursionlimit
-setrecursionlimit(300000)
-input=stdin.readline
 
 def dfs(node,g,par,sz):
 	for i in g[node]:
@@ -32,7 +30,6 @@ def main():
 			res+=1
 	print(res)
 
-threading.stack_size(10 ** 8)
 t = threading.Thread(target=main)
 t.start()
 t.join()

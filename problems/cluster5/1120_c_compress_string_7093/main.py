@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 def f(x):
     z=[0 for i in range(len(x))]
@@ -29,4 +30,3 @@ for i in range(1,n):
         if maxs[j]>=i-j:
             dp[i]=min(dp[i],dp[j]+b)
 print(dp[len(dp)-1])
-            

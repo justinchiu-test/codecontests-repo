@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
-import sys
-input=sys.stdin.readline
-n = int(input())
+from library import *
+a_line = input().split()
+n = int(a_line[0])
 a = [int(t) for t in input().split(' ')]
 mx = [[] for _ in range(n)]
 for i in range(n-1):
@@ -32,10 +32,10 @@ while len(stack):
                     answer += 1
                 count[vertex][0] += count[child][0]
                 count[vertex][1] += count[child][1]
- 
+
         if a[vertex] != 0:
             #print(count)
             count[vertex][a[vertex]-1] += 1
             #print(count)
- 
+
 print(answer)

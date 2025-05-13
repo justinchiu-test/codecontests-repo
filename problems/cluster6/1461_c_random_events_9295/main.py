@@ -2,7 +2,8 @@
 
 # by the authority of GOD     author: manhar singh sachdev #
 
-import os,sys
+import os, sys
+import library
 from io import BytesIO, IOBase
 
 def main():
@@ -14,8 +15,8 @@ def main():
             j -= 1
         if j == -1:
             for _ in range(m):
-                x = input()
-            print(1)
+                input()
+            library.pf(1, 6)
             continue
         ans = 0
         fac = 1
@@ -25,7 +26,7 @@ def main():
             if r >= j+1:
                 ans += fac*p
                 fac *= (1-p)
-        print(ans)
+        library.pf(ans, 6)
 
 #Fast IO Region
 BUFSIZE = 8192

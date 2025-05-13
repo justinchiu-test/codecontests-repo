@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
-
-import sys
-import io, os
-input = io.BytesIO(os.read(0,os.fstat(0).st_size)).readline
+from library import *
 import collections
 from collections import defaultdict
 n=int(input())

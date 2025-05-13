@@ -1,67 +1,62 @@
 #!/usr/bin/env python3
 
-from collections import defaultdict,deque
-import sys
-import bisect
-import math
-input=sys.stdin.readline
-mod=1000000007
+from library import *
+import heapq
+from collections import deque
 
-def bfs(root,count):
-    q=deque([root])
-    vis.add(root)
-    while q:
-        vertex=q.popleft()
-        for child in graph[vertex]:
-            if ans[child]==0:
-                ans[child]=count+1
-                count+=1
-            if child not in vis:
-                q.append(child)
-                vis.add(child)
-                
-graph=defaultdict(list)
-n=int(input())
-p=[int(i) for i in input().split() if i!='\n']
-if n&1:
-    for i in range(n):
-        if p[i]!=0:
-            graph[p[i]].append(i+1)
-            graph[i+1].append(p[i])
-    length=[0]*(n+1)
-    for i in graph:
-        length[i]=len(graph[i])
-    CHECK,OBSERVE=1,0
-    stack=[(OBSERVE,1,0)]
-    ans=[0]*(n+1)
-    count=0
-    while stack:
-        state,vertex,parent=stack.pop()
-        if state==OBSERVE:
-            stack.append((CHECK,vertex,parent))
-            for child in graph[vertex]:
-                if child != parent:
-                    stack.append((OBSERVE,child,vertex))
+def main():
+    n = read_int()
+    p = list(read_ints())
+    graph = [[] for _ in range(n+1)]
+    root = 0
+    for i in range(1, n+1):
+        parent = p[i-1]
+        if parent == 0:
+            root = i
         else:
-            if length[vertex]%2==0:
-                count+=1
-                ans[vertex]=count
-                length[parent]-=1
-    vis=set()
-    bfs(1,count)
-    out=[0]*(n)
-    for i in range(1,n+1):
-        out[ans[i]-1]=i
-    print('YES')
-    for i in out:
-        sys.stdout.write(str(i)+'\n')
-else:
-    print('NO')
-        
-    
-            
-        
-        
-        
-    
-    
+            graph[i].append(parent)
+            graph[parent].append(i)
+    if n % 2 == 0:
+        print('NO')
+        return
+    # compute depths
+    depth = [0] * (n+1)
+    dq = deque([root])
+    visited = [False] * (n+1)
+    visited[root] = True
+    while dq:
+        u = dq.popleft()
+        for v in graph[u]:
+            if not visited[v]:
+                visited[v] = True
+                depth[v] = depth[u] + 1
+                dq.append(v)
+    # compute degrees
+    deg = [len(graph[i]) for i in range(n+1)]
+    # priority queue for candidates
+    heap = []
+    for i in range(1, n+1):
+        if deg[i] % 2 == 0:
+            heapq.heappush(heap, (-depth[i], i))
+    ans = []
+    deleted = [False] * (n+1)
+    while heap:
+        d, u = heapq.heappop(heap)
+        if deleted[u] or deg[u] % 2 != 0:
+            continue
+        deleted[u] = True
+        ans.append(u)
+        for v in graph[u]:
+            if not deleted[v]:
+                deg[v] -= 1
+                if deg[v] % 2 == 0:
+                    heapq.heappush(heap, (-depth[v], v))
+    if len(ans) != n:
+        print('NO')
+    else:
+        print('YES')
+        for u in ans:
+            print(u)
+
+if __name__ == '__main__':
+    main()

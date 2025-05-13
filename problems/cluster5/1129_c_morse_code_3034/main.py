@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+from library import *
 
-import os, sys
-nums = list(map(int, os.read(0, os.fstat(0).st_size).split()))
+# Read all integers from input
+nums = list(read_all_ints())
 
 MOD = 10 ** 9 + 7
 BAD = ([0, 0, 1, 1], [0, 1, 0, 1], [1, 1, 1, 0], [1, 1, 1, 1])

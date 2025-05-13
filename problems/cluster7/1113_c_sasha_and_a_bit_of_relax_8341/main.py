@@ -1,16 +1,18 @@
 #!/usr/bin/env python3
+from library import *
 
-n = int(input())
-a = [int(x) for x in input().split()]
+def main():
+    n = read_int()
+    a = read_ints()
+    # prefix XOR array
+    pref = prefix_xor(a)
+    # dp for parity-based counts
+    dp = [[0] * (2**20 + 5) for _ in range(2)]
+    ans = 0
+    for i, v in enumerate(pref):
+        ans += dp[i % 2][v]
+        dp[i % 2][v] += 1
+    print(ans)
 
-pref = [0]
-for i in range(n):
-    pref.append(pref[-1] ^ a[i])
-
-dp = [[0 for i in range(2**20 + 5)] for j in range(2)]
-ans = 0
-for i in range(len(pref)):
-    ans += dp[i % 2][pref[i]]
-    dp[i % 2][pref[i]] += 1
-    #print(ans, pref[i])
-print(ans)
+if __name__ == '__main__':
+    main()

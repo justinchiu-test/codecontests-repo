@@ -1,39 +1,12 @@
 #!/usr/bin/env python3
+from library import *
 
-import sys
-from collections import deque
-from types import GeneratorType
-sys.setrecursionlimit(200000)
-input = sys.stdin.readline
-def bootstrap(f, stack=[]):
-    def wrappedfunc(*args, **kwargs):
-        if stack:
-            return f(*args, **kwargs)
-        else:
-            to = f(*args, **kwargs)
-            while True:
-                if type(to) is GeneratorType:
-                    stack.append(to)
-                    to = next(to)
-                else:
-                    stack.pop()
-                    if not stack:
-                        break
-                    to = stack[-1].send(to)
-            return to
- 
-    return wrappedfunc
-
-n = int(input())
-val = [int(i) for i in input().split()]
-tree = [[] for i in range(n + 1)]
-dp = [0 for i in range(n + 1)]
-s = [0 for i in range(n + 1)]
-ans = [0 for i in range(n + 1)]
-for i in range(n - 1):
-    a,b = map(int,input().split())
-    tree[a].append(b)
-    tree[b].append(a)
+n = read_int()
+val = read_ints()
+tree = read_tree(n)
+dp = [0] * (n + 1)
+s = [0] * (n + 1)
+ans = [0] * (n + 1)
 @bootstrap
 def dfs1(node,dist,pd):
 

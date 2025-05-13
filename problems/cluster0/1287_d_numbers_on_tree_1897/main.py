@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
-
-import sys
+from library import *
 
 # inf = open('input.txt', 'r')
 # reader = (line.rstrip() for line in inf)
-reader = (line.rstrip() for line in sys.stdin)
-input = reader.__next__
-
 n = int(input())
 cs = [0] * (n + 1)
 ps = [0] * (n + 1)

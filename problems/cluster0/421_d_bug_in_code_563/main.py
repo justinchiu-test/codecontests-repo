@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-
+from library import *
 from collections import defaultdict
 from bisect import bisect_left as lower
-import sys
-input = sys.stdin.readline
 def put():
     return map(int, input().split())
 
