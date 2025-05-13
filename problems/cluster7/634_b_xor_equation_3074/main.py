@@ -1,25 +1,19 @@
 #!/usr/bin/env python3
 
-s,x=map(int,input().split())
-if x>s or (s-x)%2!=0:
+#!/usr/bin/env python3
+from library import ni
+
+s = ni(); x = ni()
+if x > s or (s - x) & 1:
     print(0)
-else:
-    mask=1
-    res=1
-    bit=0
-    ND=(s-x)//2
-    flag=False
-    while bit<50:
-        if (mask&x)>0:
-            res*=2
-        if mask&x>0 and ND&mask>0:
-            flag=True
-            break
-        mask*=2
-        bit+=1
-    if(s==x):
-        res-=2
-    if flag:
-        res=0
-    print(res)
-    
+    exit()
+u = (s - x) // 2
+# if any bit set in both u and x, no solution
+if u & x:
+    print(0)
+    exit()
+res = 1 << x.bit_count()
+if s == x:
+    # exclude trivial zero case
+    res = max(0, res - 2)
+print(res)

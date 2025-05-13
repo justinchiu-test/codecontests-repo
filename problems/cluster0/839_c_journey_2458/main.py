@@ -31,6 +31,7 @@ def solve(v, d, r):
     if v != 0 and len(g[v]) == 1:
       #print("At ", v, "is", d, r)
       anw += d/r
-  
+
 solve(0, 0, 1)
-print(anw)
+# print answer with six decimal places
+print(f"{anw:.6f}")

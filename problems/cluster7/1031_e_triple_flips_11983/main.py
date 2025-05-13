@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import ni, nl
 
 def solve(a):
     l = len(a)
@@ -48,13 +49,14 @@ def solve(a):
 
 
 if __name__ == '__main__':
-    n = int(input())
-    a = list(map(int, input().split()))
+    n = ni()
+    a = nl(n)
     if len(a) <= 10:
         sol = solve(a)
         if sol is None:
             print("NO")
             exit(0)
+        sol.reverse()
         print("YES")
         print(len(sol))
         for t in sol:

@@ -1,40 +1,25 @@
 #!/usr/bin/env python3
 
-import sys
-import math
+from library import read_ints
 
 
-n,m,h = [int(x) for x in input().split()]  
-arr = [int(x) for x in input().split()]
+n, m, h = read_ints()
+arr = read_ints()
 
 total = sum(arr)
 
-if (total < n):
-	print ("-1")
-	sys.exit()
+if total < n:
+    print(-1)
+    exit()
 
-total1 = total - arr[h-1]
-rem  = total - total1-1
-total = total - 1
-ans = 1
-'''
-#start = total - (n-1)
-#print (start)
-x = start
-#print (rem)
-for i in range(rem-1):
-	start = float(float(start) * float(x-(i+1)))
-
-print (start)
-'''
+w = arr[h-1]
+total1 = total - w
+total -= 1
+ans = 1.0
 for i in range(n-1):
-	x = float(total1 - i)
-	y = float(total - i)
-	#print (i,x,y)
-	ans = float(ans * float(x/y))
-
-#print (ans)
-
-ans = float(ans) 
-
-print("{0:.10f}".format(round(1-ans,10)))
+    ans *= (total1 - i) / (total - i)
+res = 1 - ans
+if res > 1 - 1e-10:
+    print(1)
+else:
+    print(f"{res:.10f}")

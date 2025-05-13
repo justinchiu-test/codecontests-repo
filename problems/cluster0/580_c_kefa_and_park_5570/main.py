@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 
-M=lambda:map(int,input().split())
-n,m=M()
-*c,=M()
-t=[[]for i in range(n)]
-v=[0]*n
-for i in range(n-1):
-    x,y=M()
-    t[x-1].append(y-1)
-    t[y-1].append(x-1)
+from library import read_int, read_ints, read_edges, adj_list
+
+# Read input
+n, m = read_ints()
+c = read_ints()
+# Build tree adjacency list
+t = adj_list(n, read_edges(n-1))
+v = [0] * n
 a=i=0
 q=[(0,0)]
 while i<len(q):

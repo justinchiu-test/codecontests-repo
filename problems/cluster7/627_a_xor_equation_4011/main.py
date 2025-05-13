@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
+from library import ni
 
-R = lambda: map(int, input().split())
-s, x = R()
+s = ni(); x = ni()
 if s < x or (s - x) & 1:
     print(0)
-    exit(0)
-u, d = (s - x) // 2, x
-res = 1
-while u or d:
-    uu, dd = u & 1, d & 1
-    if uu and dd:
-        res *= 0
-    elif uu == 0 and dd == 1:
-        res *= 2
-    u, d = u >> 1, d >> 1
+    exit()
+u = (s - x) // 2
+d = x
+# if any bit set in both u and d, no solution
+if u & d:
+    print(0)
+    exit()
+# number of ways = 2^(popcount of d)
+res = 1 << d.bit_count()
 if s == x:
+    # exclude trivial all-zero selection
     res = max(0, res - 2)
 print(res)

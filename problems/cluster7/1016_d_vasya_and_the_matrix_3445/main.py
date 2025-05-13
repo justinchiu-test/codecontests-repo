@@ -1,28 +1,14 @@
 #!/usr/bin/env python3
+from library import nl, xor_list
 
-def sum(x):
-    ans = 0
-    for i in x:
-        ans ^= i
-    return ans
-
-i = lambda: [*map(int, input().split())]
-n, m = i()
-a = i()
-b = i()
-if sum(a) != sum(b):
+n, m = nl(2)
+a = nl(n)
+b = nl(m)
+if xor_list(a) != xor_list(b):
     print("NO")
-    quit()
+    exit()
 print("YES")
-one = sum(a[1:]) ^ b[0]
-print(one, end = " ")
-for i in b[1:]:
-    print(i, end = " ")
-print()
-st = ""
-for i in range(m - 1):
-    st += "0 "
-for i in a[1:]:
-    print(i, end = " ")
-    print(st)
-
+one = xor_list(a[1:]) ^ b[0]
+print(one, *b[1:])
+for ai in a[1:]:
+    print(ai, *([0] * (m-1)))

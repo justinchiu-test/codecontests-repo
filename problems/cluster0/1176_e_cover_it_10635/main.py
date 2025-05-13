@@ -1,29 +1,23 @@
 #!/usr/bin/env python3
 
-n, m = map(int, input().split())
-g = []
-for i in range(n):
-    g.append([])
-for i in range(m):
-    u, v = map(int, input().split())
-    u-=1
-    v-=1
-    g[u]+=[v]
-    g[v]+=[u]
+from library import read_ints, read_edges, adj_list
+
+# Read input and build undirected graph
+n, m = read_ints()
+g = adj_list(n, read_edges(m))
 
 start = max(range(n), key=lambda i: len(g[i]))
-edges = []
 vis = [False] * n
-q = [start]
 vis[start] = True
-while q:
-    u = q.pop(0)
+# Initialize spanning tree edge list
+edges = []
+queue = [start]
+for u in queue:
     for v in g[u]:
-        if vis[v]:
-            continue
-        vis[v] = True
-        edges.append((u, v))
-        q.append(v)
+        if not vis[v]:
+            vis[v] = True
+            edges.append((u, v))
+            queue.append(v)
 
 for u, v in edges:
     print(u+1, v+1)

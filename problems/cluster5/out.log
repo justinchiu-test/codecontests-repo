@@ -1,0 +1,91 @@
+Running test #1...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #1: Error running solution! Exit code: 1
+Running test #2...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #2: Error running solution! Exit code: 1
+Running test #3...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #3: Error running solution! Exit code: 1
+Running test #4...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #4: Error running solution! Exit code: 1
+Running test #5...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #5: Error running solution! Exit code: 1
+Running test #6...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #6: Error running solution! Exit code: 1
+Running test #7...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #7: Error running solution! Exit code: 1
+Running test #8...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #8: Error running solution! Exit code: 1
+Running test #9...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #9: Error running solution! Exit code: 1
+Running test #10...
+Traceback (most recent call last):
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/126_b_password_13138/main.py", line 5, in <module>
+    from library import read, z_function
+  File "/Users/justinchiu/code/codecontests-repo/problems/cluster5/library.py", line 41
+    """
+    ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 41)
+Test #10: Error running solution! Exit code: 1
+Results: 0/      10 tests passed

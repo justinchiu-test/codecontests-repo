@@ -1,0 +1,34 @@
+Cluster 6 evaluation: 15/30 problems passed
+Pass rate: 50.00%
+
+Problem details:
+  - 108_d_basketball_team_11673: PASS - Results: unknown
+  - 1111_d_destroy_the_colony_7405: PASS - Results: unknown
+  - 1172_c1_nauuo_and_pictures_easy_version_2723: PASS - Results: unknown
+  - 1172_c2_nauuo_and_pictures_hard_version_13029: PASS - Results: unknown
+  - 1187_f_expected_square_beauty_12302: PASS - Results: unknown
+  - 1245_e_hyakugoku_and_ladders_2311: FAIL - Results: unknown
+  - 1264_c_beautiful_mirrors_with_queries_6684: FAIL - Results: unknown
+  - 1349_d_slime_and_biscuits_751: PASS - Results: unknown
+  - 145_c_lucky_subsequence_8670: PASS - Results: unknown
+  - 1461_c_random_events_9295: FAIL - Results: unknown
+  - 1475_e_advertising_agency_1071: PASS - Results: unknown
+  - 148_d_bag_of_mice_3571: PASS - Results: unknown
+  - 1541_d_tree_array_2740: PASS - Results: unknown
+  - 1543_c_need_for_pink_slips_3469: FAIL - Results: unknown
+  - 160_c_find_pair_12111: PASS - Results: unknown
+  - 167_b_wizards_and_huge_prize_1597: FAIL - Results: unknown
+  - 261_b_maxim_and_restaurant_4932: FAIL - Results: unknown
+  - 262_d_maxim_and_restaurant_7013: FAIL - Results: unknown
+  - 28_c_bath_queue_2018: FAIL - Results: unknown
+  - 442_b_andrey_and_problem_4212: FAIL - Results: unknown
+  - 50_d_bombing_7752: FAIL - Results: unknown
+  - 518_d_ilya_and_escalator_1612: FAIL - Results: unknown
+  - 521_d_shop_3485: FAIL - Results: unknown
+  - 540_d_bad_luck_island_6817: FAIL - Results: unknown
+  - 54_c_first_digit_law_6609: FAIL - Results: unknown
+  - 623_d_birthday_6300: FAIL - Results: unknown
+  - 785_d_anton_and_school__2_9951: PASS - Results: unknown
+  - 817_b_makes_and_the_product_1937: PASS - Results: unknown
+  - 908_d_new_year_and_arbitrary_arrangement_7769: PASS - Results: unknown
+  - 9_a_die_roll_1319: PASS - Results: unknown

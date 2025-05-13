@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-MOD = 1000000007
-s = stdin.readline().strip()
+from library import read_str, read_int, read_ints, MOD, mod_pow, mod_inverse
+s = read_str()
 n = len(s)
 buc = [0] * 101
 fac = [0] * (n + 1)
@@ -47,11 +46,11 @@ for i in s:
 fac[0] = 1
 for i in range(1, n + 1):
     fac[i] = (fac[i - 1] * i) % MOD
-inv[n] = pow(fac[n], MOD - 2, MOD)
+inv[n] = mod_inverse(fac[n], MOD)
 for i in range(n - 1, -1, -1):
     inv[i] = (inv[i + 1] * (i + 1)) % MOD
 
-num = pow(fac[n // 2], 2, MOD)
+num = mod_pow(fac[n // 2], 2, MOD)
 for i in range(0, 52):
     num = (num * inv[buc[i]]) % MOD
 
@@ -84,11 +83,10 @@ for i in range(52):
         for k in range(n, buc[j] - 1, -1):
             temp_dp[k] = add(temp_dp[k], temp_dp[k - buc[j]])
 
-q = int(input())
-l = stdin.read().splitlines()
-for i in l:
-    x, y = map(int, i.split())
-    l, r = find(s[x - 1]), find(s[y - 1])
-    if l > r:
-        l, r = r, l
-    print(num * ans[l][r] % MOD)
+q = read_int()
+for _ in range(q):
+    x, y = read_ints()
+    l_idx, r_idx = find(s[x - 1]), find(s[y - 1])
+    if l_idx > r_idx:
+        l_idx, r_idx = r_idx, l_idx
+    print(num * ans[l_idx][r_idx] % MOD)

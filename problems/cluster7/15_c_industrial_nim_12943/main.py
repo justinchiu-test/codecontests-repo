@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+from library import ni, xor_range
+
+n = ni()
+r = 0
+for _ in range(n):
+    x = ni(); m = ni()
+    r ^= xor_range(x-1, x+m-1)
+print("bolik" if r == 0 else "tolik")
 
 __author__ = 'Darren'
 
