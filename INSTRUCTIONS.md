@@ -7,13 +7,16 @@ This document provides instructions for agents to complete the code compression 
 Your task is to minimize the total amount of code needed to solve all problems by:
 1. Identifying common patterns across solutions
 2. Creating a shared library of reusable components
-3. Refactoring each problem solution to use this library
+3. Refactoring EVERY problem solution to use this library
 
 ## Rules and Constraints
 You are free to use any bash commands to navigate the repo, such as grep or find.
 You are allowed to edit `library.py`, to be used in `{problem}/main.py`.
 However, those are the only files you can edit.
-The import path is taken care of for you while running tests via `bash {problem}/run.sh`.
+
+IMPORTANT:
+- The import path is taken care of for you while running tests via `bash {problem}/run.sh`.
+- ATTEMPT TO REFACTOR EVERY `{problem}/main.py`.
 
 ### What You Can Modify
 - **Library file (`library.py`)**: You can create, modify, or delete any files in this directory.
@@ -62,7 +65,7 @@ Please clean up any unused library functions.
 
 ### 3. Refactor Problem Solutions
 
-For each problem in the directory:
+For EVERY problem in the directory:
 
 1. Read and understand the original solution in `main.py`
 2. Identify which library components can replace parts of the solution
@@ -75,6 +78,8 @@ Import from the library via
 ```
 from library import ...
 ```
+
+IMPORTANT: Do this for EVERY `{problem}/main.py`.
 
 ### 4. Test Your Refactored Solutions
 
@@ -96,6 +101,8 @@ You may edit the library, but ensure that any downstream solutions still pass te
 3. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific will not reduce code.
 
 4. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
+
+REFACTOR EVERY PROBLEM/main.py
 
 ## Evaluation Criteria
 
