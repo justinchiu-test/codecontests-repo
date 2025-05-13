@@ -1,11 +1,39 @@
 #!/bin/bash
 
-# This script automates the code compression task with Claude
-# It loops through each cluster directory, runs Claude in that context,
-# and evaluates the pass rates of the problems in each cluster
+# This script automates the code compression task with Claude in parallel
+# It processes multiple cluster directories concurrently
+# Requires GNU Parallel: https://www.gnu.org/software/parallel/
 
 # Get the base directory
 BASE_DIR=$(pwd)
+mkdir -p results
+
+# Function to process a single cluster
+process_cluster() {
+    local cluster_num=$1
+    local CLUSTER_DIR="problems/cluster$cluster_num"
+
+    echo "Processing $CLUSTER_DIR..."
+
+    # Push into the cluster directory
+    pushd "$CLUSTER_DIR" > /dev/null
+
+    # Run Claude with instructions from cluster directory
+    echo "Running first Claude session for cluster $cluster_num..."
+    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Then make a plan for the library in PLAN.md. Then implement the library in library.py while refactoring the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass. Your goal is to make the library and solutions as compact as possible."
+
+    echo "Running second Claude session for cluster $cluster_num..."
+    # Twice for laziness
+    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Read your plan in PLAN.md. Finish implementing the library in library.py while continuing to refactor the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass. Your goal is to make the library and solutions as compact as possible."
+
+    # Pop back to the original directory
+    popd > /dev/null
+
+    # Evaluate pass rates after Claude processing
+    evaluate_cluster $cluster_num > results/cluster_${cluster_num}_results.txt
+
+    echo "Completed $CLUSTER_DIR"
+}
 
 # Function to evaluate cluster pass rates
 evaluate_cluster() {
@@ -82,36 +110,35 @@ evaluate_cluster() {
     done
 }
 
-mkdir -p results
+# Check if GNU Parallel is installed
+if ! command -v parallel &> /dev/null; then
+    echo "Error: GNU Parallel is required but not installed."
+    echo "Install it with 'brew install parallel' on macOS or 'apt-get install parallel' on Ubuntu."
+    exit 1
+fi
 
-# Loop through all cluster directories
-for i in {0..7}; do
+# Find available clusters
+CLUSTERS=()
+for i in {0..9}; do
   CLUSTER_DIR="problems/cluster$i"
-
-  # Check if this cluster directory exists
   if [ -d "$CLUSTER_DIR" ]; then
-    echo "Processing $CLUSTER_DIR..."
-
-    # Push into the cluster directory
-    pushd "$CLUSTER_DIR" > /dev/null
-
-    # Run Claude with instructions from cluster directory
-    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Then make a plan for the library in PLAN.md. Then implement the library in library.py while refactoring the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass. Your goal is to make the library and solutions as compact as possible."
-    # Twice for laziness
-    claude --dangerously-skip-permissions -p "Read the instructions in $BASE_DIR/INSTRUCTIONS.md. Be sure to read all the solutions to get an idea of what the library should look like. Read your plan in PLAN.md. Finish implementing the library in library.py while continuing to refactor the solutions in the current directory. As you are refactoring solutions, run tests as described in INSTRUCTIONS.md to ensure they are correct. If tests fail, you are free to examine the inputs and outputs. Continue editing the library as you refactor solutions. Make sure solutions that use any changed library functions still pass. Your goal is to make the library and solutions as compact as possible."
-
-
-    # Pop back to the original directory
-    popd > /dev/null
-
-    # Evaluate pass rates after Claude processing
-    evaluate_cluster $i > results/cluster_${i}_results.txt
-
-    echo "Completed $CLUSTER_DIR"
-  else
-    echo "Skipping $CLUSTER_DIR - directory does not exist"
+    CLUSTERS+=($i)
   fi
 done
+
+echo "Found clusters: ${CLUSTERS[@]}"
+
+# Define the number of parallel jobs (adjust as needed)
+# Default to 4 or the number of CPU cores, whichever is less
+NUM_JOBS=$(( $(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4) ))
+if [ $NUM_JOBS -gt 4 ]; then
+    NUM_JOBS=4
+fi
+
+# Process clusters in parallel
+echo "Starting parallel processing with $NUM_JOBS jobs..."
+export -f process_cluster evaluate_cluster
+parallel --jobs $NUM_JOBS process_cluster ::: "${CLUSTERS[@]}"
 
 # Create a summary file with results from all clusters
 echo "# Cluster Evaluation Summary" > "$BASE_DIR/cluster_evaluation_summary.md"
@@ -120,7 +147,7 @@ echo "" >> "$BASE_DIR/cluster_evaluation_summary.md"
 echo "| Cluster | Problems Passed | Total Problems | Pass Rate |" >> "$BASE_DIR/cluster_evaluation_summary.md"
 echo "|---------|----------------|----------------|-----------|" >> "$BASE_DIR/cluster_evaluation_summary.md"
 
-for i in {0..9}; do
+for i in "${CLUSTERS[@]}"; do
   CLUSTER_DIR="problems/cluster$i"
   if [ -d "$CLUSTER_DIR" ] && [ -f "$CLUSTER_DIR/evaluation_results.txt" ]; then
     PASS_INFO=$(head -n 1 "$CLUSTER_DIR/evaluation_results.txt" | sed -E 's/Cluster [0-9]+ evaluation: ([0-9]+)\/([0-9]+) problems passed/\1|\2/')
@@ -129,4 +156,4 @@ for i in {0..9}; do
   fi
 done
 
-echo "All clusters processed! Summary available in cluster_evaluation_summary.md"
+echo "All clusters processed in parallel! Summary available in cluster_evaluation_summary.md"
