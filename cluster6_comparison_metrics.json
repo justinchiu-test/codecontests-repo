@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster6",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster6/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 24,
             "cyclomatic": 46
         },
-        "logprobs": NaN,
-        "tokens": 868
+        "logprobs": -522.2841653686703,
+        "tokens": 896
     },
     "refactored_programs": {
         "1172_c2_nauuo_and_pictures_hard_version_13029": {
@@ -28,8 +28,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 374,
+            "logprobs": -470.8527925014852,
+            "tokens": 415,
             "problem_name": "1172_c2_nauuo_and_pictures_hard_version_13029"
         },
         "1349_d_slime_and_biscuits_751": {
@@ -43,8 +43,8 @@
                 "blank": 10,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 606,
+            "logprobs": -608.4637951180455,
+            "tokens": 646,
             "problem_name": "1349_d_slime_and_biscuits_751"
         },
         "50_d_bombing_7752": {
@@ -58,8 +58,8 @@
                 "blank": 17,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 378,
+            "logprobs": -356.15039719112053,
+            "tokens": 414,
             "problem_name": "50_d_bombing_7752"
         },
         "785_d_anton_and_school__2_9951": {
@@ -73,8 +73,8 @@
                 "blank": 5,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 215,
+            "logprobs": -169.29221890441505,
+            "tokens": 254,
             "problem_name": "785_d_anton_and_school__2_9951"
         },
         "908_d_new_year_and_arbitrary_arrangement_7769": {
@@ -88,8 +88,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 355,
+            "logprobs": -463.64844455422616,
+            "tokens": 390,
             "problem_name": "908_d_new_year_and_arbitrary_arrangement_7769"
         },
         "1264_c_beautiful_mirrors_with_queries_6684": {
@@ -103,8 +103,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 373,
+            "logprobs": -375.320629580414,
+            "tokens": 406,
             "problem_name": "1264_c_beautiful_mirrors_with_queries_6684"
         },
         "108_d_basketball_team_11673": {
@@ -118,8 +118,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -389.8498327671926,
+            "tokens": 244,
             "problem_name": "108_d_basketball_team_11673"
         },
         "623_d_birthday_6300": {
@@ -133,8 +133,8 @@
                 "blank": 6,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -299.27713224894455,
+            "tokens": 250,
             "problem_name": "623_d_birthday_6300"
         },
         "518_d_ilya_and_escalator_1612": {
@@ -148,8 +148,8 @@
                 "blank": 7,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 380,
+            "logprobs": -446.7915625832654,
+            "tokens": 414,
             "problem_name": "518_d_ilya_and_escalator_1612"
         },
         "261_b_maxim_and_restaurant_4932": {
@@ -163,8 +163,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 275,
+            "logprobs": -267.6238382161057,
+            "tokens": 312,
             "problem_name": "261_b_maxim_and_restaurant_4932"
         },
         "9_a_die_roll_1319": {
@@ -178,8 +178,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 40,
+            "logprobs": -104.03148722058798,
+            "tokens": 74,
             "problem_name": "9_a_die_roll_1319"
         },
         "540_d_bad_luck_island_6817": {
@@ -193,8 +193,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -259.2363790401955,
+            "tokens": 270,
             "problem_name": "540_d_bad_luck_island_6817"
         },
         "1187_f_expected_square_beauty_12302": {
@@ -208,8 +208,8 @@
                 "blank": 17,
                 "cyclomatic": 8
             },
-            "logprobs": NaN,
-            "tokens": 446,
+            "logprobs": -528.1173105404207,
+            "tokens": 481,
             "problem_name": "1187_f_expected_square_beauty_12302"
         },
         "1245_e_hyakugoku_and_ladders_2311": {
@@ -223,8 +223,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 215,
+            "logprobs": -316.77163218110934,
+            "tokens": 267,
             "problem_name": "1245_e_hyakugoku_and_ladders_2311"
         },
         "442_b_andrey_and_problem_4212": {
@@ -238,8 +238,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 164,
+            "logprobs": -236.59270322514328,
+            "tokens": 203,
             "problem_name": "442_b_andrey_and_problem_4212"
         },
         "160_c_find_pair_12111": {
@@ -253,8 +253,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 300,
+            "logprobs": -304.9679603594281,
+            "tokens": 338,
             "problem_name": "160_c_find_pair_12111"
         },
         "167_b_wizards_and_huge_prize_1597": {
@@ -268,8 +268,8 @@
                 "blank": 47,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 396,
+            "logprobs": -504.3743065837577,
+            "tokens": 433,
             "problem_name": "167_b_wizards_and_huge_prize_1597"
         },
         "148_d_bag_of_mice_3571": {
@@ -283,8 +283,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 201,
+            "logprobs": -194.1813972921857,
+            "tokens": 235,
             "problem_name": "148_d_bag_of_mice_3571"
         },
         "1541_d_tree_array_2740": {
@@ -298,8 +298,8 @@
                 "blank": 12,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 464,
+            "logprobs": -310.38003420662477,
+            "tokens": 499,
             "problem_name": "1541_d_tree_array_2740"
         },
         "1111_d_destroy_the_colony_7405": {
@@ -313,8 +313,8 @@
                 "blank": 22,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 736,
+            "logprobs": -576.0360934365426,
+            "tokens": 786,
             "problem_name": "1111_d_destroy_the_colony_7405"
         },
         "1475_e_advertising_agency_1071": {
@@ -328,8 +328,8 @@
                 "blank": 8,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -230.30719105131848,
+            "tokens": 235,
             "problem_name": "1475_e_advertising_agency_1071"
         },
         "28_c_bath_queue_2018": {
@@ -343,8 +343,8 @@
                 "blank": 3,
                 "cyclomatic": 8
             },
-            "logprobs": NaN,
-            "tokens": 262,
+            "logprobs": -269.6484525284793,
+            "tokens": 297,
             "problem_name": "28_c_bath_queue_2018"
         },
         "817_b_makes_and_the_product_1937": {
@@ -358,8 +358,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 119,
+            "logprobs": -179.73859167675064,
+            "tokens": 153,
             "problem_name": "817_b_makes_and_the_product_1937"
         },
         "521_d_shop_3485": {
@@ -373,8 +373,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 425,
+            "logprobs": -466.8708300776427,
+            "tokens": 459,
             "problem_name": "521_d_shop_3485"
         },
         "262_d_maxim_and_restaurant_7013": {
@@ -388,8 +388,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 212,
+            "logprobs": -190.0124096823215,
+            "tokens": 246,
             "problem_name": "262_d_maxim_and_restaurant_7013"
         },
         "1543_c_need_for_pink_slips_3469": {
@@ -403,8 +403,8 @@
                 "blank": 8,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 283,
+            "logprobs": -273.0158785677176,
+            "tokens": 319,
             "problem_name": "1543_c_need_for_pink_slips_3469"
         },
         "1461_c_random_events_9295": {
@@ -418,8 +418,8 @@
                 "blank": 5,
                 "cyclomatic": 24
             },
-            "logprobs": NaN,
-            "tokens": 606,
+            "logprobs": -308.4975776338202,
+            "tokens": 642,
             "problem_name": "1461_c_random_events_9295"
         },
         "54_c_first_digit_law_6609": {
@@ -433,8 +433,8 @@
                 "blank": 6,
                 "cyclomatic": 11
             },
-            "logprobs": NaN,
-            "tokens": 388,
+            "logprobs": -450.225835907693,
+            "tokens": 427,
             "problem_name": "54_c_first_digit_law_6609"
         },
         "1172_c1_nauuo_and_pictures_easy_version_2723": {
@@ -448,8 +448,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 350,
+            "logprobs": -404.8460553467103,
+            "tokens": 390,
             "problem_name": "1172_c1_nauuo_and_pictures_easy_version_2723"
         },
         "145_c_lucky_subsequence_8670": {
@@ -463,8 +463,8 @@
                 "blank": 4,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 489,
+            "logprobs": -472.84483800453404,
+            "tokens": 525,
             "problem_name": "145_c_lucky_subsequence_8670"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 374,
+            "logprobs": -583.5730113885286,
+            "tokens": 409,
             "problem_name": "1172_c2_nauuo_and_pictures_hard_version_13029"
         },
         "1349_d_slime_and_biscuits_751": {
@@ -495,8 +495,8 @@
                 "blank": 10,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 606,
+            "logprobs": -676.2314967805651,
+            "tokens": 640,
             "problem_name": "1349_d_slime_and_biscuits_751"
         },
         "50_d_bombing_7752": {
@@ -510,8 +510,8 @@
                 "blank": 17,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 378,
+            "logprobs": -459.05710032708623,
+            "tokens": 409,
             "problem_name": "50_d_bombing_7752"
         },
         "785_d_anton_and_school__2_9951": {
@@ -525,8 +525,8 @@
                 "blank": 5,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 215,
+            "logprobs": -291.62842474403124,
+            "tokens": 248,
             "problem_name": "785_d_anton_and_school__2_9951"
         },
         "908_d_new_year_and_arbitrary_arrangement_7769": {
@@ -540,8 +540,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 355,
+            "logprobs": -569.6492251163917,
+            "tokens": 384,
             "problem_name": "908_d_new_year_and_arbitrary_arrangement_7769"
         },
         "1264_c_beautiful_mirrors_with_queries_6684": {
@@ -555,8 +555,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 373,
+            "logprobs": -463.3859782272605,
+            "tokens": 400,
             "problem_name": "1264_c_beautiful_mirrors_with_queries_6684"
         },
         "108_d_basketball_team_11673": {
@@ -570,8 +570,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -493.59009793885616,
+            "tokens": 238,
             "problem_name": "108_d_basketball_team_11673"
         },
         "623_d_birthday_6300": {
@@ -585,8 +585,8 @@
                 "blank": 6,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -396.28377689240983,
+            "tokens": 244,
             "problem_name": "623_d_birthday_6300"
         },
         "518_d_ilya_and_escalator_1612": {
@@ -600,8 +600,8 @@
                 "blank": 7,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 380,
+            "logprobs": -551.4117674051943,
+            "tokens": 408,
             "problem_name": "518_d_ilya_and_escalator_1612"
         },
         "261_b_maxim_and_restaurant_4932": {
@@ -615,8 +615,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 275,
+            "logprobs": -373.33890227186936,
+            "tokens": 306,
             "problem_name": "261_b_maxim_and_restaurant_4932"
         },
         "9_a_die_roll_1319": {
@@ -630,8 +630,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 126,
+            "logprobs": -247.86939646259486,
+            "tokens": 154,
             "problem_name": "9_a_die_roll_1319"
         },
         "540_d_bad_luck_island_6817": {
@@ -645,8 +645,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -377.8632982139318,
+            "tokens": 264,
             "problem_name": "540_d_bad_luck_island_6817"
         },
         "1187_f_expected_square_beauty_12302": {
@@ -660,8 +660,8 @@
                 "blank": 17,
                 "cyclomatic": 8
             },
-            "logprobs": NaN,
-            "tokens": 446,
+            "logprobs": -597.107818740468,
+            "tokens": 475,
             "problem_name": "1187_f_expected_square_beauty_12302"
         },
         "1245_e_hyakugoku_and_ladders_2311": {
@@ -675,8 +675,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 215,
+            "logprobs": -417.643131300176,
+            "tokens": 261,
             "problem_name": "1245_e_hyakugoku_and_ladders_2311"
         },
         "442_b_andrey_and_problem_4212": {
@@ -690,8 +690,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 164,
+            "logprobs": -333.12078381147717,
+            "tokens": 197,
             "problem_name": "442_b_andrey_and_problem_4212"
         },
         "160_c_find_pair_12111": {
@@ -705,8 +705,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 300,
+            "logprobs": -423.02057112353367,
+            "tokens": 332,
             "problem_name": "160_c_find_pair_12111"
         },
         "167_b_wizards_and_huge_prize_1597": {
@@ -720,8 +720,8 @@
                 "blank": 47,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 396,
+            "logprobs": -578.5525615119361,
+            "tokens": 426,
             "problem_name": "167_b_wizards_and_huge_prize_1597"
         },
         "148_d_bag_of_mice_3571": {
@@ -735,8 +735,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 201,
+            "logprobs": -282.6917483159284,
+            "tokens": 229,
             "problem_name": "148_d_bag_of_mice_3571"
         },
         "1541_d_tree_array_2740": {
@@ -750,8 +750,8 @@
                 "blank": 12,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 464,
+            "logprobs": -401.2950066284245,
+            "tokens": 493,
             "problem_name": "1541_d_tree_array_2740"
         },
         "1111_d_destroy_the_colony_7405": {
@@ -765,8 +765,8 @@
                 "blank": 22,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 736,
+            "logprobs": -663.3245163248243,
+            "tokens": 780,
             "problem_name": "1111_d_destroy_the_colony_7405"
         },
         "1475_e_advertising_agency_1071": {
@@ -780,8 +780,8 @@
                 "blank": 8,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -335.76822409391093,
+            "tokens": 229,
             "problem_name": "1475_e_advertising_agency_1071"
         },
         "28_c_bath_queue_2018": {
@@ -795,8 +795,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 357,
+            "logprobs": -444.23608850570275,
+            "tokens": 387,
             "problem_name": "28_c_bath_queue_2018"
         },
         "817_b_makes_and_the_product_1937": {
@@ -810,8 +810,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 119,
+            "logprobs": -292.72040355511905,
+            "tokens": 147,
             "problem_name": "817_b_makes_and_the_product_1937"
         },
         "521_d_shop_3485": {
@@ -825,8 +825,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 425,
+            "logprobs": -555.325574715708,
+            "tokens": 453,
             "problem_name": "521_d_shop_3485"
         },
         "262_d_maxim_and_restaurant_7013": {
@@ -840,8 +840,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 212,
+            "logprobs": -299.7327263270485,
+            "tokens": 240,
             "problem_name": "262_d_maxim_and_restaurant_7013"
         },
         "1543_c_need_for_pink_slips_3469": {
@@ -855,8 +855,8 @@
                 "blank": 8,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 283,
+            "logprobs": -373.093543778565,
+            "tokens": 313,
             "problem_name": "1543_c_need_for_pink_slips_3469"
         },
         "1461_c_random_events_9295": {
@@ -870,8 +870,8 @@
                 "blank": 5,
                 "cyclomatic": 24
             },
-            "logprobs": NaN,
-            "tokens": 606,
+            "logprobs": -395.4349289277876,
+            "tokens": 636,
             "problem_name": "1461_c_random_events_9295"
         },
         "54_c_first_digit_law_6609": {
@@ -885,8 +885,8 @@
                 "blank": 8,
                 "cyclomatic": 11
             },
-            "logprobs": NaN,
-            "tokens": 382,
+            "logprobs": -555.1325280465092,
+            "tokens": 415,
             "problem_name": "54_c_first_digit_law_6609"
         },
         "1172_c1_nauuo_and_pictures_easy_version_2723": {
@@ -900,8 +900,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 350,
+            "logprobs": -515.4295553074988,
+            "tokens": 384,
             "problem_name": "1172_c1_nauuo_and_pictures_easy_version_2723"
         },
         "145_c_lucky_subsequence_8670": {
@@ -915,14 +915,14 @@
                 "blank": 4,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 489,
+            "logprobs": -593.196978199778,
+            "tokens": 519,
             "problem_name": "145_c_lucky_subsequence_8670"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 10772,
+        "logprobs": -10950.251773596869,
+        "tokens": 11920,
         "loc": 1373,
         "sloc": 1016,
         "lloc": 1045,
@@ -932,8 +932,8 @@
         "cyclomatic": 185
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 10079,
+        "logprobs": -13540.709164983113,
+        "tokens": 11020,
         "loc": 1252,
         "sloc": 914,
         "lloc": 942,
@@ -943,9 +943,9 @@
         "cyclomatic": 131
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.0687568211132057,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.0816696914700545,
+        "logprobs_refactored_div_original": 0.8086911579132587,
+        "avg_logprob_per_token_original": -1.2287394886554548,
+        "avg_logprob_per_token_refactored": -0.9186452830198715
     }
 }

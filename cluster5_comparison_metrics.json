@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster5",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster5/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 8,
             "cyclomatic": 29
         },
-        "logprobs": NaN,
-        "tokens": 688
+        "logprobs": -820.2035955375613,
+        "tokens": 717
     },
     "refactored_programs": {
         "126_b_password_13138": {
@@ -28,8 +28,8 @@
                 "blank": 23,
                 "cyclomatic": 14
             },
-            "logprobs": NaN,
-            "tokens": 571,
+            "logprobs": -468.87109735075757,
+            "tokens": 610,
             "problem_name": "126_b_password_13138"
         },
         "14_e_camels_3676": {
@@ -43,8 +43,8 @@
                 "blank": 8,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 292,
+            "logprobs": -255.1855588830233,
+            "tokens": 329,
             "problem_name": "14_e_camels_3676"
         },
         "805_d_minimum_number_of_steps_8284": {
@@ -58,8 +58,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 114,
+            "logprobs": -223.09416128247008,
+            "tokens": 155,
             "problem_name": "805_d_minimum_number_of_steps_8284"
         },
         "1303_e_erase_subsequences_10330": {
@@ -73,8 +73,8 @@
                 "blank": 6,
                 "cyclomatic": 32
             },
-            "logprobs": NaN,
-            "tokens": 747,
+            "logprobs": -350.5868495863906,
+            "tokens": 784,
             "problem_name": "1303_e_erase_subsequences_10330"
         },
         "682_d_alyona_and_strings_1931": {
@@ -88,8 +88,8 @@
                 "blank": 8,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 182,
+            "logprobs": -226.51109778882028,
+            "tokens": 217,
             "problem_name": "682_d_alyona_and_strings_1931"
         },
         "1120_c_compress_string_7093": {
@@ -103,8 +103,8 @@
                 "blank": 0,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 181,
+            "logprobs": -245.32240056396614,
+            "tokens": 216,
             "problem_name": "1120_c_compress_string_7093"
         },
         "633_c_spy_syndrome_2_3594": {
@@ -118,8 +118,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 151,
+            "logprobs": -251.4670641007002,
+            "tokens": 186,
             "problem_name": "633_c_spy_syndrome_2_3594"
         },
         "91_a_newspaper_headline_6625": {
@@ -133,8 +133,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 255,
+            "logprobs": -222.70627126536633,
+            "tokens": 297,
             "problem_name": "91_a_newspaper_headline_6625"
         },
         "597_c_subsequences_6091": {
@@ -148,8 +148,8 @@
                 "blank": 7,
                 "cyclomatic": 28
             },
-            "logprobs": NaN,
-            "tokens": 721,
+            "logprobs": -403.31886708840614,
+            "tokens": 758,
             "problem_name": "597_c_subsequences_6091"
         },
         "1188_c_array_beauty_9595": {
@@ -163,8 +163,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 322,
+            "logprobs": -344.5607088957252,
+            "tokens": 378,
             "problem_name": "1188_c_array_beauty_9595"
         },
         "667_c_reberland_linguistics_6406": {
@@ -178,8 +178,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 368,
+            "logprobs": -258.2304777954414,
+            "tokens": 403,
             "problem_name": "667_c_reberland_linguistics_6406"
         },
         "1422_e_minlexes_13041": {
@@ -193,8 +193,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 219,
+            "logprobs": -247.05236242987488,
+            "tokens": 255,
             "problem_name": "1422_e_minlexes_13041"
         },
         "44_h_phone_number_12435": {
@@ -208,8 +208,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 283,
+            "logprobs": -236.9990185549127,
+            "tokens": 322,
             "problem_name": "44_h_phone_number_12435"
         },
         "404_d_minesweeper_1d_2023": {
@@ -223,8 +223,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 152,
+            "logprobs": -195.71440885451136,
+            "tokens": 193,
             "problem_name": "404_d_minesweeper_1d_2023"
         },
         "1131_e_string_multiplication_636": {
@@ -238,8 +238,8 @@
                 "blank": 4,
                 "cyclomatic": 17
             },
-            "logprobs": NaN,
-            "tokens": 383,
+            "logprobs": -134.45819939836628,
+            "tokens": 419,
             "problem_name": "1131_e_string_multiplication_636"
         },
         "477_c_dreamoon_and_strings_12540": {
@@ -253,8 +253,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 157,
+            "logprobs": -199.1376185551049,
+            "tokens": 192,
             "problem_name": "477_c_dreamoon_and_strings_12540"
         },
         "774_h_repairing_of_string_9638": {
@@ -268,8 +268,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -227.42238102600456,
+            "tokens": 169,
             "problem_name": "774_h_repairing_of_string_9638"
         },
         "1183_h_subsequences_hard_version_3870": {
@@ -283,8 +283,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 213,
+            "logprobs": -220.14112973027116,
+            "tokens": 250,
             "problem_name": "1183_h_subsequences_hard_version_3870"
         },
         "61_e_enemy_is_weak_2240": {
@@ -298,8 +298,8 @@
                 "blank": 17,
                 "cyclomatic": 13
             },
-            "logprobs": NaN,
-            "tokens": 422,
+            "logprobs": -372.5477940709102,
+            "tokens": 457,
             "problem_name": "61_e_enemy_is_weak_2240"
         },
         "1337_e_kaavi_and_magic_spell_10539": {
@@ -313,8 +313,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 289,
+            "logprobs": -224.87189184206036,
+            "tokens": 331,
             "problem_name": "1337_e_kaavi_and_magic_spell_10539"
         },
         "1149_b_three_religions_220": {
@@ -328,8 +328,8 @@
                 "blank": 5,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 494,
+            "logprobs": -379.240432843966,
+            "tokens": 544,
             "problem_name": "1149_b_three_religions_220"
         },
         "476_e_dreamoon_and_strings_2026": {
@@ -343,8 +343,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 157,
+            "logprobs": -199.1376185551049,
+            "tokens": 192,
             "problem_name": "476_e_dreamoon_and_strings_2026"
         },
         "1499_e_chaotic_merge_7526": {
@@ -358,8 +358,8 @@
                 "blank": 57,
                 "cyclomatic": 127
             },
-            "logprobs": NaN,
-            "tokens": 2881,
+            "logprobs": -1755.727335255591,
+            "tokens": 2933,
             "problem_name": "1499_e_chaotic_merge_7526"
         },
         "1093_f_vasya_and_array_10216": {
@@ -373,8 +373,8 @@
                 "blank": 5,
                 "cyclomatic": 11
             },
-            "logprobs": NaN,
-            "tokens": 269,
+            "logprobs": -330.8386261469825,
+            "tokens": 310,
             "problem_name": "1093_f_vasya_and_array_10216"
         },
         "118_d_caesars_legions_2724": {
@@ -388,8 +388,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -146.3318979669055,
+            "tokens": 296,
             "problem_name": "118_d_caesars_legions_2724"
         },
         "1003_f_abbreviation_11357": {
@@ -403,8 +403,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 368,
+            "logprobs": -380.4956462365285,
+            "tokens": 405,
             "problem_name": "1003_f_abbreviation_11357"
         },
         "900_e_maximum_questions_7560": {
@@ -418,8 +418,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -304.4653938070999,
+            "tokens": 286,
             "problem_name": "900_e_maximum_questions_7560"
         },
         "653_b_bear_and_compressing_5990": {
@@ -433,8 +433,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 167,
+            "logprobs": -241.81543946662325,
+            "tokens": 202,
             "problem_name": "653_b_bear_and_compressing_5990"
         },
         "666_a_reberland_linguistics_4325": {
@@ -448,8 +448,8 @@
                 "blank": 2,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 173,
+            "logprobs": -228.07699938909025,
+            "tokens": 212,
             "problem_name": "666_a_reberland_linguistics_4325"
         },
         "1129_c_morse_code_3034": {
@@ -463,8 +463,8 @@
                 "blank": 4,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 391,
+            "logprobs": -296.6737674448119,
+            "tokens": 427,
             "problem_name": "1129_c_morse_code_3034"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 23,
                 "cyclomatic": 14
             },
-            "logprobs": NaN,
-            "tokens": 571,
+            "logprobs": -561.9998101286634,
+            "tokens": 603,
             "problem_name": "126_b_password_13138"
         },
         "14_e_camels_3676": {
@@ -495,8 +495,8 @@
                 "blank": 8,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 292,
+            "logprobs": -347.1179976178245,
+            "tokens": 322,
             "problem_name": "14_e_camels_3676"
         },
         "805_d_minimum_number_of_steps_8284": {
@@ -510,8 +510,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 114,
+            "logprobs": -315.9494577730837,
+            "tokens": 148,
             "problem_name": "805_d_minimum_number_of_steps_8284"
         },
         "1303_e_erase_subsequences_10330": {
@@ -525,8 +525,8 @@
                 "blank": 6,
                 "cyclomatic": 32
             },
-            "logprobs": NaN,
-            "tokens": 747,
+            "logprobs": -444.4279480023206,
+            "tokens": 777,
             "problem_name": "1303_e_erase_subsequences_10330"
         },
         "682_d_alyona_and_strings_1931": {
@@ -540,8 +540,8 @@
                 "blank": 8,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 182,
+            "logprobs": -336.1053047036095,
+            "tokens": 210,
             "problem_name": "682_d_alyona_and_strings_1931"
         },
         "1120_c_compress_string_7093": {
@@ -555,8 +555,8 @@
                 "blank": 2,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 270,
+            "logprobs": -394.0029708352754,
+            "tokens": 298,
             "problem_name": "1120_c_compress_string_7093"
         },
         "633_c_spy_syndrome_2_3594": {
@@ -570,8 +570,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 151,
+            "logprobs": -358.34898543590845,
+            "tokens": 179,
             "problem_name": "633_c_spy_syndrome_2_3594"
         },
         "91_a_newspaper_headline_6625": {
@@ -585,8 +585,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 255,
+            "logprobs": -344.1718341146857,
+            "tokens": 290,
             "problem_name": "91_a_newspaper_headline_6625"
         },
         "597_c_subsequences_6091": {
@@ -600,8 +600,8 @@
                 "blank": 7,
                 "cyclomatic": 28
             },
-            "logprobs": NaN,
-            "tokens": 721,
+            "logprobs": -477.2652366441984,
+            "tokens": 751,
             "problem_name": "597_c_subsequences_6091"
         },
         "1188_c_array_beauty_9595": {
@@ -615,8 +615,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 322,
+            "logprobs": -446.7782747637221,
+            "tokens": 371,
             "problem_name": "1188_c_array_beauty_9595"
         },
         "667_c_reberland_linguistics_6406": {
@@ -630,8 +630,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 368,
+            "logprobs": -362.8502257219435,
+            "tokens": 396,
             "problem_name": "667_c_reberland_linguistics_6406"
         },
         "1422_e_minlexes_13041": {
@@ -645,8 +645,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 219,
+            "logprobs": -369.75109038611396,
+            "tokens": 248,
             "problem_name": "1422_e_minlexes_13041"
         },
         "44_h_phone_number_12435": {
@@ -660,8 +660,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 283,
+            "logprobs": -324.25383378232226,
+            "tokens": 315,
             "problem_name": "44_h_phone_number_12435"
         },
         "404_d_minesweeper_1d_2023": {
@@ -675,8 +675,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 152,
+            "logprobs": -307.8616391592363,
+            "tokens": 186,
             "problem_name": "404_d_minesweeper_1d_2023"
         },
         "1131_e_string_multiplication_636": {
@@ -690,8 +690,8 @@
                 "blank": 4,
                 "cyclomatic": 17
             },
-            "logprobs": NaN,
-            "tokens": 383,
+            "logprobs": -412.763391282614,
+            "tokens": 412,
             "problem_name": "1131_e_string_multiplication_636"
         },
         "477_c_dreamoon_and_strings_12540": {
@@ -705,8 +705,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 157,
+            "logprobs": -313.3846828957503,
+            "tokens": 185,
             "problem_name": "477_c_dreamoon_and_strings_12540"
         },
         "774_h_repairing_of_string_9638": {
@@ -720,8 +720,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -344.1424879879305,
+            "tokens": 161,
             "problem_name": "774_h_repairing_of_string_9638"
         },
         "1183_h_subsequences_hard_version_3870": {
@@ -735,8 +735,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 213,
+            "logprobs": -328.309090173312,
+            "tokens": 243,
             "problem_name": "1183_h_subsequences_hard_version_3870"
         },
         "61_e_enemy_is_weak_2240": {
@@ -750,8 +750,8 @@
                 "blank": 17,
                 "cyclomatic": 13
             },
-            "logprobs": NaN,
-            "tokens": 422,
+            "logprobs": -464.6945650333679,
+            "tokens": 450,
             "problem_name": "61_e_enemy_is_weak_2240"
         },
         "1337_e_kaavi_and_magic_spell_10539": {
@@ -765,8 +765,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 289,
+            "logprobs": -311.16164100410816,
+            "tokens": 324,
             "problem_name": "1337_e_kaavi_and_magic_spell_10539"
         },
         "1149_b_three_religions_220": {
@@ -780,8 +780,8 @@
                 "blank": 5,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 494,
+            "logprobs": -478.7247183552623,
+            "tokens": 537,
             "problem_name": "1149_b_three_religions_220"
         },
         "476_e_dreamoon_and_strings_2026": {
@@ -795,8 +795,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 157,
+            "logprobs": -313.3846828957503,
+            "tokens": 185,
             "problem_name": "476_e_dreamoon_and_strings_2026"
         },
         "1499_e_chaotic_merge_7526": {
@@ -810,8 +810,8 @@
                 "blank": 57,
                 "cyclomatic": 127
             },
-            "logprobs": NaN,
-            "tokens": 2881,
+            "logprobs": -1870.1043997779414,
+            "tokens": 2926,
             "problem_name": "1499_e_chaotic_merge_7526"
         },
         "1093_f_vasya_and_array_10216": {
@@ -825,8 +825,8 @@
                 "blank": 4,
                 "cyclomatic": 13
             },
-            "logprobs": NaN,
-            "tokens": 266,
+            "logprobs": -381.8854944966121,
+            "tokens": 300,
             "problem_name": "1093_f_vasya_and_array_10216"
         },
         "118_d_caesars_legions_2724": {
@@ -840,8 +840,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -237.46484473305955,
+            "tokens": 289,
             "problem_name": "118_d_caesars_legions_2724"
         },
         "1003_f_abbreviation_11357": {
@@ -855,8 +855,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 353,
+            "logprobs": -448.4777649894208,
+            "tokens": 383,
             "problem_name": "1003_f_abbreviation_11357"
         },
         "900_e_maximum_questions_7560": {
@@ -870,8 +870,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -408.59733464084997,
+            "tokens": 279,
             "problem_name": "900_e_maximum_questions_7560"
         },
         "653_b_bear_and_compressing_5990": {
@@ -885,8 +885,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 167,
+            "logprobs": -345.08058856503425,
+            "tokens": 195,
             "problem_name": "653_b_bear_and_compressing_5990"
         },
         "666_a_reberland_linguistics_4325": {
@@ -900,8 +900,8 @@
                 "blank": 2,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 173,
+            "logprobs": -337.1242368686946,
+            "tokens": 205,
             "problem_name": "666_a_reberland_linguistics_4325"
         },
         "1129_c_morse_code_3034": {
@@ -915,14 +915,14 @@
                 "blank": 4,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 391,
+            "logprobs": -403.90764170480264,
+            "tokens": 420,
             "problem_name": "1129_c_morse_code_3034"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 12237,
+        "logprobs": -10391.206111713349,
+        "tokens": 13445,
         "loc": 1502,
         "sloc": 1164,
         "lloc": 1261,
@@ -932,8 +932,8 @@
         "cyclomatic": 306
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 11620,
+        "logprobs": -12790.092174473417,
+        "tokens": 12588,
         "loc": 1428,
         "sloc": 1116,
         "lloc": 1204,
@@ -943,9 +943,9 @@
         "cyclomatic": 286
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.0530981067125647,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.0680807117890054,
+        "logprobs_refactored_div_original": 0.812441847170751,
+        "avg_logprob_per_token_original": -1.0160543513245486,
+        "avg_logprob_per_token_refactored": -0.7728676914625027
     }
 }

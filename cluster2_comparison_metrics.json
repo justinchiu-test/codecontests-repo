@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster2",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster2/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 13,
             "cyclomatic": 35
         },
-        "logprobs": NaN,
-        "tokens": 971
+        "logprobs": -971.7483986203084,
+        "tokens": 999
     },
     "refactored_programs": {
         "920_e_connected_components_167": {
@@ -28,8 +28,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 159,
+            "logprobs": -236.93830726819647,
+            "tokens": 193,
             "problem_name": "920_e_connected_components_167"
         },
         "45_h_road_problem_460": {
@@ -43,8 +43,8 @@
                 "blank": 101,
                 "cyclomatic": 63
             },
-            "logprobs": NaN,
-            "tokens": 2223,
+            "logprobs": -2061.7779501287278,
+            "tokens": 2258,
             "problem_name": "45_h_road_problem_460"
         },
         "1242_b_01_mst_10223": {
@@ -58,8 +58,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -269.1930915035431,
+            "tokens": 286,
             "problem_name": "1242_b_01_mst_10223"
         },
         "1263_d_secret_passwords_6164": {
@@ -73,8 +73,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -209.76618767288585,
+            "tokens": 241,
             "problem_name": "1263_d_secret_passwords_6164"
         },
         "1521_d_nastia_plays_with_a_tree_11693": {
@@ -88,8 +88,8 @@
                 "blank": 13,
                 "cyclomatic": 21
             },
-            "logprobs": NaN,
-            "tokens": 435,
+            "logprobs": -419.15230461455354,
+            "tokens": 474,
             "problem_name": "1521_d_nastia_plays_with_a_tree_11693"
         },
         "1534_f1_falling_sand_easy_version_9507": {
@@ -103,8 +103,8 @@
                 "blank": 13,
                 "cyclomatic": 25
             },
-            "logprobs": NaN,
-            "tokens": 935,
+            "logprobs": -730.464172367675,
+            "tokens": 970,
             "problem_name": "1534_f1_falling_sand_easy_version_9507"
         },
         "217_a_ice_skating_2223": {
@@ -118,8 +118,8 @@
                 "blank": 4,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 185,
+            "logprobs": -216.80652020754306,
+            "tokens": 219,
             "problem_name": "217_a_ice_skating_2223"
         },
         "103_b_cthulhu_4280": {
@@ -133,8 +133,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 148,
+            "logprobs": -206.28281689759797,
+            "tokens": 182,
             "problem_name": "103_b_cthulhu_4280"
         },
         "1243_d_01_mst_12097": {
@@ -148,8 +148,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 163,
+            "logprobs": -151.7333713848487,
+            "tokens": 197,
             "problem_name": "1243_d_01_mst_12097"
         },
         "505_d_mr_kitayutas_technology_879": {
@@ -163,8 +163,8 @@
                 "blank": 6,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 255,
+            "logprobs": -283.53058398102104,
+            "tokens": 293,
             "problem_name": "505_d_mr_kitayutas_technology_879"
         },
         "653_e_bear_and_forgotten_tree_2_10362": {
@@ -178,8 +178,8 @@
                 "blank": 16,
                 "cyclomatic": 35
             },
-            "logprobs": NaN,
-            "tokens": 570,
+            "logprobs": -606.0511259029591,
+            "tokens": 615,
             "problem_name": "653_e_bear_and_forgotten_tree_2_10362"
         },
         "445_b_dzy_loves_chemistry_1921": {
@@ -193,8 +193,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 205,
+            "logprobs": -216.92859026523587,
+            "tokens": 239,
             "problem_name": "445_b_dzy_loves_chemistry_1921"
         },
         "510_b_fox_and_two_dots_2444": {
@@ -208,8 +208,8 @@
                 "blank": 37,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 665,
+            "logprobs": -787.8737319921592,
+            "tokens": 704,
             "problem_name": "510_b_fox_and_two_dots_2444"
         },
         "1277_e_two_fairs_122": {
@@ -223,8 +223,8 @@
                 "blank": 13,
                 "cyclomatic": 14
             },
-            "logprobs": NaN,
-            "tokens": 471,
+            "logprobs": -380.1858358693537,
+            "tokens": 506,
             "problem_name": "1277_e_two_fairs_122"
         },
         "505_b_mr_kitayutas_colorful_graph_984": {
@@ -238,8 +238,8 @@
                 "blank": 5,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 281,
+            "logprobs": -229.46108187123778,
+            "tokens": 315,
             "problem_name": "505_b_mr_kitayutas_colorful_graph_984"
         },
         "104_c_cthulhu_10214": {
@@ -253,8 +253,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 162,
+            "logprobs": -242.63578401661135,
+            "tokens": 196,
             "problem_name": "104_c_cthulhu_10214"
         },
         "27_b_tournament_1914": {
@@ -268,8 +268,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 260,
+            "logprobs": -291.86945678421694,
+            "tokens": 294,
             "problem_name": "27_b_tournament_1914"
         },
         "745_c_hongcow_builds_a_nation_7762": {
@@ -283,8 +283,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 332,
+            "logprobs": -324.897831446458,
+            "tokens": 366,
             "problem_name": "745_c_hongcow_builds_a_nation_7762"
         },
         "690_c1_brain_network_easy_6407": {
@@ -298,8 +298,8 @@
                 "blank": 3,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 226,
+            "logprobs": -208.4576028688231,
+            "tokens": 264,
             "problem_name": "690_c1_brain_network_easy_6407"
         },
         "1169_b_pairs_11885": {
@@ -313,8 +313,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 293,
+            "logprobs": -342.8986546852248,
+            "tokens": 327,
             "problem_name": "1169_b_pairs_11885"
         },
         "771_a_bear_and_friendship_condition_2351": {
@@ -328,8 +328,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 193,
+            "logprobs": -208.235353463579,
+            "tokens": 227,
             "problem_name": "771_a_bear_and_friendship_condition_2351"
         },
         "1217_d_coloring_edges_7410": {
@@ -343,8 +343,8 @@
                 "blank": 8,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 319,
+            "logprobs": -272.2321181367701,
+            "tokens": 353,
             "problem_name": "1217_d_coloring_edges_7410"
         },
         "216_b_forming_teams_6387": {
@@ -358,8 +358,8 @@
                 "blank": 18,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 488,
+            "logprobs": -456.7491642023221,
+            "tokens": 522,
             "problem_name": "216_b_forming_teams_6387"
         },
         "9_e_interesting_graph_and_apples_483": {
@@ -373,8 +373,8 @@
                 "blank": 3,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 643,
+            "logprobs": -400.5152712134467,
+            "tokens": 678,
             "problem_name": "9_e_interesting_graph_and_apples_483"
         },
         "1249_b1_books_exchange_easy_version_7099": {
@@ -388,8 +388,8 @@
                 "blank": 38,
                 "cyclomatic": 52
             },
-            "logprobs": NaN,
-            "tokens": 1222,
+            "logprobs": -728.8987413282626,
+            "tokens": 1258,
             "problem_name": "1249_b1_books_exchange_easy_version_7099"
         },
         "1000_e_we_need_more_bosses_8440": {
@@ -403,8 +403,8 @@
                 "blank": 25,
                 "cyclomatic": 25
             },
-            "logprobs": NaN,
-            "tokens": 714,
+            "logprobs": -602.1650811180848,
+            "tokens": 750,
             "problem_name": "1000_e_we_need_more_bosses_8440"
         },
         "659_e_new_reform_13276": {
@@ -418,8 +418,8 @@
                 "blank": 17,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 310,
+            "logprobs": -337.5501531374166,
+            "tokens": 348,
             "problem_name": "659_e_new_reform_13276"
         },
         "156_d_clues_3678": {
@@ -433,8 +433,8 @@
                 "blank": 14,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 450,
+            "logprobs": -461.198063595745,
+            "tokens": 484,
             "problem_name": "156_d_clues_3678"
         },
         "977_e_cyclic_components_8291": {
@@ -448,8 +448,8 @@
                 "blank": 9,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 197,
+            "logprobs": -242.96103452342723,
+            "tokens": 231,
             "problem_name": "977_e_cyclic_components_8291"
         },
         "791_b_bear_and_friendship_condition_8388": {
@@ -463,8 +463,8 @@
                 "blank": 8,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -215.2325045923011,
+            "tokens": 242,
             "problem_name": "791_b_bear_and_friendship_condition_8388"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 158,
+            "logprobs": -318.5141876993409,
+            "tokens": 186,
             "problem_name": "920_e_connected_components_167"
         },
         "45_h_road_problem_460": {
@@ -495,8 +495,8 @@
                 "blank": 101,
                 "cyclomatic": 63
             },
-            "logprobs": NaN,
-            "tokens": 2223,
+            "logprobs": -2111.765749953328,
+            "tokens": 2252,
             "problem_name": "45_h_road_problem_460"
         },
         "1242_b_01_mst_10223": {
@@ -510,8 +510,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -354.96915437865295,
+            "tokens": 280,
             "problem_name": "1242_b_01_mst_10223"
         },
         "1263_d_secret_passwords_6164": {
@@ -525,8 +525,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -308.3073748618197,
+            "tokens": 235,
             "problem_name": "1263_d_secret_passwords_6164"
         },
         "1521_d_nastia_plays_with_a_tree_11693": {
@@ -540,8 +540,8 @@
                 "blank": 13,
                 "cyclomatic": 21
             },
-            "logprobs": NaN,
-            "tokens": 435,
+            "logprobs": -518.4313297239872,
+            "tokens": 468,
             "problem_name": "1521_d_nastia_plays_with_a_tree_11693"
         },
         "1534_f1_falling_sand_easy_version_9507": {
@@ -555,8 +555,8 @@
                 "blank": 13,
                 "cyclomatic": 25
             },
-            "logprobs": NaN,
-            "tokens": 935,
+            "logprobs": -834.4464838336577,
+            "tokens": 964,
             "problem_name": "1534_f1_falling_sand_easy_version_9507"
         },
         "217_a_ice_skating_2223": {
@@ -570,8 +570,8 @@
                 "blank": 4,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 136,
+            "logprobs": -227.50983191910672,
+            "tokens": 164,
             "problem_name": "217_a_ice_skating_2223"
         },
         "103_b_cthulhu_4280": {
@@ -585,8 +585,8 @@
                 "blank": 20,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 153,
+            "logprobs": -313.4208016334132,
+            "tokens": 181,
             "problem_name": "103_b_cthulhu_4280"
         },
         "1243_d_01_mst_12097": {
@@ -600,8 +600,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 163,
+            "logprobs": -269.0054162955547,
+            "tokens": 191,
             "problem_name": "1243_d_01_mst_12097"
         },
         "505_d_mr_kitayutas_technology_879": {
@@ -615,8 +615,8 @@
                 "blank": 6,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 255,
+            "logprobs": -380.522734657024,
+            "tokens": 287,
             "problem_name": "505_d_mr_kitayutas_technology_879"
         },
         "653_e_bear_and_forgotten_tree_2_10362": {
@@ -630,8 +630,8 @@
                 "blank": 16,
                 "cyclomatic": 35
             },
-            "logprobs": NaN,
-            "tokens": 570,
+            "logprobs": -687.4149943361582,
+            "tokens": 609,
             "problem_name": "653_e_bear_and_forgotten_tree_2_10362"
         },
         "445_b_dzy_loves_chemistry_1921": {
@@ -645,8 +645,8 @@
                 "blank": 4,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 205,
+            "logprobs": -326.76467633413887,
+            "tokens": 233,
             "problem_name": "445_b_dzy_loves_chemistry_1921"
         },
         "510_b_fox_and_two_dots_2444": {
@@ -660,8 +660,8 @@
                 "blank": 37,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 665,
+            "logprobs": -859.0643016181797,
+            "tokens": 698,
             "problem_name": "510_b_fox_and_two_dots_2444"
         },
         "1277_e_two_fairs_122": {
@@ -675,8 +675,8 @@
                 "blank": 13,
                 "cyclomatic": 14
             },
-            "logprobs": NaN,
-            "tokens": 471,
+            "logprobs": -464.94119204450976,
+            "tokens": 499,
             "problem_name": "1277_e_two_fairs_122"
         },
         "505_b_mr_kitayutas_colorful_graph_984": {
@@ -690,8 +690,8 @@
                 "blank": 5,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 281,
+            "logprobs": -313.7065947250521,
+            "tokens": 309,
             "problem_name": "505_b_mr_kitayutas_colorful_graph_984"
         },
         "104_c_cthulhu_10214": {
@@ -705,8 +705,8 @@
                 "blank": 6,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 221,
+            "logprobs": -316.4274145514878,
+            "tokens": 249,
             "problem_name": "104_c_cthulhu_10214"
         },
         "27_b_tournament_1914": {
@@ -720,8 +720,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 252,
+            "logprobs": -343.351696846218,
+            "tokens": 280,
             "problem_name": "27_b_tournament_1914"
         },
         "745_c_hongcow_builds_a_nation_7762": {
@@ -735,8 +735,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 332,
+            "logprobs": -433.69002962769827,
+            "tokens": 360,
             "problem_name": "745_c_hongcow_builds_a_nation_7762"
         },
         "690_c1_brain_network_easy_6407": {
@@ -750,8 +750,8 @@
                 "blank": 3,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 226,
+            "logprobs": -303.25582126691387,
+            "tokens": 258,
             "problem_name": "690_c1_brain_network_easy_6407"
         },
         "1169_b_pairs_11885": {
@@ -765,8 +765,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 294,
+            "logprobs": -407.2764707639521,
+            "tokens": 322,
             "problem_name": "1169_b_pairs_11885"
         },
         "771_a_bear_and_friendship_condition_2351": {
@@ -780,8 +780,8 @@
                 "blank": 1,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 223,
+            "logprobs": -364.90581346030035,
+            "tokens": 251,
             "problem_name": "771_a_bear_and_friendship_condition_2351"
         },
         "1217_d_coloring_edges_7410": {
@@ -795,8 +795,8 @@
                 "blank": 8,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 319,
+            "logprobs": -379.2369607792425,
+            "tokens": 347,
             "problem_name": "1217_d_coloring_edges_7410"
         },
         "216_b_forming_teams_6387": {
@@ -810,8 +810,8 @@
                 "blank": 18,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 488,
+            "logprobs": -548.5594534170258,
+            "tokens": 516,
             "problem_name": "216_b_forming_teams_6387"
         },
         "9_e_interesting_graph_and_apples_483": {
@@ -825,8 +825,8 @@
                 "blank": 3,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 643,
+            "logprobs": -496.5857302439998,
+            "tokens": 671,
             "problem_name": "9_e_interesting_graph_and_apples_483"
         },
         "1249_b1_books_exchange_easy_version_7099": {
@@ -840,8 +840,8 @@
                 "blank": 38,
                 "cyclomatic": 52
             },
-            "logprobs": NaN,
-            "tokens": 1222,
+            "logprobs": -829.0706680824586,
+            "tokens": 1252,
             "problem_name": "1249_b1_books_exchange_easy_version_7099"
         },
         "1000_e_we_need_more_bosses_8440": {
@@ -855,8 +855,8 @@
                 "blank": 25,
                 "cyclomatic": 25
             },
-            "logprobs": NaN,
-            "tokens": 714,
+            "logprobs": -693.0499378703954,
+            "tokens": 744,
             "problem_name": "1000_e_we_need_more_bosses_8440"
         },
         "659_e_new_reform_13276": {
@@ -870,8 +870,8 @@
                 "blank": 17,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 310,
+            "logprobs": -414.1186417450589,
+            "tokens": 342,
             "problem_name": "659_e_new_reform_13276"
         },
         "156_d_clues_3678": {
@@ -885,8 +885,8 @@
                 "blank": 14,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 450,
+            "logprobs": -534.8587243347499,
+            "tokens": 478,
             "problem_name": "156_d_clues_3678"
         },
         "977_e_cyclic_components_8291": {
@@ -900,8 +900,8 @@
                 "blank": 9,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 197,
+            "logprobs": -317.59691373139447,
+            "tokens": 225,
             "problem_name": "977_e_cyclic_components_8291"
         },
         "791_b_bear_and_friendship_condition_8388": {
@@ -915,14 +915,14 @@
                 "blank": 8,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 208,
+            "logprobs": -342.11051143002123,
+            "tokens": 236,
             "problem_name": "791_b_bear_and_friendship_condition_8388"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 14134,
+        "logprobs": -13314.39088566053,
+        "tokens": 15231,
         "loc": 2151,
         "sloc": 1594,
         "lloc": 1641,
@@ -932,8 +932,8 @@
         "cyclomatic": 398
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 13200,
+        "logprobs": -15012.879612164841,
+        "tokens": 14087,
         "loc": 2045,
         "sloc": 1532,
         "lloc": 1565,
@@ -943,9 +943,9 @@
         "cyclomatic": 376
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.0707575757575758,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.0812096258962163,
+        "logprobs_refactored_div_original": 0.8868645609381937,
+        "avg_logprob_per_token_original": -1.0657258189937417,
+        "avg_logprob_per_token_refactored": -0.8741639344534522
     }
 }

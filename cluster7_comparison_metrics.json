@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster7",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster7/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 12,
             "cyclomatic": 14
         },
-        "logprobs": NaN,
-        "tokens": 396
+        "logprobs": -594.9171079957584,
+        "tokens": 424
     },
     "refactored_programs": {
         "1031_e_triple_flips_11983": {
@@ -28,8 +28,8 @@
                 "blank": 3,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 1338,
+            "logprobs": -734.7313390085338,
+            "tokens": 1387,
             "problem_name": "1031_e_triple_flips_11983"
         },
         "388_d_fox_and_perfect_sets_5562": {
@@ -43,8 +43,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 376,
+            "logprobs": -390.3561472857911,
+            "tokens": 411,
             "problem_name": "388_d_fox_and_perfect_sets_5562"
         },
         "925_c_big_secret_3711": {
@@ -58,8 +58,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 158,
+            "logprobs": -209.04182156859858,
+            "tokens": 195,
             "problem_name": "925_c_big_secret_3711"
         },
         "1394_b_boboniu_walks_on_graph_6794": {
@@ -73,8 +73,8 @@
                 "blank": 11,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 297,
+            "logprobs": -411.9898658827023,
+            "tokens": 330,
             "problem_name": "1394_b_boboniu_walks_on_graph_6794"
         },
         "1016_d_vasya_and_the_matrix_3445": {
@@ -88,8 +88,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 146,
+            "logprobs": -232.59003231669675,
+            "tokens": 180,
             "problem_name": "1016_d_vasya_and_the_matrix_3445"
         },
         "1071_c_triple_flips_5739": {
@@ -103,8 +103,8 @@
                 "blank": 3,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 1291,
+            "logprobs": -628.8346994113634,
+            "tokens": 1340,
             "problem_name": "1071_c_triple_flips_5739"
         },
         "289_e_polo_the_penguin_and_xor_operation_6598": {
@@ -118,8 +118,8 @@
                 "blank": 45,
                 "cyclomatic": 34
             },
-            "logprobs": NaN,
-            "tokens": 1005,
+            "logprobs": -631.3913266480484,
+            "tokens": 1041,
             "problem_name": "289_e_polo_the_penguin_and_xor_operation_6598"
         },
         "634_b_xor_equation_3074": {
@@ -133,8 +133,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 143,
+            "logprobs": -253.42308446345723,
+            "tokens": 178,
             "problem_name": "634_b_xor_equation_3074"
         },
         "862_c_mahmoud_and_ehab_and_the_xor_2355": {
@@ -148,8 +148,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 164,
+            "logprobs": -270.5082260144528,
+            "tokens": 200,
             "problem_name": "862_c_mahmoud_and_ehab_and_the_xor_2355"
         },
         "923_c_perfect_security_7561": {
@@ -163,8 +163,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 258,
+            "logprobs": -258.192753777382,
+            "tokens": 294,
             "problem_name": "923_c_perfect_security_7561"
         },
         "1427_e_xum_2840": {
@@ -178,8 +178,8 @@
                 "blank": 17,
                 "cyclomatic": 24
             },
-            "logprobs": NaN,
-            "tokens": 808,
+            "logprobs": -392.5999042704153,
+            "tokens": 848,
             "problem_name": "1427_e_xum_2840"
         },
         "1054_d_changing_array_9485": {
@@ -193,8 +193,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 163,
+            "logprobs": -246.65965183907937,
+            "tokens": 198,
             "problem_name": "1054_d_changing_array_9485"
         },
         "460_d_little_victor_and_set_2650": {
@@ -208,8 +208,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 851,
+            "logprobs": -452.62710521355916,
+            "tokens": 892,
             "problem_name": "460_d_little_victor_and_set_2650"
         },
         "15_c_industrial_nim_12943": {
@@ -223,8 +223,8 @@
                 "blank": 29,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -287.753762719061,
+            "tokens": 168,
             "problem_name": "15_c_industrial_nim_12943"
         },
         "895_c_square_subsets_12662": {
@@ -238,8 +238,8 @@
                 "blank": 6,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 249,
+            "logprobs": -283.519535741648,
+            "tokens": 306,
             "problem_name": "895_c_square_subsets_12662"
         },
         "627_a_xor_equation_4011": {
@@ -253,8 +253,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 151,
+            "logprobs": -195.34532068599142,
+            "tokens": 185,
             "problem_name": "627_a_xor_equation_4011"
         },
         "1151_b_dima_and_a_bad_xor_6990": {
@@ -268,8 +268,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 178,
+            "logprobs": -184.26722595052647,
+            "tokens": 212,
             "problem_name": "1151_b_dima_and_a_bad_xor_6990"
         },
         "1174_d_ehab_and_the_expected_xor_problem_10531": {
@@ -283,8 +283,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 126,
+            "logprobs": -189.41438445396176,
+            "tokens": 161,
             "problem_name": "1174_d_ehab_and_the_expected_xor_problem_10531"
         },
         "1325_d_ehab_the_xorcist_11372": {
@@ -298,8 +298,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 175,
+            "logprobs": -200.28479111034542,
+            "tokens": 209,
             "problem_name": "1325_d_ehab_the_xorcist_11372"
         },
         "424_c_magic_formulas_9623": {
@@ -313,8 +313,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 105,
+            "logprobs": -182.19675716720465,
+            "tokens": 139,
             "problem_name": "424_c_magic_formulas_9623"
         },
         "1416_c_xor_inverse_4402": {
@@ -328,8 +328,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 265,
+            "logprobs": -255.48216532828243,
+            "tokens": 300,
             "problem_name": "1416_c_xor_inverse_4402"
         },
         "1113_c_sasha_and_a_bit_of_relax_8341": {
@@ -343,8 +343,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 119,
+            "logprobs": -157.92509065892344,
+            "tokens": 154,
             "problem_name": "1113_c_sasha_and_a_bit_of_relax_8341"
         },
         "1323_d_present_959": {
@@ -358,8 +358,8 @@
                 "blank": 7,
                 "cyclomatic": 16
             },
-            "logprobs": NaN,
-            "tokens": 478,
+            "logprobs": -451.84897583507467,
+            "tokens": 512,
             "problem_name": "1323_d_present_959"
         },
         "1362_b_johnny_and_his_hobbies_8248": {
@@ -373,8 +373,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 142,
+            "logprobs": -204.72262142813057,
+            "tokens": 176,
             "problem_name": "1362_b_johnny_and_his_hobbies_8248"
         },
         "1516_b_agaga_xooorrr_3468": {
@@ -388,8 +388,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 146,
+            "logprobs": -155.2701271624536,
+            "tokens": 180,
             "problem_name": "1516_b_agaga_xooorrr_3468"
         },
         "1547_d_cogrowing_sequence_6488": {
@@ -403,8 +403,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 114,
+            "logprobs": -339.2840683283639,
+            "tokens": 153,
             "problem_name": "1547_d_cogrowing_sequence_6488"
         },
         "1534_e_lost_array_11486": {
@@ -418,8 +418,8 @@
                 "blank": 3,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 693,
+            "logprobs": -493.30558532365495,
+            "tokens": 727,
             "problem_name": "1534_e_lost_array_11486"
         },
         "817_e_choosing_the_commander_4644": {
@@ -433,8 +433,8 @@
                 "blank": 5,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 659,
+            "logprobs": -451.9970289469206,
+            "tokens": 696,
             "problem_name": "817_e_choosing_the_commander_4644"
         },
         "1438_d_powerful_ksenia_5652": {
@@ -448,8 +448,8 @@
                 "blank": 4,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 461,
+            "logprobs": -427.4687194349029,
+            "tokens": 509,
             "problem_name": "1438_d_powerful_ksenia_5652"
         },
         "1163_e_magical_permutation_2099": {
@@ -463,8 +463,8 @@
                 "blank": 1,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -382.27085372507986,
+            "tokens": 270,
             "problem_name": "1163_e_magical_permutation_2099"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 3,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 1291,
+            "logprobs": -733.1791135454416,
+            "tokens": 1334,
             "problem_name": "1031_e_triple_flips_11983"
         },
         "388_d_fox_and_perfect_sets_5562": {
@@ -495,8 +495,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 376,
+            "logprobs": -476.01807392601364,
+            "tokens": 405,
             "problem_name": "388_d_fox_and_perfect_sets_5562"
         },
         "925_c_big_secret_3711": {
@@ -510,8 +510,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 158,
+            "logprobs": -281.20843446373027,
+            "tokens": 189,
             "problem_name": "925_c_big_secret_3711"
         },
         "1394_b_boboniu_walks_on_graph_6794": {
@@ -525,8 +525,8 @@
                 "blank": 11,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 297,
+            "logprobs": -488.8840376489868,
+            "tokens": 324,
             "problem_name": "1394_b_boboniu_walks_on_graph_6794"
         },
         "1016_d_vasya_and_the_matrix_3445": {
@@ -540,8 +540,8 @@
                 "blank": 3,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 152,
+            "logprobs": -360.5579225062092,
+            "tokens": 180,
             "problem_name": "1016_d_vasya_and_the_matrix_3445"
         },
         "1071_c_triple_flips_5739": {
@@ -555,8 +555,8 @@
                 "blank": 3,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 1291,
+            "logprobs": -733.1791135454416,
+            "tokens": 1334,
             "problem_name": "1071_c_triple_flips_5739"
         },
         "289_e_polo_the_penguin_and_xor_operation_6598": {
@@ -570,8 +570,8 @@
                 "blank": 45,
                 "cyclomatic": 34
             },
-            "logprobs": NaN,
-            "tokens": 1005,
+            "logprobs": -696.1680652954524,
+            "tokens": 1035,
             "problem_name": "289_e_polo_the_penguin_and_xor_operation_6598"
         },
         "634_b_xor_equation_3074": {
@@ -585,8 +585,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 138,
+            "logprobs": -334.0389492802849,
+            "tokens": 167,
             "problem_name": "634_b_xor_equation_3074"
         },
         "862_c_mahmoud_and_ehab_and_the_xor_2355": {
@@ -600,8 +600,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 150,
+            "logprobs": -330.13658117780943,
+            "tokens": 180,
             "problem_name": "862_c_mahmoud_and_ehab_and_the_xor_2355"
         },
         "923_c_perfect_security_7561": {
@@ -615,8 +615,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 258,
+            "logprobs": -328.246418341969,
+            "tokens": 288,
             "problem_name": "923_c_perfect_security_7561"
         },
         "1427_e_xum_2840": {
@@ -630,8 +630,8 @@
                 "blank": 17,
                 "cyclomatic": 24
             },
-            "logprobs": NaN,
-            "tokens": 808,
+            "logprobs": -459.19834301417427,
+            "tokens": 842,
             "problem_name": "1427_e_xum_2840"
         },
         "1054_d_changing_array_9485": {
@@ -645,8 +645,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 163,
+            "logprobs": -348.21856416241127,
+            "tokens": 191,
             "problem_name": "1054_d_changing_array_9485"
         },
         "460_d_little_victor_and_set_2650": {
@@ -660,8 +660,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 851,
+            "logprobs": -551.4488704018205,
+            "tokens": 886,
             "problem_name": "460_d_little_victor_and_set_2650"
         },
         "15_c_industrial_nim_12943": {
@@ -675,8 +675,8 @@
                 "blank": 29,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -348.38099875561323,
+            "tokens": 161,
             "problem_name": "15_c_industrial_nim_12943"
         },
         "895_c_square_subsets_12662": {
@@ -690,8 +690,8 @@
                 "blank": 6,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -353.06314835751783,
+            "tokens": 287,
             "problem_name": "895_c_square_subsets_12662"
         },
         "627_a_xor_equation_4011": {
@@ -705,8 +705,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 153,
+            "logprobs": -280.1224106627793,
+            "tokens": 181,
             "problem_name": "627_a_xor_equation_4011"
         },
         "1151_b_dima_and_a_bad_xor_6990": {
@@ -720,8 +720,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 182,
+            "logprobs": -286.7709644093974,
+            "tokens": 210,
             "problem_name": "1151_b_dima_and_a_bad_xor_6990"
         },
         "1174_d_ehab_and_the_expected_xor_problem_10531": {
@@ -735,8 +735,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 126,
+            "logprobs": -286.40345815675914,
+            "tokens": 155,
             "problem_name": "1174_d_ehab_and_the_expected_xor_problem_10531"
         },
         "1325_d_ehab_the_xorcist_11372": {
@@ -750,8 +750,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 175,
+            "logprobs": -301.05651940380443,
+            "tokens": 203,
             "problem_name": "1325_d_ehab_the_xorcist_11372"
         },
         "424_c_magic_formulas_9623": {
@@ -765,8 +765,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 105,
+            "logprobs": -250.3507483209754,
+            "tokens": 133,
             "problem_name": "424_c_magic_formulas_9623"
         },
         "1416_c_xor_inverse_4402": {
@@ -780,8 +780,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 265,
+            "logprobs": -335.39320481847363,
+            "tokens": 294,
             "problem_name": "1416_c_xor_inverse_4402"
         },
         "1113_c_sasha_and_a_bit_of_relax_8341": {
@@ -795,8 +795,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 119,
+            "logprobs": -264.9493254606397,
+            "tokens": 148,
             "problem_name": "1113_c_sasha_and_a_bit_of_relax_8341"
         },
         "1323_d_present_959": {
@@ -810,8 +810,8 @@
                 "blank": 7,
                 "cyclomatic": 16
             },
-            "logprobs": NaN,
-            "tokens": 478,
+            "logprobs": -539.7123244036284,
+            "tokens": 506,
             "problem_name": "1323_d_present_959"
         },
         "1362_b_johnny_and_his_hobbies_8248": {
@@ -825,8 +825,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 142,
+            "logprobs": -278.42359888947936,
+            "tokens": 170,
             "problem_name": "1362_b_johnny_and_his_hobbies_8248"
         },
         "1516_b_agaga_xooorrr_3468": {
@@ -840,8 +840,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 146,
+            "logprobs": -232.9923296312193,
+            "tokens": 174,
             "problem_name": "1516_b_agaga_xooorrr_3468"
         },
         "1547_d_cogrowing_sequence_6488": {
@@ -855,8 +855,8 @@
                 "blank": 7,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 114,
+            "logprobs": -442.4856104964357,
+            "tokens": 146,
             "problem_name": "1547_d_cogrowing_sequence_6488"
         },
         "1534_e_lost_array_11486": {
@@ -870,8 +870,8 @@
                 "blank": 3,
                 "cyclomatic": 26
             },
-            "logprobs": NaN,
-            "tokens": 693,
+            "logprobs": -572.876269827072,
+            "tokens": 721,
             "problem_name": "1534_e_lost_array_11486"
         },
         "817_e_choosing_the_commander_4644": {
@@ -885,8 +885,8 @@
                 "blank": 5,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 659,
+            "logprobs": -538.9399874787675,
+            "tokens": 690,
             "problem_name": "817_e_choosing_the_commander_4644"
         },
         "1438_d_powerful_ksenia_5652": {
@@ -900,8 +900,8 @@
                 "blank": 4,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 461,
+            "logprobs": -499.682184322056,
+            "tokens": 503,
             "problem_name": "1438_d_powerful_ksenia_5652"
         },
         "1163_e_magical_permutation_2099": {
@@ -915,14 +915,14 @@
                 "blank": 1,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -461.26797140807236,
+            "tokens": 264,
             "problem_name": "1163_e_magical_permutation_2099"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 11824,
+        "logprobs": -10550.220079696364,
+        "tokens": 12975,
         "loc": 1581,
         "sloc": 1283,
         "lloc": 1365,
@@ -932,8 +932,8 @@
         "cyclomatic": 192
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 11361,
+        "logprobs": -12393.353542112438,
+        "tokens": 12301,
         "loc": 1510,
         "sloc": 1250,
         "lloc": 1321,
@@ -943,9 +943,9 @@
         "cyclomatic": 180
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.040753454801514,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.054792293309487,
+        "logprobs_refactored_div_original": 0.8512804902923867,
+        "avg_logprob_per_token_original": -1.0075078076670545,
+        "avg_logprob_per_token_refactored": -0.8131190812868103
     }
 }
