@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 
-n=int(input())
-p=[0,0]+list(map(int,input().split()))#tomamos la entrada
+from library import read_int, read_ints
+
+n = read_int()
+if n > 1:
+    p = [0, 0] + read_ints(n-1)
+else:
+    p = [0, 0]
 d=[0]*(n+1)#aki vamos a contar la cantidad d colores q necesita cada union
 for i in range(n,1,-1):#empezamos x las hojas hasta llegar a la raiz
     if d[i]==0:#si no estas visitado eres una hoja => solo necesitas un color

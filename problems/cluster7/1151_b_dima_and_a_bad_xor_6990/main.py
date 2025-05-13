@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-n, m = map(int, input().split())
-a = [[int(i) for i in input().split()] for _ in range(n)]
+from library import read_ints, read_matrix
+
+n, m = read_ints()
+a = read_matrix(n, m)
 t = a[0][0]
 for i in range(1, n):
     t ^= a[i][0]

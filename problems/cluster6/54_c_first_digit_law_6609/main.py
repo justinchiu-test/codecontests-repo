@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import read_int, read_ints
 
 def num_ones(a,b):
     '''returns how many nums start
@@ -21,8 +22,8 @@ def num_ones(a,b):
             ans+=10**(len(b)-1)
         return ans
     return num_ones(0,b)-num_ones(0,a-1)
-        
-        
+
+
 def dp(far,need):
     '''returns prob that the first
     far vars have at least need 1s'''
@@ -39,12 +40,12 @@ def dp(far,need):
     DP[far][need]=ans
     return ans
 
-n=int(input())
+n = read_int()
 L=[]
-for i in range(n):
-    s=list(map(int,input().split()))
-    L.append(num_ones(s[0],s[1])/(s[1]-s[0]+1))
-k=int(input())
+for _ in range(n):
+    a, b = read_ints()
+    L.append(num_ones(a, b) / (b - a + 1))
+k = read_int()
 atLeast=int((n*k-1)/100)+1
 if k==0:
     atLeast=0
@@ -52,6 +53,4 @@ DP=[]
 for i in range(n):
     DP.append([-1]*(atLeast+5))
 
-print(round(dp(n-1,atLeast),10))
-
-
+print(round(dp(n-1, atLeast), 10))

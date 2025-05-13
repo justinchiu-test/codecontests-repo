@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
+"""
+Solution for CF 1110C: maximize gcd(a⊕b, a&b) via bit manipulations.
+"""
+from library import ni, prime_factors
 
-import math
-from sys import stdin
-q = int(input())
-l = stdin.read().splitlines()
-
-for i in l:
-    n = int(i)
-    k = int(math.log2(n + 1))
-    if (1 << k) < n + 1:
-        print((1 << (k + 1)) - 1)
-        continue
+q = ni()
+for _ in range(q):
+    n = ni()
+    # if n+1 is not a power of two, answer is next all-ones: (1<<bit_length)-1
+    if (n + 1) & n:
+        print((1 << n.bit_length()) - 1)
     else:
-        found = False
-        for j in range(2, int(math.sqrt(n)) + 1):
-            if n % j == 0:
-                print(n // j)
-                found = True
-                break
-        if not found:
-            print(1)
+        # n = 2^k - 1; find smallest divisor p and print n//p (or 1 if prime)
+        p = prime_factors(n)[0]
+        print(n // p)

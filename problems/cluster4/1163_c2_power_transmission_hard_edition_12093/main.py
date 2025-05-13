@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
 
 from itertools import combinations
+from library import getint, getints
 
-n = int(input())
-
-points = []
-for _ in range(n):
-    x, y = map(int, input().split(' '))
-    points.append((x, y))
+n = getint()
+points = [tuple(getints()) for _ in range(n)]
 
 directions = {}
 for pair in combinations(points, 2):

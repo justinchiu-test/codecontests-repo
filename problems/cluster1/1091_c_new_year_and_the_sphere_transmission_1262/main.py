@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
+"""
+Solution for CF 1091C: generate sequence based on divisors and formula.
+"""
+from library import ni, divisors
 
-n=int(input())
-a={1}
-for i in range(2,int(n**0.5)+1):
-    if n%i==0:
-        a.add(i)
-        a.add(n//i)
-ans=[1]
-a=list(a)
-for i in a:
-    term=n//i
-    ans.append((term*(2+(term-1)*i))//2)
-ans.sort()
-print(*ans)
+n = ni()
+res = []
+for d in divisors(n):
+    t = n // d
+    # formula: t*(2 + (t-1)*d)//2
+    res.append((t * (2 + (t - 1) * d)) // 2)
+res.sort()
+print(*res)

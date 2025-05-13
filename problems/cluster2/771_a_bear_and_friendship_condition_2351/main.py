@@ -1,36 +1,29 @@
 #!/usr/bin/env python3
 
-n,m = map(int,input().split())
-dic = {}
-edges = []
+from library import mi, DSU
 from collections import Counter
-def find(node):
-    tmp = node
-    while node!=dic[node]:
-        node = dic[node]
-    while tmp!=dic[tmp]:
-        dic[tmp],tmp=node,dic[tmp]
-    return node
+
+# Read number of vertices and edges
+n, m = mi()
+# Initialize DSU for vertices labeled 1..n
+dsu = DSU(n+1)
+edges = []
 for _ in range(m):
-    p1,p2 = map(int,input().split())
-    dic.setdefault(p1,p1)
-    dic.setdefault(p2,p2)
-    edges.append(p1)
-    lp = find(p1)
-    rp = find(p2)
-    if lp!=rp:
-        dic[rp] = lp
-for k in dic:
-    find(k)
-def judge():
-    counter = Counter([dic[i] for i in edges])
-    s = Counter(dic.values())
-    for k in counter:
-        en,nn = counter[k],s[k]
-        if (nn**2-nn)//2!=en:
-            return False
-    return True
-if judge():
-    print("YES")
-else:
-    print("NO")
+    u, v = mi()
+    edges.append((u, v))
+    dsu.union(u, v)
+
+# Count edges per connected component
+edge_count = Counter()
+for u, v in edges:
+    root = dsu.find(u)
+    edge_count[root] += 1
+
+# Verify each component is a clique: edges = size*(size-1)/2
+ok = True
+for root, en in edge_count.items():
+    sz = dsu.get_size(root)
+    if en != sz*(sz-1)//2:
+        ok = False
+        break
+print("YES" if ok else "NO")

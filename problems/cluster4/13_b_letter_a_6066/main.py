@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 
 __author__ = 'Darren'
+from library import getint, getints
 
 
 def solve():
-    t = int(input())
+    t = getint()
     while t:
         run()
         t -= 1
@@ -56,7 +57,7 @@ def run():
 
     segments = []
     for _i in range(3):
-        temp = [int(x) for x in input().split()]
+        temp = list(getints())
         segments.append([(temp[0], temp[1]), (temp[2], temp[3])])
     vector1, vector2, vector3, vector4 = None, None, None, None
     if check_condition_1() and check_condition_2() and check_condition_3():

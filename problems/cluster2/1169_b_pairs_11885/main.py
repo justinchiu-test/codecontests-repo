@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
+from library import input, mi, li
 
-bound, m = [int(x) for x in input().split()]
+# read bound and number of pairs
+bound, m = mi()
 
 if m == 1:
     print("YES")
@@ -8,7 +10,7 @@ if m == 1:
 
 pairs_uniq = set()
 for _ in range(m):
-    x = [int(x) for x in input().split()]
+    x = li()
     x.sort()
     pairs_uniq.add((x[0], x[1]))
 

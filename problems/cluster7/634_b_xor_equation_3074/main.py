@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-s,x=map(int,input().split())
+from library import read_ints
+
+s, x = read_ints()
 if x>s or (s-x)%2!=0:
     print(0)
 else:
@@ -22,4 +24,3 @@ else:
     if flag:
         res=0
     print(res)
-    

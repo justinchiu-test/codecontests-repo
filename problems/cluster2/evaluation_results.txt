@@ -1,0 +1,34 @@
+Cluster 2 evaluation: 23/30 problems passed
+Pass rate: 76.66%
+
+Problem details:
+  - 1000_e_we_need_more_bosses_8440: PASS - Results: unknown
+  - 103_b_cthulhu_4280: FAIL - Results: unknown
+  - 104_c_cthulhu_10214: FAIL - Results: unknown
+  - 1169_b_pairs_11885: PASS - Results: unknown
+  - 1217_d_coloring_edges_7410: FAIL - Results: unknown
+  - 1242_b_01_mst_10223: PASS - Results: unknown
+  - 1243_d_01_mst_12097: PASS - Results: unknown
+  - 1249_b1_books_exchange_easy_version_7099: PASS - Results: unknown
+  - 1263_d_secret_passwords_6164: PASS - Results: unknown
+  - 1277_e_two_fairs_122: PASS - Results: unknown
+  - 1521_d_nastia_plays_with_a_tree_11693: FAIL - Results: unknown
+  - 1534_f1_falling_sand_easy_version_9507: PASS - Results: unknown
+  - 156_d_clues_3678: PASS - Results: unknown
+  - 216_b_forming_teams_6387: PASS - Results: unknown
+  - 217_a_ice_skating_2223: PASS - Results: unknown
+  - 27_b_tournament_1914: FAIL - Results: unknown
+  - 445_b_dzy_loves_chemistry_1921: PASS - Results: unknown
+  - 45_h_road_problem_460: FAIL - Results: unknown
+  - 505_b_mr_kitayutas_colorful_graph_984: PASS - Results: unknown
+  - 505_d_mr_kitayutas_technology_879: PASS - Results: unknown
+  - 510_b_fox_and_two_dots_2444: PASS - Results: unknown
+  - 653_e_bear_and_forgotten_tree_2_10362: PASS - Results: unknown
+  - 659_e_new_reform_13276: PASS - Results: unknown
+  - 690_c1_brain_network_easy_6407: PASS - Results: unknown
+  - 745_c_hongcow_builds_a_nation_7762: PASS - Results: unknown
+  - 771_a_bear_and_friendship_condition_2351: PASS - Results: unknown
+  - 791_b_bear_and_friendship_condition_8388: FAIL - Results: unknown
+  - 920_e_connected_components_167: PASS - Results: unknown
+  - 977_e_cyclic_components_8291: PASS - Results: unknown
+  - 9_e_interesting_graph_and_apples_483: PASS - Results: unknown

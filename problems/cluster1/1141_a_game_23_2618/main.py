@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
-def fun(a,b):
-    if a % b != 0:
-        return -1
-    temp = 0
-    m = a/b
-    
-    while m % 2 == 0:
-        m = m / 2
-        temp += 1
-    while m % 3 == 0:
-        m = m/3
-        temp += 1
-    if m == 1:
-        return temp
-    else :
-        return -1
-a,b = map(int,input().split())
-print(fun(b,a))
+#!/usr/bin/env python3
+"""
+Solution for CF 1141A: count moves to transform n to m by *2 or *3.
+"""
+from library import ni
+
+n = ni()
+m = ni()
+if m % n != 0:
+    print(-1)
+else:
+    x = m // n
+    cnt = 0
+    while x % 2 == 0:
+        x //= 2; cnt += 1
+    while x % 3 == 0:
+        x //= 3; cnt += 1
+    print(cnt if x == 1 else -1)

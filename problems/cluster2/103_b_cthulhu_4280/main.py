@@ -1,40 +1,18 @@
 #!/usr/bin/env python3
+from library import mi, connected_components
 
-
-inp = input().split()
-
-n = int(inp[0])
-m = int(inp[1])
-
-def dfs(x):
-
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
-
-if n >= 3 and n == m:
-
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
-    
-    for i in range(m):
-    
-        x, y = map(int, input().split())
-    
+# read n, m
+n, m = mi()
+# A connected undirected graph with n>=3 nodes and n edges has exactly one simple cycle
+if n >= 3 and m == n:
+    # build adjacency list (1-indexed)
+    e = [[] for _ in range(n+1)]
+    for _ in range(m):
+        x, y = mi()
         e[x].append(y)
-    
         e[y].append(x)
-
-    dfs(1)
- 
-    print('FHTAGN!' if len(visited) == n else 'NO')
+    # check connectivity
+    comps = connected_components(e[1:])
+    print('FHTAGN!' if len(comps) == 1 else 'NO')
 else:
     print('NO')
-
- 
- 

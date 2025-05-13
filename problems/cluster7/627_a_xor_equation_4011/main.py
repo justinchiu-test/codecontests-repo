@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
-R = lambda: map(int, input().split())
-s, x = R()
+from library import read_ints
+
+s, x = read_ints()
 if s < x or (s - x) & 1:
     print(0)
     exit(0)

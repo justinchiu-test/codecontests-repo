@@ -2,12 +2,12 @@
 
 import itertools
 import math
-import os
 import sys
+from library import getints
 
 eps = 1e-8
 
-coord = [[]] + [list(map(int, input().split())) for _ in range(8)]
+coord = [[]] + [list(getints()) for _ in range(8)]
 
 idx = list(range(1, 9))
 
@@ -50,7 +50,7 @@ def is_rect(coord):
 
 for comb in itertools.combinations(idx, 4):
     fsi = list(comb)
-    ssi = list(set(idx) - set(comb))
+    ssi = sorted(set(idx) - set(comb))
 
     fs = [coord[i] for i in fsi]
     ss = [coord[i] for i in ssi]

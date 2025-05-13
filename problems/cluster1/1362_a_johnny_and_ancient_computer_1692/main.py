@@ -1,29 +1,27 @@
 #!/usr/bin/env python3
 
-# from debug import debug
-import math
-t = int(input())
+from library import ni
 
-for ii in range(t):
-	a, b = map(int, input().split())
-	if a == b:
-		print(0)
-	else:
-		b, a = min(a,b), max(a,b)
-		if a%b:
-			print(-1)
-		else:
-			aa = int(math.log2(a//b))
-			if pow(2, aa) == a//b:
-				c = 0
-				c += aa//3
-				aa = aa%3
-
-				c += aa//2
-				aa = aa%2
-
-				c += aa//1
-				aa = aa%1
-				print(c)
-			else:
-				print(-1)
+t = ni()
+for _ in range(t):
+    a = ni()
+    b = ni()
+    if a == b:
+        print(0)
+        continue
+    x, y = sorted((a, b))
+    if y % x != 0:
+        print(-1)
+        continue
+    r = y // x
+    # r must be power of 2
+    if r & (r - 1) != 0:
+        print(-1)
+        continue
+    k = r.bit_length() - 1
+    ops = k // 3
+    k %= 3
+    ops += k // 2
+    k %= 2
+    ops += k
+    print(ops)

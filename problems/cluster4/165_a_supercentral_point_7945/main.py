@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-n=int(input())
-a=[]
-for i in range(0,n):
-    a.append([int(i) for i in input().split()])
+from library import getint, getints
+
+n = getint()
+a = [list(getints()) for _ in range(n)]
 ans=0
 for i in range(0,n):
     c1=0

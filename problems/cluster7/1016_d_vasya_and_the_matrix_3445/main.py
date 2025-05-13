@@ -1,28 +1,19 @@
 #!/usr/bin/env python3
 
-def sum(x):
-    ans = 0
-    for i in x:
-        ans ^= i
-    return ans
+from library import read_ints, xor_list, print_list
 
-i = lambda: [*map(int, input().split())]
-n, m = i()
-a = i()
-b = i()
-if sum(a) != sum(b):
+n, m = read_ints()
+a = read_ints()
+b = read_ints()
+if xor_list(a) != xor_list(b):
     print("NO")
-    quit()
-print("YES")
-one = sum(a[1:]) ^ b[0]
-print(one, end = " ")
-for i in b[1:]:
-    print(i, end = " ")
-print()
-st = ""
-for i in range(m - 1):
-    st += "0 "
-for i in a[1:]:
-    print(i, end = " ")
-    print(st)
+    exit(0)
 
+print("YES")
+# First row: compute leading element, then remaining b[1:]
+first = xor_list(a[1:]) ^ b[0]
+print_list([first] + b[1:])
+# Remaining rows: each row has one element from a[1:] then zeros
+zeros = [0] * (m - 1)
+for x in a[1:]:
+    print_list([x] + zeros)

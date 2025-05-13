@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
+from library import input, ii, mi
 
-a = int(input())
+# number of players
+a = ii()
 d = {}
 f = {}
-for i in range(a*(a-1)//2-1):
-    v, c = map(int, input().split())
+for _ in range(a*(a-1)//2-1):
+    v, c = mi()
     if v not in f:
         f[v] = []
     f[v].append(c)

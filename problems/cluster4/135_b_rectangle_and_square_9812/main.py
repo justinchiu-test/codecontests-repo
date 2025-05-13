@@ -1,29 +1,36 @@
 #!/usr/bin/env python3
 
-from math import *
+import math
+from library import getints
 def a(x1,y1,x2,y2,x3,y3,x4,y4):
     b=sorted([[x1,y1],[x2,y2],[x3,y3],[x4,y4]])
     x1,y1=b[0]
     x2,y2=b[1]
     x3,y3=b[2]
     x4,y4=b[3]
-    a1=sqrt((x1-x2)**2+(y1-y2)**2)
-    a2=sqrt((x4-x2)**2+(y4-y2)**2)
-    a3=sqrt((x4-x3)**2+(y4-y3)**2)
-    a4=sqrt((x1-x3)**2+(y1-y3)**2)
-    return a1==a2==a3==a4 and a1!=0 and a4!=0 and abs(abs(degrees(asin((y2-y1)/a1)-asin((y3-y1)/a4)))-90)<=10**(-8)
+    a1 = math.sqrt((x1-x2)**2 + (y1-y2)**2)
+    a2 = math.sqrt((x4-x2)**2 + (y4-y2)**2)
+    a3 = math.sqrt((x4-x3)**2 + (y4-y3)**2)
+    a4 = math.sqrt((x1-x3)**2 + (y1-y3)**2)
+    return (
+        a1 == a2 == a3 == a4 and a1 != 0
+        and abs(abs(math.degrees(math.asin((y2-y1)/a1) - math.asin((y3-y1)/a4))) - 90) <= 1e-8
+    )
 def b(x1,y1,x2,y2,x3,y3,x4,y4):
     b=sorted([[x1,y1],[x2,y2],[x3,y3],[x4,y4]])
     x1,y1=b[0]
     x2,y2=b[1]
     x3,y3=b[2]
     x4,y4=b[3]
-    a1=sqrt((x1-x2)**2+(y1-y2)**2)
-    a2=sqrt((x4-x2)**2+(y4-y2)**2)
-    a3=sqrt((x4-x3)**2+(y4-y3)**2)
-    a4=sqrt((x1-x3)**2+(y1-y3)**2)
-    return a1==a3 and a2==a4 and a1!=0 and a4!=0 and abs(abs(degrees(asin((y2-y1)/a1)-asin((y3-y1)/a4)))-90)<=10**(-8)
-c=[list(map(int,input().split())) for i in range(8)]
+    a1 = math.sqrt((x1-x2)**2 + (y1-y2)**2)
+    a2 = math.sqrt((x4-x2)**2 + (y4-y2)**2)
+    a3 = math.sqrt((x4-x3)**2 + (y4-y3)**2)
+    a4 = math.sqrt((x1-x3)**2 + (y1-y3)**2)
+    return (
+        a1 == a3 and a2 == a4 and a1 != 0
+        and abs(abs(math.degrees(math.asin((y2-y1)/a1) - math.asin((y3-y1)/a4))) - 90) <= 1e-8
+    )
+c = [list(getints()) for _ in range(8)]
 z=False
 for i in range(5):
     for j in range(i+1,6):

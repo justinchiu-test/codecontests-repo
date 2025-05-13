@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
-n, x = map(int, input().split())
+from library import read_ints
+
+n, x = read_ints()
 if (n == 2 and x == 0):
     print("NO")
     quit()
@@ -18,6 +20,7 @@ for i in range(n-3):
     print(i+1, end = " ")
     ans = (ans ^ (i+1))
 if (ans == x):
-    print(b, a, a+b)
+    # ensure correct order: a then b
+    print(a, b, a+b)
 else:
     print(0, a, a^ans^x)

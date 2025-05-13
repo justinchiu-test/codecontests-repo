@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 
-n,x,y=map(int,input().split())
-lu=0
+from library import getints
+
+n, x, y = getints()
+lu = ld = ru = rd = u = d = l = r = 0
 ld=0
 ru=0
 rd=0
@@ -10,8 +12,8 @@ d=0
 l=0
 r=0
 
-for i in range(n):
-    a,b=map(int,input().split())
+for _ in range(n):
+    a, b = getints()
     if(a<x and b<y):
         ld+=1
     elif(a<x and b>y):
@@ -48,7 +50,3 @@ elif(ind==2):
     print(x+1,y)
 else:
     print(x,y-1)
-    
-        
-        
-        
