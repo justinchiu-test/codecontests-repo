@@ -1,0 +1,951 @@
+{
+    "cluster_name": "cluster4",
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "logprobs_enabled": true,
+    "refactored_library": {
+        "file_path": "problems/cluster4/library.py",
+        "metrics": {
+            "loc": 221,
+            "sloc": 191,
+            "lloc": 204,
+            "comments": 6,
+            "multi": 2,
+            "blank": 20,
+            "cyclomatic": 119
+        },
+        "logprobs": -1152.0627973454987,
+        "tokens": 2028
+    },
+    "refactored_programs": {
+        "13_b_letter_a_6066": {
+            "file_path": "problems/cluster4/13_b_letter_a_6066/main.py",
+            "metrics": {
+                "loc": 93,
+                "sloc": 72,
+                "lloc": 71,
+                "comments": 1,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 18
+            },
+            "logprobs": -501.3621112485244,
+            "tokens": 837,
+            "problem_name": "13_b_letter_a_6066"
+        },
+        "630_o_arrow_1929": {
+            "file_path": "problems/cluster4/630_o_arrow_1929/main.py",
+            "metrics": {
+                "loc": 219,
+                "sloc": 168,
+                "lloc": 167,
+                "comments": 1,
+                "multi": 0,
+                "blank": 50,
+                "cyclomatic": 56
+            },
+            "logprobs": -1246.6446566662332,
+            "tokens": 2105,
+            "problem_name": "630_o_arrow_1929"
+        },
+        "659_d_bicycle_race_5157": {
+            "file_path": "problems/cluster4/659_d_bicycle_race_5157/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -175.2777196081162,
+            "tokens": 189,
+            "problem_name": "659_d_bicycle_race_5157"
+        },
+        "749_b_parallelogram_is_back_2975": {
+            "file_path": "problems/cluster4/749_b_parallelogram_is_back_2975/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 13,
+                "lloc": 13,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": -146.47610032215366,
+            "tokens": 154,
+            "problem_name": "749_b_parallelogram_is_back_2975"
+        },
+        "499_c_crazy_town_6399": {
+            "file_path": "problems/cluster4/499_c_crazy_town_6399/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -217.64192044345933,
+            "tokens": 239,
+            "problem_name": "499_c_crazy_town_6399"
+        },
+        "1468_f_full_turn_7213": {
+            "file_path": "problems/cluster4/1468_f_full_turn_7213/main.py",
+            "metrics": {
+                "loc": 85,
+                "sloc": 62,
+                "lloc": 71,
+                "comments": 11,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 21
+            },
+            "logprobs": -367.60608386889277,
+            "tokens": 752,
+            "problem_name": "1468_f_full_turn_7213"
+        },
+        "886_f_symmetric_projections_6728": {
+            "file_path": "problems/cluster4/886_f_symmetric_projections_6728/main.py",
+            "metrics": {
+                "loc": 124,
+                "sloc": 91,
+                "lloc": 91,
+                "comments": 3,
+                "multi": 0,
+                "blank": 30,
+                "cyclomatic": 33
+            },
+            "logprobs": -640.4736520200225,
+            "tokens": 804,
+            "problem_name": "886_f_symmetric_projections_6728"
+        },
+        "618_c_constellation_3489": {
+            "file_path": "problems/cluster4/618_c_constellation_3489/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 17,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": -245.6478731741158,
+            "tokens": 285,
+            "problem_name": "618_c_constellation_3489"
+        },
+        "598_f_cut_length_4738": {
+            "file_path": "problems/cluster4/598_f_cut_length_4738/main.py",
+            "metrics": {
+                "loc": 34,
+                "sloc": 29,
+                "lloc": 30,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 12
+            },
+            "logprobs": -373.0702760059783,
+            "tokens": 409,
+            "problem_name": "598_f_cut_length_4738"
+        },
+        "334_b_eight_point_sets_7016": {
+            "file_path": "problems/cluster4/334_b_eight_point_sets_7016/main.py",
+            "metrics": {
+                "loc": 18,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -175.15431213456014,
+            "tokens": 291,
+            "problem_name": "334_b_eight_point_sets_7016"
+        },
+        "552_d_vanya_and_triangles_5048": {
+            "file_path": "problems/cluster4/552_d_vanya_and_triangles_5048/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 23,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -197.4658080549581,
+            "tokens": 208,
+            "problem_name": "552_d_vanya_and_triangles_5048"
+        },
+        "1163_c2_power_transmission_hard_edition_12093": {
+            "file_path": "problems/cluster4/1163_c2_power_transmission_hard_edition_12093/main.py",
+            "metrics": {
+                "loc": 34,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": -202.01473510620576,
+            "tokens": 261,
+            "problem_name": "1163_c2_power_transmission_hard_edition_12093"
+        },
+        "961_d_pair_of_lines_12769": {
+            "file_path": "problems/cluster4/961_d_pair_of_lines_12769/main.py",
+            "metrics": {
+                "loc": 49,
+                "sloc": 41,
+                "lloc": 41,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 9
+            },
+            "logprobs": -278.65475978901213,
+            "tokens": 482,
+            "problem_name": "961_d_pair_of_lines_12769"
+        },
+        "464_b_restore_cube__2130": {
+            "file_path": "problems/cluster4/464_b_restore_cube__2130/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 27,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -382.07406056433075,
+            "tokens": 349,
+            "problem_name": "464_b_restore_cube__2130"
+        },
+        "2_c_commentator_problem_4414": {
+            "file_path": "problems/cluster4/2_c_commentator_problem_4414/main.py",
+            "metrics": {
+                "loc": 139,
+                "sloc": 115,
+                "lloc": 121,
+                "comments": 9,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 17
+            },
+            "logprobs": -641.0874517197904,
+            "tokens": 1746,
+            "problem_name": "2_c_commentator_problem_4414"
+        },
+        "617_d_polyline_7236": {
+            "file_path": "problems/cluster4/617_d_polyline_7236/main.py",
+            "metrics": {
+                "loc": 60,
+                "sloc": 43,
+                "lloc": 44,
+                "comments": 1,
+                "multi": 15,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -276.4673430985199,
+            "tokens": 586,
+            "problem_name": "617_d_polyline_7236"
+        },
+        "1271_c_shawarma_tent_643": {
+            "file_path": "problems/cluster4/1271_c_shawarma_tent_643/main.py",
+            "metrics": {
+                "loc": 54,
+                "sloc": 45,
+                "lloc": 45,
+                "comments": 2,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": -239.30919072389565,
+            "tokens": 323,
+            "problem_name": "1271_c_shawarma_tent_643"
+        },
+        "934_e_a_colourful_prospect_3399": {
+            "file_path": "problems/cluster4/934_e_a_colourful_prospect_3399/main.py",
+            "metrics": {
+                "loc": 138,
+                "sloc": 121,
+                "lloc": 121,
+                "comments": 8,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 39
+            },
+            "logprobs": -835.6679222387227,
+            "tokens": 1377,
+            "problem_name": "934_e_a_colourful_prospect_3399"
+        },
+        "32_e_hideandseek_3373": {
+            "file_path": "problems/cluster4/32_e_hideandseek_3373/main.py",
+            "metrics": {
+                "loc": 55,
+                "sloc": 53,
+                "lloc": 53,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 19
+            },
+            "logprobs": -420.54157891002643,
+            "tokens": 913,
+            "problem_name": "32_e_hideandseek_3373"
+        },
+        "889_d_symmetric_projections_6832": {
+            "file_path": "problems/cluster4/889_d_symmetric_projections_6832/main.py",
+            "metrics": {
+                "loc": 124,
+                "sloc": 91,
+                "lloc": 91,
+                "comments": 3,
+                "multi": 0,
+                "blank": 30,
+                "cyclomatic": 33
+            },
+            "logprobs": -640.4736520200225,
+            "tokens": 804,
+            "problem_name": "889_d_symmetric_projections_6832"
+        },
+        "165_a_supercentral_point_7945": {
+            "file_path": "problems/cluster4/165_a_supercentral_point_7945/main.py",
+            "metrics": {
+                "loc": 13,
+                "sloc": 8,
+                "lloc": 8,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 3
+            },
+            "logprobs": -97.31048680652121,
+            "tokens": 110,
+            "problem_name": "165_a_supercentral_point_7945"
+        },
+        "183_b_zoo_1910": {
+            "file_path": "problems/cluster4/183_b_zoo_1910/main.py",
+            "metrics": {
+                "loc": 75,
+                "sloc": 42,
+                "lloc": 48,
+                "comments": 29,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 7
+            },
+            "logprobs": -906.7123947165805,
+            "tokens": 816,
+            "problem_name": "183_b_zoo_1910"
+        },
+        "514_b_han_solo_and_lazer_gun_9314": {
+            "file_path": "problems/cluster4/514_b_han_solo_and_lazer_gun_9314/main.py",
+            "metrics": {
+                "loc": 26,
+                "sloc": 19,
+                "lloc": 19,
+                "comments": 4,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": -235.3300889599325,
+            "tokens": 234,
+            "problem_name": "514_b_han_solo_and_lazer_gun_9314"
+        },
+        "850_a_five_dimensional_points_3812": {
+            "file_path": "problems/cluster4/850_a_five_dimensional_points_3812/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 37,
+                "lloc": 37,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 2
+            },
+            "logprobs": -361.8202088111392,
+            "tokens": 272,
+            "problem_name": "850_a_five_dimensional_points_3812"
+        },
+        "407_a_triangle_11184": {
+            "file_path": "problems/cluster4/407_a_triangle_11184/main.py",
+            "metrics": {
+                "loc": 120,
+                "sloc": 102,
+                "lloc": 106,
+                "comments": 2,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 28
+            },
+            "logprobs": -376.64102986933045,
+            "tokens": 867,
+            "problem_name": "407_a_triangle_11184"
+        },
+        "1163_c1_power_transmission_easy_edition_2411": {
+            "file_path": "problems/cluster4/1163_c1_power_transmission_easy_edition_2411/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 32,
+                "lloc": 32,
+                "comments": 1,
+                "multi": 0,
+                "blank": 10,
+                "cyclomatic": 3
+            },
+            "logprobs": -246.56125140622171,
+            "tokens": 353,
+            "problem_name": "1163_c1_power_transmission_easy_edition_2411"
+        },
+        "135_b_rectangle_and_square_9812": {
+            "file_path": "problems/cluster4/135_b_rectangle_and_square_9812/main.py",
+            "metrics": {
+                "loc": 52,
+                "sloc": 50,
+                "lloc": 50,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 9
+            },
+            "logprobs": -341.7954571623653,
+            "tokens": 664,
+            "problem_name": "135_b_rectangle_and_square_9812"
+        },
+        "498_a_crazy_town_4318": {
+            "file_path": "problems/cluster4/498_a_crazy_town_4318/main.py",
+            "metrics": {
+                "loc": 17,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -174.5151499687875,
+            "tokens": 179,
+            "problem_name": "498_a_crazy_town_4318"
+        },
+        "1046_i_say_hello_9380": {
+            "file_path": "problems/cluster4/1046_i_say_hello_9380/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 6
+            },
+            "logprobs": -211.79434501218472,
+            "tokens": 256,
+            "problem_name": "1046_i_say_hello_9380"
+        },
+        "136_d_rectangle_and_square_9500": {
+            "file_path": "problems/cluster4/136_d_rectangle_and_square_9500/main.py",
+            "metrics": {
+                "loc": 69,
+                "sloc": 53,
+                "lloc": 53,
+                "comments": 1,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 19
+            },
+            "logprobs": -382.8907725741184,
+            "tokens": 548,
+            "problem_name": "136_d_rectangle_and_square_9500"
+        }
+    },
+    "original_programs": {
+        "13_b_letter_a_6066": {
+            "file_path": "problems_original/cluster4/13_b_letter_a_6066/main.py",
+            "metrics": {
+                "loc": 93,
+                "sloc": 72,
+                "lloc": 71,
+                "comments": 1,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 18
+            },
+            "logprobs": -563.2563814833827,
+            "tokens": 831,
+            "problem_name": "13_b_letter_a_6066"
+        },
+        "630_o_arrow_1929": {
+            "file_path": "problems_original/cluster4/630_o_arrow_1929/main.py",
+            "metrics": {
+                "loc": 219,
+                "sloc": 168,
+                "lloc": 167,
+                "comments": 1,
+                "multi": 0,
+                "blank": 50,
+                "cyclomatic": 56
+            },
+            "logprobs": -1320.5125914769606,
+            "tokens": 2099,
+            "problem_name": "630_o_arrow_1929"
+        },
+        "659_d_bicycle_race_5157": {
+            "file_path": "problems_original/cluster4/659_d_bicycle_race_5157/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -270.7484822293258,
+            "tokens": 183,
+            "problem_name": "659_d_bicycle_race_5157"
+        },
+        "749_b_parallelogram_is_back_2975": {
+            "file_path": "problems_original/cluster4/749_b_parallelogram_is_back_2975/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 13,
+                "lloc": 13,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": -255.71697795115224,
+            "tokens": 148,
+            "problem_name": "749_b_parallelogram_is_back_2975"
+        },
+        "499_c_crazy_town_6399": {
+            "file_path": "problems_original/cluster4/499_c_crazy_town_6399/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -306.3116244256101,
+            "tokens": 233,
+            "problem_name": "499_c_crazy_town_6399"
+        },
+        "1468_f_full_turn_7213": {
+            "file_path": "problems_original/cluster4/1468_f_full_turn_7213/main.py",
+            "metrics": {
+                "loc": 85,
+                "sloc": 62,
+                "lloc": 71,
+                "comments": 11,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 21
+            },
+            "logprobs": -467.6800612423035,
+            "tokens": 746,
+            "problem_name": "1468_f_full_turn_7213"
+        },
+        "886_f_symmetric_projections_6728": {
+            "file_path": "problems_original/cluster4/886_f_symmetric_projections_6728/main.py",
+            "metrics": {
+                "loc": 124,
+                "sloc": 91,
+                "lloc": 91,
+                "comments": 3,
+                "multi": 0,
+                "blank": 30,
+                "cyclomatic": 33
+            },
+            "logprobs": -730.0827213844766,
+            "tokens": 798,
+            "problem_name": "886_f_symmetric_projections_6728"
+        },
+        "618_c_constellation_3489": {
+            "file_path": "problems_original/cluster4/618_c_constellation_3489/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 17,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": -323.82792329656064,
+            "tokens": 279,
+            "problem_name": "618_c_constellation_3489"
+        },
+        "598_f_cut_length_4738": {
+            "file_path": "problems_original/cluster4/598_f_cut_length_4738/main.py",
+            "metrics": {
+                "loc": 34,
+                "sloc": 29,
+                "lloc": 30,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 12
+            },
+            "logprobs": -471.75946186979917,
+            "tokens": 403,
+            "problem_name": "598_f_cut_length_4738"
+        },
+        "334_b_eight_point_sets_7016": {
+            "file_path": "problems_original/cluster4/334_b_eight_point_sets_7016/main.py",
+            "metrics": {
+                "loc": 18,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -284.82504965436334,
+            "tokens": 285,
+            "problem_name": "334_b_eight_point_sets_7016"
+        },
+        "552_d_vanya_and_triangles_5048": {
+            "file_path": "problems_original/cluster4/552_d_vanya_and_triangles_5048/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 23,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -276.2952317308227,
+            "tokens": 202,
+            "problem_name": "552_d_vanya_and_triangles_5048"
+        },
+        "1163_c2_power_transmission_hard_edition_12093": {
+            "file_path": "problems_original/cluster4/1163_c2_power_transmission_hard_edition_12093/main.py",
+            "metrics": {
+                "loc": 34,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": -300.5193490001551,
+            "tokens": 255,
+            "problem_name": "1163_c2_power_transmission_hard_edition_12093"
+        },
+        "961_d_pair_of_lines_12769": {
+            "file_path": "problems_original/cluster4/961_d_pair_of_lines_12769/main.py",
+            "metrics": {
+                "loc": 49,
+                "sloc": 41,
+                "lloc": 41,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 9
+            },
+            "logprobs": -385.63027705030095,
+            "tokens": 476,
+            "problem_name": "961_d_pair_of_lines_12769"
+        },
+        "464_b_restore_cube__2130": {
+            "file_path": "problems_original/cluster4/464_b_restore_cube__2130/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 27,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -467.9685515344806,
+            "tokens": 343,
+            "problem_name": "464_b_restore_cube__2130"
+        },
+        "2_c_commentator_problem_4414": {
+            "file_path": "problems_original/cluster4/2_c_commentator_problem_4414/main.py",
+            "metrics": {
+                "loc": 139,
+                "sloc": 115,
+                "lloc": 121,
+                "comments": 9,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 17
+            },
+            "logprobs": -740.2978806442086,
+            "tokens": 1740,
+            "problem_name": "2_c_commentator_problem_4414"
+        },
+        "617_d_polyline_7236": {
+            "file_path": "problems_original/cluster4/617_d_polyline_7236/main.py",
+            "metrics": {
+                "loc": 60,
+                "sloc": 43,
+                "lloc": 44,
+                "comments": 1,
+                "multi": 15,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -379.08188483071797,
+            "tokens": 580,
+            "problem_name": "617_d_polyline_7236"
+        },
+        "1271_c_shawarma_tent_643": {
+            "file_path": "problems_original/cluster4/1271_c_shawarma_tent_643/main.py",
+            "metrics": {
+                "loc": 54,
+                "sloc": 45,
+                "lloc": 45,
+                "comments": 2,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": -353.546052956291,
+            "tokens": 318,
+            "problem_name": "1271_c_shawarma_tent_643"
+        },
+        "934_e_a_colourful_prospect_3399": {
+            "file_path": "problems_original/cluster4/934_e_a_colourful_prospect_3399/main.py",
+            "metrics": {
+                "loc": 138,
+                "sloc": 121,
+                "lloc": 121,
+                "comments": 8,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 39
+            },
+            "logprobs": -912.3764497034139,
+            "tokens": 1371,
+            "problem_name": "934_e_a_colourful_prospect_3399"
+        },
+        "32_e_hideandseek_3373": {
+            "file_path": "problems_original/cluster4/32_e_hideandseek_3373/main.py",
+            "metrics": {
+                "loc": 55,
+                "sloc": 53,
+                "lloc": 53,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 19
+            },
+            "logprobs": -517.6506317857518,
+            "tokens": 907,
+            "problem_name": "32_e_hideandseek_3373"
+        },
+        "889_d_symmetric_projections_6832": {
+            "file_path": "problems_original/cluster4/889_d_symmetric_projections_6832/main.py",
+            "metrics": {
+                "loc": 124,
+                "sloc": 91,
+                "lloc": 91,
+                "comments": 3,
+                "multi": 0,
+                "blank": 30,
+                "cyclomatic": 33
+            },
+            "logprobs": -730.0946842754765,
+            "tokens": 798,
+            "problem_name": "889_d_symmetric_projections_6832"
+        },
+        "165_a_supercentral_point_7945": {
+            "file_path": "problems_original/cluster4/165_a_supercentral_point_7945/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -226.03147267118874,
+            "tokens": 257,
+            "problem_name": "165_a_supercentral_point_7945"
+        },
+        "183_b_zoo_1910": {
+            "file_path": "problems_original/cluster4/183_b_zoo_1910/main.py",
+            "metrics": {
+                "loc": 75,
+                "sloc": 42,
+                "lloc": 48,
+                "comments": 29,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 7
+            },
+            "logprobs": -991.4744277683917,
+            "tokens": 810,
+            "problem_name": "183_b_zoo_1910"
+        },
+        "514_b_han_solo_and_lazer_gun_9314": {
+            "file_path": "problems_original/cluster4/514_b_han_solo_and_lazer_gun_9314/main.py",
+            "metrics": {
+                "loc": 26,
+                "sloc": 19,
+                "lloc": 19,
+                "comments": 4,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": -334.5114056931662,
+            "tokens": 228,
+            "problem_name": "514_b_han_solo_and_lazer_gun_9314"
+        },
+        "850_a_five_dimensional_points_3812": {
+            "file_path": "problems_original/cluster4/850_a_five_dimensional_points_3812/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 37,
+                "lloc": 37,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 2
+            },
+            "logprobs": -434.1569798196298,
+            "tokens": 265,
+            "problem_name": "850_a_five_dimensional_points_3812"
+        },
+        "407_a_triangle_11184": {
+            "file_path": "problems_original/cluster4/407_a_triangle_11184/main.py",
+            "metrics": {
+                "loc": 120,
+                "sloc": 102,
+                "lloc": 106,
+                "comments": 2,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 28
+            },
+            "logprobs": -458.4844966187477,
+            "tokens": 861,
+            "problem_name": "407_a_triangle_11184"
+        },
+        "1163_c1_power_transmission_easy_edition_2411": {
+            "file_path": "problems_original/cluster4/1163_c1_power_transmission_easy_edition_2411/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 32,
+                "lloc": 32,
+                "comments": 1,
+                "multi": 0,
+                "blank": 10,
+                "cyclomatic": 3
+            },
+            "logprobs": -355.5478769572729,
+            "tokens": 347,
+            "problem_name": "1163_c1_power_transmission_easy_edition_2411"
+        },
+        "135_b_rectangle_and_square_9812": {
+            "file_path": "problems_original/cluster4/135_b_rectangle_and_square_9812/main.py",
+            "metrics": {
+                "loc": 52,
+                "sloc": 50,
+                "lloc": 50,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 9
+            },
+            "logprobs": -426.45068061295825,
+            "tokens": 658,
+            "problem_name": "135_b_rectangle_and_square_9812"
+        },
+        "498_a_crazy_town_4318": {
+            "file_path": "problems_original/cluster4/498_a_crazy_town_4318/main.py",
+            "metrics": {
+                "loc": 17,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -264.7862289116271,
+            "tokens": 173,
+            "problem_name": "498_a_crazy_town_4318"
+        },
+        "1046_i_say_hello_9380": {
+            "file_path": "problems_original/cluster4/1046_i_say_hello_9380/main.py",
+            "metrics": {
+                "loc": 70,
+                "sloc": 46,
+                "lloc": 49,
+                "comments": 5,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 11
+            },
+            "logprobs": -642.9990337218402,
+            "tokens": 557,
+            "problem_name": "1046_i_say_hello_9380"
+        },
+        "136_d_rectangle_and_square_9500": {
+            "file_path": "problems_original/cluster4/136_d_rectangle_and_square_9500/main.py",
+            "metrics": {
+                "loc": 69,
+                "sloc": 53,
+                "lloc": 53,
+                "comments": 1,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 19
+            },
+            "logprobs": -473.12287769460613,
+            "tokens": 542,
+            "problem_name": "136_d_rectangle_and_square_9500"
+        }
+    },
+    "aggregated_metrics_refactored": {
+        "logprobs": -12690.545190350222,
+        "tokens": 19441,
+        "loc": 2067,
+        "sloc": 1657,
+        "lloc": 1713,
+        "comments": 100,
+        "multi": 17,
+        "blank": 292,
+        "cyclomatic": 453
+    },
+    "aggregated_metrics_original": {
+        "logprobs": -14665.747748994985,
+        "tokens": 17693,
+        "loc": 1900,
+        "sloc": 1504,
+        "lloc": 1550,
+        "comments": 96,
+        "multi": 15,
+        "blank": 284,
+        "cyclomatic": 336
+    },
+    "comparison_ratios": {
+        "tokens_refactored_div_original": 1.0987961340643193,
+        "logprobs_refactored_div_original": 0.8653186600199011,
+        "avg_logprob_per_token_original": -0.8289011331597234,
+        "avg_logprob_per_token_refactored": -0.6527722437297578
+    }
+}
