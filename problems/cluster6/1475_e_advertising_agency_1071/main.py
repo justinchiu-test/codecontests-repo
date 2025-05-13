@@ -1,29 +1,43 @@
 #!/usr/bin/env python3
 
-
-import math
-def c (k, n):
-    return (math.factorial(n) // (math.factorial(k) * math.factorial(n - k))) % (10**9 + 7)
+from library import read_int, read_ints, binomial_mod, MOD
 
 def solve():
-    n, k = map(int, input().split())
-    a = []
-    for i in input().split():
-        a.append(int(i))
-    
-    a.sort()
-    m = dict()
+    # Read input: n = total bloggers, k = bloggers to select
+    n, k = read_ints()
+    followers = read_ints()
 
-    for i in a:
-        if(m.get(i, 0) == 0): m[i] = 1
-        else: m[i] += 1
+    # Sort followers in descending order to pick bloggers with most followers
+    followers.sort(reverse=True)
 
-    ind = n - k
-    while ind < n - 1 and a[ind + 1] == a[ind]: ind += 1
-    print(c(ind - (n - k) + 1, m[a[n - k]]))
+    # Count the frequency of each follower count
+    frequency = {}
+    for f in followers:
+        frequency[f] = frequency.get(f, 0) + 1
 
-t = int(input())
+    # Find the kth largest follower count (the threshold)
+    threshold = followers[k-1]
 
-while t > 0:
-    t -= 1
-    solve()
+    # Calculate how many bloggers have exactly the threshold followers
+    total_with_threshold = frequency[threshold]
+
+    # Calculate how many of those threshold bloggers we need to include
+    # to reach exactly k bloggers
+    needed_from_threshold = followers[:k].count(threshold)
+
+    # The answer is the binomial coefficient: ways to choose needed_from_threshold
+    # bloggers from total_with_threshold bloggers with the same follower count
+    result = binomial_mod(total_with_threshold, needed_from_threshold, MOD)
+
+    print(result)
+
+def main():
+    # Read number of test cases
+    t = read_int()
+
+    # Process each test case
+    for _ in range(t):
+        solve()
+
+if __name__ == "__main__":
+    main()

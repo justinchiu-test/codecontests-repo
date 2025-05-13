@@ -1,32 +1,33 @@
 #!/usr/bin/env python3
 
-for _ in range(int(input())):
-    n=int(input())
-    i=1
-    c=2
-    l=[]
-    y=n
-    while(i<=2):
-        if n%c==0:
-            n=n//c
-            i=i+1
-            l.append(c)
-        if c>=y**0.5:
-            break
-        c=c+1
-    if l==[] or len(l)==1:
-        print("NO")
-    elif y%(l[0]*l[1])==0:
-        x=y//(l[0]*l[1])
-        if x not in l and x!=1:
-            print("YES")
-            l.append(x)
-            for i in range(len(l)):
-                if i==len(l)-1:
-                    print(l[i])
-                else:
-                    print(l[i],end=" ")
-        else:
-            print("NO")
+from library import read_int
+
+def find_three_distinct_factors(n):
+    """
+    Try to find three distinct factors a, b, c such that a*b*c = n
+    """
+    for a in range(2, int(n**(1/3)) + 1):
+        if n % a == 0:
+            # Found first factor
+            remaining = n // a
+            
+            # Find second factor
+            for b in range(a + 1, int(remaining**0.5) + 1):
+                if remaining % b == 0:
+                    c = remaining // b
+                    if c > b:  # Ensure three distinct factors
+                        return a, b, c
+    
+    return None
+
+t = read_int()
+for _ in range(t):
+    n = read_int()
+    
+    result = find_three_distinct_factors(n)
+    
+    if result:
+        print("YES")
+        print(*result)
     else:
         print("NO")

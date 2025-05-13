@@ -1,38 +1,38 @@
 #!/usr/bin/env python3
 
+from library import Graph
 
-n , m = map(int,input().split())
-g = [[] for i in range(n + 1 )]
+n, m = map(int, input().split())
+graph = Graph(n + 1)  # 1-indexed
 
-e = 0
-vx = 0
+# Build the graph from input
+for _ in range(m):
+    a, b = map(int, input().split())
+    graph.add_edge(a, b)
 
-for i in range(m):
-    a , b = map(int,input().split())
-    g[a].append(b)
-    g[b].append(a)
+# Check each connected component
+components = graph.find_connected_components()
 
-vis = [False for i in range(n + 1 )]
+# Filter out the 0th vertex component (since it's 1-indexed)
+components = [comp for comp in components if 0 not in comp]
 
-def dfs(node):
-    global vx , e
-    stack = [node]
-    while(stack):
-        node = stack.pop()
-        if not vis[node]:
-            vx +=1
-            vis[node] = True
-            for j in g[node]:
-                e +=1
-                stack.append(j)
+# Check if each component is a complete graph
+for component in components:
+    vertex_count = len(component)
+    edge_count = 0
+    
+    # Count edges in this component
+    for vertex in component:
+        edge_count += len(graph.adj[vertex])
+    
+    # Each edge is counted twice (once from each end)
+    edge_count //= 2
+    
+    # Check if it's a complete graph
+    expected_edges = (vertex_count * (vertex_count - 1)) // 2
+    
+    if edge_count != expected_edges:
+        print("No")
+        exit()
 
-ans = 'YES'
-for i in range(1 , n + 1):
-    if not vis[i]:
-        e = vx = 0
-        dfs(i)
-        e //=2
-        if e != vx*(vx - 1)//2:
-            ans = 'NO'
-
-print(ans)
+print("Yes")

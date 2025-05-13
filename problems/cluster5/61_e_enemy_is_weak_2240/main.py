@@ -1,63 +1,36 @@
 #!/usr/bin/env python3
 
-from sys import stdin
+from library import read_int, read_ints, MultiColumnSegmentTree
 
+def main():
+    # Read input
+    n = read_int()
+    a = read_ints()
+    
+    # Initialize segment tree for efficient range sum queries
+    tree = MultiColumnSegmentTree(n)
+    
+    # Map values to their ranks (0-indexed)
+    ranks = {val: idx for idx, val in enumerate(sorted(a))}
+    
+    # Count triplets where a[i] > a[j] > a[k] and i < j < k
+    result = 0
+    
+    # Process the array from right to left
+    for i in range(n - 1, -1, -1):
+        rank = ranks[a[i]]
+        
+        # Count elements processed so far that are greater than a[i]
+        # and have another element greater than them (column 1)
+        result += tree.query(rank, 1)
+        
+        # Update the first column (count of elements)
+        tree.update(rank, 1, 0)
+        
+        # Update the second column (count of elements with another element greater than them)
+        tree.update(rank, tree.query(rank, 0), 1)
+    
+    return result
 
-class order_tree:
-    def __init__(self, n):
-        self.tree, self.n = [[0, 0] for _ in range(n << 1)], n
-
-    # get interval[l,r)
-    def query(self, r, col):
-        res = 0
-        l = self.n
-        r += self.n
-
-        while l < r:
-            if l & 1:
-                res += self.tree[l][col]
-                l += 1
-
-            if r & 1:
-                r -= 1
-                res += self.tree[r][col]
-
-            l >>= 1
-            r >>= 1
-
-        return res
-
-    def update(self, ix, val, col):
-        ix += self.n
-
-        # set new value
-        self.tree[ix][col] += val
-
-        # move up
-        while ix > 1:
-            self.tree[ix >> 1][col] = self.tree[ix][col] + self.tree[ix ^ 1][col]
-            ix >>= 1
-
-
-def fast3():
-    import os, sys, atexit
-    from io import BytesIO
-    sys.stdout = BytesIO()
-    _write = sys.stdout.write
-    sys.stdout.write = lambda s: _write(s.encode())
-    atexit.register(lambda: os.write(1, sys.stdout.getvalue()))
-    return BytesIO(os.read(0, os.fstat(0).st_size)).readline
-
-
-input = fast3()
-n, a = int(input()), [int(x) for x in input().split()]
-tree, ans = order_tree(n), 0
-mem = {i: j for j, i in enumerate(sorted(a))}
-
-for i in range(n - 1, -1, -1):
-    cur = mem[a[i]]
-    ans += tree.query(cur, 1)
-    tree.update(cur, 1, 0)
-    tree.update(cur, tree.query(cur, 0), 1)
-
-print(ans)
+if __name__ == "__main__":
+    print(main())

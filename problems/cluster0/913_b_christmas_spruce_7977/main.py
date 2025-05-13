@@ -1,34 +1,37 @@
 #!/usr/bin/env python3
 
-if __name__ == '__main__':
-    n = int(input())
-    nonleaf = [0 for i in range(1010)]
-    child = [[] for i in range(1010)]
-    leaf = [0 for i in range(1010)]
+from library import read_int, make_graph, create_child_array, find_leaf_nodes
 
-    def dfs(s):
-        cnt = 0
-        for chd in child[s]:
-            cnt += dfs(chd)
-        leaf[s] = cnt
-        return 1 - nonleaf[s]
+def main():
+    n = read_int()
 
+    # Read parent-child relationships
+    parent = [-1] * (n + 1)  # 1-indexed
     for i in range(2, n + 1):
-        node = int(input())
-        child[node].append(i)
-        nonleaf[node] = 1
+        parent_node = read_int()
+        parent[i] = parent_node
 
-    dfs(1)
+    # Create children array from parent array
+    children = [[] for _ in range(n + 1)]
+    for i in range(2, n + 1):
+        children[parent[i]].append(i)
 
-    # print(nonleaf[1:n + 1])
-    # print(child[1:n + 1])
-    # print(leaf[1:n + 1])
-
+    # Check spruce property: each non-leaf node must have at least 3 leaf children
     for i in range(1, n + 1):
-        if nonleaf[i] and leaf[i] < 3:
-            print("No")
-            exit()
+        # If this is a non-leaf node
+        if children[i]:
+            # Count leaf children
+            leaf_children = 0
+            for child in children[i]:
+                if not children[child]:  # Child is a leaf if it has no children
+                    leaf_children += 1
+
+            # Check if it has at least 3 leaf children
+            if leaf_children < 3:
+                print("No")
+                return
 
     print("Yes")
 
-          	 		  	 		   				 	 	
+if __name__ == "__main__":
+    main()

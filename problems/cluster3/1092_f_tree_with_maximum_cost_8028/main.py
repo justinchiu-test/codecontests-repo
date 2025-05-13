@@ -1,63 +1,74 @@
 #!/usr/bin/env python3
 
-import sys
+from library import setup_io, bootstrap
 from collections import deque
-from types import GeneratorType
-sys.setrecursionlimit(200000)
-input = sys.stdin.readline
-def bootstrap(f, stack=[]):
-    def wrappedfunc(*args, **kwargs):
-        if stack:
-            return f(*args, **kwargs)
-        else:
-            to = f(*args, **kwargs)
-            while True:
-                if type(to) is GeneratorType:
-                    stack.append(to)
-                    to = next(to)
-                else:
-                    stack.pop()
-                    if not stack:
-                        break
-                    to = stack[-1].send(to)
-            return to
- 
-    return wrappedfunc
 
+# Set up fast I/O
+input = setup_io()
+
+# Read input
 n = int(input())
-val = [int(i) for i in input().split()]
-tree = [[] for i in range(n + 1)]
-dp = [0 for i in range(n + 1)]
-s = [0 for i in range(n + 1)]
-ans = [0 for i in range(n + 1)]
-for i in range(n - 1):
-    a,b = map(int,input().split())
-    tree[a].append(b)
-    tree[b].append(a)
+values = list(map(int, input().split()))
+total_value = sum(values)
+
+# Build tree (1-indexed)
+adj = [[] for _ in range(n + 1)]
+for _ in range(n - 1):
+    a, b = map(int, input().split())
+    adj[a].append(b)
+    adj[b].append(a)
+
+# Calculate initial cost with node 1 as root
+# dp[node] = cost of subtree rooted at node
+# sum_values[node] = sum of values in subtree rooted at node
+dp = [0] * (n + 1)
+sum_values = [0] * (n + 1)
+costs = [0] * (n + 1)  # Final costs for each possible root
+
 @bootstrap
-def dfs1(node,dist,pd):
-
-    for child in tree[node]:
-        if child == pd:
+def dfs1(node, depth, parent):
+    """First DFS to calculate subtree costs with node 1 as root."""
+    for child in adj[node]:
+        if child == parent:
             continue
-        yield dfs1(child,dist + 1, node)
+        yield dfs1(child, depth + 1, node)
         dp[node] += dp[child]
-        s[node] += s[child]
-    dp[node] += val[node - 1] * dist
-    s[node] += val[node - 1]
-    yield dp[node]
-dfs1(1,0,1)
-q = deque(); ans[1] = dp[1]
-for node in tree[1]:
-    q.append((node,1))
+        sum_values[node] += sum_values[child]
 
-while len(q) > 0:
-    node,pd = q.popleft()
-    sub_dp = ans[pd] - (dp[node] + s[node])
-    added = s[1] - s[node]
-    ans[node] = sub_dp + added + dp[node]
-    for child in tree[node]:
-        if child == pd:
-            continue
-        q.append((child,node))
-print(max(ans))
+    # Add the contribution of the current node
+    dp[node] += values[node - 1] * depth
+    sum_values[node] += values[node - 1]
+    yield
+
+# Run first DFS starting from node 1
+dfs1(1, 0, -1)
+costs[1] = dp[1]
+
+# Re-rooting technique: recompute costs for each node as root
+# BFS to propagate costs
+queue = deque()
+for child in adj[1]:
+    queue.append((child, 1))
+
+while queue:
+    node, parent = queue.popleft()
+
+    # Calculate cost when node is the root:
+    # 1. Take parent's cost
+    # 2. Subtract contribution of node's subtree
+    # 3. Add new contribution from parent's subtree
+    parent_subtree = costs[parent] - (dp[node] + sum_values[node])
+
+    # When we reroot, distances to nodes in parent's subtree increase by 1
+    new_contribution = total_value - sum_values[node]
+
+    # Combine costs: parent's subtree + node's subtree with node as root
+    costs[node] = parent_subtree + new_contribution + dp[node]
+
+    # Add node's children to queue
+    for child in adj[node]:
+        if child != parent:
+            queue.append((child, node))
+
+# Result is the maximum cost among all possible roots
+print(max(costs[1:]))

@@ -1,83 +1,84 @@
 #!/usr/bin/env python3
 
-from collections import *
+from library import read_ints, print_float, init_dp_dict, init_dp_table
+from collections import defaultdict
 
+# Read input
+n, l, k = read_ints()  # n tours, l min tours to win, k - initial bag capacity
+probabilities = read_ints()  # Probability of winning each tour (in %)
+prizes = read_ints()  # Prize for each tour (-1: huge prize, otherwise: bag capacity)
 
+# Count how many huge prizes we can win
+huge_prizes_count = prizes.count(-1)
 
-f = lambda: list(map(int, input().split()))
+# Initialize DP state
+# dp[(wins, capacity)] = probability of having 'wins' wins and 'capacity' bag capacity
+dp = {(0, min(k, huge_prizes_count)): 1.0}
 
-n, l, a = f()
+# For tours with huge prizes, track distribution of wins
+# huge_prize_distribution[i] = probability of winning exactly i huge prizes
+huge_prize_distribution = [1.0] + [0.0] * huge_prizes_count  # Initially, 0 huge prizes with 100% probability
 
-p, s = f(), f()
+# Process each tour
+for tour_idx, (prob, prize) in enumerate(zip(probabilities, prizes)):
+    prob /= 100.0  # Convert percentage to probability
 
-m = s.count(-1)
+    if prize > 0:  # If the prize is a bag (increases capacity)
+        # Create a new DP state
+        new_dp = init_dp_dict()
 
-x = {(0, min(a, m)): 1}
+        for (wins, capacity), curr_prob in dp.items():
+            # Case 1: Don't win this tour - keep same state with reduced probability
+            new_dp[(wins, capacity)] += curr_prob * (1 - prob)
 
-r = [1]
+            # Case 2: Win this tour - increase wins and capacity
+            new_wins = min(l, wins + 1)  # Cap at l since we only need l wins
+            new_capacity = min(huge_prizes_count, capacity + prize)  # Cap at max possible huge prizes
+            new_dp[(new_wins, new_capacity)] += curr_prob * prob
 
+        dp = new_dp
+    else:  # If the prize is a huge prize
+        # Update huge prize distribution
+        new_distribution = [0.0] * (huge_prizes_count + 1)
 
+        # For each current number of huge prizes
+        for i in range(huge_prizes_count + 1):
+            if i < huge_prizes_count:
+                # Win the tour and get a huge prize
+                new_distribution[i+1] += huge_prize_distribution[i] * prob
 
-for p, s in zip(p, s):
+            # Lose the tour, keep same number of huge prizes
+            new_distribution[i] += huge_prize_distribution[i] * (1 - prob)
 
-    p /= 100
+        huge_prize_distribution = new_distribution
 
-    if s > 0:
+# Calculate final answer
+# For each dp state, check if we can fit all huge prizes and have enough wins
+result_dp = init_dp_table([n - huge_prizes_count + 1, huge_prizes_count + 1], 0.0)
 
-        y = defaultdict(int)
+# Copy probabilities from dp dictionary to result_dp array
+for (wins, capacity), prob in dp.items():
+    if wins + capacity >= l:  # If we have enough wins (direct wins + capacity to store huge prizes)
+        result_dp[wins][capacity] = prob
 
-        for (k, a), q in x.items():
+# Accumulate probabilities for capacity (having more capacity means we can handle fewer huge prizes too)
+for wins in range(n - huge_prizes_count, -1, -1):
+    for capacity in range(huge_prizes_count, 0, -1):
+        result_dp[wins][capacity - 1] += result_dp[wins][capacity]
 
-            y[(k, a)] += q - q * p
+# Accumulate probabilities for wins (having more wins means we need fewer huge prizes)
+for wins in range(n - huge_prizes_count, 0, -1):
+    for capacity in range(huge_prizes_count, -1, -1):
+        result_dp[wins - 1][capacity] += result_dp[wins][capacity]
 
-            a = min(m, a + s)
+# Combine with huge prize distribution to get final probability
+final_probability = 0.0
+for huge_prize_count, prob in enumerate(huge_prize_distribution):
+    if huge_prize_count > 0 and l - huge_prize_count <= n - huge_prizes_count:
+        # If we have huge_prize_count huge prizes, we need (l - huge_prize_count) normal wins
+        final_probability += result_dp[max(0, l - huge_prize_count)][huge_prize_count] * prob
+    elif huge_prize_count == 0 and l <= n - huge_prizes_count:
+        # Special case for 0 huge prizes
+        final_probability += result_dp[l][0] * prob
 
-            k = min(l, k + 1)
-
-            y[(k, a)] += q * p
-
-        x = y
-
-    else:
-
-        i = [0] + [q * p for q in r]
-
-        j = [q - q * p for q in r] + [0]
-
-        r = [a + b for a, b in zip(i, j)]
-
-
-
-y = [[0] * (m + 1) for i in range(n - m + 1)]
-
-for (k, a), q in x.items():
-
-    if k + a >= l: y[k][a] = q
-
-
-
-for k in range(n - m, -1, -1):
-
-    for a in range(m, 0, -1):
-
-        y[k][a - 1] += y[k][a]
-
-for k in range(n - m, 0, -1):
-
-    for a in range(m, -1, -1):
-
-        y[k - 1][a] += y[k][a]
-
-
-
-d = 0
-
-for k, p in enumerate(r):
-
-    if l - k <= n - m: d += y[max(0, l - k)][k] * p
-
-print(d)
-
-
-
-# Made By Mostafa_Khaled
+print_float(final_probability, 7)

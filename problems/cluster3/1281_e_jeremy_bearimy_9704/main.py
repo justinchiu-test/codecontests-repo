@@ -1,51 +1,26 @@
 #!/usr/bin/env python3
 
-import sys
+from library import setup_io, min_max_soulmate_paths
 
-def input():
-	return sys.stdin.readline().strip()
+# Set up fast I/O
+input = setup_io()
 
 def solve():
-	k = int(input())
-	n = 2*k
-	e = [[] for i in range(n)]
-	p = [None]*(n)
-	for i in range(n-1):
-		a, b, t = map(int, input().split())
-		a -= 1
-		b -= 1
-		e[a].append((b,t))
-		e[b].append((a,t))
-	q = [0]
-	qi = 0
-	while qi < len(q):
-		x = q[qi]
-		qi += 1
-		px = p[x]
-		for v, w in e[x]:
-			if v != px:
-				q.append(v)
-				p[v] = x
-	d1 = [False] * n
-	d2 = [0] * n
-	m = 0
-	M = 0
-	for qi in range(len(q)-1,-1,-1):
-		x = q[qi]
-		px = p[x]
-		cnt = 1
-		c1 = 1
-		for v, w in e[x]:
-			if v != px:
-				if d1[v]:
-					m += w
-					cnt += 1
-				dv = d2[v]
-				M += w * min(dv, n - dv)
-				c1 += dv
-		d1[x] = cnt % 2
-		d2[x] = c1
-	print(m, M)
+    k = int(input())
+    n = 2*k
 
-for i in range(int(input())):
-	solve()
+    # Build weighted adjacency list
+    adj = [[] for _ in range(n)]
+    for _ in range(n-1):
+        a, b, t = map(int, input().split())
+        a -= 1  # Convert to 0-indexed
+        b -= 1
+        adj[a].append((b, t))
+        adj[b].append((a, t))
+
+    # Calculate minimum and maximum path sums
+    min_sum, max_sum = min_max_soulmate_paths(adj, k)
+    print(min_sum, max_sum)
+
+for _ in range(int(input())):
+    solve()

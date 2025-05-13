@@ -1,36 +1,38 @@
 #!/usr/bin/env python3
 
-from math import pow
-def take_input(s):          #for integer inputs
-    if s == 1:  return int(input())
-    return map(int, input().split())
+from library import read_ints, gcd
 
-def factor(n,k):
-    i = 0
-    while(n%k==0):
-        i += 1
+def factor_count(n, k):
+    """Count how many times k divides n"""
+    count = 0
+    while n % k == 0:
+        count += 1
         n //= k
-    return i
-        
-a, b = take_input(2)
-count = 0
+    return count, n
+
+a, b = read_ints()
+
 if a == b:
     print(0)
     exit()
 
-a_fac_2 = factor(a,2); a_fac_3 = factor(a,3); a_fac_5 = factor(a,5)
-b_fac_2 = factor(b,2); b_fac_3 = factor(b,3); b_fac_5 = factor(b,5)
-x = a
-if a_fac_2>0:   x //= pow(2,a_fac_2)
-if a_fac_3>0:   x //= pow(3,a_fac_3)
-if a_fac_5>0:   x //= pow(5,a_fac_5)
-y = b
-if b_fac_2>0:   y //= pow(2,b_fac_2)
-if b_fac_3>0:   y //= pow(3,b_fac_3)
-if b_fac_5>0:   y //= pow(5,b_fac_5)
+# Get GCD to check if they can be made equal
+common = gcd(a, b)
+a //= common
+b //= common
 
+# Check factors of 2, 3, 5
+a_2, a = factor_count(a, 2)
+a_3, a = factor_count(a, 3)
+a_5, a = factor_count(a, 5)
 
-if x != y:
+b_2, b = factor_count(b, 2)
+b_3, b = factor_count(b, 3)
+b_5, b = factor_count(b, 5)
+
+# If there are other factors, it's impossible
+if a != 1 or b != 1:
     print(-1)
 else:
-    print(abs(a_fac_2 - b_fac_2) + abs(a_fac_3 - b_fac_3) + abs(a_fac_5 - b_fac_5))
+    # Calculate total operations needed
+    print(abs(a_2 - b_2) + abs(a_3 - b_3) + abs(a_5 - b_5))

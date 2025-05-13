@@ -1,40 +1,36 @@
 #!/usr/bin/env python3
 
+from library import read_ints, print_float
 import sys
-import math
 
+n, m, h = read_ints()
+departments = read_ints()
 
-n,m,h = [int(x) for x in input().split()]  
-arr = [int(x) for x in input().split()]
+total_players = sum(departments)
 
-total = sum(arr)
+# Check if there are enough players
+if total_players < n:
+    print("-1")
+    sys.exit()
 
-if (total < n):
-	print ("-1")
-	sys.exit()
+# Calculate players not in Herr Wafa's department
+# Subtract 1 to exclude Herr Wafa himself
+players_in_wafa_dept = departments[h-1] - 1
+players_other_depts = total_players - departments[h-1]
+total_players_excluding_wafa = total_players - 1
 
-total1 = total - arr[h-1]
-rem  = total - total1-1
-total = total - 1
-ans = 1
-'''
-#start = total - (n-1)
-#print (start)
-x = start
-#print (rem)
-for i in range(rem-1):
-	start = float(float(start) * float(x-(i+1)))
-
-print (start)
-'''
+# Probability of having no teammates from Wafa's department
+# = probability that all (n-1) selected teammates are from other departments
+probability_no_teammate_from_dept = 1.0
 for i in range(n-1):
-	x = float(total1 - i)
-	y = float(total - i)
-	#print (i,x,y)
-	ans = float(ans * float(x/y))
+    probability_no_teammate_from_dept *= (players_other_depts - i) / (total_players_excluding_wafa - i)
 
-#print (ans)
+# The probability of having at least one teammate from Wafa's department
+# is 1 minus the probability of having none
+probability_at_least_one = 1.0 - probability_no_teammate_from_dept
 
-ans = float(ans) 
-
-print("{0:.10f}".format(round(1-ans,10)))
+# Special case for probability = 1
+if abs(probability_at_least_one - 1.0) < 1e-9:
+    print("1")
+else:
+    print_float(probability_at_least_one, 10)

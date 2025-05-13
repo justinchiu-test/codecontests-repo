@@ -1,21 +1,24 @@
 #!/usr/bin/env python3
 
+from library import Graph
+
 n = int(input())
-g = []
+points = []
+
+# Read all coordinates
+for _ in range(n):
+    x, y = map(int, input().split())
+    points.append((x, y))
+
+# Create a graph where points are connected if they share an x or y coordinate
+graph = Graph(n)
+
+# Connect points with same x or y coordinate
 for i in range(n):
-    t = input().split()
-    g.append([ int(t[0]), int(t[1]), False ])
+    for j in range(i + 1, n):
+        if points[i][0] == points[j][0] or points[i][1] == points[j][1]:
+            graph.add_edge(i, j)
 
-def visita(i):
-    g[i][2] = True
-    for j in range(n):
-        if g[j][2] == False and (g[i][0] == g[j][0] or g[i][1] == g[j][1]):
-            visita(j)
-
-cnt = -1
-for i in range(n):
-    if g[i][2] == False:
-        cnt += 1
-        visita(i)
-
-print(cnt)
+# Count connected components - 1 (we need number of bridges to connect all)
+components = graph.find_connected_components()
+print(len(components) - 1)

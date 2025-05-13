@@ -1,21 +1,12 @@
 #!/usr/bin/env python3
 
-# _
-#####################################################################################################################
+from library import read_int, read_ints, read_test_cases, print_array, min_cogrowing_sequence
 
-def minCo_growingSequenceWith(array):
-    sequence, prevValue = [], 0
-    for value in array:
-        n = prevValue&(prevValue^value)
-        prevValue = value^n
-        sequence.append(n)
+def process_test_case():
+    read_int()  # Skip the array length (not needed)
+    arr = read_ints()
+    return min_cogrowing_sequence(arr)
 
-    return ' '.join(map(str, sequence))
-
-
-def testCase_1547d():
-    input()
-    return map(int, input().split(' '))
-
-
-tuple(print(minCo_growingSequenceWith(testCase_1547d())) for x in range(int(input())))
+results = read_test_cases(process_test_case)
+for result in results:
+    print_array(result)

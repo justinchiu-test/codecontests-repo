@@ -1,52 +1,47 @@
 #!/usr/bin/env python3
 
-import sys
+from library import read_mixed_types, init_dp_table, print_float, expected_value
 
-n, p, t = map(str, sys.stdin.readline().split())
-n = int(n)
-p = float(p)
-t = int(t)
+# Read input: n (number of people), p (probability of moving), t (time limit)
+n, p, t = read_mixed_types([int, float, int])
 
-def CC(nn,k):
-    tmp = n
-    t = max(nn - k, k)
-    for i in range(1, min(nn - k, k) + 1):
-        tmp = tmp * (t + i) * (1 - p) / i
-    if k > nn - k:
-        tmp = tmp * pow(1-p,k + k - nn)
-    return tmp
+# Handle special cases for optimization
+if p == 0:
+    # If probability is 0, no one will move to the escalator
+    print_float(0, 12)
+    exit()
+if p == 1:
+    # If probability is 1, everyone will move (up to time limit)
+    print_float(min(n, t), 12)
+    exit()
 
-def C(n, k):
-    tmp = 1
-    if n - k > k:
-        tmp = tmp * pow(1 - p, n - k - k)
-    else:
-        tmp = tmp * pow(p, k + k - n)
-    t = max(n - k, k)
-    for i in range(1, min(n - k, k) + 1):
-        tmp = tmp * (t + i) * p * (1 - p) / i
+# Initialize Dynamic Programming table
+# dp[i][j] = probability of having j people on the escalator after i seconds
+dp = init_dp_table([t+1, n+1], 0.0)
+dp[0][0] = 1.0  # Initially, 0 people on the escalator with 100% probability
 
-    return tmp
+# Fill the DP table
+for i in range(1, t+1):
+    for j in range(n+1):
+        if j == 0:
+            # Case: No one on the escalator - the next person didn't move
+            dp[i][j] = dp[i-1][j] * (1-p)
+        elif j == n:
+            # Case: Escalator is full (reached capacity n)
+            # This happens if either:
+            # 1. It was already full (n people)
+            # 2. It had n-1 people and one more moved
+            dp[i][j] = dp[i-1][j] + dp[i-1][j-1] * p
+        else:
+            # General case:
+            # 1. Had j people and next person didn't move
+            stay_prob = dp[i-1][j] * (1-p)
+            # 2. Had j-1 people and next person moved
+            move_prob = dp[i-1][j-1] * p
+            dp[i][j] = stay_prob + move_prob
 
+# Calculate expected value (the average number of people on the escalator)
+result = sum(j * dp[t][j] for j in range(n+1))
 
-if n >= t:
-    print(t * p)
-elif p != 1 and p != 0:
-    a = 0
-    b = 0
-    for i in range(n):
-        q = C(t, i)
-        a = a + q * i
-        b = b + q
-    a = a + (1 - b) * n
-    print(a)
-    b = n
-    for i in range(t - n):
-        b = b + CC(i + 1,n + i)
-    b = b * pow(p,n)
-    #print(a + b)
-else:
-    if p == 1:
-        print(n)
-    else:
-        print(0)
+# Output result with required precision
+print_float(result, 12)

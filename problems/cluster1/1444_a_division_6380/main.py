@@ -1,55 +1,39 @@
 #!/usr/bin/env python3
 
-from sys import stdin, stdout
-from math import sqrt
-#stdin = open('Q3.txt', 'r') 
-def II(): return int(stdin.readline())
-def MI(): return map(int, stdin.readline().split())
-bigp=10**18+7
+from library import read_int, read_ints, get_prime_factors_with_counts
 
-primes=[]
-def SieveOfEratosthenes(n,primes): 
-    prime = [True for i in range(n+1)] 
-    p = 2
-    while (p * p <= n): 
-        if (prime[p] == True): 
-            for i in range(p * p, n+1, p): 
-                prime[i] = False
-        p += 1
-    for p in range(2, n): 
-        if prime[p]: 
-            primes.append(p)
+def max_divisible_by_not_q(p, q):
+    """
+    Find the maximum integer x such that:
+    1. x divides p
+    2. x is not divisible by q
+    """
+    # If p is not divisible by q, then p itself is the answer
+    if p % q != 0:
+        return p
+    
+    # Get prime factorization of q
+    q_factors = get_prime_factors_with_counts(q)
+    
+    # For each prime factor of q, find its count in p
+    min_div = float('inf')
+    for prime, q_count in q_factors.items():
+        # Count how many times this prime divides p
+        p_count = 0
+        temp_p = p
+        while temp_p % prime == 0:
+            p_count += 1
+            temp_p //= prime
+        
+        # We need to remove enough factors to make x not divisible by q
+        # For each prime factor, we need to leave (q_count-1) copies in x
+        divisor = prime ** (p_count - (q_count - 1))
+        min_div = min(min_div, divisor)
+    
+    # Divide p by the smallest required divisor
+    return p // min_div
 
-def solve():
-    p,q=MI()
-    if p%q != 0:
-        ans=p
-    else:
-        x,y=q,p
-        mind=bigp
-        sqrtq=int(sqrt(q))
-        sp=[i for i in primes if i<=sqrtq]+[bigp]
-        for i in sp:
-            j=i
-            if x==1:
-                break
-            qe=0
-            while x%j==0:
-                qe+=1
-                x=x//j
-            if i==bigp:
-                qe,j=1,x
-            if qe>0:
-                pe=qe
-                y=y//pow(j,qe)
-                while y%j==0:
-                    pe+=1
-                    y=y//j
-                mind=min(mind,pow(j,pe-qe+1))
-        ans=p//mind
-    stdout.write(str(ans)+"\n")
-
-SieveOfEratosthenes(32000,primes)
-t=II()
+t = read_int()
 for _ in range(t):
-    solve()
+    p, q = read_ints()
+    print(max_divisible_by_not_q(p, q))

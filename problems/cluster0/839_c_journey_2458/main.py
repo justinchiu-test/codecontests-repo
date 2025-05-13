@@ -21,15 +21,12 @@ def solve(v, d, r):
   q = Queue()
   q.put((v, d, r))
   while not q.empty():
-    v, d, r = q.get(v)
+    v, d, r = q.get()
     used[v] = True
     for u in g[v]:
       if not used[u]:
         q.put((u, d+1, r*(len(g[v])-(v!=0))))
-        #print("put", u)
-    #print("so at", v, "len", len(g[v]))
     if v != 0 and len(g[v]) == 1:
-      #print("At ", v, "is", d, r)
       anw += d/r
   
 solve(0, 0, 1)

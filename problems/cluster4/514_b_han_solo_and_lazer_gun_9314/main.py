@@ -1,26 +1,10 @@
 #!/usr/bin/env python3
 
-n, x0, y0 = map(int, input().split())
-slopes = {} # key: (num, den), val: count
+from library import read_ints, count_unique_directions
 
-for i in range(n):
-    x, y = map(int, input().split())
-    num = y - y0
-    den = x - x0
-    # print(num, den)
-    if den == 0 and "inf" in slopes:
-        slopes["inf"] += 1
-    elif den == 0:
-        slopes["inf"] = 1
-    else:
-        found = False
-        for s in slopes:
-            # print(isinstance(s, tuple))
-            if isinstance(s, tuple) and num * s[1] == den * s[0]:
-                slopes[s] += 1
-                found = True
-        if found == False:
-            slopes[(num, den)] = 1
-        
-print(slopes.__len__())
-    
+# Read input
+n, x0, y0 = read_ints()
+points = [read_ints() for _ in range(n)]
+
+# Count unique directions (lines) from the gun to stormtroopers
+print(count_unique_directions(x0, y0, points))

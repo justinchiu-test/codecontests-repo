@@ -1,48 +1,58 @@
 #!/usr/bin/env python3
 
+from library import Graph
 import sys
+
 input = sys.stdin.readline
-def dfs(cur_node, childs, vis, cur_dfs):
-    if cur_node in cur_dfs:
-        return True
-
-    if vis[cur_node]:
-        return False
-
-    vis[cur_node] = True
-    cur_dfs.add(cur_node)
-    for ele in childs[cur_node]:
-        if dfs(ele, childs, vis, cur_dfs):
-            return True
-
-    cur_dfs.remove(cur_node)
-    return False
 
 n, m = map(int, input().split())
-childs = [[] for i in range(n+1)]
-has_dad = [False] * (n+1)
-vis = [False] * (n+1)
-ans2 = []
+graph = Graph(n + 1, directed=True)
+
+# Store the edge list for later coloring
+edges = []
 for i in range(m):
     x1, x2 = map(int, input().split())
-    ans2.append(str((x1 < x2) + 1))
-    childs[x1].append(x2)
-    has_dad[x2] = True
+    graph.add_edge(x1, x2)
+    edges.append((x1, x2, i))  # Store edge index for coloring
 
+# Prepare for cycle detection
+visited = [False] * (n + 1)
+rec_stack = [False] * (n + 1)
 has_cycle = False
-for i in range(1, n+1):
-    if not has_dad[i] and dfs(i, childs, vis, set()):
-        has_cycle = True
-        break
 
-for i in range(1, n+1):
-    if has_dad[i] and not vis[i]:
-        has_cycle = True
-        break
+# DFS to detect cycles
+def dfs(v):
+    global has_cycle
+    visited[v] = True
+    rec_stack[v] = True
+    
+    for u in graph.adj[v]:
+        if not visited[u]:
+            if dfs(u):
+                return True
+        elif rec_stack[u]:
+            has_cycle = True
+            return True
+    
+    rec_stack[v] = False
+    return False
 
+# Run DFS from each unvisited vertex
+for i in range(1, n + 1):
+    if not visited[i]:
+        if dfs(i):
+            break
+
+# Simple coloring based on the directed property
+ans2 = []
+for i in range(m):
+    x1, x2 = edges[i][0], edges[i][1]
+    ans2.append(str((x1 < x2) + 1))  # Forward edges: color 1, backward: color 2
+
+# Output
 if has_cycle:
     print(2)
     print(' '.join(ans2))
 else:
     print(1)
-    print(' '.join(['1']*m))
+    print(' '.join(['1'] * m))

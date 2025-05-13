@@ -1,22 +1,26 @@
 #!/usr/bin/env python3
 
-# import time
+from library import read_int, initialize_dp_table
+
 N = 303
-eq = []
-dp = []
-for i in range(N):
-    eq.append([False] * N)
-for i in range(N):
-    dp.append([0] * N)
-n = int(input())
+n = read_int()
 s = input()
-# t = time.time()
+
+# Initialize tables
+eq = initialize_dp_table([N, N], False)
+dp = initialize_dp_table([N, N], 0)
+
+# Process input
 allsum = len(s)
 s = s.split()
+
+# Build equality table
 for i in range(n):
     eq[i][i] = True
     for j in range(i):
         eq[i][j] = eq[j][i] = s[i] == s[j]
+
+# Build dp table
 for i in range(n - 1, -1, -1):
     for j in range(n - 1, -1, -1):
         if eq[i][j]:
@@ -24,6 +28,8 @@ for i in range(n - 1, -1, -1):
                 dp[i][j] = dp[i + 1][j + 1] + 1
             else:
                 dp[i][j] = 1
+
+# Find minimum length
 ans = allsum
 for i in range(n):
     su = 0
@@ -38,7 +44,6 @@ for i in range(n):
             pos += 1
         cur = allsum - su * cnt + cnt
         if cnt > 1 and ans > cur:
-            # print(allsum, su, cnt, j)
             ans = cur
+
 print(ans)
-# print(time.time() - t)

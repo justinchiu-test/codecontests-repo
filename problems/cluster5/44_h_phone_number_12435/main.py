@@ -1,42 +1,71 @@
 #!/usr/bin/env python3
 
-# import sys
-# input=sys.stdin.readline
+from library import initialize_dp_table
 
-a=input()
-dp=[]
-for i in range(len(a)):
-    dp.append([0]*10)
-for i in range(10):
-    dp[0][i]=1
+def main():
+    # Read the input phone number
+    phone_number = input().strip()
+    n = len(phone_number)
     
-for i in range(len(a)-1):
-    for j in range(10):
-        if dp[i][j]!=0:
-            c=(int(a[i+1])+j)//2
-            d=(int(a[i+1])+j+1)//2
-            if c!=d:
-                dp[i+1][c]+=dp[i][j]
-                dp[i+1][d]+=dp[i][j]
-            else:
-                dp[i+1][c]+=dp[i][j]
-s=0
-for i in range(10):
-    s+=dp[-1][i]
-t=0
-c=int(a[0])
-f=[a[0]]
-for i in range(1,len(a)):
-    d=(c+int(a[i]))//2
-    e=(c+int(a[i])+1)//2
-    if int(a[i])==d:
-        f.append(a[i])
-        c=d
-    elif int(a[i])==e:
-        f.append(a[i])
-        c=e
-    else:
-        break
-if "".join(f)==a:
-    t=1
-print(s-t)
+    # Initialize DP table: dp[i][j] is the number of ways to reach 
+    # the ith digit with last digit j
+    dp = initialize_dp_table([n, 10], 0)
+    
+    # Base case: all digits are possible for the first position
+    for i in range(10):
+        dp[0][i] = 1
+    
+    # Fill the DP table
+    for i in range(n - 1):
+        for j in range(10):
+            if dp[i][j] != 0:
+                # The next digit is determined by rounding (j + a[i+1])/2
+                # either down or up
+                c = (int(phone_number[i + 1]) + j) // 2
+                d = (int(phone_number[i + 1]) + j + 1) // 2
+                
+                if c != d:
+                    # Both roundings lead to different digits
+                    dp[i + 1][c] += dp[i][j]
+                    dp[i + 1][d] += dp[i][j]
+                else:
+                    # Both roundings lead to the same digit
+                    dp[i + 1][c] += dp[i][j]
+    
+    # Sum all ways to generate the phone number
+    total_ways = sum(dp[n - 1])
+    
+    # Check if the original phone number is a valid case
+    # We need to subtract it from the count if it is
+    is_original_valid = 1
+    
+    # Check the original number by simulating the process
+    c = int(phone_number[0])
+    reconstructed = [phone_number[0]]
+    
+    for i in range(1, n):
+        # Calculate the two possible next digits
+        d = (c + int(phone_number[i])) // 2
+        e = (c + int(phone_number[i]) + 1) // 2
+        
+        # If current digit in original number matches either option, continue
+        if int(phone_number[i]) == d:
+            reconstructed.append(phone_number[i])
+            c = d
+        elif int(phone_number[i]) == e:
+            reconstructed.append(phone_number[i])
+            c = e
+        else:
+            # Original number is not a valid sequence
+            is_original_valid = 0
+            break
+    
+    # Check if we reconstructed the entire number
+    if "".join(reconstructed) != phone_number:
+        is_original_valid = 0
+    
+    # Print the result (total ways minus the original if it's valid)
+    print(total_ways - is_original_valid)
+
+if __name__ == "__main__":
+    main()

@@ -1,40 +1,31 @@
 #!/usr/bin/env python3
 
+from library import Graph
 
 inp = input().split()
-
 n = int(inp[0])
 m = int(inp[1])
 
-def dfs(x):
-
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
+# A graph is a Cthulhu if it has exactly one cycle and is connected
+# This means it should have n vertices and n edges (exactly one cycle)
+# and all vertices should be reachable from any starting point
 
 if n >= 3 and n == m:
-
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
+    # Create a graph with n vertices
+    graph = Graph(n)
     
-    for i in range(m):
-    
+    # Add edges
+    for _ in range(m):
         x, y = map(int, input().split())
+        graph.add_edge(x-1, y-1)  # Convert to 0-indexed
     
-        e[x].append(y)
+    # Check if all vertices are visited from vertex 0
+    visited = graph.dfs(0)
     
-        e[y].append(x)
-
-    dfs(1)
- 
-    print('FHTAGN!' if len(visited) == n else 'NO')
+    # All vertices should be reachable
+    if all(visited):
+        print('FHTAGN!')
+    else:
+        print('NO')
 else:
     print('NO')
-
- 
- 

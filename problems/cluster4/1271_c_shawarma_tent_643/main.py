@@ -1,54 +1,60 @@
 #!/usr/bin/env python3
 
-n,x,y=map(int,input().split())
-lu=0
-ld=0
-ru=0
-rd=0
-u=0
-d=0
-l=0
-r=0
+from library import read_ints
 
-for i in range(n):
-    a,b=map(int,input().split())
-    if(a<x and b<y):
-        ld+=1
-    elif(a<x and b>y):
-        lu+=1
-    elif(a==x and b!=y):
-        if(b>y):
-            u+=1
-        else:
-            d+=1
-    elif(a>x and b<y):
-        rd+=1
-    elif(a>x and b>y):
-        ru+=1
-    elif(a!=x and b==y):
-        if(a<x):
-            l+=1
-        else:
-            r+=1
+# Read input
+n, sx, sy = read_ints()
+students = [read_ints() for _ in range(n)]
 
-l1=[]
-#print(lu,ru,ld,rd,u,d,l,r)
-l1.append(lu+ru+u)
-l1.append(lu+ld+l)
-l1.append(ru+rd+r)
-l1.append(ld+rd+d)
-ans=max(l1)
-ind=l1.index(max(l1))
-print(ans)
-if(ind==0):
-    print(x,y+1)
-elif(ind==1):
-    print(x-1,y)
-elif(ind==2):
-    print(x+1,y)
+# Count students in each quadrant relative to the school
+left_up = 0    # x < sx, y > sy
+left_down = 0  # x < sx, y < sy
+right_up = 0   # x > sx, y > sy
+right_down = 0 # x > sx, y < sy
+up = 0         # x = sx, y > sy
+down = 0       # x = sx, y < sy
+left = 0       # x < sx, y = sy
+right = 0      # x > sx, y = sy
+
+for x, y in students:
+    if x < sx and y < sy:
+        left_down += 1
+    elif x < sx and y > sy:
+        left_up += 1
+    elif x == sx and y != sy:
+        if y > sy:
+            up += 1
+        else:
+            down += 1
+    elif x > sx and y < sy:
+        right_down += 1
+    elif x > sx and y > sy:
+        right_up += 1
+    elif x != sx and y == sy:
+        if x < sx:
+            left += 1
+        else:
+            right += 1
+
+# Calculate students that would visit the tent at each possible location
+counts = [
+    left_up + right_up + up,     # Above the school
+    left_up + left_down + left,  # Left of the school
+    right_up + right_down + right, # Right of the school
+    left_down + right_down + down  # Below the school
+]
+
+# Find the best position
+max_count = max(counts)
+best_position = counts.index(max_count)
+
+# Output the results
+print(max_count)
+if best_position == 0:
+    print(sx, sy + 1)
+elif best_position == 1:
+    print(sx - 1, sy)
+elif best_position == 2:
+    print(sx + 1, sy)
 else:
-    print(x,y-1)
-    
-        
-        
-        
+    print(sx, sy - 1)

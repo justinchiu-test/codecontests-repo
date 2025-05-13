@@ -1,18 +1,43 @@
 #!/usr/bin/env python3
 
-a = []
-for i in range(8):
-    x, y = map(int, input().split())
-    a.append((x, y))
-a.sort()
-if a[0][1] != a[1][1] and a[1][1] != a[2][1] and a[2][1] != a[0][1]:
-    if a[0][0] != a[3][0] and a[3][0] != a[5][0] and a[5][0] != a[0][0]:
-        if a[0][0] == a[1][0] == a[2][0]:
-            if a[3][0] == a[4][0]:
-                if a[5][0] == a[6][0] == a[7][0]:
-                    if a[0][1] == a[3][1] == a[5][1]:
-                        if a[1][1] == a[6][1]:
-                            if a[2][1] == a[4][1] == a[7][1]:
-                                print('respectable')
-                                exit()
-print('ugly')
+from library import read_point
+
+# Read the 8 points
+points = [read_point() for _ in range(8)]
+
+# Sort points by x-coordinate first, then by y-coordinate
+points.sort()
+
+# For a respectable set, we need 3 distinct x-coordinates and 3 distinct y-coordinates
+# with the middle point (x2, y2) missing
+x_values = set()
+y_values = set()
+
+for x, y in points:
+    x_values.add(x)
+    y_values.add(y)
+
+# We must have exactly 3 distinct values for both x and y
+if len(x_values) != 3 or len(y_values) != 3:
+    print("ugly")
+    exit()
+
+# Sort the x and y values
+x_values = sorted(list(x_values))
+y_values = sorted(list(y_values))
+
+# Check that we have all valid points except (x2, y2)
+expected_points = set()
+for x in x_values:
+    for y in y_values:
+        if x != x_values[1] or y != y_values[1]:  # Skip middle point (x2, y2)
+            expected_points.add((x, y))
+
+# Convert points to a set for comparison
+actual_points = set(points)
+
+# Check if the sets match
+if expected_points == actual_points:
+    print("respectable")
+else:
+    print("ugly")

@@ -1,10 +1,22 @@
 #!/usr/bin/env python3
 
+from library import read_int
+
+# Constants
 ALPH = 'abcdefghijklmnopqrstuvwxyz'
 MAX = 10 ** 9
 
 def cnt(s):
-    c = {ch : 0 for ch in ALPH}
+    """
+    Count maximum consecutive occurrences of each character in string s.
+    
+    Args:
+        s: Input string
+        
+    Returns:
+        Dictionary mapping each character to its maximum consecutive occurrences
+    """
+    c = {ch: 0 for ch in ALPH}
     i = 0
     while i < len(s):
         j = i + 1
@@ -15,28 +27,54 @@ def cnt(s):
     return c
 
 def nxt(c, t):
+    """
+    Update the character counts after applying transformation.
+    
+    Args:
+        c: Current character counts
+        t: Transformation string
+        
+    Returns:
+        Updated character counts
+    """
     nc = cnt(t)
+    
+    # If a character existed in previous strings but not in current transformation
+    # it still exists with count 1
     for ch in ALPH:
         if c[ch] and not nc[ch]:
             nc[ch] = 1
+    
+    # Count leading and trailing consecutive characters
     f = 0
     while f < len(t) and t[f] == t[0]:
         f += 1
+    
     r = 0
     while r < len(t) and t[-1 - r] == t[-1]:
         r += 1
+    
+    # Handle special cases based on first and last character
     if t[0] == t[-1]:
-        if f == len(t):
+        if f == len(t):  # String is all the same character
             nc[t[0]] = max(nc[t[0]], c[t[0]] + (c[t[0]] + 1) * len(t))
         elif c[t[0]]:
             nc[t[0]] = max(nc[t[0]], f + 1 + r)
     else:
         nc[t[0]] = max(nc[t[0]], f + (c[t[0]] > 0))
         nc[t[-1]] = max(nc[t[-1]], r + (c[t[-1]] > 0))
-    return {x : min(MAX, y) for x, y in nc.items()}
+    
+    # Limit values to MAX
+    return {x: min(MAX, y) for x, y in nc.items()}
 
-n = int(input())
-c = cnt(input())
-for i in range(n - 1):
-    c = nxt(c, input())
-print(max(c.values()))
+def main():
+    n = read_int()
+    c = cnt(input())
+    
+    for i in range(n - 1):
+        c = nxt(c, input())
+    
+    print(max(c.values()))
+
+if __name__ == "__main__":
+    main()

@@ -1,18 +1,35 @@
 #!/usr/bin/env python3
 
-n, x = [int(x) for x in input().split()]
-ans = []
-vis = [0] * ((2 ** 18) + 1)
-lmt = 2 ** n
-xor = 0
-vis[0], vis[x] = 1, 1
-for i in range(1, lmt):
-    if vis[i]:
+from library import read_int_pair, print_array
+
+n, x = read_int_pair()
+limit = 1 << n
+
+# Keep track of prefixes we've seen (and their XOR with x)
+seen = {}
+seen[0] = True
+if x < limit:
+    seen[x] = True
+
+answer = []
+current_xor = 0
+
+# Try all possible values up to 2^n
+for i in range(1, limit):
+    if i in seen:
         continue
-    ans.append(xor ^ i)
-    xor = i
-    vis[i] = 1
-    vis[i ^ x] = 1
-print(len(ans))
-print(*ans)
-    
+
+    # Add this value to the sequence
+    value = current_xor ^ i
+    answer.append(value)
+    current_xor = i
+
+    # Mark this prefix and its XOR with x as seen
+    seen[i] = True
+    if i ^ x < limit:
+        seen[i ^ x] = True
+
+# Output the result
+print(len(answer))
+if answer:
+    print_array(answer)

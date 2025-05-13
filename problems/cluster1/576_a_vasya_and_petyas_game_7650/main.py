@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 
-def input_ints():
-    return list(map(int, input().split()))
+from library import read_int, is_prime
 
 def main():
-    n = int(input())
-    ans = []
-    for x in range(2, n + 1):
-        s = set()
-        xx = x
-        for y in range(2, n + 1):
-            while xx % y == 0:
-                xx /= y
-                s.add(y)
-        if len(s) == 1:
-            ans.append(x)
-    print(len(ans))
-    print(' '.join(str(x) for x in ans))
+    n = read_int()
+    answer = []
+    
+    # For each prime number p <= n, add all powers of p that are <= n
+    for p in range(2, n + 1):
+        if is_prime(p):
+            # Add all powers of p that are <= n
+            power = p
+            while power <= n:
+                answer.append(power)
+                power *= p
+    
+    # Output the result
+    print(len(answer))
+    print(' '.join(map(str, answer)))
 
 if __name__ == '__main__':
     main()

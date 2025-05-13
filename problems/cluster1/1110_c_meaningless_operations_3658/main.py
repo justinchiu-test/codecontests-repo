@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 
-import math
-from sys import stdin
-q = int(input())
-l = stdin.read().splitlines()
+from library import read_int, get_smallest_prime_factor, is_power_of_two, highest_power_of_2_less_than
 
-for i in l:
-    n = int(i)
-    k = int(math.log2(n + 1))
-    if (1 << k) < n + 1:
-        print((1 << (k + 1)) - 1)
-        continue
+def solve_for_number(n):
+    # Check if n is one less than a power of 2
+    if is_power_of_two(n + 1):
+        # n is of form 2^k - 1, so find its largest proper divisor
+        # or return 1 if prime
+        factor = get_smallest_prime_factor(n)
+        return n // factor if factor < n else 1
     else:
-        found = False
-        for j in range(2, int(math.sqrt(n)) + 1):
-            if n % j == 0:
-                print(n // j)
-                found = True
-                break
-        if not found:
-            print(1)
+        # n is not of form 2^k - 1, the answer is 2^(k+1) - 1
+        return (highest_power_of_2_less_than(n) << 1) - 1
+
+def solve():
+    n = read_int()
+    return solve_for_number(n)
+
+q = read_int()
+for _ in range(q):
+    print(solve())

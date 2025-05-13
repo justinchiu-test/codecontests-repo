@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 
-def mess():
-    String=input()
-    count_it=0
-    Counter=0
+from library import MOD, mod_add
 
-    for i in String:
-        if i=='a':
-            count_it = (count_it * 2) % Modulo
-            count_it+=1
+def main():
+    string = input().strip()
+    count_a = 0
+    result = 0
 
-        elif i=='b':
-            Counter+=count_it
-            #count_it =(count_it* 2)%Modulo
-    return Counter
+    for char in string:
+        if char == 'a':
+            # Double the number of previous 'a's since each 'a' can be paired with any 'b'
+            count_a = (count_a * 2) % MOD
+            # Add 1 for the current 'a'
+            count_a = mod_add(count_a, 1, MOD)
+        elif char == 'b':
+            # Each 'b' can be paired with any accumulated 'a's
+            result = mod_add(result, count_a, MOD)
+    
+    return result
 
 if __name__ == "__main__":
-    Modulo = 1000000007
-    print(mess()%Modulo)
+    print(main() % MOD)

@@ -1,62 +1,59 @@
 #!/usr/bin/env python3
 
-import sys
-readline = sys.stdin.readline
+from library import setup_io, dfs_with_parent, get_children_array
 
-def parorder(Edge, p):
-    N = len(Edge)
-    par = [0]*N
-    par[p] = -1
-    stack = [p]
-    order = []
-    visited = set([p])
-    ast = stack.append
-    apo = order.append
-    while stack:
-        vn = stack.pop()
-        apo(vn)
-        for vf in Edge[vn]:
-            if vf in visited:
-                continue
-            visited.add(vf)
-            par[vf] = vn
-            ast(vf)
-    return par, order
+# Set up fast I/O
+input = setup_io()
 
-def getcld(p):
-    res = [[] for _ in range(len(p))]
-    for i, v in enumerate(p[1:], 1):
-        res[v].append(i)
-    return res
-
-
-N = int(readline())
+# Read input
+n = int(input())
 MOD = 998244353
-Edge = [[] for _ in range(N)]
-for _ in range(N-1):
-    a, b = map(int, readline().split())
-    a -= 1
+
+# Build adjacency list representation
+adj = [[] for _ in range(n)]
+for _ in range(n-1):
+    a, b = map(int, input().split())
+    a -= 1  # Convert to 0-indexed
     b -= 1
-    Edge[a].append(b)
-    Edge[b].append(a)
+    adj[a].append(b)
+    adj[b].append(a)
 
-P, L = parorder(Edge, 0)
-C = getcld(P)
+# Get DFS visit order and parent array
+visit_order, parent = dfs_with_parent(adj, 0)
+children = get_children_array(parent, 0)
 
-dp = [[1, 1, 0, 0, 1] for _ in range(N)]
-for p in L[::-1]:
-    if not C[p]:
+# dp[node][state]
+# state meanings:
+# 0: Not in any independent set
+# 1: In this independent set, but not in any subgraph that includes parent edge
+# 2: Not in this independent set, but in at least one subgraph that includes parent edge
+# 3: In this independent set and at least one subgraph that includes parent edge
+# 4: Not in this independent set, not in any subgraph that includes parent edge
+dp = [[1, 1, 0, 0, 1] for _ in range(n)]
+
+# Process nodes in post-order (bottom-up)
+for node in visit_order[::-1]:
+    if not children[node]:  # Leaf node
         continue
-    res = 1
-    res2 = 1
-    res3 = 1
-    for ci in C[p]:
-        res = (res*(dp[ci][2] + dp[ci][3] + dp[ci][4])) % MOD
-        res2 = (res2*(dp[ci][1] + dp[ci][2] + 2*dp[ci][3] + dp[ci][4])) % MOD
-        res3 = (res3*(sum(dp[ci]) + dp[ci][2] + dp[ci][3])) % MOD
-    dp[p][0] = res
-    dp[p][1] = res
-    dp[p][2] = (res2 - res)%MOD
-    dp[p][3] = (res3 - res)%MOD
-    dp[p][4] = res
-print((dp[0][2] + dp[0][3] + dp[0][4] - 1) %MOD)
+
+    # Calculate values for internal nodes
+    res = 1   # Product for states 0, 1, 4
+    res2 = 1  # Product for state 2
+    res3 = 1  # Product for state 3
+
+    for child in children[node]:
+        # For each child, calculate contributions to parent states
+        res = (res * (dp[child][2] + dp[child][3] + dp[child][4])) % MOD
+        res2 = (res2 * (dp[child][1] + dp[child][2] + 2*dp[child][3] + dp[child][4])) % MOD
+        res3 = (res3 * (sum(dp[child]) + dp[child][2] + dp[child][3])) % MOD
+
+    # Update dp values for the current node
+    dp[node][0] = res
+    dp[node][1] = res
+    dp[node][2] = (res2 - res) % MOD
+    dp[node][3] = (res3 - res) % MOD
+    dp[node][4] = res
+
+# Calculate the final answer: sum of states 2, 3, 4 minus 1
+result = (dp[0][2] + dp[0][3] + dp[0][4] - 1) % MOD
+print(result)

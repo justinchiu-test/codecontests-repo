@@ -1,36 +1,15 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-from collections import deque
+from library import read_graph, find_cyclic_components
 
+# Read input
+n, m = map(int, input().split())
+graph = read_graph(n, m, directed=False, one_indexed=True)
 
-def bfs(x):
-    vis[x] = True
-    q = deque([x])
-    ans = 1
-    while q:
-        cur = q.popleft()
-        ans &= len(g[cur]) == 2
-        for x in g[cur]:
-            if not vis[x]:
-                vis[x] = True
-                q.append(x)
-    return ans
+# Find all cyclic components where each vertex has degree 2
+cyclic_count = 0
+for component in graph.find_connected_components():
+    if graph.is_cyclic_component(component):
+        cyclic_count += 1
 
-
-n, m = map(int, stdin.readline().split())
-g = [[] for _ in range(n)]
-vis = [False]*n
-ans = 0
-for _ in range(m):
-    u, v = map(lambda x: int(x) - 1, stdin.readline().split())
-    g[u].append(v)
-    g[v].append(u)
-
-for x in range(n):
-    if not vis[x]:
-        ans += bfs(x)
-
-print(ans)
-
-  		 		 	   	 				 	     	   	
+print(cyclic_count)

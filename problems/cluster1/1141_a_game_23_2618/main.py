@@ -1,20 +1,27 @@
 #!/usr/bin/env python3
 
-def fun(a,b):
-    if a % b != 0:
+from library import read_ints, get_prime_factors_with_counts
+
+def count_operations(a, b):
+    """
+    Count the minimum number of operations to transform a to b.
+    Each operation is either multiplying by 2 or multiplying by 3.
+    Returns -1 if it's impossible.
+    """
+    if a == b:
+        return 0
+
+    if b % a != 0:
         return -1
-    temp = 0
-    m = a/b
-    
-    while m % 2 == 0:
-        m = m / 2
-        temp += 1
-    while m % 3 == 0:
-        m = m/3
-        temp += 1
-    if m == 1:
-        return temp
-    else :
-        return -1
-a,b = map(int,input().split())
-print(fun(b,a))
+
+    ratio = b // a
+    factors = get_prime_factors_with_counts(ratio)
+
+    # Check if the only prime factors are 2 and 3
+    if set(factors.keys()).issubset({2, 3}):
+        return sum(factors.values())
+
+    return -1
+
+a, b = read_ints()
+print(count_operations(a, b))

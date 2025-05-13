@@ -1,33 +1,30 @@
 #!/usr/bin/env python3
 
-import math
-tc = int(input())
-for i in range(tc):
-    integer = int(input())
-    k = integer
-    kamus = dict()
-    while k % 2 == 0:
-        try:
-            kamus[2] += 1
-        except:
-            kamus[2] = 1
-        k /= 2
-    
-    for i in range(3,int(math.sqrt(k))+1,2):
-        while k % i == 0:
-            try:
-                kamus[i] += 1
-            except:
-                kamus[i] = 1
-            k /= i
+from library import read_test_cases, read_int, get_prime_factors_with_counts
 
-    kamus = sorted(kamus.items(), key = lambda x: x[1], reverse = True)
+def solve():
+    n = read_int()
 
-    if kamus == []:
-        print(f'1\n{integer}')
-    else:
-        banyak, count = kamus[0][0], kamus[0][1]
-        last = integer // (banyak**(count-1))
-        print(count)
-        print(f'{banyak} '*(count-1), end='')
-        print(last)
+    # Get prime factorization with counts
+    factors = get_prime_factors_with_counts(n)
+
+    if not factors:  # If n is 1
+        return [1, [n]]
+
+    # Find the prime factor with the highest frequency
+    max_factor = max(factors.items(), key=lambda x: x[1])
+    prime, count = max_factor
+
+    # Create the sequence
+    result = [prime] * (count - 1)
+    last_number = n
+    for _ in range(count - 1):
+        last_number //= prime
+
+    result.append(last_number)
+
+    return [count, result]
+
+for length, sequence in read_test_cases(solve):
+    print(length)
+    print(*sequence)

@@ -1,24 +1,19 @@
 #!/usr/bin/env python3
 
-n = int(input())
-p = n
-arr = []
-while p%2==0:
-    arr.append(2)
-    p = p//2
-x = int(p**0.5)+1
-for i in range(3,x,2):
-    while p%i==0:
-        arr.append(i)
-        p = p//i
-if p>2:
-    arr.append(p)
-if n==1 or len(arr)==1:
+from library import read_int, get_prime_factors
+
+n = read_int()
+prime_factors = get_prime_factors(n)
+
+if n == 1 or len(prime_factors) == 1:
+    # If n is 1 or prime, the first player loses
     print(1)
     print(0)
-elif len(arr)==2:
+elif len(prime_factors) == 2:
+    # If n has exactly 2 prime factors, the first player wins without taking coins
     print(2)
 else:
-    x = arr[0]*arr[1]
+    # If n has more than 2 prime factors, the first player wins by taking the product of the first two prime factors
+    product = prime_factors[0] * prime_factors[1]
     print(1)
-    print(x)
+    print(product)
