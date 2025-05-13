@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster4",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster4/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 126,
             "cyclomatic": 183
         },
-        "logprobs": NaN,
-        "tokens": 5685
+        "logprobs": -2465.3847936392563,
+        "tokens": 5713
     },
     "refactored_programs": {
         "499_c_crazy_town_6399": {
@@ -28,8 +28,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 197,
+            "logprobs": -220.08681224220393,
+            "tokens": 239,
             "problem_name": "499_c_crazy_town_6399"
         },
         "749_b_parallelogram_is_back_2975": {
@@ -43,8 +43,8 @@
                 "blank": 13,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 960,
+            "logprobs": -687.5729446239371,
+            "tokens": 1116,
             "problem_name": "749_b_parallelogram_is_back_2975"
         },
         "1163_c2_power_transmission_hard_edition_12093": {
@@ -58,8 +58,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 83,
+            "logprobs": -98.96100744319152,
+            "tokens": 117,
             "problem_name": "1163_c2_power_transmission_hard_edition_12093"
         },
         "464_b_restore_cube__2130": {
@@ -73,8 +73,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 315,
+            "logprobs": -374.4836747872296,
+            "tokens": 349,
             "problem_name": "464_b_restore_cube__2130"
         },
         "659_d_bicycle_race_5157": {
@@ -88,8 +88,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 171,
+            "logprobs": -207.03116222298996,
+            "tokens": 205,
             "problem_name": "659_d_bicycle_race_5157"
         },
         "498_a_crazy_town_4318": {
@@ -103,8 +103,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 145,
+            "logprobs": -184.89403162625132,
+            "tokens": 179,
             "problem_name": "498_a_crazy_town_4318"
         },
         "1046_i_say_hello_9380": {
@@ -118,8 +118,8 @@
                 "blank": 14,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 454,
+            "logprobs": -606.1192408667343,
+            "tokens": 488,
             "problem_name": "1046_i_say_hello_9380"
         },
         "32_e_hideandseek_3373": {
@@ -133,8 +133,8 @@
                 "blank": 1,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 879,
+            "logprobs": -425.98673766405017,
+            "tokens": 913,
             "problem_name": "32_e_hideandseek_3373"
         },
         "889_d_symmetric_projections_6832": {
@@ -148,8 +148,8 @@
                 "blank": 30,
                 "cyclomatic": 33
             },
-            "logprobs": NaN,
-            "tokens": 770,
+            "logprobs": -638.1405060735437,
+            "tokens": 804,
             "problem_name": "889_d_symmetric_projections_6832"
         },
         "183_b_zoo_1910": {
@@ -163,8 +163,8 @@
                 "blank": 15,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 554,
+            "logprobs": -520.276653282767,
+            "tokens": 588,
             "problem_name": "183_b_zoo_1910"
         },
         "552_d_vanya_and_triangles_5048": {
@@ -178,8 +178,8 @@
                 "blank": 14,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 438,
+            "logprobs": -360.34553061952204,
+            "tokens": 472,
             "problem_name": "552_d_vanya_and_triangles_5048"
         },
         "136_d_rectangle_and_square_9500": {
@@ -193,8 +193,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 301,
+            "logprobs": -248.28535495839418,
+            "tokens": 335,
             "problem_name": "136_d_rectangle_and_square_9500"
         },
         "886_f_symmetric_projections_6728": {
@@ -208,8 +208,8 @@
                 "blank": 30,
                 "cyclomatic": 33
             },
-            "logprobs": NaN,
-            "tokens": 770,
+            "logprobs": -638.1523468975437,
+            "tokens": 804,
             "problem_name": "886_f_symmetric_projections_6728"
         },
         "598_f_cut_length_4738": {
@@ -223,8 +223,8 @@
                 "blank": 4,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 375,
+            "logprobs": -365.547455189541,
+            "tokens": 409,
             "problem_name": "598_f_cut_length_4738"
         },
         "2_c_commentator_problem_4414": {
@@ -238,8 +238,8 @@
                 "blank": 15,
                 "cyclomatic": 17
             },
-            "logprobs": NaN,
-            "tokens": 1704,
+            "logprobs": -648.0158743671409,
+            "tokens": 1746,
             "problem_name": "2_c_commentator_problem_4414"
         },
         "165_a_supercentral_point_7945": {
@@ -253,8 +253,8 @@
                 "blank": 8,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 275,
+            "logprobs": -197.7164915706856,
+            "tokens": 309,
             "problem_name": "165_a_supercentral_point_7945"
         },
         "1163_c1_power_transmission_easy_edition_2411": {
@@ -268,8 +268,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 83,
+            "logprobs": -98.96100744319152,
+            "tokens": 117,
             "problem_name": "1163_c1_power_transmission_easy_edition_2411"
         },
         "334_b_eight_point_sets_7016": {
@@ -283,8 +283,8 @@
                 "blank": 11,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 440,
+            "logprobs": -343.7779130760875,
+            "tokens": 474,
             "problem_name": "334_b_eight_point_sets_7016"
         },
         "13_b_letter_a_6066": {
@@ -298,8 +298,8 @@
                 "blank": 20,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 803,
+            "logprobs": -480.8568041998555,
+            "tokens": 837,
             "problem_name": "13_b_letter_a_6066"
         },
         "961_d_pair_of_lines_12769": {
@@ -313,8 +313,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 123,
+            "logprobs": -112.7301879627152,
+            "tokens": 157,
             "problem_name": "961_d_pair_of_lines_12769"
         },
         "618_c_constellation_3489": {
@@ -328,8 +328,8 @@
                 "blank": 6,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -242.56958781476885,
+            "tokens": 285,
             "problem_name": "618_c_constellation_3489"
         },
         "1468_f_full_turn_7213": {
@@ -343,8 +343,8 @@
                 "blank": 12,
                 "cyclomatic": 21
             },
-            "logprobs": NaN,
-            "tokens": 712,
+            "logprobs": -358.59336017461396,
+            "tokens": 752,
             "problem_name": "1468_f_full_turn_7213"
         },
         "407_a_triangle_11184": {
@@ -358,8 +358,8 @@
                 "blank": 16,
                 "cyclomatic": 28
             },
-            "logprobs": NaN,
-            "tokens": 831,
+            "logprobs": -379.2856029254399,
+            "tokens": 867,
             "problem_name": "407_a_triangle_11184"
         },
         "617_d_polyline_7236": {
@@ -373,8 +373,8 @@
                 "blank": 14,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 824,
+            "logprobs": -385.5776491121406,
+            "tokens": 858,
             "problem_name": "617_d_polyline_7236"
         },
         "135_b_rectangle_and_square_9812": {
@@ -388,8 +388,8 @@
                 "blank": 8,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 378,
+            "logprobs": -248.66429992830035,
+            "tokens": 412,
             "problem_name": "135_b_rectangle_and_square_9812"
         },
         "630_o_arrow_1929": {
@@ -403,8 +403,8 @@
                 "blank": 50,
                 "cyclomatic": 56
             },
-            "logprobs": NaN,
-            "tokens": 2066,
+            "logprobs": -1251.1659130612284,
+            "tokens": 2105,
             "problem_name": "630_o_arrow_1929"
         },
         "1271_c_shawarma_tent_643": {
@@ -418,8 +418,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 507,
+            "logprobs": -393.2581362308118,
+            "tokens": 565,
             "problem_name": "1271_c_shawarma_tent_643"
         },
         "934_e_a_colourful_prospect_3399": {
@@ -433,8 +433,8 @@
                 "blank": 9,
                 "cyclomatic": 39
             },
-            "logprobs": NaN,
-            "tokens": 1343,
+            "logprobs": -833.923881941517,
+            "tokens": 1377,
             "problem_name": "934_e_a_colourful_prospect_3399"
         },
         "514_b_han_solo_and_lazer_gun_9314": {
@@ -448,8 +448,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 98,
+            "logprobs": -153.66921255787372,
+            "tokens": 132,
             "problem_name": "514_b_han_solo_and_lazer_gun_9314"
         },
         "850_a_five_dimensional_points_3812": {
@@ -463,8 +463,8 @@
                 "blank": 4,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -375.1704471093781,
+            "tokens": 272,
             "problem_name": "850_a_five_dimensional_points_3812"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 197,
+            "logprobs": -306.3116244256101,
+            "tokens": 233,
             "problem_name": "499_c_crazy_town_6399"
         },
         "749_b_parallelogram_is_back_2975": {
@@ -495,8 +495,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 120,
+            "logprobs": -255.71697795115224,
+            "tokens": 148,
             "problem_name": "749_b_parallelogram_is_back_2975"
         },
         "1163_c2_power_transmission_hard_edition_12093": {
@@ -510,8 +510,8 @@
                 "blank": 8,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 227,
+            "logprobs": -300.5193490001551,
+            "tokens": 255,
             "problem_name": "1163_c2_power_transmission_hard_edition_12093"
         },
         "464_b_restore_cube__2130": {
@@ -525,8 +525,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 315,
+            "logprobs": -467.9685515344806,
+            "tokens": 343,
             "problem_name": "464_b_restore_cube__2130"
         },
         "659_d_bicycle_race_5157": {
@@ -540,8 +540,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 155,
+            "logprobs": -270.7484822293258,
+            "tokens": 183,
             "problem_name": "659_d_bicycle_race_5157"
         },
         "498_a_crazy_town_4318": {
@@ -555,8 +555,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 145,
+            "logprobs": -264.7862289116271,
+            "tokens": 173,
             "problem_name": "498_a_crazy_town_4318"
         },
         "1046_i_say_hello_9380": {
@@ -570,8 +570,8 @@
                 "blank": 17,
                 "cyclomatic": 11
             },
-            "logprobs": NaN,
-            "tokens": 529,
+            "logprobs": -641.8330965104194,
+            "tokens": 557,
             "problem_name": "1046_i_say_hello_9380"
         },
         "32_e_hideandseek_3373": {
@@ -585,8 +585,8 @@
                 "blank": 1,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 879,
+            "logprobs": -517.6506317857518,
+            "tokens": 907,
             "problem_name": "32_e_hideandseek_3373"
         },
         "889_d_symmetric_projections_6832": {
@@ -600,8 +600,8 @@
                 "blank": 30,
                 "cyclomatic": 33
             },
-            "logprobs": NaN,
-            "tokens": 770,
+            "logprobs": -730.0827213844766,
+            "tokens": 798,
             "problem_name": "889_d_symmetric_projections_6832"
         },
         "183_b_zoo_1910": {
@@ -615,8 +615,8 @@
                 "blank": 4,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 782,
+            "logprobs": -991.5994277683917,
+            "tokens": 810,
             "problem_name": "183_b_zoo_1910"
         },
         "552_d_vanya_and_triangles_5048": {
@@ -630,8 +630,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 174,
+            "logprobs": -276.2952317308227,
+            "tokens": 202,
             "problem_name": "552_d_vanya_and_triangles_5048"
         },
         "136_d_rectangle_and_square_9500": {
@@ -645,8 +645,8 @@
                 "blank": 15,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 514,
+            "logprobs": -473.12287769460613,
+            "tokens": 542,
             "problem_name": "136_d_rectangle_and_square_9500"
         },
         "886_f_symmetric_projections_6728": {
@@ -660,8 +660,8 @@
                 "blank": 30,
                 "cyclomatic": 33
             },
-            "logprobs": NaN,
-            "tokens": 770,
+            "logprobs": -730.0827213844766,
+            "tokens": 798,
             "problem_name": "886_f_symmetric_projections_6728"
         },
         "598_f_cut_length_4738": {
@@ -675,8 +675,8 @@
                 "blank": 4,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 375,
+            "logprobs": -471.8969773042003,
+            "tokens": 403,
             "problem_name": "598_f_cut_length_4738"
         },
         "2_c_commentator_problem_4414": {
@@ -690,8 +690,8 @@
                 "blank": 15,
                 "cyclomatic": 17
             },
-            "logprobs": NaN,
-            "tokens": 1704,
+            "logprobs": -740.2978806442086,
+            "tokens": 1740,
             "problem_name": "2_c_commentator_problem_4414"
         },
         "165_a_supercentral_point_7945": {
@@ -705,8 +705,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 229,
+            "logprobs": -226.03147267118874,
+            "tokens": 257,
             "problem_name": "165_a_supercentral_point_7945"
         },
         "1163_c1_power_transmission_easy_edition_2411": {
@@ -720,8 +720,8 @@
                 "blank": 10,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 319,
+            "logprobs": -355.5478769572729,
+            "tokens": 347,
             "problem_name": "1163_c1_power_transmission_easy_edition_2411"
         },
         "334_b_eight_point_sets_7016": {
@@ -735,8 +735,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 257,
+            "logprobs": -284.82504965436334,
+            "tokens": 285,
             "problem_name": "334_b_eight_point_sets_7016"
         },
         "13_b_letter_a_6066": {
@@ -750,8 +750,8 @@
                 "blank": 20,
                 "cyclomatic": 18
             },
-            "logprobs": NaN,
-            "tokens": 803,
+            "logprobs": -563.2563814833827,
+            "tokens": 831,
             "problem_name": "13_b_letter_a_6066"
         },
         "961_d_pair_of_lines_12769": {
@@ -765,8 +765,8 @@
                 "blank": 7,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 448,
+            "logprobs": -385.63027705030095,
+            "tokens": 476,
             "problem_name": "961_d_pair_of_lines_12769"
         },
         "618_c_constellation_3489": {
@@ -780,8 +780,8 @@
                 "blank": 6,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 251,
+            "logprobs": -323.82792329656064,
+            "tokens": 279,
             "problem_name": "618_c_constellation_3489"
         },
         "1468_f_full_turn_7213": {
@@ -795,8 +795,8 @@
                 "blank": 12,
                 "cyclomatic": 21
             },
-            "logprobs": NaN,
-            "tokens": 712,
+            "logprobs": -467.6800612423035,
+            "tokens": 746,
             "problem_name": "1468_f_full_turn_7213"
         },
         "407_a_triangle_11184": {
@@ -810,8 +810,8 @@
                 "blank": 16,
                 "cyclomatic": 28
             },
-            "logprobs": NaN,
-            "tokens": 831,
+            "logprobs": -458.4844966187477,
+            "tokens": 861,
             "problem_name": "407_a_triangle_11184"
         },
         "617_d_polyline_7236": {
@@ -825,8 +825,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 552,
+            "logprobs": -379.08188483071797,
+            "tokens": 580,
             "problem_name": "617_d_polyline_7236"
         },
         "135_b_rectangle_and_square_9812": {
@@ -840,8 +840,8 @@
                 "blank": 1,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 626,
+            "logprobs": -426.45068061295825,
+            "tokens": 658,
             "problem_name": "135_b_rectangle_and_square_9812"
         },
         "630_o_arrow_1929": {
@@ -855,8 +855,8 @@
                 "blank": 50,
                 "cyclomatic": 56
             },
-            "logprobs": NaN,
-            "tokens": 2066,
+            "logprobs": -1320.5125914769606,
+            "tokens": 2099,
             "problem_name": "630_o_arrow_1929"
         },
         "1271_c_shawarma_tent_643": {
@@ -870,8 +870,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 290,
+            "logprobs": -353.60010625042565,
+            "tokens": 318,
             "problem_name": "1271_c_shawarma_tent_643"
         },
         "934_e_a_colourful_prospect_3399": {
@@ -885,8 +885,8 @@
                 "blank": 9,
                 "cyclomatic": 39
             },
-            "logprobs": NaN,
-            "tokens": 1343,
+            "logprobs": -912.3764497034139,
+            "tokens": 1371,
             "problem_name": "934_e_a_colourful_prospect_3399"
         },
         "514_b_han_solo_and_lazer_gun_9314": {
@@ -900,8 +900,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -334.5114056931662,
+            "tokens": 228,
             "problem_name": "514_b_han_solo_and_lazer_gun_9314"
         },
         "850_a_five_dimensional_points_3812": {
@@ -915,14 +915,14 @@
                 "blank": 4,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 236,
+            "logprobs": -434.6960047418293,
+            "tokens": 265,
             "problem_name": "850_a_five_dimensional_points_3812"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 22771,
+        "logprobs": -14545.204621612902,
+        "tokens": 23996,
         "loc": 2598,
         "sloc": 1826,
         "lloc": 1879,
@@ -932,8 +932,8 @@
         "cyclomatic": 465
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 16819,
+        "logprobs": -14665.425442543296,
+        "tokens": 17693,
         "loc": 1900,
         "sloc": 1504,
         "lloc": 1550,
@@ -943,9 +943,9 @@
         "cyclomatic": 336
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.3538854866520007,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.356242581812016,
+        "logprobs_refactored_div_original": 0.9918024320943569,
+        "avg_logprob_per_token_original": -0.8288829165513647,
+        "avg_logprob_per_token_refactored": -0.6061512177701659
     }
 }

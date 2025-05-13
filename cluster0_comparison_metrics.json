@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster0",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster0/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 43,
             "cyclomatic": 94
         },
-        "logprobs": NaN,
-        "tokens": 2163
+        "logprobs": -1279.7948488040379,
+        "tokens": 2197
     },
     "refactored_programs": {
         "902_b_coloring_a_tree_2877": {
@@ -28,8 +28,8 @@
                 "blank": 11,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 280,
+            "logprobs": -222.0486618332767,
+            "tokens": 320,
             "problem_name": "902_b_coloring_a_tree_2877"
         },
         "1086_b_minimum_diameter_tree_8860": {
@@ -43,8 +43,8 @@
                 "blank": 8,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 210,
+            "logprobs": -268.35883162791947,
+            "tokens": 252,
             "problem_name": "1086_b_minimum_diameter_tree_8860"
         },
         "1041_e_tree_reconstruction_8858": {
@@ -58,8 +58,8 @@
                 "blank": 19,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 336,
+            "logprobs": -423.72014292360814,
+            "tokens": 375,
             "problem_name": "1041_e_tree_reconstruction_8858"
         },
         "963_b_destruction_of_a_tree_65": {
@@ -73,8 +73,8 @@
                 "blank": 11,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 388,
+            "logprobs": -438.0061359168844,
+            "tokens": 435,
             "problem_name": "963_b_destruction_of_a_tree_65"
         },
         "319_b_psychos_in_a_line_454": {
@@ -88,8 +88,8 @@
                 "blank": 14,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 130,
+            "logprobs": -232.7331045813705,
+            "tokens": 171,
             "problem_name": "319_b_psychos_in_a_line_454"
         },
         "1118_f1_tree_cutting_easy_version_12195": {
@@ -103,8 +103,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 351,
+            "logprobs": -381.44728706906966,
+            "tokens": 391,
             "problem_name": "1118_f1_tree_cutting_easy_version_12195"
         },
         "931_d_peculiar_appletree_4441": {
@@ -118,8 +118,8 @@
                 "blank": 9,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 268,
+            "logprobs": -302.60178494915107,
+            "tokens": 308,
             "problem_name": "931_d_peculiar_appletree_4441"
         },
         "839_c_journey_2458": {
@@ -133,8 +133,8 @@
                 "blank": 6,
                 "cyclomatic": 29
             },
-            "logprobs": NaN,
-            "tokens": 754,
+            "logprobs": -553.3673211569017,
+            "tokens": 858,
             "problem_name": "839_c_journey_2458"
         },
         "1338_b_edge_weight_assignment_7623": {
@@ -148,8 +148,8 @@
                 "blank": 9,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 395,
+            "logprobs": -399.3206666667736,
+            "tokens": 435,
             "problem_name": "1338_b_edge_weight_assignment_7623"
         },
         "110_e_lucky_tree_11049": {
@@ -163,8 +163,8 @@
                 "blank": 10,
                 "cyclomatic": 20
             },
-            "logprobs": NaN,
-            "tokens": 473,
+            "logprobs": -454.58289839878455,
+            "tokens": 517,
             "problem_name": "110_e_lucky_tree_11049"
         },
         "404_c_restore_graph_3793": {
@@ -178,8 +178,8 @@
                 "blank": 10,
                 "cyclomatic": 15
             },
-            "logprobs": NaN,
-            "tokens": 505,
+            "logprobs": -411.0471471481649,
+            "tokens": 545,
             "problem_name": "404_c_restore_graph_3793"
         },
         "1076_d_edge_deletion_9486": {
@@ -193,8 +193,8 @@
                 "blank": 5,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 467,
+            "logprobs": -327.0837713235019,
+            "tokens": 509,
             "problem_name": "1076_d_edge_deletion_9486"
         },
         "1287_d_numbers_on_tree_1897": {
@@ -208,8 +208,8 @@
                 "blank": 6,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 250,
+            "logprobs": -269.1701003303562,
+            "tokens": 290,
             "problem_name": "1287_d_numbers_on_tree_1897"
         },
         "913_b_christmas_spruce_7977": {
@@ -223,8 +223,8 @@
                 "blank": 11,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 329,
+            "logprobs": -248.71290603336854,
+            "tokens": 369,
             "problem_name": "913_b_christmas_spruce_7977"
         },
         "982_c_cut_em_all_5275": {
@@ -238,8 +238,8 @@
                 "blank": 7,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 242,
+            "logprobs": -188.6582579474512,
+            "tokens": 282,
             "problem_name": "982_c_cut_em_all_5275"
         },
         "246_d_colorful_graph_3682": {
@@ -253,8 +253,8 @@
                 "blank": 9,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 209,
+            "logprobs": -208.36159349806644,
+            "tokens": 249,
             "problem_name": "246_d_colorful_graph_3682"
         },
         "1143_c_queen_2410": {
@@ -268,8 +268,8 @@
                 "blank": 11,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 348,
+            "logprobs": -333.4759664393278,
+            "tokens": 388,
             "problem_name": "1143_c_queen_2410"
         },
         "1133_f1_spanning_tree_with_maximum_degree_10945": {
@@ -283,8 +283,8 @@
                 "blank": 12,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 281,
+            "logprobs": -267.7556836662423,
+            "tokens": 321,
             "problem_name": "1133_f1_spanning_tree_with_maximum_degree_10945"
         },
         "1391_e_pairs_of_pairs_6690": {
@@ -298,8 +298,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 499,
+            "logprobs": -434.1502135925954,
+            "tokens": 539,
             "problem_name": "1391_e_pairs_of_pairs_6690"
         },
         "420_c_bug_in_code_5355": {
@@ -313,8 +313,8 @@
                 "blank": 7,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -342.35125375008454,
+            "tokens": 283,
             "problem_name": "420_c_bug_in_code_5355"
         },
         "747_e_comments_9533": {
@@ -328,8 +328,8 @@
                 "blank": 8,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 316,
+            "logprobs": -335.53727516654254,
+            "tokens": 356,
             "problem_name": "747_e_comments_9533"
         },
         "796_c_bank_hacking_5163": {
@@ -343,8 +343,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 295,
+            "logprobs": -328.79323228366906,
+            "tokens": 335,
             "problem_name": "796_c_bank_hacking_5163"
         },
         "421_d_bug_in_code_563": {
@@ -358,8 +358,8 @@
                 "blank": 7,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -342.35125375008454,
+            "tokens": 283,
             "problem_name": "421_d_bug_in_code_563"
         },
         "981_c_useful_decomposition_4026": {
@@ -373,8 +373,8 @@
                 "blank": 8,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 356,
+            "logprobs": -243.69252858514713,
+            "tokens": 396,
             "problem_name": "981_c_useful_decomposition_4026"
         },
         "1176_e_cover_it_10635": {
@@ -388,8 +388,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 818,
+            "logprobs": -557.470840362855,
+            "tokens": 859,
             "problem_name": "1176_e_cover_it_10635"
         },
         "292_b_network_topology_9930": {
@@ -403,8 +403,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 303,
+            "logprobs": -240.9151378806067,
+            "tokens": 343,
             "problem_name": "292_b_network_topology_9930"
         },
         "1325_c_ehab_and_pathetic_mexs_1064": {
@@ -418,8 +418,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 291,
+            "logprobs": -256.12550618183786,
+            "tokens": 331,
             "problem_name": "1325_c_ehab_and_pathetic_mexs_1064"
         },
         "580_c_kefa_and_park_5570": {
@@ -433,8 +433,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 306,
+            "logprobs": -302.1091381356332,
+            "tokens": 346,
             "problem_name": "580_c_kefa_and_park_5570"
         },
         "1286_b_numbers_on_tree_11475": {
@@ -448,8 +448,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 518,
+            "logprobs": -462.56761905725745,
+            "tokens": 558,
             "problem_name": "1286_b_numbers_on_tree_11475"
         },
         "116_c_party_7303": {
@@ -463,8 +463,8 @@
                 "blank": 10,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 209,
+            "logprobs": -221.7992914852534,
+            "tokens": 249,
             "problem_name": "116_c_party_7303"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 185,
+            "logprobs": -320.30560030300217,
+            "tokens": 213,
             "problem_name": "902_b_coloring_a_tree_2877"
         },
         "1086_b_minimum_diameter_tree_8860": {
@@ -495,8 +495,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 134,
+            "logprobs": -264.129244197312,
+            "tokens": 163,
             "problem_name": "1086_b_minimum_diameter_tree_8860"
         },
         "1041_e_tree_reconstruction_8858": {
@@ -510,8 +510,8 @@
                 "blank": 19,
                 "cyclomatic": 12
             },
-            "logprobs": NaN,
-            "tokens": 336,
+            "logprobs": -520.8399099471822,
+            "tokens": 364,
             "problem_name": "1041_e_tree_reconstruction_8858"
         },
         "963_b_destruction_of_a_tree_65": {
@@ -525,8 +525,8 @@
                 "blank": 11,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 388,
+            "logprobs": -521.4798319980932,
+            "tokens": 422,
             "problem_name": "963_b_destruction_of_a_tree_65"
         },
         "319_b_psychos_in_a_line_454": {
@@ -540,8 +540,8 @@
                 "blank": 14,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 130,
+            "logprobs": -321.28460227915207,
+            "tokens": 158,
             "problem_name": "319_b_psychos_in_a_line_454"
         },
         "1118_f1_tree_cutting_easy_version_12195": {
@@ -555,8 +555,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 351,
+            "logprobs": -467.1843747190975,
+            "tokens": 379,
             "problem_name": "1118_f1_tree_cutting_easy_version_12195"
         },
         "931_d_peculiar_appletree_4441": {
@@ -570,8 +570,8 @@
                 "blank": 10,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 120,
+            "logprobs": -301.99765539489533,
+            "tokens": 148,
             "problem_name": "931_d_peculiar_appletree_4441"
         },
         "839_c_journey_2458": {
@@ -585,8 +585,8 @@
                 "blank": 7,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 245,
+            "logprobs": -395.5984351664881,
+            "tokens": 273,
             "problem_name": "839_c_journey_2458"
         },
         "1338_b_edge_weight_assignment_7623": {
@@ -600,8 +600,8 @@
                 "blank": 9,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 395,
+            "logprobs": -490.2993412114751,
+            "tokens": 423,
             "problem_name": "1338_b_edge_weight_assignment_7623"
         },
         "110_e_lucky_tree_11049": {
@@ -615,8 +615,8 @@
                 "blank": 10,
                 "cyclomatic": 20
             },
-            "logprobs": NaN,
-            "tokens": 473,
+            "logprobs": -542.5080470663445,
+            "tokens": 505,
             "problem_name": "110_e_lucky_tree_11049"
         },
         "404_c_restore_graph_3793": {
@@ -630,8 +630,8 @@
                 "blank": 10,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 250,
+            "logprobs": -382.3315888555503,
+            "tokens": 278,
             "problem_name": "404_c_restore_graph_3793"
         },
         "1076_d_edge_deletion_9486": {
@@ -645,8 +645,8 @@
                 "blank": 5,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 467,
+            "logprobs": -429.68890260977753,
+            "tokens": 497,
             "problem_name": "1076_d_edge_deletion_9486"
         },
         "1287_d_numbers_on_tree_1897": {
@@ -660,8 +660,8 @@
                 "blank": 6,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 250,
+            "logprobs": -384.05587016656347,
+            "tokens": 278,
             "problem_name": "1287_d_numbers_on_tree_1897"
         },
         "913_b_christmas_spruce_7977": {
@@ -675,8 +675,8 @@
                 "blank": 9,
                 "cyclomatic": 2
             },
-            "logprobs": NaN,
-            "tokens": 224,
+            "logprobs": -407.02579800360166,
+            "tokens": 258,
             "problem_name": "913_b_christmas_spruce_7977"
         },
         "982_c_cut_em_all_5275": {
@@ -690,8 +690,8 @@
                 "blank": 4,
                 "cyclomatic": 8
             },
-            "logprobs": NaN,
-            "tokens": 225,
+            "logprobs": -343.97560514566277,
+            "tokens": 258,
             "problem_name": "982_c_cut_em_all_5275"
         },
         "246_d_colorful_graph_3682": {
@@ -705,8 +705,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 123,
+            "logprobs": -271.6785597990956,
+            "tokens": 151,
             "problem_name": "246_d_colorful_graph_3682"
         },
         "1143_c_queen_2410": {
@@ -720,8 +720,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 164,
+            "logprobs": -303.4478679990284,
+            "tokens": 194,
             "problem_name": "1143_c_queen_2410"
         },
         "1133_f1_spanning_tree_with_maximum_degree_10945": {
@@ -735,8 +735,8 @@
                 "blank": 2,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 468,
+            "logprobs": -478.89972574583174,
+            "tokens": 496,
             "problem_name": "1133_f1_spanning_tree_with_maximum_degree_10945"
         },
         "1391_e_pairs_of_pairs_6690": {
@@ -750,8 +750,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 499,
+            "logprobs": -530.5588211190679,
+            "tokens": 527,
             "problem_name": "1391_e_pairs_of_pairs_6690"
         },
         "420_c_bug_in_code_5355": {
@@ -765,8 +765,8 @@
                 "blank": 7,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -432.22234690821386,
+            "tokens": 271,
             "problem_name": "420_c_bug_in_code_5355"
         },
         "747_e_comments_9533": {
@@ -780,8 +780,8 @@
                 "blank": 8,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 316,
+            "logprobs": -445.23903992384356,
+            "tokens": 344,
             "problem_name": "747_e_comments_9533"
         },
         "796_c_bank_hacking_5163": {
@@ -795,8 +795,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 295,
+            "logprobs": -435.7510592973427,
+            "tokens": 323,
             "problem_name": "796_c_bank_hacking_5163"
         },
         "421_d_bug_in_code_563": {
@@ -810,8 +810,8 @@
                 "blank": 7,
                 "cyclomatic": 1
             },
-            "logprobs": NaN,
-            "tokens": 243,
+            "logprobs": -432.22234690821386,
+            "tokens": 271,
             "problem_name": "421_d_bug_in_code_563"
         },
         "981_c_useful_decomposition_4026": {
@@ -825,8 +825,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 231,
+            "logprobs": -288.316050064032,
+            "tokens": 259,
             "problem_name": "981_c_useful_decomposition_4026"
         },
         "1176_e_cover_it_10635": {
@@ -840,8 +840,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 172,
+            "logprobs": -233.52961191579718,
+            "tokens": 200,
             "problem_name": "1176_e_cover_it_10635"
         },
         "292_b_network_topology_9930": {
@@ -855,8 +855,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 173,
+            "logprobs": -245.89716043530768,
+            "tokens": 201,
             "problem_name": "292_b_network_topology_9930"
         },
         "1325_c_ehab_and_pathetic_mexs_1064": {
@@ -870,8 +870,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 291,
+            "logprobs": -348.47882643647205,
+            "tokens": 319,
             "problem_name": "1325_c_ehab_and_pathetic_mexs_1064"
         },
         "580_c_kefa_and_park_5570": {
@@ -885,8 +885,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 166,
+            "logprobs": -319.1301176741514,
+            "tokens": 194,
             "problem_name": "580_c_kefa_and_park_5570"
         },
         "1286_b_numbers_on_tree_11475": {
@@ -900,8 +900,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 518,
+            "logprobs": -569.1643224824953,
+            "tokens": 546,
             "problem_name": "1286_b_numbers_on_tree_11475"
         },
         "116_c_party_7303": {
@@ -915,14 +915,14 @@
                 "blank": 21,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 147,
+            "logprobs": -318.6554169669839,
+            "tokens": 175,
             "problem_name": "116_c_party_7303"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 12776,
+        "logprobs": -11278.110400545824,
+        "tokens": 14090,
         "loc": 1762,
         "sloc": 1250,
         "lloc": 1292,
@@ -932,8 +932,8 @@
         "cyclomatic": 265
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 8222,
+        "logprobs": -11745.896080740074,
+        "tokens": 9088,
         "loc": 1250,
         "sloc": 983,
         "lloc": 1004,
@@ -943,9 +943,9 @@
         "cyclomatic": 95
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.5538798345901241,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.5503961267605635,
+        "logprobs_refactored_div_original": 0.9601745429230141,
+        "avg_logprob_per_token_original": -1.292462156771575,
+        "avg_logprob_per_token_refactored": -0.8004336693077235
     }
 }

@@ -1,7 +1,7 @@
 {
     "cluster_name": "cluster1",
     "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
-    "logprobs_enabled": false,
+    "logprobs_enabled": true,
     "refactored_library": {
         "file_path": "problems/cluster1/library.py",
         "metrics": {
@@ -13,8 +13,8 @@
             "blank": 233,
             "cyclomatic": 193
         },
-        "logprobs": NaN,
-        "tokens": 7776
+        "logprobs": -5152.211701441754,
+        "tokens": 7836
     },
     "refactored_programs": {
         "1444_a_division_6380": {
@@ -28,8 +28,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 60,
+            "logprobs": -96.13206568516696,
+            "tokens": 126,
             "problem_name": "1444_a_division_6380"
         },
         "1242_a_tile_painting_5747": {
@@ -43,8 +43,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 28,
+            "logprobs": -90.52346674400924,
+            "tokens": 94,
             "problem_name": "1242_a_tile_painting_5747"
         },
         "1343_a_candies_8456": {
@@ -58,8 +58,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 44,
+            "logprobs": -90.20774570651415,
+            "tokens": 110,
             "problem_name": "1343_a_candies_8456"
         },
         "98_b_help_king_3609": {
@@ -73,8 +73,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 161,
+            "logprobs": -338.24394989163983,
+            "tokens": 227,
             "problem_name": "98_b_help_king_3609"
         },
         "271_e_three_horses_3683": {
@@ -88,8 +88,8 @@
                 "blank": 7,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 196,
+            "logprobs": -253.78681146169768,
+            "tokens": 263,
             "problem_name": "271_e_three_horses_3683"
         },
         "1374_b_multiply_by_2_divide_by_6_231": {
@@ -103,8 +103,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 47,
+            "logprobs": -90.59338871050615,
+            "tokens": 113,
             "problem_name": "1374_b_multiply_by_2_divide_by_6_231"
         },
         "1141_a_game_23_2618": {
@@ -118,8 +118,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 36,
+            "logprobs": -88.54378369468562,
+            "tokens": 104,
             "problem_name": "1141_a_game_23_2618"
         },
         "680_c_bear_and_prime_100_4430": {
@@ -133,8 +133,8 @@
                 "blank": 9,
                 "cyclomatic": 20
             },
-            "logprobs": NaN,
-            "tokens": 460,
+            "logprobs": -520.2682532365934,
+            "tokens": 535,
             "problem_name": "680_c_bear_and_prime_100_4430"
         },
         "762_a_kth_divisor_5057": {
@@ -148,8 +148,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 38,
+            "logprobs": -90.04631046024994,
+            "tokens": 104,
             "problem_name": "762_a_kth_divisor_5057"
         },
         "1110_c_meaningless_operations_3658": {
@@ -163,8 +163,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 41,
+            "logprobs": -105.1954504506779,
+            "tokens": 107,
             "problem_name": "1110_c_meaningless_operations_3658"
         },
         "177_b1_rectangular_game_2533": {
@@ -178,8 +178,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 27,
+            "logprobs": -92.89216295434467,
+            "tokens": 93,
             "problem_name": "177_b1_rectangular_game_2533"
         },
         "1454_d_number_into_sequence_7733": {
@@ -193,8 +193,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 53,
+            "logprobs": -106.20284274954261,
+            "tokens": 119,
             "problem_name": "1454_d_number_into_sequence_7733"
         },
         "1360_d_buying_shovels_6584": {
@@ -208,8 +208,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 48,
+            "logprobs": -93.20562437465013,
+            "tokens": 114,
             "problem_name": "1360_d_buying_shovels_6584"
         },
         "1091_c_new_year_and_the_sphere_transmission_1262": {
@@ -223,8 +223,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 33,
+            "logprobs": -92.34256497594545,
+            "tokens": 99,
             "problem_name": "1091_c_new_year_and_the_sphere_transmission_1262"
         },
         "288_c_polo_the_penguin_and_xor_operation_9826": {
@@ -238,8 +238,8 @@
                 "blank": 29,
                 "cyclomatic": 39
             },
-            "logprobs": NaN,
-            "tokens": 1055,
+            "logprobs": -1198.213552919528,
+            "tokens": 1142,
             "problem_name": "288_c_polo_the_penguin_and_xor_operation_9826"
         },
         "487_c_prefix_product_sequence_2443": {
@@ -253,8 +253,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 200,
+            "logprobs": -251.59332753799112,
+            "tokens": 266,
             "problem_name": "487_c_prefix_product_sequence_2443"
         },
         "371_b_fox_dividing_cheese_352": {
@@ -268,8 +268,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 36,
+            "logprobs": -95.1487769314817,
+            "tokens": 102,
             "problem_name": "371_b_fox_dividing_cheese_352"
         },
         "803_f_coprime_subsequences_8909": {
@@ -283,8 +283,8 @@
                 "blank": 2,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 204,
+            "logprobs": -301.0462932713858,
+            "tokens": 273,
             "problem_name": "803_f_coprime_subsequences_8909"
         },
         "150_a_win_or_freeze_5134": {
@@ -298,8 +298,8 @@
                 "blank": 5,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 233,
+            "logprobs": -283.3617556467577,
+            "tokens": 299,
             "problem_name": "150_a_win_or_freeze_5134"
         },
         "1076_b_divisor_subtraction_738": {
@@ -313,8 +313,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 29,
+            "logprobs": -95.4875114258518,
+            "tokens": 95,
             "problem_name": "1076_b_divisor_subtraction_738"
         },
         "1228_c_primes_and_multiplication_13032": {
@@ -328,8 +328,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 37,
+            "logprobs": -92.11328270379154,
+            "tokens": 103,
             "problem_name": "1228_c_primes_and_multiplication_13032"
         },
         "893_e_counting_arrays_6936": {
@@ -343,8 +343,8 @@
                 "blank": 75,
                 "cyclomatic": 97
             },
-            "logprobs": NaN,
-            "tokens": 3591,
+            "logprobs": -1608.4751516340584,
+            "tokens": 3689,
             "problem_name": "893_e_counting_arrays_6936"
         },
         "1294_c_product_of_three_numbers_4292": {
@@ -358,8 +358,8 @@
                 "blank": 3,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 68,
+            "logprobs": -113.05635480023066,
+            "tokens": 134,
             "problem_name": "1294_c_product_of_three_numbers_4292"
         },
         "151_c_win_or_freeze_133": {
@@ -373,8 +373,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 122,
+            "logprobs": -207.06831160259208,
+            "tokens": 188,
             "problem_name": "151_c_win_or_freeze_133"
         },
         "99_d_help_king_8501": {
@@ -388,8 +388,8 @@
                 "blank": 2,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 265,
+            "logprobs": -390.8579921666002,
+            "tokens": 331,
             "problem_name": "99_d_help_king_8501"
         },
         "1068_b_lcm_2510": {
@@ -403,8 +403,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 31,
+            "logprobs": -99.3511177600173,
+            "tokens": 97,
             "problem_name": "1068_b_lcm_2510"
         },
         "1243_c_tile_painting_2415": {
@@ -418,8 +418,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 28,
+            "logprobs": -90.52346674400924,
+            "tokens": 94,
             "problem_name": "1243_c_tile_painting_2415"
         },
         "1362_a_johnny_and_ancient_computer_1692": {
@@ -433,8 +433,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 54,
+            "logprobs": -95.92265930747062,
+            "tokens": 120,
             "problem_name": "1362_a_johnny_and_ancient_computer_1692"
         },
         "576_a_vasya_and_petyas_game_7650": {
@@ -448,8 +448,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -171.50941516724234,
+            "tokens": 199,
             "problem_name": "576_a_vasya_and_petyas_game_7650"
         },
         "1295_d_same_gcds_6373": {
@@ -463,8 +463,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 54,
+            "logprobs": -95.98638561696613,
+            "tokens": 120,
             "problem_name": "1295_d_same_gcds_6373"
         }
     },
@@ -480,8 +480,8 @@
                 "blank": 4,
                 "cyclomatic": 19
             },
-            "logprobs": NaN,
-            "tokens": 390,
+            "logprobs": -515.3136543347846,
+            "tokens": 423,
             "problem_name": "1444_a_division_6380"
         },
         "1242_a_tile_painting_5747": {
@@ -495,8 +495,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 122,
+            "logprobs": -278.79076682515324,
+            "tokens": 150,
             "problem_name": "1242_a_tile_painting_5747"
         },
         "1343_a_candies_8456": {
@@ -510,8 +510,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 105,
+            "logprobs": -260.4401370451123,
+            "tokens": 133,
             "problem_name": "1343_a_candies_8456"
         },
         "98_b_help_king_3609": {
@@ -525,8 +525,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 161,
+            "logprobs": -407.945442944671,
+            "tokens": 189,
             "problem_name": "98_b_help_king_3609"
         },
         "271_e_three_horses_3683": {
@@ -540,8 +540,8 @@
                 "blank": 7,
                 "cyclomatic": 6
             },
-            "logprobs": NaN,
-            "tokens": 196,
+            "logprobs": -317.6905721749423,
+            "tokens": 225,
             "problem_name": "271_e_three_horses_3683"
         },
         "1374_b_multiply_by_2_divide_by_6_231": {
@@ -555,8 +555,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 134,
+            "logprobs": -227.27378367653478,
+            "tokens": 162,
             "problem_name": "1374_b_multiply_by_2_divide_by_6_231"
         },
         "1141_a_game_23_2618": {
@@ -570,8 +570,8 @@
                 "blank": 2,
                 "cyclomatic": 5
             },
-            "logprobs": NaN,
-            "tokens": 118,
+            "logprobs": -242.11269963845302,
+            "tokens": 146,
             "problem_name": "1141_a_game_23_2618"
         },
         "680_c_bear_and_prime_100_4430": {
@@ -585,8 +585,8 @@
                 "blank": 15,
                 "cyclomatic": 22
             },
-            "logprobs": NaN,
-            "tokens": 831,
+            "logprobs": -836.3817655360144,
+            "tokens": 869,
             "problem_name": "680_c_bear_and_prime_100_4430"
         },
         "762_a_kth_divisor_5057": {
@@ -600,8 +600,8 @@
                 "blank": 10,
                 "cyclomatic": 8
             },
-            "logprobs": NaN,
-            "tokens": 573,
+            "logprobs": -661.0341707503976,
+            "tokens": 634,
             "problem_name": "762_a_kth_divisor_5057"
         },
         "1110_c_meaningless_operations_3658": {
@@ -615,8 +615,8 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 140,
+            "logprobs": -245.28313555397054,
+            "tokens": 168,
             "problem_name": "1110_c_meaningless_operations_3658"
         },
         "177_b1_rectangular_game_2533": {
@@ -630,8 +630,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 72,
+            "logprobs": -199.46077680830166,
+            "tokens": 100,
             "problem_name": "177_b1_rectangular_game_2533"
         },
         "1454_d_number_into_sequence_7733": {
@@ -645,8 +645,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 229,
+            "logprobs": -354.3668386022298,
+            "tokens": 257,
             "problem_name": "1454_d_number_into_sequence_7733"
         },
         "1360_d_buying_shovels_6584": {
@@ -660,8 +660,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 137,
+            "logprobs": -270.0464815057555,
+            "tokens": 165,
             "problem_name": "1360_d_buying_shovels_6584"
         },
         "1091_c_new_year_and_the_sphere_transmission_1262": {
@@ -675,8 +675,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 92,
+            "logprobs": -238.21595370210403,
+            "tokens": 120,
             "problem_name": "1091_c_new_year_and_the_sphere_transmission_1262"
         },
         "288_c_polo_the_penguin_and_xor_operation_9826": {
@@ -690,8 +690,8 @@
                 "blank": 29,
                 "cyclomatic": 39
             },
-            "logprobs": NaN,
-            "tokens": 1055,
+            "logprobs": -1267.922525767175,
+            "tokens": 1103,
             "problem_name": "288_c_polo_the_penguin_and_xor_operation_9826"
         },
         "487_c_prefix_product_sequence_2443": {
@@ -705,8 +705,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 132,
+            "logprobs": -250.367529030796,
+            "tokens": 160,
             "problem_name": "487_c_prefix_product_sequence_2443"
         },
         "371_b_fox_dividing_cheese_352": {
@@ -720,8 +720,8 @@
                 "blank": 6,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 336,
+            "logprobs": -385.21096550795227,
+            "tokens": 364,
             "problem_name": "371_b_fox_dividing_cheese_352"
         },
         "803_f_coprime_subsequences_8909": {
@@ -735,8 +735,8 @@
                 "blank": 2,
                 "cyclomatic": 10
             },
-            "logprobs": NaN,
-            "tokens": 204,
+            "logprobs": -360.86199977743956,
+            "tokens": 235,
             "problem_name": "803_f_coprime_subsequences_8909"
         },
         "150_a_win_or_freeze_5134": {
@@ -750,8 +750,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 142,
+            "logprobs": -251.6979945999476,
+            "tokens": 170,
             "problem_name": "150_a_win_or_freeze_5134"
         },
         "1076_b_divisor_subtraction_738": {
@@ -765,8 +765,8 @@
                 "blank": 14,
                 "cyclomatic": 22
             },
-            "logprobs": NaN,
-            "tokens": 862,
+            "logprobs": -1333.6521691400092,
+            "tokens": 892,
             "problem_name": "1076_b_divisor_subtraction_738"
         },
         "1228_c_primes_and_multiplication_13032": {
@@ -780,8 +780,8 @@
                 "blank": 38,
                 "cyclomatic": 3
             },
-            "logprobs": NaN,
-            "tokens": 722,
+            "logprobs": -551.5161090190376,
+            "tokens": 768,
             "problem_name": "1228_c_primes_and_multiplication_13032"
         },
         "893_e_counting_arrays_6936": {
@@ -795,8 +795,8 @@
                 "blank": 75,
                 "cyclomatic": 97
             },
-            "logprobs": NaN,
-            "tokens": 3591,
+            "logprobs": -1637.5158397710277,
+            "tokens": 3651,
             "problem_name": "893_e_counting_arrays_6936"
         },
         "1294_c_product_of_three_numbers_4292": {
@@ -810,8 +810,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 198,
+            "logprobs": -294.73794222103817,
+            "tokens": 226,
             "problem_name": "1294_c_product_of_three_numbers_4292"
         },
         "151_c_win_or_freeze_133": {
@@ -825,8 +825,8 @@
                 "blank": 1,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 122,
+            "logprobs": -258.32282094596025,
+            "tokens": 150,
             "problem_name": "151_c_win_or_freeze_133"
         },
         "99_d_help_king_8501": {
@@ -840,8 +840,8 @@
                 "blank": 2,
                 "cyclomatic": 9
             },
-            "logprobs": NaN,
-            "tokens": 265,
+            "logprobs": -432.20549487183297,
+            "tokens": 293,
             "problem_name": "99_d_help_king_8501"
         },
         "1068_b_lcm_2510": {
@@ -855,8 +855,8 @@
                 "blank": 7,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 125,
+            "logprobs": -292.9155801810211,
+            "tokens": 153,
             "problem_name": "1068_b_lcm_2510"
         },
         "1243_c_tile_painting_2415": {
@@ -870,8 +870,8 @@
                 "blank": 3,
                 "cyclomatic": 4
             },
-            "logprobs": NaN,
-            "tokens": 103,
+            "logprobs": -211.14092052234034,
+            "tokens": 131,
             "problem_name": "1243_c_tile_painting_2415"
         },
         "1362_a_johnny_and_ancient_computer_1692": {
@@ -885,8 +885,8 @@
                 "blank": 4,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 165,
+            "logprobs": -314.17471327447015,
+            "tokens": 193,
             "problem_name": "1362_a_johnny_and_ancient_computer_1692"
         },
         "576_a_vasya_and_petyas_game_7650": {
@@ -900,8 +900,8 @@
                 "blank": 3,
                 "cyclomatic": 7
             },
-            "logprobs": NaN,
-            "tokens": 133,
+            "logprobs": -232.1748616942355,
+            "tokens": 161,
             "problem_name": "576_a_vasya_and_petyas_game_7650"
         },
         "1295_d_same_gcds_6373": {
@@ -915,14 +915,14 @@
                 "blank": 2,
                 "cyclomatic": 0
             },
-            "logprobs": NaN,
-            "tokens": 112,
+            "logprobs": -303.2971823237199,
+            "tokens": 140,
             "problem_name": "1295_d_same_gcds_6373"
         }
     },
     "aggregated_metrics_refactored": {
-        "logprobs": NaN,
-        "tokens": 15188,
+        "logprobs": -12490.111477773953,
+        "tokens": 17296,
         "loc": 2108,
         "sloc": 1239,
         "lloc": 1313,
@@ -932,8 +932,8 @@
         "cyclomatic": 381
     },
     "aggregated_metrics_original": {
-        "logprobs": NaN,
-        "tokens": 11567,
+        "logprobs": -13432.070827746425,
+        "tokens": 12531,
         "loc": 1627,
         "sloc": 1141,
         "lloc": 1197,
@@ -943,9 +943,9 @@
         "cyclomatic": 255
     },
     "comparison_ratios": {
-        "tokens_refactored_div_original": 1.313045733552347,
-        "logprobs_refactored_div_original": NaN,
-        "avg_logprob_per_token_original": NaN,
-        "avg_logprob_per_token_refactored": NaN
+        "tokens_refactored_div_original": 1.3802569627324235,
+        "logprobs_refactored_div_original": 0.9298723657690458,
+        "avg_logprob_per_token_original": -1.0719073360263687,
+        "avg_logprob_per_token_refactored": -0.7221387302135727
     }
 }
