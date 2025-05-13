@@ -16,8 +16,8 @@ However, those are the only files you can edit.
 The import path is taken care of for you while running tests via `bash {problem}/run.sh`.
 
 ### What You Can Modify
-- **Library file (`./library.py`)**: You can create, modify, or delete any files in this directory.
-- **Problem Solutions (`./*/main.py`)**: You can modify the main.py file in each problem directory to utilize your library. Note that the initial solutions may be incorrect and not pass all tests.
+- **Library file (`library.py`)**: You can create, modify, or delete any files in this directory.
+- **Problem Solutions (`{problem}/main.py`)**: You can modify the main.py file in each problem directory to utilize your library. Note that the initial solutions may be incorrect and not pass all tests.
 
 ### What You Cannot Modify
 - **Problem Descriptions (`{problem}/PROBLEM.md`)**: These files describe the problems and must not be changed.
