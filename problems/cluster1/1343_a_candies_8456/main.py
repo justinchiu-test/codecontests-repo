@@ -1,19 +1,8 @@
 #!/usr/bin/env python3
 
-import math
-if __name__ == "__main__":
-    n =  int(input())
+from library import read_int, solve_candies
 
-    for i in range(n):
-        m = int(input())
-
-        res = 1
-        test = 0
-        while(m > 2**res -1):
-            res += 1
-            if m% (2**res -1) == 0:
-                test = m//(2**res -1)
-                break
-
-        x = test
-        print(x)
+t = read_int()
+for _ in range(t):
+    n = read_int()
+    print(solve_candies(n))

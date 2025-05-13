@@ -1,70 +1,100 @@
 #!/usr/bin/env python3
 
-import sys
-input = lambda: sys.stdin.readline().rstrip()
-
+from library import read_int, read_int_tuple, enable_fast_io
 from collections import deque
-mod = 10 ** 9 + 7
-N = int(input())
-E = []
-for _ in range(N - 1):
-    x, y = map(int, input().split())
-    x, y = x-1, y-1
-    E.append((x, y))
 
-pre = [1]
-PA = [pre]
-for i in range(N + 2):
-    ne = [0] * (i + 2)
-    for j, a in enumerate(pre):
-        ne[j] = (ne[j] + a) % mod
-        ne[j+1] = (ne[j+1] + a) % mod
-    PA.append(ne)
-    pre = ne
-for pa in PA:
-    for i in range(len(pa) - 1):
-        pa[i+1] = (pa[i+1] + pa[i]) % mod
-
-i2 = mod + 1 >> 1
-poi2 = [1]
-for _ in range(N + 5):
-    poi2.append(poi2[-1] * i2 % mod)
-iN = pow(N, mod - 2, mod)
-ans = 0
-for i0 in range(N):
-    X = [[] for i in range(N)]
-    for x, y in E:
-        X[x].append(y)
-        X[y].append(x)
-
-    P = [-1] * N
-    Q = deque([i0])
-    R = []
-    D = [0] * N
-    while Q:
-        i = deque.popleft(Q)
-        R.append(i)
-        for a in X[i]:
-            if a != P[i]:
-                P[a] = i
-                X[a].remove(i)
-                deque.append(Q, a)
-                D[a] = D[i] + 1
+def main():
+    enable_fast_io()
     
-    size = [1] * N
-    for j in R[1:][::-1]:
-        size[P[j]] += size[j]
+    # Modulus for arithmetic operations
+    mod = 10**9 + 7
     
-    for j in R:
-        if j <= i0: continue
-        d = D[j]
-        ans = (ans + size[j] * iN)
-        k = j
-        while P[k] != i0:
-            p = P[k]
-            s = size[p] - size[k]
-            ans = (ans + s * PA[d-1][D[p]-1] % mod * iN % mod * poi2[d-1]) % mod
-            k = p
+    # Read input
+    n = read_int()
+    
+    # Build the tree
+    graph = [[] for _ in range(n)]
+    for _ in range(n - 1):
+        x, y = read_int_tuple()
+        x -= 1  # Convert to 0-indexed
+        y -= 1
+        graph[x].append(y)
+        graph[y].append(x)
+    
+    # Precompute Pascal's triangle (for combinations)
+    pascal = [[1]]
+    pre = [1]
+    for i in range(n + 2):
+        new_row = [0] * (i + 2)
+        for j, a in enumerate(pre):
+            new_row[j] = (new_row[j] + a) % mod
+            new_row[j + 1] = (new_row[j + 1] + a) % mod
+        pascal.append(new_row)
+        pre = new_row
+    
+    # Convert pascal to prefix sums
+    for pa in pascal:
+        for i in range(len(pa) - 1):
+            pa[i + 1] = (pa[i + 1] + pa[i]) % mod
+    
+    # Precompute powers of 1/2
+    half = (mod + 1) >> 1  # This is the modular inverse of 2
+    powers_of_half = [1]
+    for _ in range(n + 5):
+        powers_of_half.append(powers_of_half[-1] * half % mod)
+    
+    # Inverse of n (for 1/n calculations)
+    inv_n = pow(n, mod - 2, mod)
+    
+    # Calculate the expected number of inversions
+    answer = 0
+    for root in range(n):
+        # Recreate the tree for BFS with root as the starting node
+        tree = [[] for _ in range(n)]
+        for i in range(n):
+            tree[i] = graph[i].copy()
+        
+        # BFS to get parent and depth information
+        parent = [-1] * n
+        queue = deque([root])
+        nodes_by_bfs = []
+        depth = [0] * n
+        
+        while queue:
+            node = queue.popleft()
+            nodes_by_bfs.append(node)
+            
+            for neighbor in tree[node]:
+                if neighbor != parent[node]:
+                    parent[neighbor] = node
+                    tree[neighbor].remove(node)  # Remove the parent from the neighbor's adjacency list
+                    queue.append(neighbor)
+                    depth[neighbor] = depth[node] + 1
+        
+        # Calculate subtree sizes
+        subtree_size = [1] * n
+        for node in reversed(nodes_by_bfs[1:]):  # Skip the root
+            subtree_size[parent[node]] += subtree_size[node]
+        
+        # Calculate inversions contribution
+        for node in nodes_by_bfs:
+            if node <= root:
+                continue
+            
+            d = depth[node]
+            answer = (answer + subtree_size[node] * inv_n) % mod
+            
+            current = node
+            while parent[current] != root:
+                p = parent[current]
+                s = subtree_size[p] - subtree_size[current]
+                contribution = (s * pascal[d-1][depth[p]-1]) % mod
+                contribution = (contribution * inv_n) % mod
+                contribution = (contribution * powers_of_half[d-1]) % mod
+                answer = (answer + contribution) % mod
+                current = p
+    
+    print(answer)
 
-print(ans)
-
+if __name__ == "__main__":
+    main()

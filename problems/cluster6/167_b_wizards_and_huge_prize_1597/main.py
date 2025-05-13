@@ -1,83 +1,70 @@
 #!/usr/bin/env python3
 
-from collections import *
+from collections import defaultdict
+from library import read_ints
 
+# Read input
+n, l, initial_bags = read_ints()
+probabilities = read_ints()
+prizes = read_ints()
 
+# Count the number of tours with huge prizes
+huge_prizes_count = prizes.count(-1)
 
-f = lambda: list(map(int, input().split()))
+# Initialize DP state for tours with bags
+# (k, a): q means having won k tours and having a capacity for a huge prizes with probability q
+dp_bags = {(0, min(initial_bags, huge_prizes_count)): 1}
 
-n, l, a = f()
+# Initialize DP state for tours with huge prizes
+# r[i] is the probability of getting i huge prizes
+dp_huge = [1]
 
-p, s = f(), f()
+# Process each tour
+for p, s in zip(probabilities, prizes):
+    p /= 100  # Convert percent to probability
+    
+    if s > 0:  # If prize is a bag
+        new_dp = defaultdict(int)
+        
+        for (k, a), q in dp_bags.items():
+            # Case: Don't win this tour
+            new_dp[(k, a)] += q - q * p
+            
+            # Case: Win this tour
+            new_capacity = min(huge_prizes_count, a + s)
+            new_wins = min(l, k + 1)
+            new_dp[(new_wins, new_capacity)] += q * p
+        
+        dp_bags = new_dp
+    else:  # If prize is huge
+        # Calculate new huge prize distribution
+        win_probs = [0] + [q * p for q in dp_huge]
+        lose_probs = [q - q * p for q in dp_huge] + [0]
+        dp_huge = [a + b for a, b in zip(win_probs, lose_probs)]
 
-m = s.count(-1)
+# Calculate final probabilities
+result_dp = [[0] * (huge_prizes_count + 1) for _ in range(n - huge_prizes_count + 1)]
 
-x = {(0, min(a, m)): 1}
+# Initialize with valid states from dp_bags
+for (k, a), q in dp_bags.items():
+    if k + a >= l:  # If we win enough tours
+        result_dp[k][a] = q
 
-r = [1]
+# Process the DP array
+# Propagate probabilities up
+for k in range(n - huge_prizes_count, -1, -1):
+    for a in range(huge_prizes_count, 0, -1):
+        result_dp[k][a - 1] += result_dp[k][a]
 
+for k in range(n - huge_prizes_count, 0, -1):
+    for a in range(huge_prizes_count, -1, -1):
+        result_dp[k - 1][a] += result_dp[k][a]
 
+# Calculate final answer
+answer = 0
+for k, p in enumerate(dp_huge):
+    if l - k <= n - huge_prizes_count:
+        answer += result_dp[max(0, l - k)][k] * p
 
-for p, s in zip(p, s):
-
-    p /= 100
-
-    if s > 0:
-
-        y = defaultdict(int)
-
-        for (k, a), q in x.items():
-
-            y[(k, a)] += q - q * p
-
-            a = min(m, a + s)
-
-            k = min(l, k + 1)
-
-            y[(k, a)] += q * p
-
-        x = y
-
-    else:
-
-        i = [0] + [q * p for q in r]
-
-        j = [q - q * p for q in r] + [0]
-
-        r = [a + b for a, b in zip(i, j)]
-
-
-
-y = [[0] * (m + 1) for i in range(n - m + 1)]
-
-for (k, a), q in x.items():
-
-    if k + a >= l: y[k][a] = q
-
-
-
-for k in range(n - m, -1, -1):
-
-    for a in range(m, 0, -1):
-
-        y[k][a - 1] += y[k][a]
-
-for k in range(n - m, 0, -1):
-
-    for a in range(m, -1, -1):
-
-        y[k - 1][a] += y[k][a]
-
-
-
-d = 0
-
-for k, p in enumerate(r):
-
-    if l - k <= n - m: d += y[max(0, l - k)][k] * p
-
-print(d)
-
-
-
-# Made By Mostafa_Khaled
+# Format and print the answer with 7 decimal places
+print(f"{answer:.7f}")

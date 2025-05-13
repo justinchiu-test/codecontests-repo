@@ -1,33 +1,30 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-inp = lambda: stdin.readline().strip()
+from library import DSU
 
-n = int(inp())
+n = int(input().strip())
 
+# We use the DSU to track connected components of letters
+# Each letter is represented by its position in the alphabet (0-25)
+dsu = DSU(26)
+letter_exists = [False] * 26
 
-def dfs(visited, graph, node):
-    if not visited[node]:
-        visited[node] = True
-        for neighbour in graph[node]:
-            dfs(visited, graph, neighbour)
+for _ in range(n):
+    s = set(input().strip())
+    
+    # Mark all letters in the password as existing
+    letter_indices = [ord(ch) - ord('a') for ch in s]
+    for idx in letter_indices:
+        letter_exists[idx] = True
+    
+    # Union all letters in the same password
+    for i in range(len(letter_indices) - 1):
+        dsu.union(letter_indices[i], letter_indices[i + 1])
 
-
-adj = [set() for x in range(26)]
-visited = [True]*26
-for i in range(n):
-    s = list(set(inp()))
-    for j in range(len(s)):
-        visited[ord(s[j])-97] = False
-        for k in range(len(s)):
-            if s[k] != s[j]:
-                adj[ord(s[j])-97].add(ord(s[k])-97)
-
+# Count the number of distinct components among letters that exist
+roots = set()
 for i in range(26):
-    adj[i] = list(adj[i])
-counter = 0
-for i in range(26):
-    if not visited[i]:
-        dfs(visited,adj,i)
-        counter += 1
-print(counter)
+    if letter_exists[i]:
+        roots.add(dsu.find(i))
+
+print(len(roots))

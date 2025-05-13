@@ -1,27 +1,48 @@
 #!/usr/bin/env python3
 
-n,m=map(int,input().split())
-non=[{i} for i in range(n)]
-for i in range(m):
-    u,v=map(int,input().split())
-    u,v=u-1,v-1
-    non[u].add(v)
-    non[v].add(u)
-vertex=set(range(n))
-ans=[]
-while(vertex):
-    a=next(iter(vertex))
-    vertex.remove(a)
-    stk=[a]
-    cou=1
-    while(stk):
-        v=stk.pop()
-        s=vertex-non[v]
-        cou+=len(s)
-        stk.extend(s)
-        vertex&=non[v]
-    ans.append(cou)
-ans.sort()
-print(len(ans))
-print(" ".join(map(str,ans)))
+from library import Graph
+from collections import deque
+
+n, m = map(int, input().split())
+
+# Store the non-existing edges (complements of the graph)
+non_edges = [set() for _ in range(n)]
+for _ in range(m):
+    u, v = map(int, input().split())
+    u -= 1  # Convert to 0-indexed
+    v -= 1
+    non_edges[u].add(v)
+    non_edges[v].add(u)
+
+# Find connected components
+components = []
+remaining_vertices = set(range(n))
+
+while remaining_vertices:
+    # Start a new component
+    start = next(iter(remaining_vertices))
+    component = []
     
+    # BFS to find all nodes in this component
+    queue = deque([start])
+    component.append(start)
+    remaining_vertices.remove(start)
+    
+    while queue:
+        node = queue.popleft()
+        
+        # Neighbors are all vertices except those in non_edges[node]
+        # and those already visited (not in remaining_vertices)
+        neighbors = remaining_vertices - non_edges[node]
+        
+        for neighbor in neighbors:
+            queue.append(neighbor)
+            component.append(neighbor)
+            remaining_vertices.remove(neighbor)
+    
+    components.append(len(component))
+
+# Sort components by size and print
+components.sort()
+print(len(components))
+print(" ".join(map(str, components)))

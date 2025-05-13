@@ -1,40 +1,39 @@
 #!/usr/bin/env python3
 
+from library import Graph
 
-inp = input().split()
+n, m = map(int, input().split())
 
-n = int(inp[0])
-m = int(inp[1])
+# For a graph to be Cthulhu:
+# 1. It must have exactly n edges (to form a single cycle with trees)
+# 2. It must be connected (all vertices must be reachable from any vertex)
+# 3. It must have at least 3 vertices
 
-def dfs(x):
+if n < 3 or n != m:
+    print("NO")
+    exit()
 
-    visited.add(x)
+# Build the graph
+graph = Graph(n + 1)  # 1-indexed
 
-    for y in e[x]:
+for _ in range(m):
+    x, y = map(int, input().split())
+    graph.add_edge(x, y)
 
-        if not y in visited:
+# Check if the graph is connected
+visited = {}
 
-            dfs(y)
+def dfs(node):
+    visited[node] = True
+    for neighbor in graph.neighbors(node):
+        if neighbor not in visited:
+            dfs(neighbor)
 
-if n >= 3 and n == m:
+# Start DFS from vertex 1
+dfs(1)
 
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
-    
-    for i in range(m):
-    
-        x, y = map(int, input().split())
-    
-        e[x].append(y)
-    
-        e[y].append(x)
-
-    dfs(1)
- 
-    print('FHTAGN!' if len(visited) == n else 'NO')
+# If all vertices are visited, the graph is connected
+if len(visited) == n:
+    print("FHTAGN!")
 else:
-    print('NO')
-
- 
- 
+    print("NO")

@@ -1,56 +1,33 @@
 #!/usr/bin/env python3
 
-import sys
-input = sys.stdin.buffer.readline
+from library import read_int, read_int_tuple, enable_fast_io, parsas_tree_max_beauty
 
 def main():
-    t = int(input()); INF = float("inf")
+    enable_fast_io()
+    
+    t = read_int()  # Number of test cases
+    
     for _ in range(t):
-        n = int(input())
-        L = []; R = []
-        for i in range(n):
-            l,r = map(int,input().split())
-            L.append(l); R.append(r)
-        G = [[] for _ in range(n)]
-        for i in range(n-1):
-            a,b = map(int,input().split())
-            a-=1;b-=1 #0-index
-            G[a].append(b)
-            G[b].append(a)
-
-        root = 0
-        #depth = [-1]*n
-        #depth[0] = 0
-        par = [-1]*n
-        #depth_list = defaultdict(list)
-        #depth_list[0].append(root)
-        stack = []
-        stack.append(~0)
-        stack.append(0)
-        dp = [[0, 0] for _ in range(n)]
-        #cnt = 0
-        while stack:
-            #cnt += 1
-            v = stack.pop()
-            if v >= 0:
-                for u in G[v]:
-                    if u == par[v]: continue
-                    par[u] = v
-                    stack.append(~u)
-                    stack.append(u)
-            
-            else:
-                u = ~v #child
-                v = par[u] #parent
-                if v == -1: continue
-                zero = max(dp[u][0] + abs(L[v] - L[u]), dp[u][1] + abs(L[v] - R[u]))
-                one = max(dp[u][0] + abs(R[v] - L[u]), dp[u][1] + abs(R[v] - R[u]))
-                dp[v][0] += zero
-                dp[v][1] += one
-        ans = max(dp[0])
-        #print("CNT",cnt)
-        #print(dp)
-        print(ans)
+        n = read_int()  # Number of vertices
+        
+        # Read the lower and upper bounds for each vertex
+        bounds = []
+        for _ in range(n):
+            l, r = read_int_tuple()
+            bounds.append((l, r))
+        
+        # Build the tree
+        graph = [[] for _ in range(n)]
+        for _ in range(n - 1):
+            a, b = read_int_tuple()
+            a -= 1  # Convert to 0-indexed
+            b -= 1
+            graph[a].append(b)
+            graph[b].append(a)
+        
+        # Calculate the maximum beauty of the tree
+        result = parsas_tree_max_beauty(graph, bounds)
+        print(result)
 
 if __name__ == "__main__":
     main()

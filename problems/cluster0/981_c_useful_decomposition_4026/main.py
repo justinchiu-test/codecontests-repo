@@ -1,33 +1,50 @@
 #!/usr/bin/env python3
 
-n = int(input())
-flag = True
-f = [0] * (n - 1)
-t = [0] * (n - 1)
-co = [0] * n
-for i in range(n - 1):
-    f[i], t[i] = map(int, input().split())
-    co[f[i] - 1] += 1
-    co[t[i] - 1] += 1
-mid = 0
-en = []
-for i in range(n):
-    if co[i] == 1:
-        en.append(i + 1)
-    elif co[i] > 2:
-        if mid == 0:
-            mid = i + 1
+from library import read_int, read_ints
+
+def main():
+    # Read number of nodes
+    n = read_int()
+    
+    # Initialize variables
+    is_valid = True
+    degrees = [0] * n  # Track degree of each node
+    
+    # Read edges
+    for _ in range(n - 1):
+        u, v = read_ints()
+        degrees[u - 1] += 1  # Convert to 0-indexed
+        degrees[v - 1] += 1
+    
+    # Find leaf nodes (degree 1) and central node (degree > 2)
+    leaf_nodes = []
+    central_node = 0
+    
+    for i in range(n):
+        if degrees[i] == 1:
+            leaf_nodes.append(i + 1)  # Convert back to 1-indexed
+        elif degrees[i] > 2:
+            if central_node == 0:
+                central_node = i + 1  # Convert back to 1-indexed
+            else:
+                # More than one node with degree > 2, not a star-like tree
+                print("No")
+                is_valid = False
+                break
+    
+    # Output the result
+    if is_valid:
+        print("Yes")
+        if central_node != 0:
+            # Star-like tree with a central node
+            print(len(leaf_nodes))
+            for leaf in leaf_nodes:
+                if leaf != central_node:
+                    print(central_node, leaf)
         else:
-            print("No")
-            flag = False
-            break
-if flag:
-    print("Yes")
-    if mid != 0:
-        print(len(en))
-        for i in range(len(en)):
-            if (en[i] != mid):
-                print(mid, en[i])
-    else:
-        print(1)
-        print(en[0], en[1])
+            # Simple path (only two leaf nodes)
+            print(1)
+            print(leaf_nodes[0], leaf_nodes[1])
+
+if __name__ == "__main__":
+    main()

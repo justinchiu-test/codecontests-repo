@@ -1,60 +1,97 @@
 #!/usr/bin/env python3
 
-"""n=int(input())
-x=list(map(int, input().split()))
-c=0
-pro=1
-for i in range(n):
-    if x[i]==1:
-        c+=1
-        if c==1:
-            old=i
-        elif c>1:
-            new=i
-            pro*=(new-old)
-            old=new
-print(pro)
-"""
-a=list(map(int,input().split()))
-b=list(map(int,input().split()))
-c=list(map(int,input().split()))
-x,y,z=1,1,0
-if a[0]==b[0] or a[0]==c[0] or b[0]==c[0]:
-    x=2
-    if a[0]==b[0] and a[0]==c[0] and b[0]==c[0]:
-        x=3
+from library import Point
+
+# Read the three points
+points = []
+for _ in range(3):
+    x, y = map(int, input().split())
+    points.append(Point(x, y))
+
+a, b, c = points
+
+# Check for aligned points
+x_aligned = False  # If there are points with the same x-coordinate
+y_aligned = False  # If there are points with the same y-coordinate
+
+# Check which points share the same x or y coordinate
+same_x_count = 0
+if a.x == b.x:
+    same_x_count += 1
+if a.x == c.x:
+    same_x_count += 1
+if b.x == c.x:
+    same_x_count += 1
+
+same_y_count = 0
+if a.y == b.y:
+    same_y_count += 1
+if a.y == c.y:
+    same_y_count += 1
+if b.y == c.y:
+    same_y_count += 1
+
+# Check if any point lies between two others (forms a straight line)
+point_between = False
+
+# For points with the same x-coordinate
+if a.x == b.x:
+    if c.x == a.x:  # All three points on the same vertical line
+        x_aligned = True
     else:
-        if a[0]==b[0]:
-            if c[1] in range(min(a[1],b[1]),max(a[1],b[1])):
-                z+=1
-        elif a[0]==c[0]:
-            if b[1] in range(min(a[1],c[1]),max(a[1],c[1])):
-                z+=1
-        elif b[0]==c[0]:
-            if a[1] in range(min(b[1],c[1]),max(b[1],c[1])):
-                z+=1
-if a[1]==b[1] or a[1]==c[1] or b[1]==c[1]:
-    y=2
-    if a[1]==b[1] and a[1]==c[1] and b[1]==c[1]:
-        y=3
+        # Check if c's y-coordinate is between a's and b's
+        if (c.y > min(a.y, b.y) and c.y < max(a.y, b.y)):
+            point_between = True
+
+if a.x == c.x:
+    if b.x == a.x:  # Already checked above
+        pass
     else:
-        if a[1]==b[1]:
-            if c[0] in range(min(a[0],b[0]),max(a[0],b[0])):
-                z+=1
-        elif a[1]==c[1]:
-            if b[0] in range(min(a[0],c[0]),max(a[0],c[0])):
-                z+=1
-        elif b[1]==c[1]:
-            if a[0] in range(min(b[0],c[0]),max(b[0],c[0])):
-                z+=1
-if x*y==1:
-    print(3)
-elif x*y==3:
+        # Check if b's y-coordinate is between a's and c's
+        if (b.y > min(a.y, c.y) and b.y < max(a.y, c.y)):
+            point_between = True
+
+if b.x == c.x:
+    if a.x == b.x:  # Already checked above
+        pass
+    else:
+        # Check if a's y-coordinate is between b's and c's
+        if (a.y > min(b.y, c.y) and a.y < max(b.y, c.y)):
+            point_between = True
+
+# For points with the same y-coordinate
+if a.y == b.y:
+    if c.y == a.y:  # All three points on the same horizontal line
+        y_aligned = True
+    else:
+        # Check if c's x-coordinate is between a's and b's
+        if (c.x > min(a.x, b.x) and c.x < max(a.x, b.x)):
+            point_between = True
+
+if a.y == c.y:
+    if b.y == a.y:  # Already checked above
+        pass
+    else:
+        # Check if b's x-coordinate is between a's and c's
+        if (b.x > min(a.x, c.x) and b.x < max(a.x, c.x)):
+            point_between = True
+
+if b.y == c.y:
+    if a.y == b.y:  # Already checked above
+        pass
+    else:
+        # Check if a's x-coordinate is between b's and c's
+        if (a.x > min(b.x, c.x) and a.x < max(b.x, c.x)):
+            point_between = True
+
+# Determine the minimum number of segments needed
+if same_x_count == 3:  # All points on one vertical line
     print(1)
-elif x*y==4:
+elif same_y_count == 3:  # All points on one horizontal line
+    print(1)
+elif (same_x_count >= 1 or same_y_count >= 1) and not point_between:
+    # Some points aligned, but not in a way that forces 3 segments
     print(2)
 else:
-    if z==1:
-        print(3)
-    else:
-        print(2)
+    # Either no alignment or the points are aligned in a way that requires 3 segments
+    print(3)

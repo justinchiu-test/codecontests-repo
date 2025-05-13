@@ -1,45 +1,68 @@
 #!/usr/bin/env python3
 
-import sys
-input = sys.stdin.buffer.readline
+from library import read_int
+from collections import deque
 
-for T in range(int(input())):
-    k = int(input())
-    counts = [0] * (2 * k + 1)
-    adjacencies = [list() for i in range(2 * k + 1)]
-    for _ in range(2 * k - 1):
+def solve_test_case():
+    k = read_int()  # Number of pairs
+    n = 2 * k  # Total number of houses/people
+    
+    # Build the tree with weighted edges
+    adj = [[] for _ in range(n + 1)]  # 1-indexed adjacency list
+    
+    for _ in range(n - 1):
         a, b, weight = map(int, input().split())
-        counts[a] += 1; counts[b] += 1
-        adjacencies[a].append((b, weight))
-        adjacencies[b].append((a, weight))
-
-    parents = [0] * (2 * k + 1)
-    weights = [0] * (2 * k + 1)
-
-    root = 1 # arbitrary
-    parents[root] = root
-    queue = [0] * (2 * k)
-    head, tail = 0, 0
-    queue[tail] = root
-    tail += 1
-    while head < tail:
-        node = queue[head]
-        for child, weight in adjacencies[node]:
-            if parents[child] < 1:
+        adj[a].append((b, weight))
+        adj[b].append((a, weight))
+    
+    # BFS to determine parent relationships and edge weights
+    root = 1  # Arbitrary root
+    parents = [0] * (n + 1)
+    edge_weights = [0] * (n + 1)  # Weight of edge connecting node to its parent
+    parents[root] = root  # Mark root as processed
+    
+    queue = deque([root])
+    bfs_order = []  # Store BFS order for bottom-up processing
+    
+    while queue:
+        node = queue.popleft()
+        bfs_order.append(node)
+        
+        for child, weight in adj[node]:
+            if parents[child] == 0:  # Not visited yet
                 parents[child] = node
-                weights[child] = weight
-                queue[tail] = child
-                tail += 1
-        head += 1
+                edge_weights[child] = weight
+                queue.append(child)
+    
+    # Calculate subtree sizes
+    subtree_sizes = [1] * (n + 1)  # Initialize all subtree sizes to 1 (just the node itself)
+    
+    # Process nodes in reverse BFS order (bottom-up)
+    minimum = 0  # G - minimum sum
+    maximum = 0  # B - maximum sum
+    
+    for node in reversed(bfs_order):
+        if node == root:
+            continue  # Skip the root node
+            
+        parent = parents[node]
+        subtree_sizes[parent] += subtree_sizes[node]
+        
+        # For minimum sum: 
+        # If subtree size is odd, it means one person must be separated from their soulmate
+        if subtree_sizes[node] % 2 == 1:
+            minimum += edge_weights[node]
+        
+        # For maximum sum:
+        # The maximum distance contribution of this edge is:
+        # weight * min(subtree_size, total_size - subtree_size)
+        edge_contribution = edge_weights[node] * min(subtree_sizes[node], n - subtree_sizes[node])
+        maximum += edge_contribution
+    
+    return minimum, maximum
 
-    subtree_sizes = [1] * (2 * k + 1)
-    maximum = minimum = 0
-    index = len(queue) - 1
-    while index >= 0: # build up the tree
-        node = queue[index]
-        subtree_sizes[parents[node]] += subtree_sizes[node]
-        if subtree_sizes[node] & 1:
-            minimum += weights[node]
-        maximum += weights[node] * min(subtree_sizes[node], 2 * k - subtree_sizes[node])
-        index -= 1
-    print(minimum, maximum)
+# Process all test cases
+t = read_int()
+for _ in range(t):
+    min_sum, max_sum = solve_test_case()
+    print(min_sum, max_sum)

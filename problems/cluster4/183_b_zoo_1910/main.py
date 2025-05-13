@@ -1,75 +1,73 @@
 #!/usr/bin/env python3
 
-def gcd(a,b):
-    if b == 0:
-        return a
-    return gcd(b, a % b)
-    
-def normalize_rational(num,den):
-    #associate the -ve with the num or cancel -ve sign when both are -ve
-    if num ^ den < 0 and num > 0 or num ^ den > 0 and num < 0:
-        num = -num; den = -den
-    #put it in its simplest form
-    g = gcd(abs(num),abs(den))
-    num //= g; den //=g
-    return (num,den)
+from library import Point, gcd
 
-from sys import *
-l = stdin.readline()
-(n,m) = (int(tkn) for tkn in l.split())
-xs = [0] * m; ys = [0] * m
-#maxhits = [set() for i in range(n+1)]
+def normalize_rational(num, den):
+    """Normalize a rational number to its simplest form."""
+    # Handle negative numbers
+    if (num < 0) != (den < 0):  # One is negative but not both
+        num = abs(num)
+        den = -abs(den)
+    else:
+        num = abs(num)
+        den = abs(den)
+    
+    # Put it in simplest form
+    g = gcd(abs(num), abs(den))
+    num //= g
+    den //= g
+    
+    return (num, den)
+
+# Read input
+n, m = map(int, input().split())
+flamingos = []
+
+for _ in range(m):
+    x, y = map(int, input().split())
+    flamingos.append(Point(x, y))
+
+# Initialize maximum hits for each binocular (1-indexed)
 maxhits = [1] * (n + 1)
-maxhits[0] = 0
-for i in range(m):
-    l = stdin.readline()
-    (x,y) = (int(tkn) for tkn in l.split())
-    xs[i] = x; ys[i] = y
+maxhits[0] = 0  # Ignore index 0
+
+# Find lines passing through each pair of flamingos
 line_to_points = {}
 for i in range(m):
-    for j in range(m):
-        #m = dy/dx; y = (dy/dx)x + c ==> y.dx = x.dy + c.dx
-        #y.dx = x.dy + c'
-        #c' = y.dx - x.dy
-        #c' = ys[i]*dx - xs[i]*dy
-        #Now, at y = 0, x = -c' / dy
-        dy = ys[i] - ys[j]; dx = xs[i] - xs[j]
-        if dy == 0:
+    for j in range(i + 1, m):  # Only need to check each pair once
+        p1, p2 = flamingos[i], flamingos[j]
+        
+        # Calculate line parameters
+        dy = p2.y - p1.y
+        dx = p2.x - p1.x
+        
+        if dy == 0:  # Horizontal line, no intercept with x-axis
             continue
-        #not a special case anymore
-        # if dx == 0:
-            # if xs[i] > n:
-                # continue
-            # else:
-                # count_seen_from_x = len([x for x in xs if x == xs[i]])
-                # maxhits[xs[i]] = max(count_seen_from_x, maxhits[xs[i]])
-        else:
-            slope = normalize_rational(dy,dx)
-            c_prime = ys[i]*dx - xs[i]*dy
-            x_intercept = -c_prime / dy
-            line = (slope,x_intercept)
+        
+        # Calculate slope and x-intercept
+        slope = normalize_rational(dy, dx)
+        c_prime = p1.y * dx - p1.x * dy
+        x_intercept = -c_prime / dy
+        
+        line = (slope, x_intercept)
+        
+        # Check if this line passes through a binocular
+        if int(x_intercept) == x_intercept and 1 <= x_intercept <= n:
             if line in line_to_points:
-                #print("line: ", line)
-                #print("now: ", points)
+                # Add these flamingos to the existing line
                 points = line_to_points[line]
-                points.add(i); points.add(j)
-                #print("after addition: ", points)
-                continue
-            
-            #if (i == 1 and j == 2):
-            #    print(c_prime, x_intercept, dy, dx)
-            if int(x_intercept) == x_intercept and x_intercept <= n and x_intercept > 0:
-                points = set([i,j])
+                points.add(i)
+                points.add(j)
+            else:
+                # Create new line with these flamingos
+                points = {i, j}
                 line_to_points[line] = points
-                #maxhits[int(x_intercept)] = points
-                # count_on_line = 2
-                # for k in range(m):
-                    # if k != i and k != j and ys[k] * dx == xs[k]*dy + c_prime:
-                        # count_on_line += 1
-                # maxhits[int(x_intercept)] = max(count_on_line, maxhits[int(x_intercept)])
-for line,points in line_to_points.items():
+
+# Update maxhits for each binocular
+for line, points in line_to_points.items():
     x_intercept = int(line[1])
-    maxhits[x_intercept] = max(maxhits[x_intercept],len(points))
-#print(maxhits)
-#print(sum([max(len(points),1) for points in maxhits]) - 1)
-print(sum(maxhits))
+    maxhits[x_intercept] = max(maxhits[x_intercept], len(points))
+
+# Sum up the maximum hits for all binoculars
+total_hits = sum(maxhits)
+print(total_hits)

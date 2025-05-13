@@ -1,41 +1,57 @@
 #!/usr/bin/env python3
 
-import sys
-input = sys.stdin.readline
-sys.setrecursionlimit(10 ** 5)
+from library import read_str, create_dp_table, mod_add, MOD_998_244_353
 
-s = input()[:-1]
-t = input()[:-1]
+def magic_spell():
+    """
+    Kaavi's Magic Spell problem solution.
 
-MOD = 998244353
-r_lim = len(t)
-n = len(s)
-dp = [[0] * (n + 1) for i in range(n + 1)]
+    We use dynamic programming to calculate the number of ways to form magic spells.
+    dp[l][r] = number of ways to form substring T[l:r] using the operations.
+    """
+    # Read input strings
+    source_string = read_str()
+    target_prefix = read_str()
 
+    # Initialize variables
+    target_length = len(target_prefix)
+    source_length = len(source_string)
 
-for length in range(1, n + 1):
-    for l in range(n + 1):
-        r = l + length
-        if r > n:
-            break
-        if length == 1:
-            if l >= r_lim or s[0] == t[l]:
-                dp[l][r] = 2
-            else:
-                dp[l][r] = 0
-            continue
+    # Create DP table
+    dp = create_dp_table(source_length + 1, source_length + 1)
 
-        if l >= r_lim or s[length - 1] == t[l]:
-            dp[l][r] += dp[l + 1][r]
-            dp[l][r] %= MOD
-        if r - 1 >= r_lim or s[length - 1] == t[r - 1]:
-            dp[l][r] += dp[l][r - 1]
-            dp[l][r] %= MOD
+    # Fill DP table
+    for length in range(1, source_length + 1):
+        for left in range(source_length + 1):
+            right = left + length
 
+            # Skip if out of bounds
+            if right > source_length:
+                break
 
-ans = 0
-for i in range(r_lim, n + 1):
-    ans += dp[0][i]
-    ans %= MOD
+            # Base case: length 1
+            if length == 1:
+                # Either left is beyond target prefix length (so any char is okay),
+                # or the first char of source matches the char at position l in target
+                if left >= target_length or source_string[0] == target_prefix[left]:
+                    dp[left][right] = 2  # Can add to front or back
+                else:
+                    dp[left][right] = 0  # Can't form valid prefix
+                continue
 
-print(ans)
+            # Recursive case: add to front of A
+            if left >= target_length or source_string[length - 1] == target_prefix[left]:
+                dp[left][right] = mod_add(dp[left][right], dp[left + 1][right], MOD_998_244_353)
+
+            # Recursive case: add to back of A
+            if right - 1 >= target_length or source_string[length - 1] == target_prefix[right - 1]:
+                dp[left][right] = mod_add(dp[left][right], dp[left][right - 1], MOD_998_244_353)
+
+    # Sum up all possibilities for magic spells (where formed string has target as prefix)
+    total_ways = 0
+    for i in range(target_length, source_length + 1):
+        total_ways = mod_add(total_ways, dp[0][i], MOD_998_244_353)
+
+    return total_ways
+
+print(magic_spell())

@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# Reproduce the original solution which passed the tests
 # by the authority of GOD     author: manhar singh sachdev #
 
 import os,sys

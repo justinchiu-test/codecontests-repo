@@ -1,137 +1,51 @@
 #!/usr/bin/env python3
 
-'''
-Zijian He
-1429876
-'''
-# Import
-from sys import setrecursionlimit
-setrecursionlimit(10**6)
+from library import read_grid, Graph, has_cycle_undirected
 
+# Read input
+row, col = map(int, input().split())
+grid = read_grid(row)
 
-# Function from class
-class Graph:
-    def __init__ (self):
-        self._alist = {}
+# Create a graph where nodes are grid cells 
+# and edges connect cells of the same color
+graph = Graph(row * col, directed=False)
 
-    def add_vertex (self, vertex):
-        if vertex not in self._alist:
-            self._alist[vertex] = set()
+# Helper function to convert (row, col) to node index
+def cell_to_node(r, c):
+    return r * col + c
 
-    def add_edge (self, source, destination):
-        self.add_vertex(source)
-        self.add_vertex(destination)
-        self._alist[source].add(destination)
+# Connect adjacent cells of the same color
+directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # right, down, left, up
 
-    def is_edge (self, source, destination):
-        return (self.is_vertex(source)
-                and destination in self._alist[source])
+for r in range(row):
+    for c in range(col):
+        for dr, dc in directions:
+            nr, nc = r + dr, c + dc
+            if 0 <= nr < row and 0 <= nc < col and grid[r][c] == grid[nr][nc]:
+                graph.add_edge(cell_to_node(r, c), cell_to_node(nr, nc))
 
-    def is_vertex (self, vertex):
-        return vertex in self._alist
+# Check if the graph has a cycle (cyclic component)
+# We need to use a custom cycle detection for undirected graphs
+has_cycle = False
+visited = {}
 
-    def neighbours (self, vertex):
-        return self._alist[vertex]
+def dfs_cycle(node, parent):
+    global has_cycle
+    if has_cycle:
+        return
+    
+    visited[node] = True
+    
+    for neighbor in graph.neighbors(node):
+        if neighbor != parent:
+            if neighbor in visited:
+                has_cycle = True
+                return
+            dfs_cycle(neighbor, node)
 
-    def vertices (self):
-        return self._alist.keys()
+# Check each connected component for cycles
+for node in range(row * col):
+    if node not in visited and not has_cycle:
+        dfs_cycle(node, -1)
 
-class UndirectedGraph (Graph):
-    def add_edge (self, a, b):
-        super().add_edge (a, b)
-        super().add_edge (b, a)
-
-def depth_first_search(g, v):
-    reached = {}
-    def do_dfs(curr, prev):
-        if curr in reached:
-            return
-        reached[curr] = prev
-        for succ in g.neighbours(curr):
-            do_dfs(succ, curr)
-    do_dfs(v, v)
-    return reached
-#-----------------------------------------------------------------------
-
-# Declaire the variables for checking the cycle
-Detect = False
-
-vertex = {}
-
-def dfs_v2(g, curr, prev):
-	global Detect
-	global vertex
-	
-	if Detect:
-		return
-		
-	vertex[curr] = True
-
-	for succ in g.neighbours(curr):
-	
-		if vertex[succ] and succ != prev:
-			Detect = True
-			return
-		if not vertex[succ]:
-			dfs_v2(g, succ, curr)
-
-
-def cycle(g):
-	global Detect
-	global vertex
-	
-	# Initialize all the node as unmarked
-	for i in g.vertices():
-		vertex[i] = False
-		
-	# Check throughout the node
-	for j in g.vertices():
-		if not vertex[j]:
-			dfs_v2(g, j, j)
-		if Detect:
-			break
-	return 
-
-# ----------------------------------------------------------------------
-
-
-
-# Process the input
-row, col = map(int, input().split(" "))
-rows = []
-
-for i in range(row):
-	rows.append(input())
-	
-# Set node as a dictionary
-node = {}
-
-for i in range(row):
-	for j in range(col):
-		node[i * col + j] = rows[i][j]
-	
-# Set up the graph
-result_Graph = UndirectedGraph()
-
-# Connecting the node with same color
-for i in range(row * col):
-	
-	result_Graph.add_vertex(i)
-	
-	try:
-		if node[i] == node[i + 1] and (i % col) != (col - 1):
-			result_Graph.add_edge(i, i + 1)	
-			
-		if node[i] == node[i + col]:
-			result_Graph.add_edge(i, i + col)
-	except:
-		continue
-
-# Main function
-cycle(result_Graph)
-
-if Detect:
-	print("Yes")
-	
-else:
-	print("No")
+print("Yes" if has_cycle else "No")

@@ -1,0 +1,21 @@
+#!/usr/bin/env python3
+
+from library import setup_large_recursion, read_int, read_tree, calculate_subtree_sizes, run_with_large_stack
+
+def main():
+    n = read_int()
+    if n % 2 != 0:
+        print(-1)
+        exit(0)
+    
+    tree = read_tree(n)
+    sizes = calculate_subtree_sizes(tree, 0)
+    
+    res = 0
+    for i in range(1, n):
+        if sizes[i] % 2 != 0:
+            res += 1
+    print(res)
+
+setup_large_recursion()
+run_with_large_stack(main)

@@ -1,42 +1,51 @@
 #!/usr/bin/env python3
 
-from collections import defaultdict
-import sys
-input = sys.stdin.readline
-'''
-for CASES in range(int(input())):
-n, m = map(int, input().split())
-n = int(input())
-A = list(map(int, input().split()))
-S = input().strip()
-sys.stdout.write(" ".join(map(str,ans))+"\n")
-'''
-inf = 100000000000000000  # 1e17
-mod = 998244353
+from library import read_int_tuple, read_ints, create_dp_table, mod_add, MOD_998_244_353
 
-n, m = map(int, input().split())
-A = [0] + sorted(list(map(int, input().split())))
+def array_beauty():
+    # Read input
+    n, k = read_int_tuple()
+    arr = read_ints()
 
-ans = 0
+    # Sort the array and add a dummy element at index 0 for 1-indexing
+    arr = [0] + sorted(arr)
 
-f = [[0] * (n + 10) for _ in range(m + 10)]
+    # Initialize answer
+    total_beauty = 0
 
-for x in range(1,(A[n] - A[1]) // (m - 1) + 1):
-    for i in range(1, n + 1):
-        f[1][i] = 1
-    for i in range(2, m + 1):
-        sum = 0
-        pre = 1
-        for j in range(1, n + 1):
-            while pre <= n and A[pre] + x <= A[j]:
-                sum += f[i - 1][pre]
-                sum %= mod
-                pre += 1
-            f[i][j] = sum
-    for i in range(1, n + 1):
-        ans += f[m][i]
-        ans %= mod
-print(ans)
+    # Create DP table
+    # f[i][j] = number of ways to choose i elements with the last element being arr[j]
+    # with minimum difference between elements being at least x
+    dp = create_dp_table(k + 10, n + 10)
 
+    # We iterate through all possible beauty values
+    # The maximum possible beauty is (A[n] - A[1]) / (k - 1)
+    max_possible_beauty = (arr[n] - arr[1]) // (k - 1) + 1
 
-# the end
+    for x in range(1, max_possible_beauty):
+        # Base case: for subsequences of length 1, we can choose any single element
+        for i in range(1, n + 1):
+            dp[1][i] = 1
+
+        # Fill DP table for subsequences of length 2 to k
+        for seq_len in range(2, k + 1):
+            current_sum = 0
+            prefix = 1  # Keep track of the index of the previous element
+
+            for current_idx in range(1, n + 1):
+                # Find all previous elements that can be paired with the current element
+                # while maintaining the beauty requirement (minimum difference ≥ x)
+                while prefix <= n and arr[prefix] + x <= arr[current_idx]:
+                    current_sum = mod_add(current_sum, dp[seq_len - 1][prefix], MOD_998_244_353)
+                    prefix += 1
+
+                # Update DP state
+                dp[seq_len][current_idx] = current_sum
+
+        # Sum up the contribution of this beauty value
+        for i in range(1, n + 1):
+            total_beauty = mod_add(total_beauty, dp[k][i], MOD_998_244_353)
+
+    return total_beauty
+
+print(array_beauty())

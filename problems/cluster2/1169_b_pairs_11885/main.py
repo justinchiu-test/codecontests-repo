@@ -1,42 +1,54 @@
 #!/usr/bin/env python3
 
-bound, m = [int(x) for x in input().split()]
+from collections import Counter
 
+n, m = map(int, input().split())
+
+# If there's only one pair, we can always choose the numbers in it as x and y
 if m == 1:
     print("YES")
     exit(0)
 
-pairs_uniq = set()
+# Read pairs and store them as tuples
+pairs = []
 for _ in range(m):
-    x = [int(x) for x in input().split()]
-    x.sort()
-    pairs_uniq.add((x[0], x[1]))
+    a, b = map(int, input().split())
+    pairs.append((a, b))
 
-if len(pairs_uniq) == 1:
+# If all pairs are the same, the answer is trivially YES
+if all(pair == pairs[0] for pair in pairs):
     print("YES")
     exit(0)
 
-pairs = [x for x in pairs_uniq]
-
-# Choose the first one as our x
+# Try to choose one of the numbers from the first pair as x
+# Then find a potential y that covers the remaining pairs
 for x in pairs[0]:
-    no_x_pairs = [n for n in pairs if n[0] != x and n[1] != x]
-
-    x_pairs_count = 0
-    d = {}
-    for (i, j) in pairs:
-        if i != x and j != x:
-            if i not in d:
-                d[i] = 0
-            d[i] += 1
-            if j not in d:
-                d[j] = 0
-            d[j] += 1
-        else:
-            x_pairs_count += 1
-
-    max_ = 0 if len(d.values()) == 0 else sorted(d.values())[-1]
-    if max_ + x_pairs_count == len(pairs):
+    # Count occurrences of each number in pairs not covered by x
+    remaining_numbers = []
+    for a, b in pairs:
+        if a != x and b != x:
+            remaining_numbers.extend([a, b])
+    
+    # If there are no remaining pairs, any other number can be y
+    if not remaining_numbers:
+        print("YES")
+        exit(0)
+    
+    # Count occurrences of each number
+    counter = Counter(remaining_numbers)
+    
+    # Find the most frequent number
+    most_common = counter.most_common(1)[0]
+    potential_y, count = most_common
+    
+    # Check if the potential y covers all remaining pairs
+    covers_all = True
+    for a, b in pairs:
+        if a != x and b != x and a != potential_y and b != potential_y:
+            covers_all = False
+            break
+    
+    if covers_all:
         print("YES")
         exit(0)
 

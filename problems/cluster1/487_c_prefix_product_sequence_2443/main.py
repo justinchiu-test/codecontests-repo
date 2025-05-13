@@ -1,18 +1,30 @@
 #!/usr/bin/env python3
 
-n = int(input())
+from library import read_int, is_prime, mod_pow, prefix_product_sequence
+
+n = read_int()
+
+# This problem has solutions for:
+# 1. n = 1 (trivial case)
+# 2. n = 4 (special case)
+# 3. n is prime (can be constructed)
+
 if n == 1:
-    print('YES\n1')
-    exit(0)
-if n == 4:
-    print('YES\n1 3 2 4')
-    exit(0)
-for p in range(2, int(n ** 0.5) + 1):
-    if n % p == 0:
-        print('NO')
-        exit(0)
-print('YES')
-print(1)
-for j in range(2, n):
-    print(j * pow(j - 1, n - 2, n) % n)
-print(n)
+    print('YES')
+    print(1)
+elif n == 4:
+    print('YES')
+    print(1)
+    print(3)
+    print(2)
+    print(4)
+elif is_prime(n):
+    print('YES')
+    print(1)
+    for j in range(2, n):
+        # Calculate j * (j-1)^(n-2) % n
+        inverse = mod_pow(j - 1, n - 2, n)
+        print((j * inverse) % n)
+    print(n)
+else:
+    print('NO')

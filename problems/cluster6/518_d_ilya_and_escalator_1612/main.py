@@ -1,52 +1,38 @@
 #!/usr/bin/env python3
 
-import sys
+from library import read_floats
 
-n, p, t = map(str, sys.stdin.readline().split())
+# Read the input
+n, p, t = read_floats()
 n = int(n)
-p = float(p)
 t = int(t)
 
-def CC(nn,k):
-    tmp = n
-    t = max(nn - k, k)
-    for i in range(1, min(nn - k, k) + 1):
-        tmp = tmp * (t + i) * (1 - p) / i
-    if k > nn - k:
-        tmp = tmp * pow(1-p,k + k - nn)
-    return tmp
+# Special cases for efficiency
+if p == 0:
+    print("0.000000000000")
+    exit()
+elif p == 1:
+    print(f"{min(n, t):.12f}")
+    exit()
 
-def C(n, k):
-    tmp = 1
-    if n - k > k:
-        tmp = tmp * pow(1 - p, n - k - k)
-    else:
-        tmp = tmp * pow(p, k + k - n)
-    t = max(n - k, k)
-    for i in range(1, min(n - k, k) + 1):
-        tmp = tmp * (t + i) * p * (1 - p) / i
+# Define DP array: dp[i][j] = probability that j people are on escalator after i seconds
+dp = [[0] * (n + 1) for _ in range(t + 1)]
 
-    return tmp
+# Base case: initially 0 people on escalator with probability 1
+dp[0][0] = 1
 
+# Fill the DP table using recurrence relation
+for i in range(1, t + 1):  # For each second
+    for j in range(n + 1):  # For each possible number of people on escalator
+        if j == 0:  # No person entered yet
+            dp[i][0] = dp[i-1][0] * (1 - p)  # No one entered in this second
+        elif j == n:  # Maximum people reached
+            dp[i][n] = dp[i-1][n-1] * p + dp[i-1][n]  # Last person entered or no one entered
+        else:  # 0 < j < n
+            dp[i][j] = dp[i-1][j-1] * p + dp[i-1][j] * (1 - p)  # New person entered or no one entered
 
-if n >= t:
-    print(t * p)
-elif p != 1 and p != 0:
-    a = 0
-    b = 0
-    for i in range(n):
-        q = C(t, i)
-        a = a + q * i
-        b = b + q
-    a = a + (1 - b) * n
-    print(a)
-    b = n
-    for i in range(t - n):
-        b = b + CC(i + 1,n + i)
-    b = b * pow(p,n)
-    #print(a + b)
-else:
-    if p == 1:
-        print(n)
-    else:
-        print(0)
+# Calculate expected value: ∑(j * Probability of j people on escalator after t seconds)
+expected_people = sum(j * dp[t][j] for j in range(n + 1))
+
+# Print the result with the expected format (12 decimal places)
+print(f"{expected_people:.12f}")

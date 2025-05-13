@@ -1,60 +1,40 @@
 #!/usr/bin/env python3
 
-import sys
-from math import sqrt, gcd, ceil, log
-# from bisect import bisect, bisect_left
-from collections import defaultdict, Counter, deque
-# from heapq import heapify, heappush, heappop
-input = sys.stdin.readline
-read = lambda: list(map(int, input().strip().split()))
+from library import Graph, has_cycle_undirected, count_connected_components
 
-sys.setrecursionlimit(200000)
+n, m = map(int, input().split())
+graph = Graph(n)
 
+for _ in range(m):
+    x, y = map(int, input().split())
+    x -= 1  # Convert to 0-indexed
+    y -= 1
+    graph.add_edge(x, y)
 
-def main(): 
-	n, m = read()
-	adj = defaultdict(list)
-	visited = defaultdict(int)
-	# visited
-	for i in range(m):
-		x, y = read()
-		adj[x].append(y)
-		adj[y].append(x)
+# We need to count the number of connected components without cycles
+# For each connected component with no cycle, we need to add a lamp
+acyclic_components = 0
+visited = {}
 
-	def dfs(ver):
-		parent = defaultdict(int)
-		stk = [(ver,0)]
-		visited[ver] = 1
-		parent[ver] = 0
-		while stk:
-			node, par = stk.pop()
-			for child in adj[node]:
-				if child == par:continue
-				elif not visited[child]:
-					visited[child] = 1
-					parent[child] = node
-					stk.append((child, node))
-				elif parent[child] != node:
-					return(0)
-		return(1)
+def has_cycle(start, visited, parent=-1):
+    visited[start] = True
+    
+    for neighbor in graph.neighbors(start):
+        if neighbor not in visited:
+            if has_cycle(neighbor, visited, start):
+                return True
+        elif neighbor != parent:
+            return True
+    
+    return False
 
-	ans = 0
-	for i in range(1, n+1):
-		if not visited[i]:
-			ans += dfs(i)
-			# print(i, visited)
-	print(ans)
-		# 
+# Check each component for cycles
+for i in range(n):
+    if i not in visited:
+        component_visited = {}
+        has_cycle_result = has_cycle(i, component_visited)
+        if not has_cycle_result:
+            acyclic_components += 1
+        visited.update(component_visited)
 
-
-
-
-			
-
-
-
-
-
-
-if __name__ == "__main__":
-	main()
+print(acyclic_components)

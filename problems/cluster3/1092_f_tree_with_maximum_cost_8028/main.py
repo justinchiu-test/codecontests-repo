@@ -1,63 +1,67 @@
 #!/usr/bin/env python3
 
-import sys
+from library import read_int, read_ints, bootstrap, enable_fast_io
 from collections import deque
-from types import GeneratorType
-sys.setrecursionlimit(200000)
-input = sys.stdin.readline
-def bootstrap(f, stack=[]):
-    def wrappedfunc(*args, **kwargs):
-        if stack:
-            return f(*args, **kwargs)
-        else:
-            to = f(*args, **kwargs)
-            while True:
-                if type(to) is GeneratorType:
-                    stack.append(to)
-                    to = next(to)
-                else:
-                    stack.pop()
-                    if not stack:
-                        break
-                    to = stack[-1].send(to)
-            return to
- 
-    return wrappedfunc
 
-n = int(input())
-val = [int(i) for i in input().split()]
-tree = [[] for i in range(n + 1)]
-dp = [0 for i in range(n + 1)]
-s = [0 for i in range(n + 1)]
-ans = [0 for i in range(n + 1)]
-for i in range(n - 1):
-    a,b = map(int,input().split())
-    tree[a].append(b)
-    tree[b].append(a)
+# Enable fast I/O
+enable_fast_io()
+
+# Read input
+n = read_int()
+weights = read_ints()  # Values assigned to each vertex
+tree = [[] for _ in range(n + 1)]  # 1-indexed adjacency list
+
+# Build the tree
+for _ in range(n - 1):
+    u, v = read_ints()
+    tree[u].append(v)
+    tree[v].append(u)
+
+# DP arrays
+dp = [0] * (n + 1)  # dp[node] = sum of dist(node, i) * a_i for all i in subtree of node
+subtree_sum = [0] * (n + 1)  # subtree_sum[node] = sum of weights in subtree of node
+ans = [0] * (n + 1)  # ans[node] = cost of tree with node as root
+
 @bootstrap
-def dfs1(node,dist,pd):
-
+def dfs1(node, dist, parent):
+    """First DFS to calculate DP values and subtree sums."""
     for child in tree[node]:
-        if child == pd:
+        if child == parent:
             continue
-        yield dfs1(child,dist + 1, node)
+        yield dfs1(child, dist + 1, node)
         dp[node] += dp[child]
-        s[node] += s[child]
-    dp[node] += val[node - 1] * dist
-    s[node] += val[node - 1]
+        subtree_sum[node] += subtree_sum[child]
+    
+    dp[node] += weights[node - 1] * dist  # Add current node's contribution
+    subtree_sum[node] += weights[node - 1]  # Add current node's weight to subtree sum
     yield dp[node]
-dfs1(1,0,1)
-q = deque(); ans[1] = dp[1]
-for node in tree[1]:
-    q.append((node,1))
 
-while len(q) > 0:
-    node,pd = q.popleft()
-    sub_dp = ans[pd] - (dp[node] + s[node])
-    added = s[1] - s[node]
-    ans[node] = sub_dp + added + dp[node]
+# Run first DFS from root node 1
+dfs1(1, 0, 1)
+ans[1] = dp[1]  # Answer for root node
+
+# BFS to reroot the tree and calculate all answers
+queue = deque()
+for child in tree[1]:
+    queue.append((child, 1))  # (node, parent)
+
+while queue:
+    node, parent = queue.popleft()
+    
+    # Calculate cost when rerooted at node
+    # Formula: ans[node] = ans[parent] - (contribution of node's subtree to parent) + (contribution of parent's subtree to node)
+    # Contribution of node's subtree to parent: dp[node] + subtree_sum[node]
+    # Contribution of parent's subtree to node: (total_sum - subtree_sum[node]) + dp[parent]
+    
+    # Calculate answer for current node
+    node_subtree_contribution = dp[node] + subtree_sum[node]
+    remaining_tree_sum = subtree_sum[1] - subtree_sum[node]
+    ans[node] = ans[parent] - node_subtree_contribution + remaining_tree_sum + dp[node]
+    
+    # Add node's children to queue
     for child in tree[node]:
-        if child == pd:
-            continue
-        q.append((child,node))
-print(max(ans))
+        if child != parent:
+            queue.append((child, node))
+
+# Print maximum possible cost
+print(max(ans[1:]))  # Skip ans[0] as we're 1-indexed

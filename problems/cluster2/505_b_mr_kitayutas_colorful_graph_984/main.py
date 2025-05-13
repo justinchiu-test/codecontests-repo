@@ -1,40 +1,37 @@
 #!/usr/bin/env python3
 
+from library import Graph, bfs
+
 def build_graph():
-    line1 = input().strip().split()
-    n = int(line1[0])
-    m = int(line1[1])
-    graph = {}
+    n, m = map(int, input().split())
+    
+    # Create a graph for each color
+    color_graphs = {}
+    
     for _ in range(m):
-        line = input().strip().split()
-        u = int(line[0])
-        v = int(line[1])
-        c = int(line[2])
-        if c not in graph:
-            graph[c] = {j: [] for j in range(1, n+1)}
-        graph[c][u].append(v)
-        graph[c][v].append(u)
-    return graph
+        u, v, c = map(int, input().split())
+        if c not in color_graphs:
+            color_graphs[c] = Graph(n + 1)  # 1-indexed
+        
+        color_graphs[c].add_edge(u, v)
+    
+    return color_graphs
 
-def no_of_paths(u, v, graph):
-    x = 0
-    for c in graph:
-        parent = {}
-        parent = dfs_visit(v, graph[c], parent)
-        if u in parent:
-            x += 1
-    return x
-
-def dfs_visit(i, adj_list, parent):
-    for j in adj_list[i]:
-        if j not in parent:
-            parent[j] = i
-            dfs_visit(j, adj_list, parent)
-    return parent
-
+def count_paths(u, v, color_graphs):
+    count = 0
+    
+    for c, graph in color_graphs.items():
+        # Check if there's a path between u and v using color c
+        visited = bfs(graph, u)
+        if v in visited:
+            count += 1
+    
+    return count
 
 if __name__ == "__main__":
-    graph = build_graph()
-    for _ in range(int(input())):
-        line = input().strip().split()
-        print(no_of_paths(int(line[0]), int(line[1]), graph))
+    color_graphs = build_graph()
+    q = int(input())
+    
+    for _ in range(q):
+        u, v = map(int, input().split())
+        print(count_paths(u, v, color_graphs))

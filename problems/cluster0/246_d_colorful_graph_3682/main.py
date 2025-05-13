@@ -1,20 +1,36 @@
 #!/usr/bin/env python3
 
 from collections import defaultdict
-l=lambda :map(int,input().split())
-n,m=l()
-c=list(l())
-graph=defaultdict(set)
-for i in range(m):
-    a,b=l()
-    if c[a-1]==c[b-1]:
+from library import read_ints, read_int_list
+
+# Read input
+n, m = read_ints()
+colors = read_int_list()
+
+# Build graph of color connections
+color_graph = defaultdict(set)
+
+for _ in range(m):
+    a, b = read_ints()
+    a -= 1  # Convert to 0-based indexing
+    b -= 1
+    
+    # Skip same color connections
+    if colors[a] == colors[b]:
         continue
-    graph[c[a-1]].add(c[b-1])
-    graph[c[b - 1]].add(c[a - 1])
-d,f=min(c),0
-for i in sorted(graph):
-    h=len(graph[i])
-    if h>f:
-        f=h
-        d=i
-print(d)
+    
+    # Add bidirectional color connections
+    color_graph[colors[a]].add(colors[b])
+    color_graph[colors[b]].add(colors[a])
+
+# Find color with maximum neighbor diversity
+max_diversity = 0
+best_color = min(colors)  # Default to minimum color
+
+for color in sorted(color_graph):
+    diversity = len(color_graph[color])
+    if diversity > max_diversity:
+        max_diversity = diversity
+        best_color = color
+
+print(best_color)

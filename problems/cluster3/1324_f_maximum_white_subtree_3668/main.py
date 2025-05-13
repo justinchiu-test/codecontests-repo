@@ -8,7 +8,6 @@ from collections import defaultdict
 
 BUFSIZE = 8192
 
-
 class FastIO(IOBase):
     newlines = 0
 
@@ -42,7 +41,6 @@ class FastIO(IOBase):
             os.write(self._fd, self.buffer.getvalue())
             self.buffer.truncate(0), self.buffer.seek(0)
 
-
 class IOWrapper(IOBase):
     def __init__(self, file):
         self.buffer = FastIO(file)
@@ -52,14 +50,9 @@ class IOWrapper(IOBase):
         self.read = lambda: self.buffer.read().decode("ascii")
         self.readline = lambda: self.buffer.readline().decode("ascii")
 
-
 sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
 input = lambda: sys.stdin.readline().rstrip("\r\n")
 sys.setrecursionlimit(2 * 10 ** 5)
-
-
-
-ans=0
 
 def bootstrap(f, stack=[]):
     def wrappedfunc(*args, **kwargs):
@@ -77,22 +70,19 @@ def bootstrap(f, stack=[]):
                         break
                     to = stack[-1].send(to)
             return to
-
     return wrappedfunc
 
-
 @bootstrap
-def dfs(now, lay, fa):
+def dfs1(now, fa):
     SUM[now] = 0
     NUM[now] = C[now]
     for to in A[now]:
         if to != fa:
-            yield dfs(to, lay + 1, now)
+            yield dfs1(to, now)
             SUM[now] += SUM[to]
             SUM[now] += NUM[to]
             NUM[now] += NUM[to]
     yield
-
 
 @bootstrap
 def change(now, fa):
@@ -117,7 +107,6 @@ def change(now, fa):
             SUM[now] += NUM[to]
     yield
 
-
 n = int(input())
 A = [[] for i in range(n + 1)]
 C = [0] + (list(map(int, input().split())))
@@ -127,8 +116,7 @@ for i in range(n - 1):
     x, y = map(int, input().split())
     A[x].append(y)
     A[y].append(x)
-dfs(1, 0, 0)
+dfs1(1, 0)
+ans = 0
 change(1, 0)
 print(ans)
-# print(NUM)
-# print(SUM)

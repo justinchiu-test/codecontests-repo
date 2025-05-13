@@ -1,33 +1,33 @@
 #!/usr/bin/env python3
 
-def iterative_dfs(graph, start, path=[]):
-    visited = {}
-    for i in graph:
-        visited[i] = []
-    q=[start]
-    while q:
-        v=q.pop(0)
-        if not visited[v]:
-            visited[v] = True
-            path=path+[v]
-            q=graph[v]+q
-    return path
-    
-nodes, edges = map(int, input().split(' '))
-graph = {}
-for i in range(nodes):
-  graph[i] = []
+from library import DSU
 
-for i in range(edges):
-  a, b = map(int, input().split(' '))
-  graph[a-1].append(b-1)
-  graph[b-1].append(a-1)
+n, m = map(int, input().split())
 
-marked = [False] * nodes
-num = 0
-for i in range(nodes):
-  if not marked[i]:
-    for j in iterative_dfs(graph, i):
-      marked[j] = True
-    num += 1
-print(2**(nodes-num))
+# If there are no chemicals or no reactions, the danger is 1
+if n == 0 or m == 0:
+    print(1)
+    exit()
+
+# Use DSU to find connected components
+dsu = DSU(n)
+
+for _ in range(m):
+    a, b = map(int, input().split())
+    dsu.union(a - 1, b - 1)  # Convert to 0-indexed
+
+# For each component with k nodes, we can get 2^(k-1) danger
+# This is because each time we add a chemical that can react
+# with something already in the tube, the danger doubles.
+# For a component of size k, we can double the danger k-1 times.
+result = 1
+components = {}
+
+for i in range(n):
+    root = dsu.find(i)
+    components[root] = True
+
+# The answer is 2^(edges in a spanning forest)
+# In a connected component with k nodes, a spanning tree has k-1 edges
+# So the total edges in a spanning forest is n - (number of components)
+print(2 ** (n - len(components)))

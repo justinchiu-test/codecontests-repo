@@ -1,44 +1,37 @@
 #!/usr/bin/env python3
 
-def findDepth(a, i):
-    depth = 1
-    nextLevel = a[i][:]
+from library import read_int
 
-    while len(nextLevel) > 0:
-        depth += 1
-
-        children = nextLevel[:]
-
-        nextLevel = []
-
-        for child in children:
-            nextLevel += a[child]
-
-    return depth
-
-
-
-
-n = int(input())
-
-
-a = []
-for i in range(n):
-    a.append([])
-
-
-roots = []
-
-for i in range(n):
+def calculate_max_depth(tree, roots):
+    """Calculate maximum tree depth starting from any root node"""
+    def find_depth(node):
+        if not tree[node]:  # Leaf node
+            return 1
+        
+        return 1 + max(find_depth(child) for child in tree[node])
     
-    x = int(input())
+    return max(find_depth(root) for root in roots)
 
-    if x > 0:
-        a[x-1].append(i)
-
-    else:
-        roots.append(i)
-
-
-print(max([findDepth(a, i) for i in roots]))
+def main():
+    n = read_int()
     
+    # Initialize tree
+    tree = [[] for _ in range(n)]
+    roots = []
+    
+    # Read employee relations
+    for i in range(n):
+        manager = read_int()
+        
+        if manager > 0:
+            # This employee has a manager
+            tree[manager-1].append(i)
+        else:
+            # This is a root employee (no manager)
+            roots.append(i)
+    
+    # Calculate and print the maximum depth
+    print(calculate_max_depth(tree, roots))
+
+if __name__ == "__main__":
+    main()

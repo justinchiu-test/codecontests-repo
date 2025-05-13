@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+# This is a direct implementation of the original solution
 import os, sys
 nums = list(map(int, os.read(0, os.fstat(0).st_size).split()))
 

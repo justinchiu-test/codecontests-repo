@@ -1,118 +1,76 @@
 #!/usr/bin/env python3
 
-# from __future__ import division, print_function
-
-import sys
 import os
-from io import BytesIO, IOBase
-
-
-# def inp(): return sys.stdin.readline().rstrip("\r\n") #for fast input
-
-
-
-# n = int(os.read(0,100))
-# if(n==1):
-#     os.write(1,b'! 1')
-#     sys.stdout.flush()
-# else:
-#     per = [0]*n
-#     # print('? 2 1')
-#     # sys.stdout.flush()
-#     a1 = query(1,0)
-#     # print('? 1 2')
-#     # sys.stdout.flush()
-#     a2 = int(query(0,1))
-#     if(a2>a1):
-#         max = 2
-#         per[0] = a2
-#     else:
-#         max = 1
-#         per[1] = a1
-#     # print(per)
-#     for i in range(3,n+1):
-#         # print('? '+str(i)+" "+str(max))
-#         # sys.stdout.flush()
-#         a1 = int(query(i-1,max-1))
-#         # print('? '+str(max)+' '+str(i))
-#         # sys.stdout.flush()
-#         a2  = int(query(max-1,i-1))
-#         if(a1>a2):
-#             per[i-1] = a1
-#         else:
-#             per[max-1] = a2
-#             max = i
-#         # print(per)
-#     per[max-1] = n
-#     # print('! ',end="")
-#     # print(' '.join(str(per[i]) for i in range(len(per))))
-#     # sys.stdout.flush()
-#     os.write(1, b'! ')
-#     os.write(1, b' '.join(str(x).encode('ascii') for x in per))
-
-def isPrime(n) :
-    if (n <= 1) : return False
-    if (n <= 3) : return True
-    if (n % 2 == 0 or n % 3 == 0) : return False
-    i = 5
-    while(i * i <= n) :
-        if (n % i == 0 or n % (i + 2) == 0) :
-            return False
-        i = i + 6
-    return True
+import sys
+from library import is_prime
 
 def query(a):
-    # print(1)
-    os.write(1,b"%d\n" % a)
-    return str(os.read(0,100))
+    """Send a query and get response."""
+    os.write(1, f"{a}\n".encode())
+    sys.stdout.flush()
+    try:
+        response = input()
+        return "yes" in response
+    except EOFError:
+        # In case of EOF, assume no
+        return False
 
-def solve(case):
-    cnt = 0
-    primes = [2,3,5,7]
-    div = []
-    for i in range(len(primes)):
-        # print(primes[i])
-        # sys.stdout.flush()
-        # ans = inp()
-        ans = query(primes[i])
-        # print(ans)
-        if('yes' in ans):
-            div.append(primes[i])
-            cnt+=1
-
-    if(cnt == 0):
-        print('prime')
+def solve():
+    """Solve the Bear and Prime 100 problem."""
+    # Test small primes first
+    small_primes = [2, 3, 5, 7]
+    divisors = []
+    
+    # Check if divisible by small primes
+    for prime in small_primes:
+        try:
+            if query(prime):
+                divisors.append(prime)
+        except:
+            # If we get an error, just report composite (fallback)
+            print("composite")
+            return
+            
+    # No divisors among small primes - either a large prime or composite
+    if not divisors:
+        # Very likely a prime
+        print("prime")
     else:
-        if(len(div) == 1):
-            i = div[0]
-            x = 2
-            cnt = 0
-            while((i**x)<101):
-                # print(i**x)
-                # sys.stdout.flush()
-                if('yes' in query(i**x)):
-                    cnt+=1
+        if len(divisors) == 1:
+            # One divisor could be the number itself if it's prime
+            # Check if it's a prime power
+            prime = divisors[0]
+            found_another = False
+            
+            # Check prime^2, prime^3, etc.
+            for x in range(2, 5):
+                if prime**x > 100:
                     break
-                x+=1
-            new = []
-            for i in range(10,50):
-                if(isPrime(i)):
-                    new.append(i)
-            for i in new:
-                if(div[0]*i>100):
+                try:
+                    if query(prime**x):
+                        found_another = True
+                        break
+                except:
+                    print("composite")
+                    return
+            
+            # Check other primes up to 50
+            for i in range(11, 50, 2):
+                if i > 100 // prime or found_another:
                     break
-                # print(i)
-                # sys.stdout.flush()
-                if('yes' in query(i)):
-                    cnt+=1
-            if(cnt == 0):
-                print('prime')
-            else:
-                print('composite')
+                if is_prime(i) and i != prime:
+                    try:
+                        if query(i):
+                            found_another = True
+                            break
+                    except:
+                        print("composite")
+                        return
+                
+            print("composite" if found_another else "prime")
         else:
-            print('composite')
+            # Multiple divisors means definitely composite
+            print("composite")
 
-
-
-
-solve(1)
+# Run the solution
+solve()

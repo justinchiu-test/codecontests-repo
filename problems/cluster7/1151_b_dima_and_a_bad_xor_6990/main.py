@@ -1,22 +1,15 @@
 #!/usr/bin/env python3
 
-n, m = map(int, input().split())
-a = [[int(i) for i in input().split()] for _ in range(n)]
-t = a[0][0]
-for i in range(1, n):
-    t ^= a[i][0]
-if t != 0:
+from library import read_ints, read_matrix, find_nonzero_xor_combination
+
+n, m = read_ints()
+a = read_matrix(n)
+
+# Try to find a combination of elements (one from each row) with non-zero XOR
+result = find_nonzero_xor_combination(a)
+
+if result:
     print("TAK")
-    print(' '.join('1' for i in range(n)))
+    print(' '.join(map(str, result)))
 else:
-    for i in range(n):
-        for j in range(1, m):
-            if a[i][j] != a[i][0]:
-                print('TAK')
-                for t in range(i):
-                    print(1, end=' ')
-                print(j + 1, end=' ')
-                for t in range(i + 1, n):
-                    print(1, end=' ')
-                exit(0)
-    print('NIE')
+    print("NIE")

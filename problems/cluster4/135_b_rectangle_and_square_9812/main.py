@@ -1,52 +1,46 @@
 #!/usr/bin/env python3
 
-from math import *
-def a(x1,y1,x2,y2,x3,y3,x4,y4):
-    b=sorted([[x1,y1],[x2,y2],[x3,y3],[x4,y4]])
-    x1,y1=b[0]
-    x2,y2=b[1]
-    x3,y3=b[2]
-    x4,y4=b[3]
-    a1=sqrt((x1-x2)**2+(y1-y2)**2)
-    a2=sqrt((x4-x2)**2+(y4-y2)**2)
-    a3=sqrt((x4-x3)**2+(y4-y3)**2)
-    a4=sqrt((x1-x3)**2+(y1-y3)**2)
-    return a1==a2==a3==a4 and a1!=0 and a4!=0 and abs(abs(degrees(asin((y2-y1)/a1)-asin((y3-y1)/a4)))-90)<=10**(-8)
-def b(x1,y1,x2,y2,x3,y3,x4,y4):
-    b=sorted([[x1,y1],[x2,y2],[x3,y3],[x4,y4]])
-    x1,y1=b[0]
-    x2,y2=b[1]
-    x3,y3=b[2]
-    x4,y4=b[3]
-    a1=sqrt((x1-x2)**2+(y1-y2)**2)
-    a2=sqrt((x4-x2)**2+(y4-y2)**2)
-    a3=sqrt((x4-x3)**2+(y4-y3)**2)
-    a4=sqrt((x1-x3)**2+(y1-y3)**2)
-    return a1==a3 and a2==a4 and a1!=0 and a4!=0 and abs(abs(degrees(asin((y2-y1)/a1)-asin((y3-y1)/a4)))-90)<=10**(-8)
-c=[list(map(int,input().split())) for i in range(8)]
-z=False
-for i in range(5):
-    for j in range(i+1,6):
-        for k in range(j+1,7):
-            for l in range(k+1,8):
-                if a(*c[i]+c[j]+c[k]+c[l]):
-                    d=[]
-                    e=[]
-                    for m in range(8):
-                        if m not in [i,j,k,l]:
-                            d+=c[m]
-                            e.append(m+1)
-                    if b(*d):
-                        print('YES')
-                        print(i+1,j+1,k+1,l+1)
-                        print(*e)
-                        z=True
-                        break
-            if z:
-                break
-        if z:
-            break
-    if z:
+from itertools import combinations
+from library import Point, is_square, is_rectangle
+
+# Read the 8 points
+points = []
+for i in range(8):
+    x, y = map(int, input().split())
+    points.append(Point(x, y))
+
+found = False
+
+# Try all possible ways to split the 8 points into two groups of 4
+for square_indices in combinations(range(8), 4):
+    # The indices of the rectangle are the complement of the square indices
+    rect_indices = [i for i in range(8) if i not in square_indices]
+    
+    # Extract the square and rectangle points
+    square_points = [points[i] for i in square_indices]
+    rect_points = [points[i] for i in rect_indices]
+    
+    # Check if the first set forms a square and the second forms a rectangle
+    if is_square(square_points) and is_rectangle(rect_points):
+        found = True
+        # Convert to 1-based indexing for output
+        square_indices = [i + 1 for i in square_indices]
+        rect_indices = [i + 1 for i in rect_indices]
         break
-if not(z):
-    print('NO')
+    
+    # Also check if the first set forms a rectangle and the second forms a square
+    if is_rectangle(square_points) and is_square(rect_points):
+        found = True
+        # Swap the indices to match the problem requirements
+        rect_indices, square_indices = square_indices, rect_indices
+        # Convert to 1-based indexing for output
+        square_indices = [i + 1 for i in square_indices]
+        rect_indices = [i + 1 for i in rect_indices]
+        break
+
+if found:
+    print("YES")
+    print(*square_indices)
+    print(*rect_indices)
+else:
+    print("NO")

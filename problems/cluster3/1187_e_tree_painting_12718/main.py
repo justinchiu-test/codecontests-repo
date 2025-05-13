@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 
-import sys
+from library import read_int, read_int_tuple
 
-input = sys.stdin.readline
-
-n = int(input())
+# Read input
+n = read_int()
 G = [[] for _ in range(n)]
 
 for _ in range(n-1):
-    a,b = map(int,input().split())
+    a, b = read_int_tuple()
     G[a-1].append(b-1)
     G[b-1].append(a-1)
 
-F = [0]*n
+# First DFS to calculate subtree sizes F
+F = [0] * n
 stk = [0]
-visited = [0]*n
+visited = [0] * n
 
 while stk:
     x = stk[-1]
@@ -25,13 +25,15 @@ while stk:
                 stk.append(y)
     else:
         x = stk.pop()
-        F[x] = 1
+        F[x] = 1  # Count current node
         for y in G[x]:                
-            F[x] += F[y]
+            if visited[y] and stk.count(y) == 0:  # y is a child if it's visited but not in stack
+                F[x] += F[y]  # Add child's subtree size
 
-DP = [0]*n
+# Second DFS to calculate DP (sum of subtree sizes)
+DP = [0] * n
 stk = [0]
-visited = [0]*n
+visited = [0] * n
 
 while stk:
     x = stk[-1]
@@ -42,23 +44,29 @@ while stk:
                 stk.append(y)
     else:
         x = stk.pop()
-        DP[x] = F[x]
+        DP[x] = F[x]  # Start with own subtree size
         for y in G[x]:
-            DP[x] += DP[y]
+            if visited[y] and stk.count(y) == 0:  # y is a child
+                DP[x] += DP[y]  # Add child's DP value
 
-ans = [0]*n
-ans[0] = DP[0]
+# Third phase: Rerooting to find maximum
+ans = [0] * n
+ans[0] = DP[0]  # Initial value for root
 stk = [0]
-Z = DP[0]
+visited = [0] * n
+visited[0] = 1
+Z = DP[0]  # Maximum answer
 
 while stk:
     x = stk.pop()
     for y in G[x]:
-        if not ans[y]:
+        if not visited[y]:
+            # Rerooting formula: ans[y] = ans[x] + n - 2*F[y]
+            # This formula updates the answer when we reroot from x to y
             ay = ans[x] + n - 2 * F[y]
-            ans[y] = ay 
-            Z = max(Z,ay)
+            ans[y] = ay
+            Z = max(Z, ay)  # Update maximum
+            visited[y] = 1
             stk.append(y)
 
 print(Z)
-

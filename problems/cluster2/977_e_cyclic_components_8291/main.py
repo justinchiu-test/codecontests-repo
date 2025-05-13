@@ -1,36 +1,45 @@
 #!/usr/bin/env python3
 
-from sys import stdin
+from library import Graph
 from collections import deque
 
+n, m = map(int, input().split())
+graph = Graph(n)
 
-def bfs(x):
-    vis[x] = True
-    q = deque([x])
-    ans = 1
-    while q:
-        cur = q.popleft()
-        ans &= len(g[cur]) == 2
-        for x in g[cur]:
-            if not vis[x]:
-                vis[x] = True
-                q.append(x)
-    return ans
-
-
-n, m = map(int, stdin.readline().split())
-g = [[] for _ in range(n)]
-vis = [False]*n
-ans = 0
 for _ in range(m):
-    u, v = map(lambda x: int(x) - 1, stdin.readline().split())
-    g[u].append(v)
-    g[v].append(u)
+    u, v = map(int, input().split())
+    u -= 1  # Convert to 0-indexed
+    v -= 1
+    graph.add_edge(u, v)
 
-for x in range(n):
-    if not vis[x]:
-        ans += bfs(x)
+def is_cycle(start, visited):
+    # BFS to check if all nodes in the component have degree 2
+    component = []
+    queue = deque([start])
+    visited[start] = True
+    
+    while queue:
+        node = queue.popleft()
+        component.append(node)
+        
+        for neighbor in graph.neighbors(node):
+            if neighbor not in visited:
+                visited[neighbor] = True
+                queue.append(neighbor)
+    
+    # Check if each node in the component has degree 2
+    for node in component:
+        if len(graph.neighbors(node)) != 2:
+            return False
+    
+    return True
 
-print(ans)
+visited = {}
+count = 0
 
-  		 		 	   	 				 	     	   	
+for i in range(n):
+    if i not in visited:
+        if is_cycle(i, visited):
+            count += 1
+
+print(count)
