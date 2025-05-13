@@ -1,40 +1,36 @@
 #!/usr/bin/env python3
 
-def build_graph():
-    line1 = input().strip().split()
-    n = int(line1[0])
-    m = int(line1[1])
-    graph = {}
+from library import get_ints, dfs
+
+def main():
+    n, m = get_ints()
+    
+    # Create a dictionary of colored graphs
+    # For each color, we have an adjacency list
+    colored_graphs = {}
+    
     for _ in range(m):
-        line = input().strip().split()
-        u = int(line[0])
-        v = int(line[1])
-        c = int(line[2])
-        if c not in graph:
-            graph[c] = {j: [] for j in range(1, n+1)}
-        graph[c][u].append(v)
-        graph[c][v].append(u)
-    return graph
-
-def no_of_paths(u, v, graph):
-    x = 0
-    for c in graph:
-        parent = {}
-        parent = dfs_visit(v, graph[c], parent)
-        if u in parent:
-            x += 1
-    return x
-
-def dfs_visit(i, adj_list, parent):
-    for j in adj_list[i]:
-        if j not in parent:
-            parent[j] = i
-            dfs_visit(j, adj_list, parent)
-    return parent
-
+        u, v, c = get_ints()
+        if c not in colored_graphs:
+            colored_graphs[c] = [[] for _ in range(n+1)]
+        colored_graphs[c][u].append(v)
+        colored_graphs[c][v].append(u)
+    
+    # Process queries
+    q = get_ints()[0]
+    for _ in range(q):
+        u, v = get_ints()
+        count = 0
+        
+        # Check each color
+        for c in colored_graphs:
+            # Check if u and v are connected using only edges of color c
+            visited = set()
+            dfs(colored_graphs[c], u, visited)
+            if v in visited:
+                count += 1
+        
+        print(count)
 
 if __name__ == "__main__":
-    graph = build_graph()
-    for _ in range(int(input())):
-        line = input().strip().split()
-        print(no_of_paths(int(line[0]), int(line[1]), graph))
+    main()

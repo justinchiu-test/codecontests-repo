@@ -1,21 +1,17 @@
 #!/usr/bin/env python3
 
-n = int(input())
-g = []
+from library import get_int, DSU
+
+n = get_int()
+points = []
+for _ in range(n):
+    x, y = map(int, input().split())
+    points.append((x, y))
+
+dsu = DSU(n)
 for i in range(n):
-    t = input().split()
-    g.append([ int(t[0]), int(t[1]), False ])
+    for j in range(i+1, n):
+        if points[i][0] == points[j][0] or points[i][1] == points[j][1]:
+            dsu.union(i, j)
 
-def visita(i):
-    g[i][2] = True
-    for j in range(n):
-        if g[j][2] == False and (g[i][0] == g[j][0] or g[i][1] == g[j][1]):
-            visita(j)
-
-cnt = -1
-for i in range(n):
-    if g[i][2] == False:
-        cnt += 1
-        visita(i)
-
-print(cnt)
+print(dsu.count_components() - 1)

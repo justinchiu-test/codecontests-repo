@@ -1,43 +1,45 @@
 #!/usr/bin/env python3
 
-import sys
-import collections
-import math
-import heapq
-from operator import itemgetter
+from library import read_int, read_n_points, Line, Point, print_answer
 
-def getint():
-    return int(input())
-
-def getints():
-    return [int(x) for x in input().split(' ')]
-
-n = getint()
-points = [tuple(getints()) for _ in range(n)]
-result = 0
-
-slopes = collections.defaultdict(set)
-for i in range(n - 1):
-    for j in range(i + 1, n):
-        x1, y1, x2, y2 = points[i][0], points[i][1], points[j][0], points[j][1]
-        a, b = y1 - y2, x1 - x2
-
-        d = math.gcd(a, b)
-        a, b = a // d, b // d
-        if a < 0 or (a == 0 and b < 0):
-            a, b = -a, -b
+def solve():
+    n = read_int()
+    points = read_n_points(n)
+    
+    # Store unique lines
+    unique_lines = set()
+    
+    # Generate all possible lines through pairs of points
+    for i in range(n):
+        for j in range(i + 1, n):
+            if points[i] != points[j]:  # Ensure we have distinct points
+                line = Line.from_points(points[i], points[j])
+                unique_lines.add(line)
+    
+    # Group lines by their slope (direction)
+    slope_groups = {}
+    for line in unique_lines:
+        # Normalize the slope for consistent comparison
+        if line.b == 0:  # Vertical line
+            slope = float('inf')
+        else:
+            slope = -line.a / line.b  # Slope is -a/b from ax + by + c = 0
         
-        c = a * x1 - b * y1
-        slope = (a, b)
-        slopes[slope].add(c)
+        if slope not in slope_groups:
+            slope_groups[slope] = []
+        slope_groups[slope].append(line)
+    
+    result = 0
+    slope_counts = [len(group) for group in slope_groups.values()]
+    
+    # Calculate the number of intersection points
+    for i in range(len(slope_counts)):
+        # Every line in this slope group intersects with every line in other groups
+        # Sum total = slope_count[i] * (total_lines - slope_count[i])
+        result += slope_counts[i] * (sum(slope_counts) - slope_counts[i])
+    
+    # Divide by 2 as each intersection is counted twice
+    print_answer(result // 2)
 
-slopeGroups = [(ab[0], ab[1], len(cs)) for ab, cs in slopes.items()]
-m = len(slopeGroups)
-
-for i in range(m - 1):
-    intersects = 0
-    for j in range(i + 1, m):
-        intersects += slopeGroups[j][2]
-    result += slopeGroups[i][2] * intersects
-
-print(str(result))
+if __name__ == "__main__":
+    solve()

@@ -1,14 +1,6 @@
 #!/usr/bin/env python3
 
-__author__ = 'Darren'
-
-
-def solve():
-    t = int(input())
-    while t:
-        run()
-        t -= 1
-
+from library import read_int, read_ints, print_answer, Vector2D, read_test_cases
 
 def run():
     def check_condition_1():
@@ -56,38 +48,16 @@ def run():
 
     segments = []
     for _i in range(3):
-        temp = [int(x) for x in input().split()]
+        temp = read_ints()
         segments.append([(temp[0], temp[1]), (temp[2], temp[3])])
     vector1, vector2, vector3, vector4 = None, None, None, None
     if check_condition_1() and check_condition_2() and check_condition_3():
-        print('YES')
+        print_answer(True)
     else:
-        print('NO')
+        print_answer(False)
 
-
-class Vector2D:
-    def __init__(self, p1, p2):
-        self.x = p2[0] - p1[0]
-        self.y = p2[1] - p1[1]
-
-    def distance_square(self):
-        return self.x ** 2 + self.y ** 2
-
-    def __sub__(self, other):
-        return Vector2D(self.x - other.x, self.y - other.y)
-
-    def dot_product(self, other):
-        return self.x * other.x + self.y * other.y
-
-    def cross_product(self, other):
-        return self.x * other.y - self.y * other.x
-
-    def parallel(self, other):
-        return self.cross_product(other) == 0
-
-    def acute_or_perpendicular(self, other):
-        return self.dot_product(other) >= 0 and not self.parallel(other)
-
+def solve():
+    read_test_cases(run)
 
 if __name__ == '__main__':
     solve()

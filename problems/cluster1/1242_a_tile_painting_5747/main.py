@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 
-from sys import stdin
-import math
-n=int(stdin.readline())
-if n<3:
-    k=n
-else:
-    d=0
-    g=n
-    for i in range(2,int(math.sqrt(n))+1):
-        if n%i==0:
-            d+=1
-            g=math.gcd(g,i)
-            if i*i!=n:
-                d+=1
-                g=math.gcd(g,n//i)
-    if d==0:
-        k=n
+from library import get_int, is_prime, divisors, gcd_of_list
+
+def min_colors(n):
+    """
+    Determine the minimum number of colors needed to paint tiles
+    such that no two adjacent tiles have the same color.
+    """
+    # Special cases for small n
+    if n < 3:
+        return n
+    
+    # Check if n is prime
+    if is_prime(n):
+        return n
+    
+    # Get all divisors except 1 and n
+    all_divisors = [d for d in divisors(n) if d != 1 and d != n]
+    
+    # If we have divisors, return their GCD
+    if all_divisors:
+        return gcd_of_list(all_divisors)
     else:
-        k=g
-print(k)
-    
+        return n  # This should never happen if n > 2 and not prime
 
-
-
-    
-    
+n = get_int()
+print(min_colors(n))

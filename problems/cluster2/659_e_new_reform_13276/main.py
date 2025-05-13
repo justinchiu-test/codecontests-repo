@@ -1,60 +1,42 @@
 #!/usr/bin/env python3
 
-import sys
-from math import sqrt, gcd, ceil, log
-# from bisect import bisect, bisect_left
-from collections import defaultdict, Counter, deque
-# from heapq import heapify, heappush, heappop
-input = sys.stdin.readline
-read = lambda: list(map(int, input().strip().split()))
-
-sys.setrecursionlimit(200000)
-
+from library import get_ints
 
 def main(): 
-	n, m = read()
-	adj = defaultdict(list)
-	visited = defaultdict(int)
-	# visited
-	for i in range(m):
-		x, y = read()
-		adj[x].append(y)
-		adj[y].append(x)
-
-	def dfs(ver):
-		parent = defaultdict(int)
-		stk = [(ver,0)]
-		visited[ver] = 1
-		parent[ver] = 0
-		while stk:
-			node, par = stk.pop()
-			for child in adj[node]:
-				if child == par:continue
-				elif not visited[child]:
-					visited[child] = 1
-					parent[child] = node
-					stk.append((child, node))
-				elif parent[child] != node:
-					return(0)
-		return(1)
-
-	ans = 0
-	for i in range(1, n+1):
-		if not visited[i]:
-			ans += dfs(i)
-			# print(i, visited)
-	print(ans)
-		# 
-
-
-
-
-			
-
-
-
-
-
+    n, m = get_ints()
+    graph = [[] for _ in range(n+1)]
+    
+    for _ in range(m):
+        x, y = get_ints()
+        graph[x].append(y)
+        graph[y].append(x)
+    
+    # Check each connected component: 
+    # - If there is a cycle, we can orient roads to avoid any separate city
+    # - If no cycle, we need one separate city
+    
+    visited = [False] * (n+1)
+    tree_components = 0
+    
+    def dfs_check_cycle(node, parent):
+        visited[node] = True
+        for neighbor in graph[node]:
+            if neighbor == parent:
+                continue
+            if visited[neighbor]:
+                # Found a cycle
+                return True
+            if dfs_check_cycle(neighbor, node):
+                return True
+        return False
+    
+    for i in range(1, n+1):
+        if not visited[i]:
+            # If component has no cycle, it's a tree and needs one separate city
+            if not dfs_check_cycle(i, -1):
+                tree_components += 1
+    
+    print(tree_components)
 
 if __name__ == "__main__":
-	main()
+    main()

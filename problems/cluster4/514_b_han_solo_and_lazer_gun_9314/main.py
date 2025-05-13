@@ -1,26 +1,31 @@
 #!/usr/bin/env python3
 
-n, x0, y0 = map(int, input().split())
-slopes = {} # key: (num, den), val: count
+from library import read_ints, normalize_vector, Point, print_answer
 
-for i in range(n):
-    x, y = map(int, input().split())
-    num = y - y0
-    den = x - x0
-    # print(num, den)
-    if den == 0 and "inf" in slopes:
-        slopes["inf"] += 1
-    elif den == 0:
-        slopes["inf"] = 1
-    else:
-        found = False
-        for s in slopes:
-            # print(isinstance(s, tuple))
-            if isinstance(s, tuple) and num * s[1] == den * s[0]:
-                slopes[s] += 1
-                found = True
-        if found == False:
-            slopes[(num, den)] = 1
-        
-print(slopes.__len__())
+def solve():
+    # Read input
+    n, x0, y0 = read_ints()
+    gun = Point(x0, y0)
     
+    # Use a set to store unique normalized vectors (directions)
+    directions = set()
+    
+    for _ in range(n):
+        x, y = read_ints()
+        target = Point(x, y)
+        
+        # Calculate the vector from gun to stormtrooper
+        dx = target.x - gun.x
+        dy = target.y - gun.y
+        
+        # Normalize the vector to get a unique direction
+        direction = normalize_vector(dx, dy)
+        
+        # Add the direction to our set of unique directions
+        directions.add(direction)
+    
+    # The number of unique directions is the minimum number of shots needed
+    print_answer(len(directions))
+
+if __name__ == "__main__":
+    solve()

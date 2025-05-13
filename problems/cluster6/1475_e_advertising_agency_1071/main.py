@@ -1,29 +1,33 @@
 #!/usr/bin/env python3
 
+from library import read_int, read_ints, Combinatorics, MOD, read_test_cases
 
-import math
-def c (k, n):
-    return (math.factorial(n) // (math.factorial(k) * math.factorial(n - k))) % (10**9 + 7)
+# Initialize combinatorics with precomputed factorials
+combinatorics = Combinatorics()
 
 def solve():
-    n, k = map(int, input().split())
-    a = []
-    for i in input().split():
-        a.append(int(i))
+    n, k = read_ints()
+    a = read_ints()
     
-    a.sort()
-    m = dict()
-
+    # Sort in descending order to get the k highest values
+    a.sort(reverse=True)
+    
+    # Count frequency of each value
+    freq = {}
     for i in a:
-        if(m.get(i, 0) == 0): m[i] = 1
-        else: m[i] += 1
+        freq[i] = freq.get(i, 0) + 1
+    
+    # The kth highest value
+    kth_value = a[k-1]
+    
+    # How many of the kth value are in the top k
+    count_in_top_k = sum(1 for i in range(k) if a[i] == kth_value)
+    
+    # Total count of the kth value
+    total_count = freq[kth_value]
+    
+    # We need to choose count_in_top_k elements from total_count
+    return combinatorics.combination(total_count, count_in_top_k)
 
-    ind = n - k
-    while ind < n - 1 and a[ind + 1] == a[ind]: ind += 1
-    print(c(ind - (n - k) + 1, m[a[n - k]]))
-
-t = int(input())
-
-while t > 0:
-    t -= 1
-    solve()
+for _ in read_test_cases():
+    print(solve())

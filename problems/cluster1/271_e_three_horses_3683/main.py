@@ -1,37 +1,30 @@
 #!/usr/bin/env python3
 
-# written with help of editorial
-n, m = map(int, input().split())
-a = list(map(int, input().split()))
+from library import get_ints, gcd
 
-def gcd(x, y):
-    while y:
-        x, y = y, x % y
-    return x
+n, m = get_ints()
+a = get_ints()
 
-g = 0
-for x in a:
-    g = gcd(g, x - 1)
-
-answer = 0
-
-def process(x):
+def process_divisor(x):
     global answer
     if x % 2 == 0:
-        return 0
+        return
     for i in range(30):
         v = 2 ** i * x
         if v > m:
             break
         answer += m - v
 
-for i in range(1, g + 1):
-    if i * i > g:
-        break
-    if g % i:
-        continue
-    process(i)
-    if i * i != g:
-        process(g // i)
+# Find gcd of (a_i - 1) for all i
+g = 0
+for x in a:
+    g = gcd(g, x - 1)
+
+answer = 0
+for i in range(1, int(g**0.5) + 1):
+    if g % i == 0:
+        process_divisor(i)
+        if i * i != g:
+            process_divisor(g // i)
 
 print(answer)

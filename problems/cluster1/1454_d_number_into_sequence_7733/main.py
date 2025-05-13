@@ -1,33 +1,37 @@
 #!/usr/bin/env python3
 
-import math
-tc = int(input())
-for i in range(tc):
-    integer = int(input())
-    k = integer
-    kamus = dict()
-    while k % 2 == 0:
-        try:
-            kamus[2] += 1
-        except:
-            kamus[2] = 1
-        k /= 2
+from library import get_int, prime_factors
+
+def solve(n):
+    """
+    Find the longest non-decreasing sequence a1, a2, ..., ak such that:
+    1. a1 * a2 * ... * ak = n
+    2. gcd(a1, a2, ..., ak) > 1
+    """
+    # Get prime factorization
+    factors = prime_factors(n)
     
-    for i in range(3,int(math.sqrt(k))+1,2):
-        while k % i == 0:
-            try:
-                kamus[i] += 1
-            except:
-                kamus[i] = 1
-            k /= i
+    # If n is prime (only one factor with power 1)
+    if len(factors) == 1 and list(factors.values())[0] == 1:
+        return [1, n]
+    
+    # Find the prime with the highest power
+    prime, max_power = max(factors.items(), key=lambda x: x[1])
+    
+    # Create the sequence
+    sequence = [prime] * (max_power - 1)
+    
+    # Calculate the last element (all remaining factors combined)
+    last_element = n
+    for _ in range(max_power - 1):
+        last_element //= prime
+    
+    sequence.append(last_element)
+    
+    return [len(sequence)] + sequence
 
-    kamus = sorted(kamus.items(), key = lambda x: x[1], reverse = True)
-
-    if kamus == []:
-        print(f'1\n{integer}')
-    else:
-        banyak, count = kamus[0][0], kamus[0][1]
-        last = integer // (banyak**(count-1))
-        print(count)
-        print(f'{banyak} '*(count-1), end='')
-        print(last)
+for _ in range(get_int()):
+    n = get_int()
+    result = solve(n)
+    print(result[0])
+    print(*result[1:])

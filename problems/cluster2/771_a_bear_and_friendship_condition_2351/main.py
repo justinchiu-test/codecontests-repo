@@ -1,36 +1,42 @@
 #!/usr/bin/env python3
 
-n,m = map(int,input().split())
-dic = {}
-edges = []
-from collections import Counter
-def find(node):
-    tmp = node
-    while node!=dic[node]:
-        node = dic[node]
-    while tmp!=dic[tmp]:
-        dic[tmp],tmp=node,dic[tmp]
-    return node
-for _ in range(m):
-    p1,p2 = map(int,input().split())
-    dic.setdefault(p1,p1)
-    dic.setdefault(p2,p2)
-    edges.append(p1)
-    lp = find(p1)
-    rp = find(p2)
-    if lp!=rp:
-        dic[rp] = lp
-for k in dic:
-    find(k)
-def judge():
-    counter = Counter([dic[i] for i in edges])
-    s = Counter(dic.values())
-    for k in counter:
-        en,nn = counter[k],s[k]
-        if (nn**2-nn)//2!=en:
-            return False
-    return True
-if judge():
+from library import get_ints, DSU, yes_no
+from collections import defaultdict
+
+def main():
+    n, m = get_ints()
+    dsu = DSU(n + 1)
+    edges = []
+    
+    # Process all friend relationships
+    for _ in range(m):
+        p1, p2 = get_ints()
+        edges.append((p1, p2))
+        # Union the two friends
+        dsu.union(p1, p2)
+    
+    # Get components from DSU
+    components = dsu.get_components()
+    
+    # Count edges in each component
+    component_edges = defaultdict(int)
+    for p1, p2 in edges:
+        root = dsu.get(p1)
+        component_edges[root] += 1
+    
+    # Check condition: In a complete graph with k nodes, there should be k*(k-1)/2 edges
+    for root, members in components.items():
+        if root == 0:  # Skip the 0 index since we're using 1-indexed vertices
+            continue
+        
+        size = len(members)
+        expected_edges = (size * (size - 1)) // 2
+        
+        if component_edges[root] != expected_edges:
+            print("NO")
+            return
+    
     print("YES")
-else:
-    print("NO")
+
+if __name__ == "__main__":
+    main()

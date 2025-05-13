@@ -1,35 +1,35 @@
 #!/usr/bin/env python3
 
-n, m = [int(i) for i in input().split()]
-adj = [[] for i in range(n+1)]
-seen = [False for i in range(n+1)]
-pai = [0 for i in range(n+1)]
-ciclos = 0
+from library import get_ints, detect_cycle
 
-def dfs (u):
-    seen[u] = True
-    global ciclos
-    for v in adj[u]:
-        if not seen[v]:
-            pai[v] = u
+n, m = get_ints()
+graph = [[] for _ in range(n+1)]
+
+# Build graph
+for _ in range(m):
+    x, y = get_ints()
+    graph[x].append(y)
+    graph[y].append(x)
+
+# Check if all vertices are connected
+visited = set()
+dfs_count = 0
+
+def dfs(u):
+    visited.add(u)
+    for v in graph[u]:
+        if v not in visited:
             dfs(v)
-        elif v != pai[u]:
-            ciclos += 1
 
-for i in range(m):
-    x, y = [int(i) for i in input().split()]
-    adj[x].append(y)
-    adj[y].append(x)
-
+# Start DFS from vertex 1
 dfs(1)
-conexo = True
+is_connected = len(visited) == n
 
-for i in range(1, n+1, 1):
-    if not seen[i]:
-        conexo = False
+# Check for exactly one cycle
+has_cycle = detect_cycle(graph, 1, True)
 
-if conexo and ciclos/2 == 1:
+# Cthulhu has exactly one cycle and all vertices are connected
+if is_connected and has_cycle and n == m:
     print('FHTAGN!')
 else:
     print('NO')
-exit(0)

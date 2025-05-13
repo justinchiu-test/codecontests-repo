@@ -1,20 +1,30 @@
 #!/usr/bin/env python3
 
-def fun(a,b):
-    if a % b != 0:
+from library import get_ints, prime_factors
+
+def min_operations(n, m):
+    """
+    Find the minimum number of operations to transform n to m
+    by multiplying by 2 or 3. Return -1 if impossible.
+    """
+    if n == m:
+        return 0
+    if m % n != 0:
         return -1
-    temp = 0
-    m = a/b
     
-    while m % 2 == 0:
-        m = m / 2
-        temp += 1
-    while m % 3 == 0:
-        m = m/3
-        temp += 1
-    if m == 1:
-        return temp
-    else :
+    ratio = m // n
+    
+    # Get prime factorization of the ratio
+    factors = prime_factors(ratio)
+    
+    # Check if all factors are 2 or 3
+    if any(p != 2 and p != 3 for p in factors):
         return -1
-a,b = map(int,input().split())
-print(fun(b,a))
+    
+    # Count total operations (sum of exponents)
+    operations = sum(factors.values())
+    
+    return operations
+
+n, m = get_ints()
+print(min_operations(n, m))

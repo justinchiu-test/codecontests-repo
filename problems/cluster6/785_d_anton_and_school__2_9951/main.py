@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
 
-mod = 10 ** 9 + 7
+from library import read_str, Combinatorics, MOD
 
-fact, inv, invfact = [1, 1], [0, 1], [1, 1]
-for i in range(2, 200200):
-    fact.append(fact[-1] * i % mod)
-    inv.append(inv[mod % i] * (mod - mod // i) % mod)
-    invfact.append(invfact[-1] * inv[-1] % mod)
+# Initialize combinatorics with precomputed factorials
+combinatorics = Combinatorics(200200)
 
-def C(n, k):
-    if k < 0 or k > n:
-        return 0
-    return fact[n] * invfact[k] * invfact[n - k] % mod
+s = read_str()
+open_count = 0
+close_count = s.count(')')
+answer = 0
 
-s = input()
-op, cl = 0, s.count(')')
-ans = 0
-for x in s:
-    if x == '(':
-        op += 1
-        cur = C(cl + op - 1, op)
-        ans += cur
+# For each opening bracket, calculate the number of ways to form subsequences
+for char in s:
+    if char == '(':
+        open_count += 1
+        # Calculate C(open_count + close_count - 1, open_count)
+        answer = (answer + combinatorics.combination(open_count + close_count - 1, open_count)) % MOD
     else:
-        cl -= 1
+        close_count -= 1
 
-print(ans % mod)
+print(answer % MOD)

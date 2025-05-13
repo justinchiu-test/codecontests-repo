@@ -1,21 +1,44 @@
 #!/usr/bin/env python3
 
-u, v = list(map(int, input().split()))
-if u > v:
-    print(-1)
-elif u == 0 and v == 0:
-    print(0)
-elif u == v:
-    print(1)
-    print(u)
+from library import fast_ints, print_list
+
+def solve(u, v):
+    # Check if u > v (impossible case)
+    if u > v:
+        return -1
+
+    # Both are zero case
+    if u == 0 and v == 0:
+        return 0
+
+    # Single number case: u equals v
+    if u == v:
+        return [1, u]
+
+    # Check parity: difference between v and u must be even
+    if (v - u) % 2 != 0:
+        return -1
+
+    # Try with two numbers
+    half_diff = (v - u) // 2
+    a = u + half_diff
+    b = half_diff
+
+    if a + b == v and a ^ b == u:
+        return [2, a, b]
+
+    # Try with three numbers
+    a, b, c = u, half_diff, half_diff
+    if a + b + c == v and a ^ b ^ c == u:
+        return [3, a, b, c]
+
+    # No solution
+    return -1
+
+u, v = fast_ints()
+result = solve(u, v)
+
+if result == -1 or result == 0:
+    print(result)
 else:
-    a, b, c = u, (v - u) // 2, (v - u) // 2
-    d, e = (v - u) // 2 + u, (v - u) // 2
-    if d + e == v and d ^ e == u:
-        print(2)
-        print(d, e)
-    elif a+b+c == v and a ^ b ^ c == u:
-        print(3)
-        print(a, b, c)
-    else:
-        print(-1)
+    print_list(result)

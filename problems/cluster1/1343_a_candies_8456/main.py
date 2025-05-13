@@ -1,19 +1,21 @@
 #!/usr/bin/env python3
 
-import math
-if __name__ == "__main__":
-    n =  int(input())
+from library import get_int
 
-    for i in range(n):
-        m = int(input())
+def solve(n):
+    """
+    Find an integer x such that n = x + 2x + 4x + ... + (2^k-1)x
+    This can be rewritten as: n = x * (2^k - 1)
+    """
+    # Try different values of k, starting from 2
+    for k in range(2, 31):  # 2^30 > 10^9, so this is sufficient
+        divisor = (1 << k) - 1  # 2^k - 1
+        if n % divisor == 0:
+            return n // divisor
+    
+    # This shouldn't happen with the given constraints
+    return -1
 
-        res = 1
-        test = 0
-        while(m > 2**res -1):
-            res += 1
-            if m% (2**res -1) == 0:
-                test = m//(2**res -1)
-                break
-
-        x = test
-        print(x)
+for _ in range(get_int()):
+    n = get_int()
+    print(solve(n))

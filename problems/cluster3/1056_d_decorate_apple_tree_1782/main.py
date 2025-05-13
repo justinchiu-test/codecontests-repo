@@ -1,14 +1,33 @@
 #!/usr/bin/env python3
+from sys import path
+path.append("/home/justinchiu_cohere_com/codecontests-repo/problems/cluster3")
+from library import read_int, read_ints, tree_dp_bottom_up
 
-n=int(input())
-p=[0,0]+list(map(int,input().split()))#tomamos la entrada
-d=[0]*(n+1)#aki vamos a contar la cantidad d colores q necesita cada union
-for i in range(n,1,-1):#empezamos x las hojas hasta llegar a la raiz
-    if d[i]==0:#si no estas visitado eres una hoja => solo necesitas un color
-        d[i]=1
-    d[p[i]]+=d[i]#si no necesitas tantos colores como la cantidad q necesitan tus hijos
-if n==1:#si la entrada es 1 solo necesitas un color
-    d[1]=1
-d=d[1:]#quitamos el vertice 0(al final todo empieza en 1-n)
-d.sort()#ordenamos para dar la cantidad d colores en orden d los vertices(o sea, de k)
-print(*d)
+def main():
+    n = read_int()
+    if n == 1:
+        print(1)
+        return
+        
+    parents = [0, 0] + read_ints()  # 1-indexed
+    
+    # Create adjacency list from parent array
+    adj = [[] for _ in range(n+1)]
+    for i in range(2, n+1):
+        adj[parents[i]].append(i)
+    
+    # Process function for tree DP - count leaves in subtree
+    def process_node(node, parent, child_results):
+        if not child_results:  # Leaf node
+            return 1
+        return sum(child_results)
+    
+    # Calculate colors needed (leaf count in each subtree)
+    colors = tree_dp_bottom_up(adj, process_node, 1)
+    
+    # Sort and output colors
+    result = sorted(colors[1:])
+    print(*result)
+
+if __name__ == "__main__":
+    main()

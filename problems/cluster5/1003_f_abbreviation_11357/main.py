@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 
-# import time
+import sys
+sys.path.append('..')
+from library import iinput
+
 N = 303
-eq = []
-dp = []
-for i in range(N):
-    eq.append([False] * N)
-for i in range(N):
-    dp.append([0] * N)
-n = int(input())
+eq = [[False] * N for _ in range(N)]
+dp = [[0] * N for _ in range(N)]
+
+n = iinput()
 s = input()
-# t = time.time()
 allsum = len(s)
 s = s.split()
+
 for i in range(n):
     eq[i][i] = True
     for j in range(i):
         eq[i][j] = eq[j][i] = s[i] == s[j]
+
 for i in range(n - 1, -1, -1):
     for j in range(n - 1, -1, -1):
         if eq[i][j]:
@@ -24,6 +25,7 @@ for i in range(n - 1, -1, -1):
                 dp[i][j] = dp[i + 1][j + 1] + 1
             else:
                 dp[i][j] = 1
+
 ans = allsum
 for i in range(n):
     su = 0
@@ -38,7 +40,6 @@ for i in range(n):
             pos += 1
         cur = allsum - su * cnt + cnt
         if cnt > 1 and ans > cur:
-            # print(allsum, su, cnt, j)
             ans = cur
+
 print(ans)
-# print(time.time() - t)

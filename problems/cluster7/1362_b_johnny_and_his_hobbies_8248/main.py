@@ -1,24 +1,20 @@
 #!/usr/bin/env python3
 
-t=int(input())
-for T in range(t):
-	n=int(input())
-	lista=[int(x) for x in input().split()]
-	ma=max(lista)
-	mi=min(lista)
-	listb=[0]*n
-	ans=0
-	for k in range(1,2*ma+1):
-		temp=0
-		for i in range(n):
-			listb[i]=lista[i]^k
-			tk=0
-			if(listb[i] not in lista):
-				temp=1
-				break
-		if(temp==0):
-			ans=1
-			print(k)
-			break
-	if(ans==0):
-		print(-1)
+from library import fast_int, fast_int_list
+
+t = fast_int()
+for _ in range(t):
+    n = fast_int()
+    nums = fast_int_list()
+    max_val = max(nums)
+    found_k = False
+    
+    for k in range(1, 2*max_val+1):
+        xor_nums = [num ^ k for num in nums]
+        if all(x in nums for x in xor_nums):
+            print(k)
+            found_k = True
+            break
+    
+    if not found_k:
+        print(-1)

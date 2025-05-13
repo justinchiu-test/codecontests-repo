@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 
 import sys
-from array import array  # noqa: F401
+sys.path.append('..')
+from library import rinput
 
-
-def input():
-    return sys.stdin.buffer.readline().decode('utf-8')
-
-
-n, t = map(int, input().split())
+n, t = rinput()
 
 dp = [[[0] * 5 for _ in range(2 * t + 1)] for _ in range(n)]
 dp[0][0] = [0] + [1] * 4

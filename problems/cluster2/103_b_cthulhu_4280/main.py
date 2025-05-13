@@ -1,40 +1,24 @@
 #!/usr/bin/env python3
 
+from library import get_ints, dfs
 
-inp = input().split()
+n, m = get_ints()
 
-n = int(inp[0])
-m = int(inp[1])
-
-def dfs(x):
-
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
-
+# Cthulhu is a cycle with n vertices and n edges
+# So we need n vertices, n edges, and all vertices should be connected
 if n >= 3 and n == m:
+    # Build the graph
+    graph = [[] for _ in range(n + 1)]
+    
+    for _ in range(m):
+        x, y = get_ints()
+        graph[x].append(y)
+        graph[y].append(x)
 
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
+    # Check if all vertices are connected
+    visited = dfs(graph, 1)
     
-    for i in range(m):
-    
-        x, y = map(int, input().split())
-    
-        e[x].append(y)
-    
-        e[y].append(x)
-
-    dfs(1)
- 
+    # Subtract 1 from visited count since we're using 1-indexed vertices
     print('FHTAGN!' if len(visited) == n else 'NO')
 else:
     print('NO')
-
- 
- 

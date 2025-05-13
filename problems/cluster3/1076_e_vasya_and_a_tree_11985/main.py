@@ -1,122 +1,72 @@
 #!/usr/bin/env python3
-
-import math
-
-import os
 import sys
-from io import BytesIO, IOBase
-from types import GeneratorType
-from collections import defaultdict
-BUFSIZE = 8192
+from collections import defaultdict, deque
 
-
-class FastIO(IOBase):
-    newlines = 0
-
-    def __init__(self, file):
-        self._fd = file.fileno()
-        self.buffer = BytesIO()
-        self.writable = "x" in file.mode or "r" not in file.mode
-        self.write = self.buffer.write if self.writable else None
-
-    def read(self):
-        while True:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
-            if not b:
+def main():
+    # Read input
+    n = int(input())
+    adj = [[] for _ in range(n+1)]
+    
+    for _ in range(n-1):
+        u, v = map(int, input().split())
+        adj[u].append(v)
+        adj[v].append(u)
+    
+    m = int(input())
+    queries = defaultdict(list)
+    for _ in range(m):
+        v, d, x = map(int, input().split())
+        queries[v].append((d, x))
+        
+    # Calculate tree depths with BFS
+    depths = [-1] * (n+1)
+    depths[1] = 0  # Root has depth 0
+    queue = deque([1])
+    
+    while queue:
+        node = queue.popleft()
+        for child in adj[node]:
+            if depths[child] == -1:  # Not visited
+                depths[child] = depths[node] + 1
+                queue.append(child)
+    
+    # Build children list for each node
+    children = [[] for _ in range(n+1)]
+    for i in range(2, n+1):  # Start from node 2 (non-root)
+        # Find parent (the node with smaller depth)
+        for neighbor in adj[i]:
+            if depths[neighbor] < depths[i]:
+                children[neighbor].append(i)
                 break
-            ptr = self.buffer.tell()
-            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
-        self.newlines = 0
-        return self.buffer.read()
+    
+    # Create prefix sum array to process range updates efficiently
+    values = [0] * (n+1)
+    
+    # Function to apply a query (add value to all nodes in d-subtree of v)
+    def apply_query(v, d, x):
+        # BFS from node v to process all nodes up to distance d
+        queue = deque([(v, 0)])  # (node, distance from v)
+        visited = [False] * (n+1)
+        visited[v] = True
+        
+        while queue:
+            node, dist = queue.popleft()
+            
+            if dist <= d:
+                values[node] += x
+                
+                for neighbor in adj[node]:
+                    if not visited[neighbor] and depths[neighbor] > depths[v]:  # Only descendants
+                        visited[neighbor] = True
+                        queue.append((neighbor, dist + 1))
+    
+    # Apply all queries
+    for v in range(1, n+1):
+        for d, x in queries[v]:
+            apply_query(v, d, x)
+    
+    # Output the result
+    print(*values[1:])
 
-    def readline(self):
-        while self.newlines == 0:
-            b = os.read(self._fd, max(os.fstat(self._fd).st_size, BUFSIZE))
-            self.newlines = b.count(b"\n") + (not b)
-            ptr = self.buffer.tell()
-            self.buffer.seek(0, 2), self.buffer.write(b), self.buffer.seek(ptr)
-        self.newlines -= 1
-        return self.buffer.readline()
-
-    def flush(self):
-        if self.writable:
-            os.write(self._fd, self.buffer.getvalue())
-            self.buffer.truncate(0), self.buffer.seek(0)
-
-
-class IOWrapper(IOBase):
-    def __init__(self, file):
-        self.buffer = FastIO(file)
-        self.flush = self.buffer.flush
-        self.writable = self.buffer.writable
-        self.write = lambda s: self.buffer.write(s.encode("ascii"))
-        self.read = lambda: self.buffer.read().decode("ascii")
-        self.readline = lambda: self.buffer.readline().decode("ascii")
-
-sys.stdin, sys.stdout = IOWrapper(sys.stdin), IOWrapper(sys.stdout)
-input = lambda: sys.stdin.readline().rstrip("\r\n")
-sys.setrecursionlimit(10**5)
-
-
-def bootstrap(f, stack=[]):
-    def wrappedfunc(*args, **kwargs):
-        if stack:
-            return f(*args, **kwargs)
-        else:
-            to = f(*args, **kwargs)
-            while True:
-                if type(to) is GeneratorType:
-                    stack.append(to)
-                    to = next(to)
-                else:
-                    stack.pop()
-                    if not stack:
-                        break
-                    to = stack[-1].send(to)
-            return to
-    return wrappedfunc
-
-@bootstrap
-def dfs(u,i,p):
-    global d
-    global s
-    s+=-d[i-1]
-
-    for j in val[u]:
-        d[i+j[0]]+=j[1]
-        s+=j[1]
-
-    ans[u]=s
-    for j in adj[u]:
-        if j!=p:
-            yield dfs(j,i+1,u)
-    for j in val[u]:
-        d[i + j[0]] += -j[1]
-        s += -j[1]
-    s+=d[i-1]
-
-    yield
-
-
-
-
-n=int(input())
-adj=[[] for i in range(n+1)]
-for j in range(n-1):
-    u,v=map(int,input().split())
-    adj[u].append(v)
-    adj[v].append(u)
-
-
-val=[[] for i in range(n+1)]
-m=int(input())
-for j in range(m):
-    v,d,va=map(int,input().split())
-    val[v].append([d,va])
-
-
-s=0
-d=defaultdict(lambda:0)
-ans=[0 for i in range(n+1)]
-dfs(1,0,0)
-print(*ans[1:])
+if __name__ == "__main__":
+    main()

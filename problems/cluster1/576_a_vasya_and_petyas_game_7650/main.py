@@ -1,22 +1,25 @@
 #!/usr/bin/env python3
 
-def input_ints():
-    return list(map(int, input().split()))
+from library import get_int, is_prime
 
-def main():
-    n = int(input())
-    ans = []
-    for x in range(2, n + 1):
-        s = set()
-        xx = x
-        for y in range(2, n + 1):
-            while xx % y == 0:
-                xx /= y
-                s.add(y)
-        if len(s) == 1:
-            ans.append(x)
-    print(len(ans))
-    print(' '.join(str(x) for x in ans))
+def solve(n):
+    """
+    Find all numbers from 2 to n that are either prime or powers of primes.
+    """
+    result = []
+    
+    # First, add powers of each prime in the correct order
+    for prime in range(2, n + 1):
+        if is_prime(prime):
+            # Add all powers of this prime
+            power = prime
+            while power <= n:
+                result.append(power)
+                power *= prime
+    
+    return result
 
-if __name__ == '__main__':
-    main()
+n = get_int()
+answer = solve(n)
+print(len(answer))
+print(" ".join(map(str, answer)))
