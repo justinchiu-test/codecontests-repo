@@ -36,6 +36,7 @@ Begin by examining every problem to identify common patterns:
 - Look for similar data structures, algorithms, and techniques
 - Note common input/output patterns
 - Find repeated utility functions or helpers
+- You can potentially take a different approach than the current program
 
 Suggested approach:
 ```bash
@@ -94,15 +95,14 @@ You may edit the library, but ensure that any downstream solutions still pass te
 
 ## Tips for Success
 
-1. **Start Small**: Begin by implementing a few core components and refactoring a small set of related problems.
+1. **Keep a CHECKLIST of REFACTORED PROBLEMS**: Ensure that every program gets compressed. Keep a checklist of refactored programs in `PLAN.md`. Do not stop until every program has been completed.
 
-2. **Be Consistent**: Use consistent naming conventions and function signatures across your library.
+2. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems. Find similar problems and ensure that common components are shared.
 
 3. **Balance Abstraction**: Find the right level of abstraction - too generic may be complex, too specific will not reduce code.
 
-4. **Focus on Common Patterns**: Prioritize implementing components that can be used across many problems.
+4. **Be Consistent**: Use consistent naming conventions and function signatures across your library.
 
-REFACTOR EVERY PROBLEM/main.py
 
 ## Evaluation Criteria
 
