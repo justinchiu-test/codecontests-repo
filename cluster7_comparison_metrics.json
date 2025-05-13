@@ -1,0 +1,951 @@
+{
+    "cluster_name": "cluster7",
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "logprobs_enabled": false,
+    "refactored_library": {
+        "file_path": "problems/cluster7/library.py",
+        "metrics": {
+            "loc": 570,
+            "sloc": 353,
+            "lloc": 407,
+            "comments": 41,
+            "multi": 27,
+            "blank": 122,
+            "cyclomatic": 131
+        },
+        "logprobs": NaN,
+        "tokens": 4509
+    },
+    "refactored_programs": {
+        "895_c_square_subsets_12662": {
+            "file_path": "problems/cluster7/895_c_square_subsets_12662/main.py",
+            "metrics": {
+                "loc": 29,
+                "sloc": 22,
+                "lloc": 24,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 236,
+            "problem_name": "895_c_square_subsets_12662"
+        },
+        "1151_b_dima_and_a_bad_xor_6990": {
+            "file_path": "problems/cluster7/1151_b_dima_and_a_bad_xor_6990/main.py",
+            "metrics": {
+                "loc": 15,
+                "sloc": 9,
+                "lloc": 9,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 94,
+            "problem_name": "1151_b_dima_and_a_bad_xor_6990"
+        },
+        "1516_b_agaga_xooorrr_3468": {
+            "file_path": "problems/cluster7/1516_b_agaga_xooorrr_3468/main.py",
+            "metrics": {
+                "loc": 46,
+                "sloc": 26,
+                "lloc": 26,
+                "comments": 9,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 8
+            },
+            "logprobs": NaN,
+            "tokens": 319,
+            "problem_name": "1516_b_agaga_xooorrr_3468"
+        },
+        "1163_e_magical_permutation_2099": {
+            "file_path": "problems/cluster7/1163_e_magical_permutation_2099/main.py",
+            "metrics": {
+                "loc": 41,
+                "sloc": 39,
+                "lloc": 41,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 236,
+            "problem_name": "1163_e_magical_permutation_2099"
+        },
+        "1547_d_cogrowing_sequence_6488": {
+            "file_path": "problems/cluster7/1547_d_cogrowing_sequence_6488/main.py",
+            "metrics": {
+                "loc": 12,
+                "sloc": 7,
+                "lloc": 7,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 1
+            },
+            "logprobs": NaN,
+            "tokens": 81,
+            "problem_name": "1547_d_cogrowing_sequence_6488"
+        },
+        "627_a_xor_equation_4011": {
+            "file_path": "problems/cluster7/627_a_xor_equation_4011/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 24,
+                "lloc": 24,
+                "comments": 16,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 10
+            },
+            "logprobs": NaN,
+            "tokens": 431,
+            "problem_name": "627_a_xor_equation_4011"
+        },
+        "1016_d_vasya_and_the_matrix_3445": {
+            "file_path": "problems/cluster7/1016_d_vasya_and_the_matrix_3445/main.py",
+            "metrics": {
+                "loc": 28,
+                "sloc": 24,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 2
+            },
+            "logprobs": NaN,
+            "tokens": 152,
+            "problem_name": "1016_d_vasya_and_the_matrix_3445"
+        },
+        "1394_b_boboniu_walks_on_graph_6794": {
+            "file_path": "problems/cluster7/1394_b_boboniu_walks_on_graph_6794/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 31,
+                "lloc": 31,
+                "comments": 1,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 297,
+            "problem_name": "1394_b_boboniu_walks_on_graph_6794"
+        },
+        "424_c_magic_formulas_9623": {
+            "file_path": "problems/cluster7/424_c_magic_formulas_9623/main.py",
+            "metrics": {
+                "loc": 41,
+                "sloc": 18,
+                "lloc": 18,
+                "comments": 14,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 425,
+            "problem_name": "424_c_magic_formulas_9623"
+        },
+        "1416_c_xor_inverse_4402": {
+            "file_path": "problems/cluster7/1416_c_xor_inverse_4402/main.py",
+            "metrics": {
+                "loc": 38,
+                "sloc": 35,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 265,
+            "problem_name": "1416_c_xor_inverse_4402"
+        },
+        "817_e_choosing_the_commander_4644": {
+            "file_path": "problems/cluster7/817_e_choosing_the_commander_4644/main.py",
+            "metrics": {
+                "loc": 95,
+                "sloc": 73,
+                "lloc": 73,
+                "comments": 17,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 659,
+            "problem_name": "817_e_choosing_the_commander_4644"
+        },
+        "1323_d_present_959": {
+            "file_path": "problems/cluster7/1323_d_present_959/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 34,
+                "lloc": 34,
+                "comments": 7,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 16
+            },
+            "logprobs": NaN,
+            "tokens": 478,
+            "problem_name": "1323_d_present_959"
+        },
+        "1054_d_changing_array_9485": {
+            "file_path": "problems/cluster7/1054_d_changing_array_9485/main.py",
+            "metrics": {
+                "loc": 26,
+                "sloc": 21,
+                "lloc": 21,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 163,
+            "problem_name": "1054_d_changing_array_9485"
+        },
+        "1427_e_xum_2840": {
+            "file_path": "problems/cluster7/1427_e_xum_2840/main.py",
+            "metrics": {
+                "loc": 107,
+                "sloc": 86,
+                "lloc": 90,
+                "comments": 4,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 24
+            },
+            "logprobs": NaN,
+            "tokens": 808,
+            "problem_name": "1427_e_xum_2840"
+        },
+        "388_d_fox_and_perfect_sets_5562": {
+            "file_path": "problems/cluster7/388_d_fox_and_perfect_sets_5562/main.py",
+            "metrics": {
+                "loc": 31,
+                "sloc": 22,
+                "lloc": 25,
+                "comments": 12,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 376,
+            "problem_name": "388_d_fox_and_perfect_sets_5562"
+        },
+        "634_b_xor_equation_3074": {
+            "file_path": "problems/cluster7/634_b_xor_equation_3074/main.py",
+            "metrics": {
+                "loc": 47,
+                "sloc": 23,
+                "lloc": 23,
+                "comments": 13,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 8
+            },
+            "logprobs": NaN,
+            "tokens": 395,
+            "problem_name": "634_b_xor_equation_3074"
+        },
+        "862_c_mahmoud_and_ehab_and_the_xor_2355": {
+            "file_path": "problems/cluster7/862_c_mahmoud_and_ehab_and_the_xor_2355/main.py",
+            "metrics": {
+                "loc": 74,
+                "sloc": 48,
+                "lloc": 48,
+                "comments": 21,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 15
+            },
+            "logprobs": NaN,
+            "tokens": 545,
+            "problem_name": "862_c_mahmoud_and_ehab_and_the_xor_2355"
+        },
+        "460_d_little_victor_and_set_2650": {
+            "file_path": "problems/cluster7/460_d_little_victor_and_set_2650/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 126,
+                "lloc": 129,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 851,
+            "problem_name": "460_d_little_victor_and_set_2650"
+        },
+        "923_c_perfect_security_7561": {
+            "file_path": "problems/cluster7/923_c_perfect_security_7561/main.py",
+            "metrics": {
+                "loc": 53,
+                "sloc": 40,
+                "lloc": 40,
+                "comments": 15,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 36
+            },
+            "logprobs": NaN,
+            "tokens": 705,
+            "problem_name": "923_c_perfect_security_7561"
+        },
+        "1031_e_triple_flips_11983": {
+            "file_path": "problems/cluster7/1031_e_triple_flips_11983/main.py",
+            "metrics": {
+                "loc": 138,
+                "sloc": 134,
+                "lloc": 136,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 19
+            },
+            "logprobs": NaN,
+            "tokens": 1291,
+            "problem_name": "1031_e_triple_flips_11983"
+        },
+        "289_e_polo_the_penguin_and_xor_operation_6598": {
+            "file_path": "problems/cluster7/289_e_polo_the_penguin_and_xor_operation_6598/main.py",
+            "metrics": {
+                "loc": 92,
+                "sloc": 65,
+                "lloc": 65,
+                "comments": 18,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 18
+            },
+            "logprobs": NaN,
+            "tokens": 3119,
+            "problem_name": "289_e_polo_the_penguin_and_xor_operation_6598"
+        },
+        "1071_c_triple_flips_5739": {
+            "file_path": "problems/cluster7/1071_c_triple_flips_5739/main.py",
+            "metrics": {
+                "loc": 178,
+                "sloc": 144,
+                "lloc": 147,
+                "comments": 18,
+                "multi": 4,
+                "blank": 18,
+                "cyclomatic": 44
+            },
+            "logprobs": NaN,
+            "tokens": 1714,
+            "problem_name": "1071_c_triple_flips_5739"
+        },
+        "1362_b_johnny_and_his_hobbies_8248": {
+            "file_path": "problems/cluster7/1362_b_johnny_and_his_hobbies_8248/main.py",
+            "metrics": {
+                "loc": 30,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 7,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 203,
+            "problem_name": "1362_b_johnny_and_his_hobbies_8248"
+        },
+        "925_c_big_secret_3711": {
+            "file_path": "problems/cluster7/925_c_big_secret_3711/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 23,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 158,
+            "problem_name": "925_c_big_secret_3711"
+        },
+        "15_c_industrial_nim_12943": {
+            "file_path": "problems/cluster7/15_c_industrial_nim_12943/main.py",
+            "metrics": {
+                "loc": 18,
+                "sloc": 10,
+                "lloc": 10,
+                "comments": 3,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 159,
+            "problem_name": "15_c_industrial_nim_12943"
+        },
+        "1534_e_lost_array_11486": {
+            "file_path": "problems/cluster7/1534_e_lost_array_11486/main.py",
+            "metrics": {
+                "loc": 49,
+                "sloc": 45,
+                "lloc": 81,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 26
+            },
+            "logprobs": NaN,
+            "tokens": 693,
+            "problem_name": "1534_e_lost_array_11486"
+        },
+        "1174_d_ehab_and_the_expected_xor_problem_10531": {
+            "file_path": "problems/cluster7/1174_d_ehab_and_the_expected_xor_problem_10531/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 24,
+                "lloc": 24,
+                "comments": 10,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 6
+            },
+            "logprobs": NaN,
+            "tokens": 259,
+            "problem_name": "1174_d_ehab_and_the_expected_xor_problem_10531"
+        },
+        "1325_d_ehab_the_xorcist_11372": {
+            "file_path": "problems/cluster7/1325_d_ehab_the_xorcist_11372/main.py",
+            "metrics": {
+                "loc": 34,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 9,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 290,
+            "problem_name": "1325_d_ehab_the_xorcist_11372"
+        },
+        "1438_d_powerful_ksenia_5652": {
+            "file_path": "problems/cluster7/1438_d_powerful_ksenia_5652/main.py",
+            "metrics": {
+                "loc": 66,
+                "sloc": 56,
+                "lloc": 65,
+                "comments": 5,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 18
+            },
+            "logprobs": NaN,
+            "tokens": 461,
+            "problem_name": "1438_d_powerful_ksenia_5652"
+        },
+        "1113_c_sasha_and_a_bit_of_relax_8341": {
+            "file_path": "problems/cluster7/1113_c_sasha_and_a_bit_of_relax_8341/main.py",
+            "metrics": {
+                "loc": 31,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 6,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 204,
+            "problem_name": "1113_c_sasha_and_a_bit_of_relax_8341"
+        }
+    },
+    "original_programs": {
+        "895_c_square_subsets_12662": {
+            "file_path": "problems_original/cluster7/895_c_square_subsets_12662/main.py",
+            "metrics": {
+                "loc": 29,
+                "sloc": 22,
+                "lloc": 24,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 236,
+            "problem_name": "895_c_square_subsets_12662"
+        },
+        "1151_b_dima_and_a_bad_xor_6990": {
+            "file_path": "problems_original/cluster7/1151_b_dima_and_a_bad_xor_6990/main.py",
+            "metrics": {
+                "loc": 22,
+                "sloc": 20,
+                "lloc": 20,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 182,
+            "problem_name": "1151_b_dima_and_a_bad_xor_6990"
+        },
+        "1516_b_agaga_xooorrr_3468": {
+            "file_path": "problems_original/cluster7/1516_b_agaga_xooorrr_3468/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 146,
+            "problem_name": "1516_b_agaga_xooorrr_3468"
+        },
+        "1163_e_magical_permutation_2099": {
+            "file_path": "problems_original/cluster7/1163_e_magical_permutation_2099/main.py",
+            "metrics": {
+                "loc": 41,
+                "sloc": 39,
+                "lloc": 41,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 236,
+            "problem_name": "1163_e_magical_permutation_2099"
+        },
+        "1547_d_cogrowing_sequence_6488": {
+            "file_path": "problems_original/cluster7/1547_d_cogrowing_sequence_6488/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 11,
+                "lloc": 11,
+                "comments": 3,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 114,
+            "problem_name": "1547_d_cogrowing_sequence_6488"
+        },
+        "627_a_xor_equation_4011": {
+            "file_path": "problems_original/cluster7/627_a_xor_equation_4011/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 153,
+            "problem_name": "627_a_xor_equation_4011"
+        },
+        "1016_d_vasya_and_the_matrix_3445": {
+            "file_path": "problems_original/cluster7/1016_d_vasya_and_the_matrix_3445/main.py",
+            "metrics": {
+                "loc": 28,
+                "sloc": 24,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 2
+            },
+            "logprobs": NaN,
+            "tokens": 152,
+            "problem_name": "1016_d_vasya_and_the_matrix_3445"
+        },
+        "1394_b_boboniu_walks_on_graph_6794": {
+            "file_path": "problems_original/cluster7/1394_b_boboniu_walks_on_graph_6794/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 31,
+                "lloc": 31,
+                "comments": 1,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 297,
+            "problem_name": "1394_b_boboniu_walks_on_graph_6794"
+        },
+        "424_c_magic_formulas_9623": {
+            "file_path": "problems_original/cluster7/424_c_magic_formulas_9623/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 14,
+                "lloc": 14,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 105,
+            "problem_name": "424_c_magic_formulas_9623"
+        },
+        "1416_c_xor_inverse_4402": {
+            "file_path": "problems_original/cluster7/1416_c_xor_inverse_4402/main.py",
+            "metrics": {
+                "loc": 38,
+                "sloc": 35,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 265,
+            "problem_name": "1416_c_xor_inverse_4402"
+        },
+        "817_e_choosing_the_commander_4644": {
+            "file_path": "problems_original/cluster7/817_e_choosing_the_commander_4644/main.py",
+            "metrics": {
+                "loc": 95,
+                "sloc": 73,
+                "lloc": 73,
+                "comments": 17,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 659,
+            "problem_name": "817_e_choosing_the_commander_4644"
+        },
+        "1323_d_present_959": {
+            "file_path": "problems_original/cluster7/1323_d_present_959/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 34,
+                "lloc": 34,
+                "comments": 7,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 16
+            },
+            "logprobs": NaN,
+            "tokens": 478,
+            "problem_name": "1323_d_present_959"
+        },
+        "1054_d_changing_array_9485": {
+            "file_path": "problems_original/cluster7/1054_d_changing_array_9485/main.py",
+            "metrics": {
+                "loc": 26,
+                "sloc": 21,
+                "lloc": 21,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 163,
+            "problem_name": "1054_d_changing_array_9485"
+        },
+        "1427_e_xum_2840": {
+            "file_path": "problems_original/cluster7/1427_e_xum_2840/main.py",
+            "metrics": {
+                "loc": 107,
+                "sloc": 86,
+                "lloc": 90,
+                "comments": 4,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 24
+            },
+            "logprobs": NaN,
+            "tokens": 808,
+            "problem_name": "1427_e_xum_2840"
+        },
+        "388_d_fox_and_perfect_sets_5562": {
+            "file_path": "problems_original/cluster7/388_d_fox_and_perfect_sets_5562/main.py",
+            "metrics": {
+                "loc": 31,
+                "sloc": 22,
+                "lloc": 25,
+                "comments": 12,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 376,
+            "problem_name": "388_d_fox_and_perfect_sets_5562"
+        },
+        "634_b_xor_equation_3074": {
+            "file_path": "problems_original/cluster7/634_b_xor_equation_3074/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 138,
+            "problem_name": "634_b_xor_equation_3074"
+        },
+        "862_c_mahmoud_and_ehab_and_the_xor_2355": {
+            "file_path": "problems_original/cluster7/862_c_mahmoud_and_ehab_and_the_xor_2355/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 21,
+                "lloc": 21,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 150,
+            "problem_name": "862_c_mahmoud_and_ehab_and_the_xor_2355"
+        },
+        "460_d_little_victor_and_set_2650": {
+            "file_path": "problems_original/cluster7/460_d_little_victor_and_set_2650/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 126,
+                "lloc": 129,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 851,
+            "problem_name": "460_d_little_victor_and_set_2650"
+        },
+        "923_c_perfect_security_7561": {
+            "file_path": "problems_original/cluster7/923_c_perfect_security_7561/main.py",
+            "metrics": {
+                "loc": 32,
+                "sloc": 28,
+                "lloc": 28,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 7
+            },
+            "logprobs": NaN,
+            "tokens": 258,
+            "problem_name": "923_c_perfect_security_7561"
+        },
+        "1031_e_triple_flips_11983": {
+            "file_path": "problems_original/cluster7/1031_e_triple_flips_11983/main.py",
+            "metrics": {
+                "loc": 138,
+                "sloc": 134,
+                "lloc": 136,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 19
+            },
+            "logprobs": NaN,
+            "tokens": 1291,
+            "problem_name": "1031_e_triple_flips_11983"
+        },
+        "289_e_polo_the_penguin_and_xor_operation_6598": {
+            "file_path": "problems_original/cluster7/289_e_polo_the_penguin_and_xor_operation_6598/main.py",
+            "metrics": {
+                "loc": 167,
+                "sloc": 111,
+                "lloc": 116,
+                "comments": 11,
+                "multi": 0,
+                "blank": 45,
+                "cyclomatic": 34
+            },
+            "logprobs": NaN,
+            "tokens": 1005,
+            "problem_name": "289_e_polo_the_penguin_and_xor_operation_6598"
+        },
+        "1071_c_triple_flips_5739": {
+            "file_path": "problems_original/cluster7/1071_c_triple_flips_5739/main.py",
+            "metrics": {
+                "loc": 138,
+                "sloc": 134,
+                "lloc": 136,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 19
+            },
+            "logprobs": NaN,
+            "tokens": 1291,
+            "problem_name": "1071_c_triple_flips_5739"
+        },
+        "1362_b_johnny_and_his_hobbies_8248": {
+            "file_path": "problems_original/cluster7/1362_b_johnny_and_his_hobbies_8248/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 22,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 142,
+            "problem_name": "1362_b_johnny_and_his_hobbies_8248"
+        },
+        "925_c_big_secret_3711": {
+            "file_path": "problems_original/cluster7/925_c_big_secret_3711/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 23,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 158,
+            "problem_name": "925_c_big_secret_3711"
+        },
+        "15_c_industrial_nim_12943": {
+            "file_path": "problems_original/cluster7/15_c_industrial_nim_12943/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 12,
+                "lloc": 12,
+                "comments": 2,
+                "multi": 0,
+                "blank": 29,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 133,
+            "problem_name": "15_c_industrial_nim_12943"
+        },
+        "1534_e_lost_array_11486": {
+            "file_path": "problems_original/cluster7/1534_e_lost_array_11486/main.py",
+            "metrics": {
+                "loc": 49,
+                "sloc": 45,
+                "lloc": 81,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 26
+            },
+            "logprobs": NaN,
+            "tokens": 693,
+            "problem_name": "1534_e_lost_array_11486"
+        },
+        "1174_d_ehab_and_the_expected_xor_problem_10531": {
+            "file_path": "problems_original/cluster7/1174_d_ehab_and_the_expected_xor_problem_10531/main.py",
+            "metrics": {
+                "loc": 18,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 126,
+            "problem_name": "1174_d_ehab_and_the_expected_xor_problem_10531"
+        },
+        "1325_d_ehab_the_xorcist_11372": {
+            "file_path": "problems_original/cluster7/1325_d_ehab_the_xorcist_11372/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 19,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 175,
+            "problem_name": "1325_d_ehab_the_xorcist_11372"
+        },
+        "1438_d_powerful_ksenia_5652": {
+            "file_path": "problems_original/cluster7/1438_d_powerful_ksenia_5652/main.py",
+            "metrics": {
+                "loc": 66,
+                "sloc": 56,
+                "lloc": 65,
+                "comments": 5,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 18
+            },
+            "logprobs": NaN,
+            "tokens": 461,
+            "problem_name": "1438_d_powerful_ksenia_5652"
+        },
+        "1113_c_sasha_and_a_bit_of_relax_8341": {
+            "file_path": "problems_original/cluster7/1113_c_sasha_and_a_bit_of_relax_8341/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 11,
+                "lloc": 11,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 119,
+            "problem_name": "1113_c_sasha_and_a_bit_of_relax_8341"
+        }
+    },
+    "aggregated_metrics_refactored": {
+        "logprobs": NaN,
+        "tokens": 20576,
+        "loc": 2235,
+        "sloc": 1615,
+        "lloc": 1735,
+        "comments": 259,
+        "multi": 31,
+        "blank": 338,
+        "cyclomatic": 405
+    },
+    "aggregated_metrics_original": {
+        "logprobs": NaN,
+        "tokens": 11361,
+        "loc": 1510,
+        "sloc": 1250,
+        "lloc": 1321,
+        "comments": 84,
+        "multi": 0,
+        "blank": 181,
+        "cyclomatic": 180
+    },
+    "comparison_ratios": {
+        "tokens_refactored_div_original": 1.8111081770970865,
+        "logprobs_refactored_div_original": NaN,
+        "avg_logprob_per_token_original": NaN,
+        "avg_logprob_per_token_refactored": NaN
+    }
+}

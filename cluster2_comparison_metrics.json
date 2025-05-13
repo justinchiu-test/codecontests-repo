@@ -1,0 +1,951 @@
+{
+    "cluster_name": "cluster2",
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "logprobs_enabled": false,
+    "refactored_library": {
+        "file_path": "problems/cluster2/library.py",
+        "metrics": {
+            "loc": 639,
+            "sloc": 454,
+            "lloc": 473,
+            "comments": 36,
+            "multi": 12,
+            "blank": 142,
+            "cyclomatic": 139
+        },
+        "logprobs": NaN,
+        "tokens": 4447
+    },
+    "refactored_programs": {
+        "1249_b1_books_exchange_easy_version_7099": {
+            "file_path": "problems/cluster2/1249_b1_books_exchange_easy_version_7099/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 11,
+                "lloc": 11,
+                "comments": 5,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 135,
+            "problem_name": "1249_b1_books_exchange_easy_version_7099"
+        },
+        "1242_b_01_mst_10223": {
+            "file_path": "problems/cluster2/1242_b_01_mst_10223/main.py",
+            "metrics": {
+                "loc": 37,
+                "sloc": 32,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 249,
+            "problem_name": "1242_b_01_mst_10223"
+        },
+        "1263_d_secret_passwords_6164": {
+            "file_path": "problems/cluster2/1263_d_secret_passwords_6164/main.py",
+            "metrics": {
+                "loc": 30,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 6,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 206,
+            "problem_name": "1263_d_secret_passwords_6164"
+        },
+        "659_e_new_reform_13276": {
+            "file_path": "problems/cluster2/659_e_new_reform_13276/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 27,
+                "lloc": 27,
+                "comments": 5,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 251,
+            "problem_name": "659_e_new_reform_13276"
+        },
+        "27_b_tournament_1914": {
+            "file_path": "problems/cluster2/27_b_tournament_1914/main.py",
+            "metrics": {
+                "loc": 56,
+                "sloc": 33,
+                "lloc": 33,
+                "comments": 13,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 6
+            },
+            "logprobs": NaN,
+            "tokens": 433,
+            "problem_name": "27_b_tournament_1914"
+        },
+        "156_d_clues_3678": {
+            "file_path": "problems/cluster2/156_d_clues_3678/main.py",
+            "metrics": {
+                "loc": 58,
+                "sloc": 33,
+                "lloc": 33,
+                "comments": 12,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 388,
+            "problem_name": "156_d_clues_3678"
+        },
+        "216_b_forming_teams_6387": {
+            "file_path": "problems/cluster2/216_b_forming_teams_6387/main.py",
+            "metrics": {
+                "loc": 82,
+                "sloc": 51,
+                "lloc": 52,
+                "comments": 12,
+                "multi": 4,
+                "blank": 20,
+                "cyclomatic": 20
+            },
+            "logprobs": NaN,
+            "tokens": 560,
+            "problem_name": "216_b_forming_teams_6387"
+        },
+        "510_b_fox_and_two_dots_2444": {
+            "file_path": "problems/cluster2/510_b_fox_and_two_dots_2444/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 30,
+                "lloc": 30,
+                "comments": 10,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 6
+            },
+            "logprobs": NaN,
+            "tokens": 373,
+            "problem_name": "510_b_fox_and_two_dots_2444"
+        },
+        "653_e_bear_and_forgotten_tree_2_10362": {
+            "file_path": "problems/cluster2/653_e_bear_and_forgotten_tree_2_10362/main.py",
+            "metrics": {
+                "loc": 95,
+                "sloc": 78,
+                "lloc": 82,
+                "comments": 1,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 35
+            },
+            "logprobs": NaN,
+            "tokens": 570,
+            "problem_name": "653_e_bear_and_forgotten_tree_2_10362"
+        },
+        "771_a_bear_and_friendship_condition_2351": {
+            "file_path": "problems/cluster2/771_a_bear_and_friendship_condition_2351/main.py",
+            "metrics": {
+                "loc": 36,
+                "sloc": 23,
+                "lloc": 23,
+                "comments": 8,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 274,
+            "problem_name": "771_a_bear_and_friendship_condition_2351"
+        },
+        "1521_d_nastia_plays_with_a_tree_11693": {
+            "file_path": "problems/cluster2/1521_d_nastia_plays_with_a_tree_11693/main.py",
+            "metrics": {
+                "loc": 75,
+                "sloc": 61,
+                "lloc": 65,
+                "comments": 1,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 21
+            },
+            "logprobs": NaN,
+            "tokens": 435,
+            "problem_name": "1521_d_nastia_plays_with_a_tree_11693"
+        },
+        "745_c_hongcow_builds_a_nation_7762": {
+            "file_path": "problems/cluster2/745_c_hongcow_builds_a_nation_7762/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 46,
+                "lloc": 47,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 332,
+            "problem_name": "745_c_hongcow_builds_a_nation_7762"
+        },
+        "1217_d_coloring_edges_7410": {
+            "file_path": "problems/cluster2/1217_d_coloring_edges_7410/main.py",
+            "metrics": {
+                "loc": 49,
+                "sloc": 34,
+                "lloc": 34,
+                "comments": 6,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 336,
+            "problem_name": "1217_d_coloring_edges_7410"
+        },
+        "505_d_mr_kitayutas_technology_879": {
+            "file_path": "problems/cluster2/505_d_mr_kitayutas_technology_879/main.py",
+            "metrics": {
+                "loc": 35,
+                "sloc": 28,
+                "lloc": 28,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 12
+            },
+            "logprobs": NaN,
+            "tokens": 255,
+            "problem_name": "505_d_mr_kitayutas_technology_879"
+        },
+        "104_c_cthulhu_10214": {
+            "file_path": "problems/cluster2/104_c_cthulhu_10214/main.py",
+            "metrics": {
+                "loc": 46,
+                "sloc": 24,
+                "lloc": 24,
+                "comments": 13,
+                "multi": 0,
+                "blank": 10,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 319,
+            "problem_name": "104_c_cthulhu_10214"
+        },
+        "977_e_cyclic_components_8291": {
+            "file_path": "problems/cluster2/977_e_cyclic_components_8291/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 31,
+                "lloc": 31,
+                "comments": 4,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 6
+            },
+            "logprobs": NaN,
+            "tokens": 244,
+            "problem_name": "977_e_cyclic_components_8291"
+        },
+        "791_b_bear_and_friendship_condition_8388": {
+            "file_path": "problems/cluster2/791_b_bear_and_friendship_condition_8388/main.py",
+            "metrics": {
+                "loc": 70,
+                "sloc": 42,
+                "lloc": 44,
+                "comments": 11,
+                "multi": 4,
+                "blank": 16,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 459,
+            "problem_name": "791_b_bear_and_friendship_condition_8388"
+        },
+        "103_b_cthulhu_4280": {
+            "file_path": "problems/cluster2/103_b_cthulhu_4280/main.py",
+            "metrics": {
+                "loc": 39,
+                "sloc": 20,
+                "lloc": 20,
+                "comments": 10,
+                "multi": 0,
+                "blank": 10,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 237,
+            "problem_name": "103_b_cthulhu_4280"
+        },
+        "505_b_mr_kitayutas_colorful_graph_984": {
+            "file_path": "problems/cluster2/505_b_mr_kitayutas_colorful_graph_984/main.py",
+            "metrics": {
+                "loc": 37,
+                "sloc": 23,
+                "lloc": 23,
+                "comments": 4,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 6
+            },
+            "logprobs": NaN,
+            "tokens": 238,
+            "problem_name": "505_b_mr_kitayutas_colorful_graph_984"
+        },
+        "445_b_dzy_loves_chemistry_1921": {
+            "file_path": "problems/cluster2/445_b_dzy_loves_chemistry_1921/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 11,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 267,
+            "problem_name": "445_b_dzy_loves_chemistry_1921"
+        },
+        "9_e_interesting_graph_and_apples_483": {
+            "file_path": "problems/cluster2/9_e_interesting_graph_and_apples_483/main.py",
+            "metrics": {
+                "loc": 84,
+                "sloc": 80,
+                "lloc": 80,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 643,
+            "problem_name": "9_e_interesting_graph_and_apples_483"
+        },
+        "920_e_connected_components_167": {
+            "file_path": "problems/cluster2/920_e_connected_components_167/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 29,
+                "lloc": 29,
+                "comments": 9,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 282,
+            "problem_name": "920_e_connected_components_167"
+        },
+        "1169_b_pairs_11885": {
+            "file_path": "problems/cluster2/1169_b_pairs_11885/main.py",
+            "metrics": {
+                "loc": 55,
+                "sloc": 32,
+                "lloc": 32,
+                "comments": 11,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 371,
+            "problem_name": "1169_b_pairs_11885"
+        },
+        "1000_e_we_need_more_bosses_8440": {
+            "file_path": "problems/cluster2/1000_e_we_need_more_bosses_8440/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 15,
+                "lloc": 15,
+                "comments": 6,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 178,
+            "problem_name": "1000_e_we_need_more_bosses_8440"
+        },
+        "1534_f1_falling_sand_easy_version_9507": {
+            "file_path": "problems/cluster2/1534_f1_falling_sand_easy_version_9507/main.py",
+            "metrics": {
+                "loc": 114,
+                "sloc": 86,
+                "lloc": 96,
+                "comments": 16,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 25
+            },
+            "logprobs": NaN,
+            "tokens": 935,
+            "problem_name": "1534_f1_falling_sand_easy_version_9507"
+        },
+        "690_c1_brain_network_easy_6407": {
+            "file_path": "problems/cluster2/690_c1_brain_network_easy_6407/main.py",
+            "metrics": {
+                "loc": 37,
+                "sloc": 20,
+                "lloc": 20,
+                "comments": 11,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 265,
+            "problem_name": "690_c1_brain_network_easy_6407"
+        },
+        "1277_e_two_fairs_122": {
+            "file_path": "problems/cluster2/1277_e_two_fairs_122/main.py",
+            "metrics": {
+                "loc": 79,
+                "sloc": 57,
+                "lloc": 57,
+                "comments": 9,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 14
+            },
+            "logprobs": NaN,
+            "tokens": 471,
+            "problem_name": "1277_e_two_fairs_122"
+        },
+        "1243_d_01_mst_12097": {
+            "file_path": "problems/cluster2/1243_d_01_mst_12097/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 21,
+                "lloc": 21,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 163,
+            "problem_name": "1243_d_01_mst_12097"
+        },
+        "45_h_road_problem_460": {
+            "file_path": "problems/cluster2/45_h_road_problem_460/main.py",
+            "metrics": {
+                "loc": 306,
+                "sloc": 202,
+                "lloc": 202,
+                "comments": 38,
+                "multi": 0,
+                "blank": 101,
+                "cyclomatic": 63
+            },
+            "logprobs": NaN,
+            "tokens": 2223,
+            "problem_name": "45_h_road_problem_460"
+        },
+        "217_a_ice_skating_2223": {
+            "file_path": "problems/cluster2/217_a_ice_skating_2223/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 12,
+                "lloc": 12,
+                "comments": 5,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 164,
+            "problem_name": "217_a_ice_skating_2223"
+        }
+    },
+    "original_programs": {
+        "1249_b1_books_exchange_easy_version_7099": {
+            "file_path": "problems_original/cluster2/1249_b1_books_exchange_easy_version_7099/main.py",
+            "metrics": {
+                "loc": 183,
+                "sloc": 125,
+                "lloc": 132,
+                "comments": 7,
+                "multi": 13,
+                "blank": 38,
+                "cyclomatic": 52
+            },
+            "logprobs": NaN,
+            "tokens": 1222,
+            "problem_name": "1249_b1_books_exchange_easy_version_7099"
+        },
+        "1242_b_01_mst_10223": {
+            "file_path": "problems_original/cluster2/1242_b_01_mst_10223/main.py",
+            "metrics": {
+                "loc": 38,
+                "sloc": 32,
+                "lloc": 33,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 251,
+            "problem_name": "1242_b_01_mst_10223"
+        },
+        "1263_d_secret_passwords_6164": {
+            "file_path": "problems_original/cluster2/1263_d_secret_passwords_6164/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 25,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 200,
+            "problem_name": "1263_d_secret_passwords_6164"
+        },
+        "659_e_new_reform_13276": {
+            "file_path": "problems_original/cluster2/659_e_new_reform_13276/main.py",
+            "metrics": {
+                "loc": 60,
+                "sloc": 37,
+                "lloc": 39,
+                "comments": 6,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 310,
+            "problem_name": "659_e_new_reform_13276"
+        },
+        "27_b_tournament_1914": {
+            "file_path": "problems_original/cluster2/27_b_tournament_1914/main.py",
+            "metrics": {
+                "loc": 35,
+                "sloc": 33,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 252,
+            "problem_name": "27_b_tournament_1914"
+        },
+        "156_d_clues_3678": {
+            "file_path": "problems_original/cluster2/156_d_clues_3678/main.py",
+            "metrics": {
+                "loc": 80,
+                "sloc": 64,
+                "lloc": 64,
+                "comments": 2,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 12
+            },
+            "logprobs": NaN,
+            "tokens": 450,
+            "problem_name": "156_d_clues_3678"
+        },
+        "216_b_forming_teams_6387": {
+            "file_path": "problems_original/cluster2/216_b_forming_teams_6387/main.py",
+            "metrics": {
+                "loc": 77,
+                "sloc": 51,
+                "lloc": 51,
+                "comments": 8,
+                "multi": 0,
+                "blank": 18,
+                "cyclomatic": 26
+            },
+            "logprobs": NaN,
+            "tokens": 488,
+            "problem_name": "216_b_forming_teams_6387"
+        },
+        "510_b_fox_and_two_dots_2444": {
+            "file_path": "problems_original/cluster2/510_b_fox_and_two_dots_2444/main.py",
+            "metrics": {
+                "loc": 137,
+                "sloc": 83,
+                "lloc": 83,
+                "comments": 13,
+                "multi": 4,
+                "blank": 37,
+                "cyclomatic": 26
+            },
+            "logprobs": NaN,
+            "tokens": 665,
+            "problem_name": "510_b_fox_and_two_dots_2444"
+        },
+        "653_e_bear_and_forgotten_tree_2_10362": {
+            "file_path": "problems_original/cluster2/653_e_bear_and_forgotten_tree_2_10362/main.py",
+            "metrics": {
+                "loc": 95,
+                "sloc": 78,
+                "lloc": 82,
+                "comments": 1,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 35
+            },
+            "logprobs": NaN,
+            "tokens": 570,
+            "problem_name": "653_e_bear_and_forgotten_tree_2_10362"
+        },
+        "771_a_bear_and_friendship_condition_2351": {
+            "file_path": "problems_original/cluster2/771_a_bear_and_friendship_condition_2351/main.py",
+            "metrics": {
+                "loc": 36,
+                "sloc": 34,
+                "lloc": 34,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 7
+            },
+            "logprobs": NaN,
+            "tokens": 223,
+            "problem_name": "771_a_bear_and_friendship_condition_2351"
+        },
+        "1521_d_nastia_plays_with_a_tree_11693": {
+            "file_path": "problems_original/cluster2/1521_d_nastia_plays_with_a_tree_11693/main.py",
+            "metrics": {
+                "loc": 75,
+                "sloc": 61,
+                "lloc": 65,
+                "comments": 1,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 21
+            },
+            "logprobs": NaN,
+            "tokens": 435,
+            "problem_name": "1521_d_nastia_plays_with_a_tree_11693"
+        },
+        "745_c_hongcow_builds_a_nation_7762": {
+            "file_path": "problems_original/cluster2/745_c_hongcow_builds_a_nation_7762/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 46,
+                "lloc": 47,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 332,
+            "problem_name": "745_c_hongcow_builds_a_nation_7762"
+        },
+        "1217_d_coloring_edges_7410": {
+            "file_path": "problems_original/cluster2/1217_d_coloring_edges_7410/main.py",
+            "metrics": {
+                "loc": 48,
+                "sloc": 39,
+                "lloc": 39,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 319,
+            "problem_name": "1217_d_coloring_edges_7410"
+        },
+        "505_d_mr_kitayutas_technology_879": {
+            "file_path": "problems_original/cluster2/505_d_mr_kitayutas_technology_879/main.py",
+            "metrics": {
+                "loc": 35,
+                "sloc": 28,
+                "lloc": 28,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 12
+            },
+            "logprobs": NaN,
+            "tokens": 255,
+            "problem_name": "505_d_mr_kitayutas_technology_879"
+        },
+        "104_c_cthulhu_10214": {
+            "file_path": "problems_original/cluster2/104_c_cthulhu_10214/main.py",
+            "metrics": {
+                "loc": 35,
+                "sloc": 28,
+                "lloc": 28,
+                "comments": 1,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 221,
+            "problem_name": "104_c_cthulhu_10214"
+        },
+        "977_e_cyclic_components_8291": {
+            "file_path": "problems_original/cluster2/977_e_cyclic_components_8291/main.py",
+            "metrics": {
+                "loc": 36,
+                "sloc": 26,
+                "lloc": 27,
+                "comments": 1,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 197,
+            "problem_name": "977_e_cyclic_components_8291"
+        },
+        "791_b_bear_and_friendship_condition_8388": {
+            "file_path": "problems_original/cluster2/791_b_bear_and_friendship_condition_8388/main.py",
+            "metrics": {
+                "loc": 38,
+                "sloc": 29,
+                "lloc": 29,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 208,
+            "problem_name": "791_b_bear_and_friendship_condition_8388"
+        },
+        "103_b_cthulhu_4280": {
+            "file_path": "problems_original/cluster2/103_b_cthulhu_4280/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 19,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 153,
+            "problem_name": "103_b_cthulhu_4280"
+        },
+        "505_b_mr_kitayutas_colorful_graph_984": {
+            "file_path": "problems_original/cluster2/505_b_mr_kitayutas_colorful_graph_984/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 34,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 10
+            },
+            "logprobs": NaN,
+            "tokens": 281,
+            "problem_name": "505_b_mr_kitayutas_colorful_graph_984"
+        },
+        "445_b_dzy_loves_chemistry_1921": {
+            "file_path": "problems_original/cluster2/445_b_dzy_loves_chemistry_1921/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 28,
+                "lloc": 28,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 4
+            },
+            "logprobs": NaN,
+            "tokens": 205,
+            "problem_name": "445_b_dzy_loves_chemistry_1921"
+        },
+        "9_e_interesting_graph_and_apples_483": {
+            "file_path": "problems_original/cluster2/9_e_interesting_graph_and_apples_483/main.py",
+            "metrics": {
+                "loc": 84,
+                "sloc": 80,
+                "lloc": 80,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 3
+            },
+            "logprobs": NaN,
+            "tokens": 643,
+            "problem_name": "9_e_interesting_graph_and_apples_483"
+        },
+        "920_e_connected_components_167": {
+            "file_path": "problems_original/cluster2/920_e_connected_components_167/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 24,
+                "lloc": 24,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 158,
+            "problem_name": "920_e_connected_components_167"
+        },
+        "1169_b_pairs_11885": {
+            "file_path": "problems_original/cluster2/1169_b_pairs_11885/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 32,
+                "lloc": 32,
+                "comments": 2,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 294,
+            "problem_name": "1169_b_pairs_11885"
+        },
+        "1000_e_we_need_more_bosses_8440": {
+            "file_path": "problems_original/cluster2/1000_e_we_need_more_bosses_8440/main.py",
+            "metrics": {
+                "loc": 104,
+                "sloc": 78,
+                "lloc": 79,
+                "comments": 2,
+                "multi": 0,
+                "blank": 25,
+                "cyclomatic": 25
+            },
+            "logprobs": NaN,
+            "tokens": 714,
+            "problem_name": "1000_e_we_need_more_bosses_8440"
+        },
+        "1534_f1_falling_sand_easy_version_9507": {
+            "file_path": "problems_original/cluster2/1534_f1_falling_sand_easy_version_9507/main.py",
+            "metrics": {
+                "loc": 114,
+                "sloc": 86,
+                "lloc": 96,
+                "comments": 16,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 25
+            },
+            "logprobs": NaN,
+            "tokens": 935,
+            "problem_name": "1534_f1_falling_sand_easy_version_9507"
+        },
+        "690_c1_brain_network_easy_6407": {
+            "file_path": "problems_original/cluster2/690_c1_brain_network_easy_6407/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 226,
+            "problem_name": "690_c1_brain_network_easy_6407"
+        },
+        "1277_e_two_fairs_122": {
+            "file_path": "problems_original/cluster2/1277_e_two_fairs_122/main.py",
+            "metrics": {
+                "loc": 79,
+                "sloc": 57,
+                "lloc": 57,
+                "comments": 9,
+                "multi": 0,
+                "blank": 13,
+                "cyclomatic": 14
+            },
+            "logprobs": NaN,
+            "tokens": 471,
+            "problem_name": "1277_e_two_fairs_122"
+        },
+        "1243_d_01_mst_12097": {
+            "file_path": "problems_original/cluster2/1243_d_01_mst_12097/main.py",
+            "metrics": {
+                "loc": 25,
+                "sloc": 21,
+                "lloc": 21,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": NaN,
+            "tokens": 163,
+            "problem_name": "1243_d_01_mst_12097"
+        },
+        "45_h_road_problem_460": {
+            "file_path": "problems_original/cluster2/45_h_road_problem_460/main.py",
+            "metrics": {
+                "loc": 306,
+                "sloc": 202,
+                "lloc": 202,
+                "comments": 38,
+                "multi": 0,
+                "blank": 101,
+                "cyclomatic": 63
+            },
+            "logprobs": NaN,
+            "tokens": 2223,
+            "problem_name": "45_h_road_problem_460"
+        },
+        "217_a_ice_skating_2223": {
+            "file_path": "problems_original/cluster2/217_a_ice_skating_2223/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 5
+            },
+            "logprobs": NaN,
+            "tokens": 136,
+            "problem_name": "217_a_ice_skating_2223"
+        }
+    },
+    "aggregated_metrics_refactored": {
+        "logprobs": NaN,
+        "tokens": 16703,
+        "loc": 2420,
+        "sloc": 1666,
+        "lloc": 1708,
+        "comments": 278,
+        "multi": 20,
+        "blank": 524,
+        "cyclomatic": 388
+    },
+    "aggregated_metrics_original": {
+        "logprobs": NaN,
+        "tokens": 13200,
+        "loc": 2045,
+        "sloc": 1532,
+        "lloc": 1565,
+        "comments": 124,
+        "multi": 17,
+        "blank": 409,
+        "cyclomatic": 376
+    },
+    "comparison_ratios": {
+        "tokens_refactored_div_original": 1.2653787878787879,
+        "logprobs_refactored_div_original": NaN,
+        "avg_logprob_per_token_original": NaN,
+        "avg_logprob_per_token_refactored": NaN
+    }
+}
