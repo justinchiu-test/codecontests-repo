@@ -11,6 +11,7 @@ This script:
 
 import json
 import logging
+import shutil
 from pathlib import Path
 from typing import Dict, List, Optional
 
@@ -31,6 +32,7 @@ DATASET_NAME = "deepmind/code_contests"
 REPO_ROOT = Path(__file__).resolve().parents[2]
 PROBLEMS_DIR = REPO_ROOT / "problems"
 CLUSTERS_PATH = REPO_ROOT / "data" / "clusters.json"
+INSTRUCTIONS_PATH = REPO_ROOT / "INSTRUCTIONS.md"
 
 
 def load_clusters() -> Dict[str, List[str]]:
@@ -205,6 +207,29 @@ def process_problem(dataset_problem: DatasetProblem, index: int, cluster_id: str
     logger.info(f"Processed problem: cluster{cluster_id}/{problem_id} with {num_tests} test cases")
 
 
+def copy_instructions_to_cluster(cluster_dir: Path) -> bool:
+    """
+    Copy INSTRUCTIONS.md to the cluster directory.
+
+    Args:
+        cluster_dir: Path to the cluster directory
+
+    Returns:
+        True if successful, False otherwise
+    """
+    if not INSTRUCTIONS_PATH.exists():
+        logger.warning(f"INSTRUCTIONS.md not found at {INSTRUCTIONS_PATH}")
+        return False
+
+    try:
+        shutil.copy(INSTRUCTIONS_PATH, cluster_dir / "INSTRUCTIONS.md")
+        logger.info(f"Copied INSTRUCTIONS.md to {cluster_dir}")
+        return True
+    except Exception as e:
+        logger.error(f"Failed to copy INSTRUCTIONS.md to {cluster_dir}: {e}")
+        return False
+
+
 def main():
     """
     Main entry point for processing problems based on clusters.
@@ -260,6 +285,9 @@ def main():
                 f.write(
                     f'"""\nLibrary file for cluster{cluster_id}.\nThis contains shared code that can be imported by problems in this cluster.\n"""\n'  # noqa: E501
                 )
+
+        # Copy INSTRUCTIONS.md to cluster directory
+        copy_instructions_to_cluster(cluster_dir)
 
         # Process problems in this cluster
         for problem_name in problem_names:
