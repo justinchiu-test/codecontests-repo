@@ -5,7 +5,7 @@
 
 ## Description
 
-You are given an undirected tree of n vertices.
+You are given an undirected tree of n vertices. 
 
 Some vertices are colored blue, some are colored red and some are uncolored. It is guaranteed that the tree contains at least one red vertex and at least one blue vertex.
 

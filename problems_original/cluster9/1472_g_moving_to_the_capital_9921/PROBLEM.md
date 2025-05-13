@@ -9,11 +9,11 @@ There are n cities in Berland. The city numbered 1 is the capital. Some pairs of
 
 Before the trip, Polycarp for each city found out the value of d_i — the shortest distance from the capital (the 1-st city) to the i-th city.
 
-Polycarp begins his journey in the city with number s and, being in the i-th city, chooses one of the following actions:
+Polycarp begins his journey in the city with number s and, being in the i-th city, chooses one of the following actions: 
 
-  1. Travel from the i-th city to the j-th city if there is a road from the i-th city to the j-th and d_i < d_j;
-  2. Travel from the i-th city to the j-th city if there is a road from the i-th city to the j-th and d_i ≥ d_j;
-  3. Stop traveling.
+  1. Travel from the i-th city to the j-th city if there is a road from the i-th city to the j-th and d_i < d_j; 
+  2. Travel from the i-th city to the j-th city if there is a road from the i-th city to the j-th and d_i ≥ d_j; 
+  3. Stop traveling. 
 
 
 
@@ -21,11 +21,11 @@ Since the government of Berland does not want all people to come to the capital,
 
 <image>
 
-For example, if n = 6 and the cities are connected, as in the picture above, then Polycarp could have made the following travels (not all possible options):
+For example, if n = 6 and the cities are connected, as in the picture above, then Polycarp could have made the following travels (not all possible options): 
 
-  * 2 → 5 → 1 → 2 → 5;
-  * 3 → 6 → 2;
-  * 1 → 3 → 6 → 2 → 5.
+  * 2 → 5 → 1 → 2 → 5; 
+  * 3 → 6 → 2; 
+  * 1 → 3 → 6 → 2 → 5. 
 
 
 
@@ -85,9 +85,9 @@ Input
 Output
 
 
-0 0 1 2 0 1
-0 0
-0 0 2 1 1 0
+0 0 1 2 0 1 
+0 0 
+0 0 2 1 1 0 
 
 ## Categories
 
@@ -134,8 +134,8 @@ Codeforces
 
 **Output**:
 ```
-0 0 1 2 0 1
-0 0
+0 0 1 2 0 1 
+0 0 
 0 0 2 1 1 0
 ```
 

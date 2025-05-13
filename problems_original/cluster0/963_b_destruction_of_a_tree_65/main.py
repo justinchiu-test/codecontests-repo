@@ -19,7 +19,7 @@ def bfs(root,count):
             if child not in vis:
                 q.append(child)
                 vis.add(child)
-
+                
 graph=defaultdict(list)
 n=int(input())
 p=[int(i) for i in input().split() if i!='\n']
@@ -57,3 +57,11 @@ if n&1:
         sys.stdout.write(str(i)+'\n')
 else:
     print('NO')
+        
+    
+            
+        
+        
+        
+    
+    

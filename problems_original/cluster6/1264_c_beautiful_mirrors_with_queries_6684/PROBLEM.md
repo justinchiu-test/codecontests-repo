@@ -11,8 +11,8 @@ Some mirrors are called checkpoints. Initially, only the 1st mirror is a checkpo
 
 Creatnx asks the mirrors one by one, starting from the 1-st mirror. Every day, if he asks i-th mirror, there are two possibilities:
 
-  * The i-th mirror tells Creatnx that he is beautiful. In this case, if i = n Creatnx will stop and become happy, otherwise he will continue asking the i+1-th mirror next day;
-  * In the other case, Creatnx will feel upset. The next day, Creatnx will start asking from the checkpoint with a maximal number that is less or equal to i.
+  * The i-th mirror tells Creatnx that he is beautiful. In this case, if i = n Creatnx will stop and become happy, otherwise he will continue asking the i+1-th mirror next day; 
+  * In the other case, Creatnx will feel upset. The next day, Creatnx will start asking from the checkpoint with a maximal number that is less or equal to i. 
 
 
 

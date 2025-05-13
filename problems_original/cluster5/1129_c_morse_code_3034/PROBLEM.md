@@ -15,7 +15,7 @@ Since the answers can be incredibly tremendous, print them modulo 10^9 + 7.
 
 Input
 
-The first line contains an integer m (1 ≤ m ≤ 3 000) — the number of modifications to S.
+The first line contains an integer m (1 ≤ m ≤ 3 000) — the number of modifications to S. 
 
 Each of the next m lines contains either a "0" (representing a dot) or a "1" (representing a dash), specifying which character should be appended to S.
 
@@ -91,13 +91,13 @@ Let us consider the first sample after all characters have been appended to S, s
 
 As you can see, "1", "11", and "111" all correspond to some distinct English letter. In fact, they are translated into a 'T', an 'M', and an 'O', respectively. All non-empty sequences of English letters that are represented with some substring of S in Morse code, therefore, are as follows.
 
-  1. "T" (translates into "1")
-  2. "M" (translates into "11")
-  3. "O" (translates into "111")
-  4. "TT" (translates into "11")
-  5. "TM" (translates into "111")
-  6. "MT" (translates into "111")
-  7. "TTT" (translates into "111")
+  1. "T" (translates into "1") 
+  2. "M" (translates into "11") 
+  3. "O" (translates into "111") 
+  4. "TT" (translates into "11") 
+  5. "TM" (translates into "111") 
+  6. "MT" (translates into "111") 
+  7. "TTT" (translates into "111") 
 
 
 

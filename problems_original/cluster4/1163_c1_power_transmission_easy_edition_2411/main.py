@@ -26,7 +26,7 @@ for i in range(n - 1):
         a, b = a // d, b // d
         if a < 0 or (a == 0 and b < 0):
             a, b = -a, -b
-
+        
         c = a * x1 - b * y1
         slope = (a, b)
         slopes[slope].add(c)

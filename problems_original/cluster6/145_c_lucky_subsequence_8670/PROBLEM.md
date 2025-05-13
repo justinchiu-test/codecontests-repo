@@ -19,7 +19,7 @@ Help Petya find the number of different lucky subsequences of the sequence a. As
 
 Input
 
-The first line contains two integers n and k (1 ≤ k ≤ n ≤ 105). The next line contains n integers ai (1 ≤ ai ≤ 109) — the sequence a.
+The first line contains two integers n and k (1 ≤ k ≤ n ≤ 105). The next line contains n integers ai (1 ≤ ai ≤ 109) — the sequence a. 
 
 Output
 

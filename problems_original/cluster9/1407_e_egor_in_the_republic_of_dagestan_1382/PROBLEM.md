@@ -13,7 +13,7 @@ As any famous artist, Egor has lots of haters and too annoying fans, so he can t
 
 Egor's manager likes Dagestan very much and wants to stay here as long as possible, so he asks you to make such schedule that there would be no path from 1 to n or the shortest path's length would be greatest possible.
 
-A path is one city or a sequence of roads such that for every road (excluding the first one) the city this road goes from is equal to the city previous road goes into. Egor can move only along paths consisting of safe roads only.
+A path is one city or a sequence of roads such that for every road (excluding the first one) the city this road goes from is equal to the city previous road goes into. Egor can move only along paths consisting of safe roads only. 
 
 The path length is equal to the number of roads in it. The shortest path in a graph is a path with smallest length.
 

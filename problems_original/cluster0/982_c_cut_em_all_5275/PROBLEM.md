@@ -11,7 +11,7 @@ Your task is to determine the maximum possible number of edges that can be remov
 
 Input
 
-The first line contains an integer n (1 ≤ n ≤ 10^5) denoting the size of the tree.
+The first line contains an integer n (1 ≤ n ≤ 10^5) denoting the size of the tree. 
 
 The next n - 1 lines contain two integers u, v (1 ≤ u, v ≤ n) each, describing the vertices connected by the i-th edge.
 

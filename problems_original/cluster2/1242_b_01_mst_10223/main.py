@@ -26,13 +26,13 @@ ff=cc.defaultdict(int)
 used=cc.defaultdict(int)
 for i in range(1,n+1):
 	if find(i)==i:
-
+			
 		for j in range(1,n+1):
 			if j not in g[i]:
 				g[i]&=g[j]
 		for j in range(1,n+1):
 			if j not in g[i]:
 				union(i,j)
-
-
+				
+ 
 print(len(set([find(i) for i in range(1,n+1)]))-1)

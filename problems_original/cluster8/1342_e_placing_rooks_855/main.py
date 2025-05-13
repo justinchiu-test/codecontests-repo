@@ -13,7 +13,7 @@ def solve(n,k):
         return ans
     if k>=n:
         return 0
-
+    
     inv=lambda x: pow(x,mod-2,mod)
     Fact=[1] #階乗
     for i in range(1,n+1):
@@ -26,7 +26,7 @@ def solve(n,k):
         if n<r:
             return 0
         return Fact[n]*Finv[r]*Finv[n-r]%mod
-
+    
     m=n-k
     t=1
     ans=0
@@ -42,6 +42,6 @@ def main():
     n,k=map(int,input().split())
     ans=solve(n,k)
     sys.stdout.write(str(ans)+'\n')
-
+    
 if __name__=='__main__':
     main()

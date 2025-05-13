@@ -7,7 +7,7 @@
 
 Among Johnny's numerous hobbies, there are two seemingly harmless ones: applying bitwise operations and sneaking into his dad's office. As it is usually the case with small children, Johnny is unaware that combining these two activities can get him in a lot of trouble.
 
-There is a set S containing very important numbers on his dad's desk. The minute Johnny heard about it, he decided that it's a good idea to choose a positive integer k and replace each element s of the set S with s ⊕ k (⊕ denotes the [exclusive or](https://en.wikipedia.org/wiki/Exclusive_or#Computer_science) operation).
+There is a set S containing very important numbers on his dad's desk. The minute Johnny heard about it, he decided that it's a good idea to choose a positive integer k and replace each element s of the set S with s ⊕ k (⊕ denotes the [exclusive or](https://en.wikipedia.org/wiki/Exclusive_or#Computer_science) operation). 
 
 Help him choose such k that Johnny's dad will not see any difference after his son is done playing (i.e. Johnny will get the same set as before playing). It is possible that no such number exists. It is also possible that there are many of them. In such a case, output the smallest one. Note that the order of elements in a set doesn't matter, i.e. set \{1, 2, 3\} equals to set \{2, 1, 3\}.
 
@@ -17,7 +17,7 @@ For example, if S = \{1, 3, 4\} and k = 2, new set will be equal to \{3, 1, 6\}.
 
 Input
 
-In the first line of input, there is a single integer t (1 ≤ t ≤ 1024), the number of test cases. In the next lines, t test cases follow. Each of them consists of two lines.
+In the first line of input, there is a single integer t (1 ≤ t ≤ 1024), the number of test cases. In the next lines, t test cases follow. Each of them consists of two lines. 
 
 In the first line there is a single integer n (1 ≤ n ≤ 1024) denoting the number of elements in set S. Second line consists of n distinct integers s_i (0 ≤ s_i < 1024), elements of S.
 

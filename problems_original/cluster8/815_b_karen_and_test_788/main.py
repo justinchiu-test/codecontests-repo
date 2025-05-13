@@ -23,7 +23,7 @@ def f_pow(a, k):
 def c(n, k):
     d = f[k] * f[n - k] % mod
     return f[n] * f_pow(d, mod - 2) % mod
-
+     
 oper = 1
 while not (oper and n % 2 == 0):
     for i in range(n - 1):

@@ -9,9 +9,9 @@ Vasya plays one very well-known and extremely popular MMORPG game. His game char
 
 Vasya decided to 'upgrade' his character via the game store. This store offers n possible ways to improve the hero's skills; Each of these ways belongs to one of three types:
 
-  1. assign the i-th skill to b;
-  2. add b to the i-th skill;
-  3. multiply the i-th skill by b.
+  1. assign the i-th skill to b; 
+  2. add b to the i-th skill; 
+  3. multiply the i-th skill by b. 
 
 
 
@@ -29,7 +29,7 @@ Output
 
 The first line should contain a number l (0 ≤ l ≤ m) — the number of improvements you should use.
 
-The second line should contain l distinct space-separated numbers vi (1 ≤ vi ≤ n) — the indices of improvements in the order in which they should be applied. The improvements are numbered starting from 1, in the order in which they appear in the input.
+The second line should contain l distinct space-separated numbers vi (1 ≤ vi ≤ n) — the indices of improvements in the order in which they should be applied. The improvements are numbered starting from 1, in the order in which they appear in the input. 
 
 Examples
 

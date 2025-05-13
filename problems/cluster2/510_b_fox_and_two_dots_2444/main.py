@@ -61,14 +61,14 @@ vertex = {}
 def dfs_v2(g, curr, prev):
 	global Detect
 	global vertex
-
+	
 	if Detect:
 		return
-
+		
 	vertex[curr] = True
 
 	for succ in g.neighbours(curr):
-
+	
 		if vertex[succ] and succ != prev:
 			Detect = True
 			return
@@ -79,18 +79,18 @@ def dfs_v2(g, curr, prev):
 def cycle(g):
 	global Detect
 	global vertex
-
+	
 	# Initialize all the node as unmarked
 	for i in g.vertices():
 		vertex[i] = False
-
+		
 	# Check throughout the node
 	for j in g.vertices():
 		if not vertex[j]:
 			dfs_v2(g, j, j)
 		if Detect:
 			break
-	return
+	return 
 
 # ----------------------------------------------------------------------
 
@@ -102,26 +102,26 @@ rows = []
 
 for i in range(row):
 	rows.append(input())
-
+	
 # Set node as a dictionary
 node = {}
 
 for i in range(row):
 	for j in range(col):
 		node[i * col + j] = rows[i][j]
-
+	
 # Set up the graph
 result_Graph = UndirectedGraph()
 
 # Connecting the node with same color
 for i in range(row * col):
-
+	
 	result_Graph.add_vertex(i)
-
+	
 	try:
 		if node[i] == node[i + 1] and (i % col) != (col - 1):
-			result_Graph.add_edge(i, i + 1)
-
+			result_Graph.add_edge(i, i + 1)	
+			
 		if node[i] == node[i + col]:
 			result_Graph.add_edge(i, i + col)
 	except:
@@ -132,6 +132,6 @@ cycle(result_Graph)
 
 if Detect:
 	print("Yes")
-
+	
 else:
 	print("No")

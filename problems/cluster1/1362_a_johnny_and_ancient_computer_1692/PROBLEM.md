@@ -5,16 +5,16 @@
 
 ## Description
 
-Johnny has recently found an ancient, broken computer. The machine has only one register, which allows one to put in there one variable. Then in one operation, you can shift its bits left or right by at most three positions. The right shift is forbidden if it cuts off some ones. So, in fact, in one operation, you can multiply or divide your number by 2, 4 or 8, and division is only allowed if the number is divisible by the chosen divisor.
+Johnny has recently found an ancient, broken computer. The machine has only one register, which allows one to put in there one variable. Then in one operation, you can shift its bits left or right by at most three positions. The right shift is forbidden if it cuts off some ones. So, in fact, in one operation, you can multiply or divide your number by 2, 4 or 8, and division is only allowed if the number is divisible by the chosen divisor. 
 
-Formally, if the register contains a positive integer x, in one operation it can be replaced by one of the following:
+Formally, if the register contains a positive integer x, in one operation it can be replaced by one of the following: 
 
-  * x ⋅ 2
-  * x ⋅ 4
-  * x ⋅ 8
-  * x / 2, if x is divisible by 2
-  * x / 4, if x is divisible by 4
-  * x / 8, if x is divisible by 8
+  * x ⋅ 2 
+  * x ⋅ 4 
+  * x ⋅ 8 
+  * x / 2, if x is divisible by 2 
+  * x / 4, if x is divisible by 4 
+  * x / 8, if x is divisible by 8 
 
 
 

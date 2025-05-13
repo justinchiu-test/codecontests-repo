@@ -6,10 +6,10 @@ from math import sqrt,ceil,floor,factorial,gcd,log2,log10
 from io import BytesIO, IOBase
 from collections import *
 from itertools import *
-from random import *
+from random import * 
 from string import *
 from queue import *
-from heapq import heappush, heappop, heapify
+from heapq import heappush, heappop, heapify 
 from re import *
 from os import *
 
@@ -84,7 +84,7 @@ def getPrimes(N = 10**5):
             continue
         for j in range(2*i, N+1, i):
             sieve[j] = 0
-    prime = [i for i in range(N+1) if sieve[i] != 0]
+    prime = [i for i in range(N+1) if sieve[i] != 0] 
     return prime
 def primeFactor(n,prime=getPrimes()):
     lst = []
@@ -96,7 +96,7 @@ def primeFactor(n,prime=getPrimes()):
             n//=i
     if n>1:
         lst.append(n)
-    return lst
+    return lst    
 
 dx = [-1, 1, 0, 0, 1, -1, 1, -1]
 dy = [0, 0, 1, -1, 1, -1, -1, 1]
@@ -127,3 +127,8 @@ while s:
 print(n*(n-1))
 for i in lst:
     output(i)
+
+
+
+
+

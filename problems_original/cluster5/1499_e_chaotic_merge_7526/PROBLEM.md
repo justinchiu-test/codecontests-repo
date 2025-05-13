@@ -9,10 +9,10 @@ You are given two strings x and y, both consist only of lowercase Latin letters.
 
 Let's call a sequence a a merging sequence if it consists of exactly |x| zeros and exactly |y| ones in some order.
 
-A merge z is produced from a sequence a by the following rules:
+A merge z is produced from a sequence a by the following rules: 
 
-  * if a_i=0, then remove a letter from the beginning of x and append it to the end of z;
-  * if a_i=1, then remove a letter from the beginning of y and append it to the end of z.
+  * if a_i=0, then remove a letter from the beginning of x and append it to the end of z; 
+  * if a_i=1, then remove a letter from the beginning of y and append it to the end of z. 
 
 
 
@@ -93,14 +93,14 @@ Output
 
 Note
 
-In the first example there are:
+In the first example there are: 
 
-  * 6 pairs of substrings "a" and "b", each with valid merging sequences "01" and "10";
-  * 3 pairs of substrings "a" and "bb", each with a valid merging sequence "101";
-  * 4 pairs of substrings "aa" and "b", each with a valid merging sequence "010";
-  * 2 pairs of substrings "aa" and "bb", each with valid merging sequences "0101" and "1010";
-  * 2 pairs of substrings "aaa" and "b", each with no valid merging sequences;
-  * 1 pair of substrings "aaa" and "bb" with a valid merging sequence "01010";
+  * 6 pairs of substrings "a" and "b", each with valid merging sequences "01" and "10"; 
+  * 3 pairs of substrings "a" and "bb", each with a valid merging sequence "101"; 
+  * 4 pairs of substrings "aa" and "b", each with a valid merging sequence "010"; 
+  * 2 pairs of substrings "aa" and "bb", each with valid merging sequences "0101" and "1010"; 
+  * 2 pairs of substrings "aaa" and "b", each with no valid merging sequences; 
+  * 1 pair of substrings "aaa" and "bb" with a valid merging sequence "01010"; 
 
 
 

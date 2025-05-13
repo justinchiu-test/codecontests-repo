@@ -5,7 +5,7 @@
 
 ## Description
 
-Natasha's favourite numbers are n and 1, and Sasha's favourite numbers are m and -1. One day Natasha and Sasha met and wrote down every possible array of length n+m such that some n of its elements are equal to 1 and another m elements are equal to -1. For each such array they counted its maximal prefix sum, probably an empty one which is equal to 0 (in another words, if every nonempty prefix sum is less to zero, then it is considered equal to zero). Formally, denote as f(a) the maximal prefix sum of an array a_{1, … ,l} of length l ≥ 0. Then:
+Natasha's favourite numbers are n and 1, and Sasha's favourite numbers are m and -1. One day Natasha and Sasha met and wrote down every possible array of length n+m such that some n of its elements are equal to 1 and another m elements are equal to -1. For each such array they counted its maximal prefix sum, probably an empty one which is equal to 0 (in another words, if every nonempty prefix sum is less to zero, then it is considered equal to zero). Formally, denote as f(a) the maximal prefix sum of an array a_{1, … ,l} of length l ≥ 0. Then: 
 
 $$$f(a) = max (0, \smash{\displaystylemax_{1 ≤ i ≤ l}} ∑_{j=1}^{i} a_j )$$$
 
@@ -62,9 +62,9 @@ Output
 
 Note
 
-In the first example the only possible array is [-1,-1], its maximal prefix sum is equal to 0.
+In the first example the only possible array is [-1,-1], its maximal prefix sum is equal to 0. 
 
-In the second example the only possible array is [1,1], its maximal prefix sum is equal to 2.
+In the second example the only possible array is [1,1], its maximal prefix sum is equal to 2. 
 
 There are 6 possible arrays in the third example:
 

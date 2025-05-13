@@ -5,11 +5,11 @@
 
 ## Description
 
-Given two integers n and x, construct an array that satisfies the following conditions:
+Given two integers n and x, construct an array that satisfies the following conditions: 
 
-  * for any element a_i in the array, 1 ≤ a_i<2^n;
-  * there is no non-empty subsegment with [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) equal to 0 or x,
-  * its length l should be maximized.
+  * for any element a_i in the array, 1 ≤ a_i<2^n; 
+  * there is no non-empty subsegment with [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) equal to 0 or x, 
+  * its length l should be maximized. 
 
 
 
@@ -51,7 +51,7 @@ Output
 
 
 3
-1 3 1
+1 3 1 
 
 Input
 

@@ -46,7 +46,7 @@ Output
 
 Note
 
-For the first sample, the corresponding optimal values of s' after removal 0 through |s| = 5 characters from s are {"aaaaa", "aaaa", "aaa", "aa", "a", ""}.
+For the first sample, the corresponding optimal values of s' after removal 0 through |s| = 5 characters from s are {"aaaaa", "aaaa", "aaa", "aa", "a", ""}. 
 
 For the second sample, possible corresponding optimal values of s' are {"axbaxxb", "abaxxb", "axbab", "abab", "aba", "ab", "a", ""}.
 

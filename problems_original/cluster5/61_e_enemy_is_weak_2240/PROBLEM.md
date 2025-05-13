@@ -5,7 +5,7 @@
 
 ## Description
 
-The Romans have attacked again. This time they are much more than the Persians but Shapur is ready to defeat them. He says: "A lion is never afraid of a hundred sheep".
+The Romans have attacked again. This time they are much more than the Persians but Shapur is ready to defeat them. He says: "A lion is never afraid of a hundred sheep". 
 
 Nevertheless Shapur has to find weaknesses in the Roman army to defeat them. So he gives the army a weakness number.
 
@@ -15,11 +15,11 @@ Help Shapur find out how weak the Romans are.
 
 Input
 
-The first line of input contains a single number n (3 ≤ n ≤ 106) — the number of men in Roman army. Next line contains n different positive integers ai (1 ≤ i ≤ n, 1 ≤ ai ≤ 109) — powers of men in the Roman army.
+The first line of input contains a single number n (3 ≤ n ≤ 106) — the number of men in Roman army. Next line contains n different positive integers ai (1 ≤ i ≤ n, 1 ≤ ai ≤ 109) — powers of men in the Roman army. 
 
 Output
 
-A single integer number, the weakness of the Roman army.
+A single integer number, the weakness of the Roman army. 
 
 Please, do not use %lld specificator to read or write 64-bit integers in C++. It is preffered to use cout (also you may use %I64d).
 

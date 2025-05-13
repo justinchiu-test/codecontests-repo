@@ -6,9 +6,9 @@ def PRINT(a, b) :
         print(str(int(a)) + "/" + str(int(b)))
 def solve(n) :
         pre = 0
-        while(n > 1 and (n % 2 == 0)) :
+        while(n > 1 and (n % 2 == 0)) : 
 	        pre = pre + 1
-	        n = n // 2
+	        n = n // 2                
         if(n == 1) :
                 PRINT(pre, 1)
                 return
@@ -23,7 +23,7 @@ def solve(n) :
         k = len(arr)
         ans = 0
         for i in range(0, k) :
-                if(arr[i] == 1) :
+                if(arr[i] == 1) : 
                         ans = ans + (2 ** (k-1-i)) * (i+1)
         ans = ans * n + k
         A = ans

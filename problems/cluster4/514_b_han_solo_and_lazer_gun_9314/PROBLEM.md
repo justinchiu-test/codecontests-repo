@@ -5,13 +5,13 @@
 
 ## Description
 
-There are n Imperial stormtroopers on the field. The battle field is a plane with Cartesian coordinate system. Each stormtrooper is associated with his coordinates (x, y) on this plane.
+There are n Imperial stormtroopers on the field. The battle field is a plane with Cartesian coordinate system. Each stormtrooper is associated with his coordinates (x, y) on this plane. 
 
 Han Solo has the newest duplex lazer gun to fight these stormtroopers. It is situated at the point (x0, y0). In one shot it can can destroy all the stormtroopers, situated on some line that crosses point (x0, y0).
 
 Your task is to determine what minimum number of shots Han Solo needs to defeat all the stormtroopers.
 
-The gun is the newest invention, it shoots very quickly and even after a very large number of shots the stormtroopers don't have enough time to realize what's happening and change their location.
+The gun is the newest invention, it shoots very quickly and even after a very large number of shots the stormtroopers don't have enough time to realize what's happening and change their location. 
 
 Input
 
@@ -21,7 +21,7 @@ Next n lines contain two integers each xi, yi ( - 104 ≤ xi, yi ≤ 104) — th
 
 Output
 
-Print a single integer — the minimum number of shots Han Solo needs to destroy all the stormtroopers.
+Print a single integer — the minimum number of shots Han Solo needs to destroy all the stormtroopers. 
 
 Examples
 
@@ -52,7 +52,7 @@ Output
 
 Note
 
-Explanation to the first and second samples from the statement, respectively:
+Explanation to the first and second samples from the statement, respectively: 
 
 <image>
 

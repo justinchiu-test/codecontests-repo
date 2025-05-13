@@ -15,9 +15,9 @@ def bfs(g,src,d,found):
                 found[child]=1
             elif d[child]==d[rmv]+1:
                 found[child]+=1
-
-
-
+                
+            
+        
 n,m=map(int,sys.stdin.readline().split())
 g=[]
 gt=[]
@@ -26,7 +26,7 @@ for i in range(n):
     gt.append(list())
 for _ in range(m):
     u,v=map(int,sys.stdin.readline().split())
-    u-=1
+    u-=1 
     v-=1
     g[u].append(v)
     gt[v].append(u)

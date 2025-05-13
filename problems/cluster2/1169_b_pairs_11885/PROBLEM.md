@@ -5,7 +5,7 @@
 
 ## Description
 
-Toad Ivan has m pairs of integers, each integer is between 1 and n, inclusive. The pairs are (a_1, b_1), (a_2, b_2), …, (a_m, b_m).
+Toad Ivan has m pairs of integers, each integer is between 1 and n, inclusive. The pairs are (a_1, b_1), (a_2, b_2), …, (a_m, b_m). 
 
 He asks you to check if there exist two integers x and y (1 ≤ x < y ≤ n) such that in each given pair at least one integer is equal to x or y.
 

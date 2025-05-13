@@ -9,9 +9,9 @@ Gildong is playing with his dog, Badugi. They're at a park that has n intersecti
 
 Gildong has put one snack at every intersection of the park. Now Gildong will give Badugi a mission to eat all of the snacks. Badugi starts at the 1-st intersection, and he will move by the following rules:
 
-  * Badugi looks for snacks that are as close to him as possible. Here, the distance is the length of the shortest path from Badugi's current location to the intersection with the snack. However, Badugi's sense of smell is limited to k meters, so he can only find snacks that are less than or equal to k meters away from himself. If he cannot find any such snack, he fails the mission.
-  * Among all the snacks that Badugi can smell from his current location, he chooses a snack that minimizes the distance he needs to travel from his current intersection. If there are multiple such snacks, Badugi will choose one arbitrarily.
-  * He repeats this process until he eats all n snacks. After that, he has to find the 1-st intersection again which also must be less than or equal to k meters away from the last snack he just ate. If he manages to find it, he completes the mission. Otherwise, he fails the mission.
+  * Badugi looks for snacks that are as close to him as possible. Here, the distance is the length of the shortest path from Badugi's current location to the intersection with the snack. However, Badugi's sense of smell is limited to k meters, so he can only find snacks that are less than or equal to k meters away from himself. If he cannot find any such snack, he fails the mission. 
+  * Among all the snacks that Badugi can smell from his current location, he chooses a snack that minimizes the distance he needs to travel from his current intersection. If there are multiple such snacks, Badugi will choose one arbitrarily. 
+  * He repeats this process until he eats all n snacks. After that, he has to find the 1-st intersection again which also must be less than or equal to k meters away from the last snack he just ate. If he manages to find it, he completes the mission. Otherwise, he fails the mission. 
 
 
 
@@ -25,10 +25,10 @@ The first line of each test case contains one integer n (2 ≤ n ≤ 2 ⋅ 10^5)
 
 The next n-1 lines contain two integers u and v (1 ≤ u,v ≤ n, u ≠ v) each, which means there is a road between intersection u and v. All roads are bidirectional and distinct.
 
-It is guaranteed that:
+It is guaranteed that: 
 
-  * For each test case, for every a and b (1 ≤ a, b ≤ n), it is possible to get to the b-th intersection from the a-th intersection.
-  * The sum of n in all test cases doesn't exceed 2 ⋅ 10^5.
+  * For each test case, for every a and b (1 ≤ a, b ≤ n), it is possible to get to the b-th intersection from the a-th intersection. 
+  * The sum of n in all test cases doesn't exceed 2 ⋅ 10^5. 
 
 Output
 
@@ -66,12 +66,12 @@ Output
 
 Note
 
-In the first case, Badugi can complete his mission with k=2 by moving as follows:
+In the first case, Badugi can complete his mission with k=2 by moving as follows: 
 
-  1. Initially, Badugi is at the 1-st intersection. The closest snack is obviously at the 1-st intersection, so he just eats it.
-  2. Next, he looks for the closest snack, which can be either the one at the 2-nd or the one at the 3-rd intersection. Assume that he chooses the 2-nd intersection. He moves to the 2-nd intersection, which is 1 meter away, and eats the snack.
-  3. Now the only remaining snack is on the 3-rd intersection, and he needs to move along 2 paths to get to it.
-  4. After eating the snack at the 3-rd intersection, he needs to find the 1-st intersection again, which is only 1 meter away. As he gets back to it, he completes the mission.
+  1. Initially, Badugi is at the 1-st intersection. The closest snack is obviously at the 1-st intersection, so he just eats it. 
+  2. Next, he looks for the closest snack, which can be either the one at the 2-nd or the one at the 3-rd intersection. Assume that he chooses the 2-nd intersection. He moves to the 2-nd intersection, which is 1 meter away, and eats the snack. 
+  3. Now the only remaining snack is on the 3-rd intersection, and he needs to move along 2 paths to get to it. 
+  4. After eating the snack at the 3-rd intersection, he needs to find the 1-st intersection again, which is only 1 meter away. As he gets back to it, he completes the mission. 
 
 
 

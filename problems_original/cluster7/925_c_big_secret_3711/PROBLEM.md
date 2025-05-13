@@ -8,7 +8,7 @@
 Vitya has learned that the answer for The Ultimate Question of Life, the Universe, and Everything is not the integer 54 42, but an increasing integer sequence a_1, …, a_n. In order to not reveal the secret earlier than needed, Vitya encrypted the answer and obtained the sequence b_1, …, b_n using the following rules:
 
   * b_1 = a_1;
-  * b_i = a_i ⊕ a_{i - 1} for all i from 2 to n, where x ⊕ y is the [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of x and y.
+  * b_i = a_i ⊕ a_{i - 1} for all i from 2 to n, where x ⊕ y is the [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of x and y. 
 
 
 
@@ -52,7 +52,7 @@ Input
 Output
 
 Yes
-4 12 7 31 7 61
+4 12 7 31 7 61 
 
 Note
 

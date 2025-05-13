@@ -5,7 +5,7 @@ import threading
 
 def main():
 
-
+    
     p = input().split()
     n = int(p[0]) #number of locations
     m = int(p[1]) #number of passages
@@ -20,7 +20,7 @@ def main():
     g = graph(n,m)
 
     g.buildBridgeTree()
-
+    
     e = graph(len(g.bridges)+1,len(g.bridges))
 
     e.conexions= []
@@ -36,7 +36,7 @@ def main():
     for i in range(len(g.bridges)):
         e.conexions[g.cc[g.bridges[i][0]]].append((g.cc[g.bridges[i][1]],True))
         e.conexions[g.cc[g.bridges[i][1]]].append((g.cc[g.bridges[i][0]],True))
-
+    
     e.bridges=g.bridges
     e.bridge=g.bridge
     e.cc=g.cc
@@ -56,7 +56,7 @@ class graph:
 
     n = int() #number of nodes
     edges= int() #number of edges
-    time = int()
+    time = int() 
 
 
     conexions = [] #adjacency list
@@ -68,7 +68,7 @@ class graph:
     seen = [] #visited or not
     cc = [] #index of connected components
     low = [] #low[i]=min(discovery(i),discovery(w)) w:any node discoverable from i
-    pi = [] #index of i's father
+    pi = [] #index of i's father 
 
     CC = []
     newEdges = []
@@ -86,29 +86,29 @@ class graph:
             self.cc.append(-1)
             self.CC.append([])
             self.bridge.append([])
-
-
+            
+    
     def buildGraph(self):
         #this method put every edge in the adjacency list
         for i in range(self.edges):
             p2=input().split()
             self.conexions[int(p2[0])-1].append((int(p2[1])-1,False))
             self.conexions[int(p2[1])-1].append((int(p2[0])-1,False))
-
+    
     def searchBridges (self):
-        self.time = 0
+        self.time = 0 
 
         for i in range(self.n):
             self.pi.append(-1)
             for j in range(self.n):
                 self.bridge[i].append(False)
-
-
+        
+        
 
 
         self.searchBridges_(0,-1) #we can start in any node 'cause the graph is connected
 
-
+    
     def searchBridges_(self,c,index):
 
         self.seen[c]=True #mark as visited
@@ -116,30 +116,30 @@ class graph:
         self.discovery[c]=self.low[c]= self.time
 
         for i in range(len(self.conexions[c])):
-
+        
             pos = self.conexions[c][i][0]
             if not self.seen[pos]:
                 self.pi[pos]=c #the node that discovered it
-
+            
                 self.searchBridges_(pos,i) #search throw its not visited conexions
-
+            
                 self.low[c]= min([self.low[c],self.low[pos]]) #definition of low
-
+            
             elif self.pi[c]!=pos: #It is not the node that discovered it
                 self.low[c]= min([self.low[c],self.discovery[pos]])
-
+        
         if self.pi[c]!=-1 and self.low[c]==self.discovery[c]:  #it isn't the root and none of its connections is reacheable earlier than it
             self.bridges.append((c,self.pi[c]))
             self.bridge[self.pi[c]][c]=self.bridge[c][self.pi[c]]= True
-
+            
             for i in range(len(self.conexions[c])):
                 if(self.conexions[c][i][0]==self.pi[c]):
                     self.conexions[c][i]=(self.pi[c],True)
                     self.conexions[self.pi[c]][index]=(c,True)
 
-
-
-
+        
+            
+        
 
 
     def findCC(self):
@@ -149,14 +149,14 @@ class graph:
         for i in range(self.n):
             self.pi[i]=-1
             self.seen[i]=False
-
+        
         for i in range(self.n):
             if self.seen[i]==False:
                 self.cc[i]=j #assign the index of the new connected component
                 self.CC[j].append(i)
                 self.findCC_(i,j) #search throw its not visited conexions
                 j+=1 #we finished the search in the connected component
-
+    
     def findCC_(self, c, j):
 
         self.seen[c]=True #mark as visited
@@ -165,7 +165,7 @@ class graph:
 
             pos = self.conexions[c][i][0]
             if(self.seen[pos]==False and self.conexions[c][i][1]==False):
-
+                
                 self.cc[pos]=j #assign the index of the connected component
                 self.CC[j].append(pos)
                 self.pi[pos]=c #the node that discovered it
@@ -197,7 +197,7 @@ class graph:
                 if self.discovery[i]>max :
                     max= self.discovery[i] #look for the furthest node to preview furthest node, and that is the diameter in a tree
                     maxIndex2=i
-
+        
             self.ReBuildTree(maxIndex,maxIndex2)
 
 
@@ -219,7 +219,7 @@ class graph:
 
 
     def buildBridgeTree(self):
-
+        
         self.buildGraph()
         self.searchBridges()
         self.findCC()
@@ -233,7 +233,7 @@ class graph:
                     self.newEdges.append((self.CC[u][i],self.CC[v][j]))
                     find=1
                     break
-
+            
             if find==1:
                 break
 
@@ -253,7 +253,7 @@ class graph:
                 r+=1
             else:
                 newIndex.append(0)
-
+        
         self.n=r
 
         if self.n==1:
@@ -270,20 +270,20 @@ class graph:
         for i in range(len(self.bridges)):
 
             len0 = len(self.CC[self.cc[self.bridges[i][0]]])
-
+            
 
             if(len0!=0):
                 for j in range(len0):
                     newCC[newIndex[self.cc[self.bridges[i][0]]]].append(self.CC[self.cc[self.bridges[i][0]]][j])
                 self.CC[self.cc[self.bridges[i][0]]]=[]
-
+            
             len1 = len(self.CC[self.cc[self.bridges[i][1]]])
-
+            
             if(len1!=0):
                 for j in range(len1):
                     newCC[newIndex[self.cc[self.bridges[i][1]]]].append(self.CC[self.cc[self.bridges[i][1]]][j])
                 self.CC[self.cc[self.bridges[i][1]]]=[]
-
+            
             self.conexions[newIndex[self.cc[self.bridges[i][0]]]].append((newIndex[self.cc[self.bridges[i][1]]],True))
             self.conexions[newIndex[self.cc[self.bridges[i][1]]]].append((newIndex[self.cc[self.bridges[i][0]]],True))
 
@@ -296,7 +296,7 @@ class graph:
 
 
 
-
+            
 
 
 

@@ -11,14 +11,14 @@ Polycarp lives near the intersection s and works in a building near the intersec
 
 Polycarp's car has a complex navigation system installed in it. Let's describe how it works. When Polycarp starts his journey at the intersection s, the system chooses some shortest path from s to t and shows it to Polycarp. Let's denote the next intersection in the chosen path as v. If Polycarp chooses to drive along the road from s to v, then the navigator shows him the same shortest path (obviously, starting from v as soon as he arrives at this intersection). However, if Polycarp chooses to drive to another intersection w instead, the navigator rebuilds the path: as soon as Polycarp arrives at w, the navigation system chooses some shortest path from w to t and shows it to Polycarp. The same process continues until Polycarp arrives at t: if Polycarp moves along the road recommended by the system, it maintains the shortest path it has already built; but if Polycarp chooses some other path, the system rebuilds the path by the same rules.
 
-Here is an example. Suppose the map of Bertown looks as follows, and Polycarp drives along the path [1, 2, 3, 4] (s = 1, t = 4):
+Here is an example. Suppose the map of Bertown looks as follows, and Polycarp drives along the path [1, 2, 3, 4] (s = 1, t = 4): 
 
 Check the picture by the link [http://tk.codeforces.com/a.png](//tk.codeforces.com/a.png)
 
-  1. When Polycarp starts at 1, the system chooses some shortest path from 1 to 4. There is only one such path, it is [1, 5, 4];
-  2. Polycarp chooses to drive to 2, which is not along the path chosen by the system. When Polycarp arrives at 2, the navigator rebuilds the path by choosing some shortest path from 2 to 4, for example, [2, 6, 4] (note that it could choose [2, 3, 4]);
-  3. Polycarp chooses to drive to 3, which is not along the path chosen by the system. When Polycarp arrives at 3, the navigator rebuilds the path by choosing the only shortest path from 3 to 4, which is [3, 4];
-  4. Polycarp arrives at 4 along the road chosen by the navigator, so the system does not have to rebuild anything.
+  1. When Polycarp starts at 1, the system chooses some shortest path from 1 to 4. There is only one such path, it is [1, 5, 4]; 
+  2. Polycarp chooses to drive to 2, which is not along the path chosen by the system. When Polycarp arrives at 2, the navigator rebuilds the path by choosing some shortest path from 2 to 4, for example, [2, 6, 4] (note that it could choose [2, 3, 4]); 
+  3. Polycarp chooses to drive to 3, which is not along the path chosen by the system. When Polycarp arrives at 3, the navigator rebuilds the path by choosing the only shortest path from 3 to 4, which is [3, 4]; 
+  4. Polycarp arrives at 4 along the road chosen by the navigator, so the system does not have to rebuild anything. 
 
 
 
@@ -34,7 +34,7 @@ Then m lines follow, each describing a road. Each line contains two integers u a
 
 The following line contains one integer k (2 ≤ k ≤ n) — the number of intersections in Polycarp's path from home to his workplace.
 
-The last line contains k integers p_1, p_2, ..., p_k (1 ≤ p_i ≤ n, all these integers are pairwise distinct) — the intersections along Polycarp's path in the order he arrived at them. p_1 is the intersection where Polycarp lives (s = p_1), and p_k is the intersection where Polycarp's workplace is situated (t = p_k). It is guaranteed that for every i ∈ [1, k - 1] the road from p_i to p_{i + 1} exists, so the path goes along the roads of Bertown.
+The last line contains k integers p_1, p_2, ..., p_k (1 ≤ p_i ≤ n, all these integers are pairwise distinct) — the intersections along Polycarp's path in the order he arrived at them. p_1 is the intersection where Polycarp lives (s = p_1), and p_k is the intersection where Polycarp's workplace is situated (t = p_k). It is guaranteed that for every i ∈ [1, k - 1] the road from p_i to p_{i + 1} exists, so the path goes along the roads of Bertown. 
 
 Output
 

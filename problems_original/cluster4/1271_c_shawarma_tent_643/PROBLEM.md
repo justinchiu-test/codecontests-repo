@@ -23,7 +23,7 @@ Then n lines follow. The i-th of them contains two integers x_i, y_i (0 ≤ x_i,
 
 Output
 
-The output should consist of two lines. The first of them should contain one integer c — the maximum number of students that will buy shawarmas at the tent.
+The output should consist of two lines. The first of them should contain one integer c — the maximum number of students that will buy shawarmas at the tent. 
 
 The second line should contain two integers p_x and p_y — the coordinates where the tent should be located. If there are multiple answers, print any of them. Note that each of p_x and p_y should be not less than 0 and not greater than 10^{9}.
 

@@ -29,3 +29,4 @@ for i in range(1,n):
         if maxs[j]>=i-j:
             dp[i]=min(dp[i],dp[j]+b)
 print(dp[len(dp)-1])
+            

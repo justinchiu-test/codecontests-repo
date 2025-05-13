@@ -9,7 +9,7 @@ Petya loves lucky numbers. We all know that lucky numbers are the positive integ
 
 One day Petya encountered a tree with n vertexes. Besides, the tree was weighted, i. e. each edge of the tree has weight (a positive integer). An edge is lucky if its weight is a lucky number. Note that a tree with n vertexes is an undirected connected graph that has exactly n - 1 edges.
 
-Petya wondered how many vertex triples (i, j, k) exists that on the way from i to j, as well as on the way from i to k there must be at least one lucky edge (all three vertexes are pairwise distinct). The order of numbers in the triple matters, that is, the triple (1, 2, 3) is not equal to the triple (2, 1, 3) and is not equal to the triple (1, 3, 2).
+Petya wondered how many vertex triples (i, j, k) exists that on the way from i to j, as well as on the way from i to k there must be at least one lucky edge (all three vertexes are pairwise distinct). The order of numbers in the triple matters, that is, the triple (1, 2, 3) is not equal to the triple (2, 1, 3) and is not equal to the triple (1, 3, 2). 
 
 Find how many such triples of vertexes exist.
 

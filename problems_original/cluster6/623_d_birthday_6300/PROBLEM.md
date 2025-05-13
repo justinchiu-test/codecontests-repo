@@ -19,7 +19,7 @@ The second line contains n integers pi (<image>), giving the probability to catc
 
 Output
 
-Print a single real value — the expectation of the number of rounds provided that Misha plays optimally. Your answer will be considered correct if its absolute or relative error does not exceed 10 - 6.
+Print a single real value — the expectation of the number of rounds provided that Misha plays optimally. Your answer will be considered correct if its absolute or relative error does not exceed 10 - 6. 
 
 Namely: let's assume that your answer is a, and the answer of the jury is b. The checker program will consider your answer correct, if <image>.
 

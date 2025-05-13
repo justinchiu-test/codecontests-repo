@@ -11,7 +11,7 @@ def factor(n,k):
         i += 1
         n //= k
     return i
-
+        
 a, b = take_input(2)
 count = 0
 if a == b:

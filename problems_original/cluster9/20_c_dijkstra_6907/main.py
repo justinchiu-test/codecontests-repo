@@ -46,7 +46,7 @@ def dijkstra(graph, src, dest, n):
 
 def main():
     graph = Graph()
-
+    
     n, m = [int(i) for i in input().split()]
     for i in range(m):
         u, v, w = [int(j) for j in input().split()]
@@ -58,3 +58,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+

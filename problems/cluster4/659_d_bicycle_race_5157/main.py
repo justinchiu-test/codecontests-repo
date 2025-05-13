@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-read = lambda: map(int, input().split())
+read = lambda: map(int, input().split())   
 vect = lambda a, b: a[0] * b[1] - a[1] * b[0]
 vector = lambda A, B: (B[0] - A[0], B[1] - A[1])
 n = int(input())

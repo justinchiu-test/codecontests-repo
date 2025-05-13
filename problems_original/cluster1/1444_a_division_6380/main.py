@@ -2,22 +2,22 @@
 
 from sys import stdin, stdout
 from math import sqrt
-#stdin = open('Q3.txt', 'r')
+#stdin = open('Q3.txt', 'r') 
 def II(): return int(stdin.readline())
 def MI(): return map(int, stdin.readline().split())
 bigp=10**18+7
 
 primes=[]
-def SieveOfEratosthenes(n,primes):
-    prime = [True for i in range(n+1)]
+def SieveOfEratosthenes(n,primes): 
+    prime = [True for i in range(n+1)] 
     p = 2
-    while (p * p <= n):
-        if (prime[p] == True):
-            for i in range(p * p, n+1, p):
+    while (p * p <= n): 
+        if (prime[p] == True): 
+            for i in range(p * p, n+1, p): 
                 prime[i] = False
         p += 1
-    for p in range(2, n):
-        if prime[p]:
+    for p in range(2, n): 
+        if prime[p]: 
             primes.append(p)
 
 def solve():

@@ -48,3 +48,7 @@ elif(ind==2):
     print(x+1,y)
 else:
     print(x,y-1)
+    
+        
+        
+        

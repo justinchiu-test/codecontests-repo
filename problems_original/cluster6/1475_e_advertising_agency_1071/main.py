@@ -10,7 +10,7 @@ def solve():
     a = []
     for i in input().split():
         a.append(int(i))
-
+    
     a.sort()
     m = dict()
 

@@ -40,7 +40,7 @@ def parse(s):
     return res
 
 s = input().rstrip()
-res = parse(s)
+res = parse(s)    
 print(len(res))
 for layer in reversed(res):
     print(' '.join(layer))

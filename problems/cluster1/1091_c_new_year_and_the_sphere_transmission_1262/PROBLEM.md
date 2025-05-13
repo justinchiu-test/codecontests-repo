@@ -9,7 +9,7 @@ There are n people sitting in a circle, numbered from 1 to n in the order in whi
 
 The person with id 1 initially has a ball. He picks a positive integer k at most n, and passes the ball to his k-th neighbour in the direction of increasing ids, that person passes the ball to his k-th neighbour in the same direction, and so on until the person with the id 1 gets the ball back. When he gets it back, people do not pass the ball any more.
 
-For instance, if n = 6 and k = 4, the ball is passed in order [1, 5, 3, 1].
+For instance, if n = 6 and k = 4, the ball is passed in order [1, 5, 3, 1]. 
 
 Consider the set of all people that touched the ball. The fun value of the game is the sum of the ids of people that touched it. In the above example, the fun value would be 1 + 5 + 3 = 9.
 
@@ -52,7 +52,7 @@ Output
 
 Note
 
-In the first sample, we've already shown that picking k = 4 yields fun value 9, as does k = 2. Picking k = 6 results in fun value of 1. For k = 3 we get fun value 5 and with k = 1 or k = 5 we get 21.
+In the first sample, we've already shown that picking k = 4 yields fun value 9, as does k = 2. Picking k = 6 results in fun value of 1. For k = 3 we get fun value 5 and with k = 1 or k = 5 we get 21. 
 
 <image>
 

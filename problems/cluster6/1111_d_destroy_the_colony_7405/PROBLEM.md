@@ -7,7 +7,7 @@
 
 There is a colony of villains with several holes aligned in a row, where each hole contains exactly one villain.
 
-Each colony arrangement can be expressed as a string of even length, where the i-th character of the string represents the type of villain in the i-th hole.
+Each colony arrangement can be expressed as a string of even length, where the i-th character of the string represents the type of villain in the i-th hole. 
 
 Iron Man can destroy a colony only if the colony arrangement is such that all villains of a certain type either live in the first half of the colony or in the second half of the colony.
 

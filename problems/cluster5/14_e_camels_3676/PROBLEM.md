@@ -7,10 +7,10 @@
 
 Bob likes to draw camels: with a single hump, two humps, three humps, etc. He draws a camel by connecting points on a coordinate plane. Now he's drawing camels with t humps, representing them as polylines in the plane. Each polyline consists of n vertices with coordinates (x1, y1), (x2, y2), ..., (xn, yn). The first vertex has a coordinate x1 = 1, the second — x2 = 2, etc. Coordinates yi might be any, but should satisfy the following conditions:
 
-  * there should be t humps precisely, i.e. such indexes j (2 ≤ j ≤ n - 1), so that yj - 1 < yj > yj + 1,
-  * there should be precisely t - 1 such indexes j (2 ≤ j ≤ n - 1), so that yj - 1 > yj < yj + 1,
-  * no segment of a polyline should be parallel to the Ox-axis,
-  * all yi are integers between 1 and 4.
+  * there should be t humps precisely, i.e. such indexes j (2 ≤ j ≤ n - 1), so that yj - 1 < yj > yj + 1, 
+  * there should be precisely t - 1 such indexes j (2 ≤ j ≤ n - 1), so that yj - 1 > yj < yj + 1, 
+  * no segment of a polyline should be parallel to the Ox-axis, 
+  * all yi are integers between 1 and 4. 
 
 
 

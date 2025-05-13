@@ -15,11 +15,11 @@ Two vertices u and v belong to the same connected component if and only if there
 
 A connected component is a cycle if and only if its vertices can be reordered in such a way that:
 
-  * the first vertex is connected with the second vertex by an edge,
-  * the second vertex is connected with the third vertex by an edge,
-  * ...
-  * the last vertex is connected with the first vertex by an edge,
-  * all the described edges of a cycle are distinct.
+  * the first vertex is connected with the second vertex by an edge, 
+  * the second vertex is connected with the third vertex by an edge, 
+  * ... 
+  * the last vertex is connected with the first vertex by an edge, 
+  * all the described edges of a cycle are distinct. 
 
 
 

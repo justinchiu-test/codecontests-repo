@@ -9,13 +9,13 @@ The commanding officers decided to drop a nuclear bomb on the enemy's forces. Yo
 
 The enemy has N strategically important objects. Their positions are known due to the intelligence service. The aim of the strike is to deactivate at least K important objects of the enemy. The bombing impact point is already determined and has coordinates of [X0; Y0].
 
-The nuclear warhead is marked by the estimated impact radius R ≥ 0. All the buildings that are located closer than R to the bombing epicentre will be destroyed. All the buildings that are located further than R from the epicentre, can also be deactivated with some degree of probability. Let's assume that D is the distance between a building and the epicentre. This building's deactivation probability P(D, R) is calculated according to the following formula:
+The nuclear warhead is marked by the estimated impact radius R ≥ 0. All the buildings that are located closer than R to the bombing epicentre will be destroyed. All the buildings that are located further than R from the epicentre, can also be deactivated with some degree of probability. Let's assume that D is the distance between a building and the epicentre. This building's deactivation probability P(D, R) is calculated according to the following formula: 
 
 <image> We should regard <image> as ea, where e ≈ 2.7182818284590452353602874713527
 
 If the estimated impact radius of the warhead is equal to zero, then all the buildings located in the impact point will be completely demolished and all the rest of important objects will not be damaged.
 
-The commanding officers want the probability of failing the task to be no more than ε. Nuclear warheads are too expensive a luxury, that's why you have to minimise the estimated impact radius of the warhead.
+The commanding officers want the probability of failing the task to be no more than ε. Nuclear warheads are too expensive a luxury, that's why you have to minimise the estimated impact radius of the warhead. 
 
 Input
 

@@ -5,17 +5,17 @@
 
 ## Description
 
-As a German University in Cairo (GUC) student and a basketball player, Herr Wafa was delighted once he heard the news. GUC is finally participating in the Annual Basketball Competition (ABC).
+As a German University in Cairo (GUC) student and a basketball player, Herr Wafa was delighted once he heard the news. GUC is finally participating in the Annual Basketball Competition (ABC). 
 
 A team is to be formed of n players, all of which are GUC students. However, the team might have players belonging to different departments. There are m departments in GUC, numbered from 1 to m. Herr Wafa's department has number h. For each department i, Herr Wafa knows number si — how many students who play basketball belong to this department.
 
-Herr Wafa was also able to guarantee a spot on the team, using his special powers. But since he hates floating-point numbers, he needs your help at finding the probability that he will have at least one teammate belonging to his department.
+Herr Wafa was also able to guarantee a spot on the team, using his special powers. But since he hates floating-point numbers, he needs your help at finding the probability that he will have at least one teammate belonging to his department. 
 
 Note that every possible team containing Herr Wafa is equally probable. Consider all the students different from each other.
 
 Input
 
-The first line contains three integers n, m and h (1 ≤ n ≤ 100, 1 ≤ m ≤ 1000, 1 ≤ h ≤ m) — the number of players on the team, the number of departments in GUC and Herr Wafa's department, correspondingly.
+The first line contains three integers n, m and h (1 ≤ n ≤ 100, 1 ≤ m ≤ 1000, 1 ≤ h ≤ m) — the number of players on the team, the number of departments in GUC and Herr Wafa's department, correspondingly. 
 
 The second line contains a single-space-separated list of m integers si (1 ≤ si ≤ 100), denoting the number of students in the i-th department. Note that sh includes Herr Wafa.
 

@@ -11,7 +11,7 @@ A coloring of the grid is called stupid if every row has exactly one segment of 
 
 In other words, every row must have at least one blue cell, and all blue cells in a row must be consecutive. Similarly, every column must have at least one yellow cell, and all yellow cells in a column must be consecutive.
 
-<image> An example of a stupid coloring.  <image> Examples of clever colorings. The first coloring is missing a blue cell in the second row, and the second coloring has two yellow segments in the second column.
+<image> An example of a stupid coloring.  <image> Examples of clever colorings. The first coloring is missing a blue cell in the second row, and the second coloring has two yellow segments in the second column. 
 
 How many stupid colorings of the grid are there? Two colorings are considered different if there is some cell that is colored differently.
 

@@ -5,7 +5,7 @@
 
 ## Description
 
-Kaavi, the mysterious fortune teller, deeply believes that one's fate is inevitable and unavoidable. Of course, she makes her living by predicting others' future. While doing divination, Kaavi believes that magic spells can provide great power for her to see the future.
+Kaavi, the mysterious fortune teller, deeply believes that one's fate is inevitable and unavoidable. Of course, she makes her living by predicting others' future. While doing divination, Kaavi believes that magic spells can provide great power for her to see the future. 
 
 <image>
 
@@ -20,7 +20,7 @@ During the divination, Kaavi needs to perform a sequence of operations. There ar
 
 Kaavi can perform no more than n operations. To finish the divination, she wants to know the number of different operation sequences to make A a magic spell (i.e. with the prefix T). As her assistant, can you help her? The answer might be huge, so Kaavi only needs to know the answer modulo 998 244 353.
 
-Two operation sequences are considered different if they are different in length or there exists an i that their i-th operation is different.
+Two operation sequences are considered different if they are different in length or there exists an i that their i-th operation is different. 
 
 A substring is a contiguous sequence of characters within a string. A prefix of a string S is a substring of S that occurs at the beginning of S.
 

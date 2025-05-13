@@ -2,7 +2,7 @@
 
 import sys
 # try:
-# 	sys.stdin = open('input.txt', 'r')
+# 	sys.stdin = open('input.txt', 'r') 
 # 	sys.stdout = open('output.txt', 'w')
 # except:
 # 	pass
@@ -55,6 +55,6 @@ if (len(neigh[0])==1):
 	MIN = 1 if all([True if i%2==0 else False for i in leafDepth]) else 3
 else:
 	MIN = 1 if all([True if i%2==0 else False for i in leafDepth]) or all([True if i%2==1 else False for i in leafDepth]) else 3
-
+        
 #Out
 print(MIN, MAX)

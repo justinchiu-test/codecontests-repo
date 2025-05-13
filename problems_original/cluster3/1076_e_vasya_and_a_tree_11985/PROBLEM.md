@@ -7,10 +7,10 @@
 
 Vasya has a tree consisting of n vertices with root in vertex 1. At first all vertices has 0 written on it.
 
-Let d(i, j) be the distance between vertices i and j, i.e. number of edges in the shortest path from i to j. Also, let's denote k-subtree of vertex x — set of vertices y such that next two conditions are met:
+Let d(i, j) be the distance between vertices i and j, i.e. number of edges in the shortest path from i to j. Also, let's denote k-subtree of vertex x — set of vertices y such that next two conditions are met: 
 
-  * x is the ancestor of y (each vertex is the ancestor of itself);
-  * d(x, y) ≤ k.
+  * x is the ancestor of y (each vertex is the ancestor of itself); 
+  * d(x, y) ≤ k. 
 
 
 
@@ -51,7 +51,7 @@ Input
 Output
 
 
-1 11 1 100 0
+1 11 1 100 0 
 
 
 Input
@@ -73,7 +73,7 @@ Input
 Output
 
 
-10 24 14 11 11
+10 24 14 11 11 
 
 Note
 

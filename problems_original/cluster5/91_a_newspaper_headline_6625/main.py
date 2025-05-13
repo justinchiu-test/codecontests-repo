@@ -25,4 +25,4 @@ while i < nb:
             break
     cp = dp[cp][ord(b[i]) - 97] + 1
     i += 1
-print(ans if ans != math.inf else -1)
+print(ans if ans != math.inf else -1)    

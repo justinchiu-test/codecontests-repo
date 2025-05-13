@@ -9,8 +9,8 @@ One unknown hacker wants to get the admin's password of AtForces testing system,
 
 Hacker went home and started preparing to hack AtForces. He found that the system contains only passwords from the stolen list and that the system determines the equivalence of the passwords a and b as follows:
 
-  * two passwords a and b are equivalent if there is a letter, that exists in both a and b;
-  * two passwords a and b are equivalent if there is a password c from the list, which is equivalent to both a and b.
+  * two passwords a and b are equivalent if there is a letter, that exists in both a and b; 
+  * two passwords a and b are equivalent if there is a password c from the list, which is equivalent to both a and b. 
 
 
 
@@ -18,8 +18,8 @@ If a password is set in the system and an equivalent one is applied to access th
 
 For example, if the list contain passwords "a", "b", "ab", "d", then passwords "a", "b", "ab" are equivalent to each other, but the password "d" is not equivalent to any other password from list. In other words, if:
 
-  * admin's password is "b", then you can access to system by using any of this passwords: "a", "b", "ab";
-  * admin's password is "d", then you can access to system by using only "d".
+  * admin's password is "b", then you can access to system by using any of this passwords: "a", "b", "ab"; 
+  * admin's password is "d", then you can access to system by using only "d". 
 
 
 

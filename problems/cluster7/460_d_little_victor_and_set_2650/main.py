@@ -22,7 +22,7 @@ if k == 2:
             print(2)
             print(l, l+1)
             quit()
-
+            
     for i in range(l, r+1):
         if i%2==0:
             print(1)
@@ -131,3 +131,4 @@ if k >= 5:
             print(4)
             print(i, i+1, i+2, i+3)
             quit()
+            

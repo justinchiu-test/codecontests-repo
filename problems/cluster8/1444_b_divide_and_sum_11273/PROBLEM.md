@@ -77,19 +77,19 @@ Two partitions of an array are considered different if the sets of indices of el
 
 In the first example, there are two correct partitions of the array a:
 
-  1. p = [1], q = [4], then x = [1], y = [4], f(p, q) = |1 - 4| = 3;
-  2. p = [4], q = [1], then x = [4], y = [1], f(p, q) = |4 - 1| = 3.
+  1. p = [1], q = [4], then x = [1], y = [4], f(p, q) = |1 - 4| = 3; 
+  2. p = [4], q = [1], then x = [4], y = [1], f(p, q) = |4 - 1| = 3. 
 
 
 
-In the second example, there are six valid partitions of the array a:
+In the second example, there are six valid partitions of the array a: 
 
-  1. p = [2, 1], q = [2, 1] (elements with indices 1 and 2 in the original array are selected in the subsequence p);
-  2. p = [2, 2], q = [1, 1];
-  3. p = [2, 1], q = [1, 2] (elements with indices 1 and 4 are selected in the subsequence p);
-  4. p = [1, 2], q = [2, 1];
-  5. p = [1, 1], q = [2, 2];
-  6. p = [2, 1], q = [2, 1] (elements with indices 3 and 4 are selected in the subsequence p).
+  1. p = [2, 1], q = [2, 1] (elements with indices 1 and 2 in the original array are selected in the subsequence p); 
+  2. p = [2, 2], q = [1, 1]; 
+  3. p = [2, 1], q = [1, 2] (elements with indices 1 and 4 are selected in the subsequence p); 
+  4. p = [1, 2], q = [2, 1]; 
+  5. p = [1, 1], q = [2, 2]; 
+  6. p = [2, 1], q = [2, 1] (elements with indices 3 and 4 are selected in the subsequence p). 
 
 ## Categories
 

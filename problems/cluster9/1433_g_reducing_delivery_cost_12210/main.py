@@ -32,11 +32,11 @@ def main():
         edges[x].append((t, y))
         edges[y].append((t, x))
         xy.append((x, y))
-
+    
     dist = [[] for _ in range(n)]
     for i in range(n):
         dist[i] = dijkstra(n, i, edges)
-
+        
     ab = [list(map(int, input().split())) for _ in range(k)]
     ans = 10 ** 20
     for x, y in xy:
@@ -47,5 +47,5 @@ def main():
             tmp += min(dist[a][b], dist[a][x] + dist[b][y], dist[a][y] + dist[b][x])
         ans = min(ans, tmp)
     print(ans)
-
+    
 main()

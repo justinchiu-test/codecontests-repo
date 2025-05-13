@@ -7,15 +7,15 @@
 
 You have n × n square grid and an integer k. Put an integer in each cell while satisfying the conditions below.
 
-  * All numbers in the grid should be between 1 and k inclusive.
-  * Minimum number of the i-th row is 1 (1 ≤ i ≤ n).
-  * Minimum number of the j-th column is 1 (1 ≤ j ≤ n).
+  * All numbers in the grid should be between 1 and k inclusive. 
+  * Minimum number of the i-th row is 1 (1 ≤ i ≤ n). 
+  * Minimum number of the j-th column is 1 (1 ≤ j ≤ n). 
 
 
 
 Find the number of ways to put integers in the grid. Since the answer can be very large, find the answer modulo (10^{9} + 7).
 
-<image> These are the examples of valid and invalid grid when n=k=2.
+<image> These are the examples of valid and invalid grid when n=k=2. 
 
 Input
 

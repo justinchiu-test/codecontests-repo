@@ -5,12 +5,12 @@
 
 ## Description
 
-Ksenia has an array a consisting of n positive integers a_1, a_2, …, a_n.
+Ksenia has an array a consisting of n positive integers a_1, a_2, …, a_n. 
 
-In one operation she can do the following:
+In one operation she can do the following: 
 
-  * choose three distinct indices i, j, k, and then
-  * change all of a_i, a_j, a_k to a_i ⊕ a_j ⊕ a_k simultaneously, where ⊕ denotes the [bitwise XOR operation](https://en.wikipedia.org/wiki/Bitwise_operation#XOR).
+  * choose three distinct indices i, j, k, and then 
+  * change all of a_i, a_j, a_k to a_i ⊕ a_j ⊕ a_k simultaneously, where ⊕ denotes the [bitwise XOR operation](https://en.wikipedia.org/wiki/Bitwise_operation#XOR). 
 
 
 
@@ -28,7 +28,7 @@ Print YES or NO in the first line depending on whether it is possible to make al
 
 If it is possible, print an integer m (0 ≤ m ≤ n), which denotes the number of operations you do.
 
-In each of the next m lines, print three distinct integers i, j, k, representing one operation.
+In each of the next m lines, print three distinct integers i, j, k, representing one operation. 
 
 If there are many such operation sequences possible, print any. Note that you do not have to minimize the number of operations.
 

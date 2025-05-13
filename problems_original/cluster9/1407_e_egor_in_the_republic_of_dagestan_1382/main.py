@@ -14,7 +14,7 @@ for _ in range(m):
     u -= 1
     v -= 1
     back[v].append((u,w))
-
+    
 
 out = [2] * n
 outl = [-1] * n
@@ -30,7 +30,8 @@ while q:
             if outl[u] == -1:
                 outl[u] = outl[v] + 1
                 q.append(u)
-
+                
 out = [v if v != 2 else 1 for v in out]
 print(outl[0])
 print(''.join(map(str,out)))
+        

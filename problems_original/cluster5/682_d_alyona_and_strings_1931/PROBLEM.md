@@ -11,9 +11,9 @@ Alyona has her favourite positive integer k and because she is too small, k does
 
 Formally, Alyona wants to find a sequence of k non-empty strings p1, p2, p3, ..., pk satisfying following conditions:
 
-  * s can be represented as concatenation a1p1a2p2... akpkak + 1, where a1, a2, ..., ak + 1 is a sequence of arbitrary strings (some of them may be possibly empty);
-  * t can be represented as concatenation b1p1b2p2... bkpkbk + 1, where b1, b2, ..., bk + 1 is a sequence of arbitrary strings (some of them may be possibly empty);
-  * sum of the lengths of strings in sequence is maximum possible.
+  * s can be represented as concatenation a1p1a2p2... akpkak + 1, where a1, a2, ..., ak + 1 is a sequence of arbitrary strings (some of them may be possibly empty); 
+  * t can be represented as concatenation b1p1b2p2... bkpkbk + 1, where b1, b2, ..., bk + 1 is a sequence of arbitrary strings (some of them may be possibly empty); 
+  * sum of the lengths of strings in sequence is maximum possible. 
 
 
 

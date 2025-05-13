@@ -24,3 +24,4 @@ while(vertex):
 ans.sort()
 print(len(ans))
 print(" ".join(map(str,ans)))
+    

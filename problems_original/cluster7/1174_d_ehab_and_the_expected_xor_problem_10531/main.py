@@ -15,3 +15,4 @@ for i in range(1, lmt):
     vis[i ^ x] = 1
 print(len(ans))
 print(*ans)
+    

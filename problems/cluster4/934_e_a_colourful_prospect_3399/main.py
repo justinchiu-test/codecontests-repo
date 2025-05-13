@@ -46,7 +46,7 @@ class line:
 		d = self.a * other.b - self.b * other.a
 		return d
 	def __str__(self):
-		return str(self.a) + "*x + " + str(self.b) + "*y = " + str(self.c)
+		return str(self.a) + "*x + " + str(self.b) + "*y = " + str(self.c) 
 
 def line_pt(A, B):
 		d = (A - B).rot()
@@ -126,7 +126,7 @@ def unite(v, u):
 	par[get_par(v)] = get_par(u)
 for i in range(n):
 	s = set()
-	for j in range(n):
+	for j in range(n):	
 		tmp = arr[i].intersect(arr[j])
 		if (len(tmp)):
 			unite(i, j)

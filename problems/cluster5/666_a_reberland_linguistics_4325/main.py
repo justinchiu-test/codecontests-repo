@@ -17,3 +17,4 @@ def gen(l, ll):
 gen(len(s) - 1,len(s))
 print(len(d))
 for k in sorted(d): print(k)
+ 

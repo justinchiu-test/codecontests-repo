@@ -92,3 +92,4 @@ for _ in range(q):
 				bit -= 1
 				continue
 		print(res)
+

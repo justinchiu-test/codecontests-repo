@@ -30,7 +30,7 @@ def scc(E):
                 if done[j]: continue
                 Q.append(~j)
                 Q.append(j)
-
+    
     done = [0] * n
     SCC = []
     ### ID ���K�v�ȂƂ�
@@ -59,7 +59,7 @@ def scc(E):
                 Q.append(j)
         SCC.append(L)
     # return SCC, I
-
+    
     ### �� Edge ���K�v�ȂƂ� �i��� return �������j
     # nE = [set() for _ in range(len(SCC))]
     # iE = [set() for _ in range(len(SCC))]
@@ -109,3 +109,6 @@ for k in range(su):
 ciE = scc(E)
 
 print(sum(ciE))
+
+
+

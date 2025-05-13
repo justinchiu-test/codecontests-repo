@@ -17,7 +17,7 @@ More formaly, the slowness of keyboard is equal to ∑_{i=2}^{n} |pos_{s_{i-1}} 
 
 For example, if s is aacabc and the keyboard is bac, then the total time of typing this password is |pos_a - pos_a| + |pos_a - pos_c| + |pos_c - pos_a| + |pos_a - pos_b| + |pos_b - pos_c| = |2 - 2| + |2 - 3| + |3 - 2| + |2 - 1| + |1 - 3| = 0 + 1 + 1 + 1 + 2 = 5.
 
-Before buying a new keyboard you want to know the minimum possible slowness that the keyboard can have.
+Before buying a new keyboard you want to know the minimum possible slowness that the keyboard can have. 
 
 Input
 

@@ -17,3 +17,6 @@ elif ans == (5/6):
     print("5/6")
 else:
     print("1/1")
+
+
+

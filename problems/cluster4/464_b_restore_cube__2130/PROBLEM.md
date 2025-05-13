@@ -1,4 +1,4 @@
-# 464_B. Restore Cube
+# 464_B. Restore Cube 
 
 **ID:** 464_b_restore_cube__2130
 **Difficulty:** 8
@@ -90,13 +90,13 @@ Codeforces
 **Output**:
 ```
 YES
-0 0 0
-0 0 1
-0 1 0
-1 0 0
-0 1 1
-1 0 1
-1 1 0
+0 0 0 
+0 0 1 
+0 1 0 
+1 0 0 
+0 1 1 
+1 0 1 
+1 1 0 
 1 1 1
 ```
 

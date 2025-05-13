@@ -5,7 +5,7 @@
 
 ## Description
 
-Ostap already settled down in Rio de Janiero suburb and started to grow a tree in his garden. Recall that a tree is a connected undirected acyclic graph.
+Ostap already settled down in Rio de Janiero suburb and started to grow a tree in his garden. Recall that a tree is a connected undirected acyclic graph. 
 
 Ostap's tree now has n vertices. He wants to paint some vertices of the tree black such that from any vertex u there is at least one black vertex v at distance no more than k. Distance between two vertices of the tree is the minimum possible number of edges of the path between them.
 

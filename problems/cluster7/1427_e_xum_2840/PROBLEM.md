@@ -7,10 +7,10 @@
 
 You have a blackboard and initially only an odd number x is written on it. Your goal is to write the number 1 on the blackboard.
 
-You may write new numbers on the blackboard with the following two operations.
+You may write new numbers on the blackboard with the following two operations. 
 
-  * You may take two numbers (not necessarily distinct) already on the blackboard and write their sum on the blackboard. The two numbers you have chosen remain on the blackboard.
-  * You may take two numbers (not necessarily distinct) already on the blackboard and write their [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) on the blackboard. The two numbers you have chosen remain on the blackboard.
+  * You may take two numbers (not necessarily distinct) already on the blackboard and write their sum on the blackboard. The two numbers you have chosen remain on the blackboard. 
+  * You may take two numbers (not necessarily distinct) already on the blackboard and write their [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) on the blackboard. The two numbers you have chosen remain on the blackboard. 
 
 Perform a sequence of operations such that at the end the number 1 is on the blackboard.
 
@@ -20,10 +20,10 @@ The single line of the input contains the odd integer x (3 ≤ x ≤ 999,999).
 
 Output
 
-Print on the first line the number q of operations you perform. Then q lines should follow, each describing one operation.
+Print on the first line the number q of operations you perform. Then q lines should follow, each describing one operation. 
 
-  * The "sum" operation is described by the line "a + b", where a, b must be integers already present on the blackboard.
-  * The "xor" operation is described by the line "a ^ b", where a, b must be integers already present on the blackboard.
+  * The "sum" operation is described by the line "a + b", where a, b must be integers already present on the blackboard. 
+  * The "xor" operation is described by the line "a ^ b", where a, b must be integers already present on the blackboard. 
 
 The operation symbol (+ or ^) must be separated from a, b by a whitespace.
 

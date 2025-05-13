@@ -49,11 +49,11 @@ Output
 
 Note
 
-In the first sample, there are two cases. One is directly remove the root and another is remove the root after one step. Thus the expected steps are:
+In the first sample, there are two cases. One is directly remove the root and another is remove the root after one step. Thus the expected steps are: 
 
 1 × (1 / 2) + 2 × (1 / 2) = 1.5
 
-In the second sample, things get more complex. There are two cases that reduce to the first sample, and one case cleaned at once. Thus the expected steps are:
+In the second sample, things get more complex. There are two cases that reduce to the first sample, and one case cleaned at once. Thus the expected steps are: 
 
 1 × (1 / 3) + (1 + 1.5) × (2 / 3) = (1 / 3) + (5 / 3) = 2
 

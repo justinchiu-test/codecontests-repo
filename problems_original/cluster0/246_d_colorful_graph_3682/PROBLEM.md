@@ -15,7 +15,7 @@ Input
 
 The first line contains two space-separated integers n, m (1 ≤ n, m ≤ 105) — the number of vertices end edges of the graph, correspondingly. The second line contains a sequence of integers c1, c2, ..., cn (1 ≤ ci ≤ 105) — the colors of the graph vertices. The numbers on the line are separated by spaces.
 
-Next m lines contain the description of the edges: the i-th line contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n; ai ≠ bi) — the numbers of the vertices, connected by the i-th edge.
+Next m lines contain the description of the edges: the i-th line contains two space-separated integers ai, bi (1 ≤ ai, bi ≤ n; ai ≠ bi) — the numbers of the vertices, connected by the i-th edge. 
 
 It is guaranteed that the given graph has no self-loops or multiple edges.
 

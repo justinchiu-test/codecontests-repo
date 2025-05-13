@@ -45,7 +45,7 @@ Input
 Output
 
 
-1 2 4
+1 2 4 
 
 
 Input
@@ -82,26 +82,26 @@ Input
 Output
 
 
-5
+5 
 
 Note
 
 The deletion process in the first example is as follows (see the picture below, the vertices with c_i=1 are in yellow):
 
-  * first you will delete the vertex 1, because it does not respect ancestors and all its children (the vertex 2) do not respect it, and 1 is the smallest index among such vertices;
-  * the vertex 2 will be connected with the vertex 3 after deletion;
-  * then you will delete the vertex 2, because it does not respect ancestors and all its children (the only vertex 4) do not respect it;
-  * the vertex 4 will be connected with the vertex 3;
-  * then you will delete the vertex 4, because it does not respect ancestors and all its children (there are none) do not respect it ([vacuous truth](https://en.wikipedia.org/wiki/Vacuous_truth));
-  * you will just delete the vertex 4;
-  * there are no more vertices to delete.
+  * first you will delete the vertex 1, because it does not respect ancestors and all its children (the vertex 2) do not respect it, and 1 is the smallest index among such vertices; 
+  * the vertex 2 will be connected with the vertex 3 after deletion; 
+  * then you will delete the vertex 2, because it does not respect ancestors and all its children (the only vertex 4) do not respect it; 
+  * the vertex 4 will be connected with the vertex 3; 
+  * then you will delete the vertex 4, because it does not respect ancestors and all its children (there are none) do not respect it ([vacuous truth](https://en.wikipedia.org/wiki/Vacuous_truth)); 
+  * you will just delete the vertex 4; 
+  * there are no more vertices to delete. 
 
 <image>
 
 In the second example you don't need to delete any vertex:
 
-  * vertices 2 and 3 have children that respect them;
-  * vertices 4 and 5 respect ancestors.
+  * vertices 2 and 3 have children that respect them; 
+  * vertices 4 and 5 respect ancestors. 
 
 <image>
 

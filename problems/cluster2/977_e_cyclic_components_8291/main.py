@@ -32,3 +32,5 @@ for x in range(n):
         ans += bfs(x)
 
 print(ans)
+
+  		 		 	   	 				 	     	   	

@@ -30,7 +30,7 @@ for i in range(n):
 roots = []
 
 for i in range(n):
-
+    
     x = int(input())
 
     if x > 0:
@@ -41,3 +41,4 @@ for i in range(n):
 
 
 print(max([findDepth(a, i) for i in roots]))
+    

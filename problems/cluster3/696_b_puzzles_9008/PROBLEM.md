@@ -10,19 +10,19 @@ Barney lives in country USC (United States of Charzeh). USC has n cities numbere
 <image>
 
 Some girl has stolen Barney's heart, and Barney wants to find her. He starts looking for in the root of the tree and (since he is Barney Stinson not a random guy), he uses a random DFS to search in the cities. A pseudo code of this algorithm is as follows:
-
-
-
-    let starting_time be an array of length n
-    current_time = 0
-    dfs(v):
-    	current_time = current_time + 1
-    	starting_time[v] = current_time
-    	shuffle children[v] randomly (each permutation with equal possibility)
-    	// children[v] is vector of children cities of city v
-    	for u in children[v]:
-    		dfs(u)
-
+    
+    
+      
+    let starting_time be an array of length n  
+    current_time = 0  
+    dfs(v):  
+    	current_time = current_time + 1  
+    	starting_time[v] = current_time  
+    	shuffle children[v] randomly (each permutation with equal possibility)  
+    	// children[v] is vector of children cities of city v  
+    	for u in children[v]:  
+    		dfs(u)  
+    
 
 As told before, Barney will start his journey in the root of the tree (equivalent to call dfs(1)).
 
@@ -50,7 +50,7 @@ Input
 
 Output
 
-1.0 4.0 5.0 3.5 4.5 5.0 5.0
+1.0 4.0 5.0 3.5 4.5 5.0 5.0 
 
 
 Input
@@ -61,7 +61,7 @@ Input
 
 Output
 
-1.0 5.0 5.5 6.5 7.5 8.0 8.0 7.0 7.5 6.5 7.5 8.0
+1.0 5.0 5.5 6.5 7.5 8.0 8.0 7.0 7.5 6.5 7.5 8.0 
 
 ## Categories
 

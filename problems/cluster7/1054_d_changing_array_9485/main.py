@@ -22,3 +22,5 @@ for elem in dic:
   ans+=half*(half-1)/2
 ans=n*(n+1)/2-ans
 print(int(ans))
+  
+    

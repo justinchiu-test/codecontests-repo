@@ -22,7 +22,7 @@ def Solve(n,k):
     ans = 0
 
     for i in range(n + 1): #nos movemos por las filas o columnas seleccionadas
-        base = pow(k,n-i,mod) * pow(k-1,i,mod) - pow(k-1,n,mod) + mod  #formas de colocar los numeros en las filas o culmnas
+        base = pow(k,n-i,mod) * pow(k-1,i,mod) - pow(k-1,n,mod) + mod  #formas de colocar los numeros en las filas o culmnas 
         base % mod
         val = pow(-1,i) * mod_nCr(n,i) * pow(base,n,mod)    #formas de escoger las i filas o columnas
         ans += val
@@ -59,3 +59,5 @@ for i in range(n + 1):
     ans %= mod
 
 print(ans)
+
+

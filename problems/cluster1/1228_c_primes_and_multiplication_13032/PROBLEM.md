@@ -11,15 +11,15 @@ Let prime(x) be the set of prime divisors of x. For example, prime(140) = \{ 2, 
 
 Let g(x, p) be the maximum possible integer p^k where k is an integer such that x is divisible by p^k. For example:
 
-  * g(45, 3) = 9 (45 is divisible by 3^2=9 but not divisible by 3^3=27),
-  * g(63, 7) = 7 (63 is divisible by 7^1=7 but not divisible by 7^2=49).
+  * g(45, 3) = 9 (45 is divisible by 3^2=9 but not divisible by 3^3=27), 
+  * g(63, 7) = 7 (63 is divisible by 7^1=7 but not divisible by 7^2=49). 
 
 
 
 Let f(x, y) be the product of g(y, p) for all p in prime(x). For example:
 
-  * f(30, 70) = g(70, 2) ⋅ g(70, 3) ⋅ g(70, 5) = 2^1 ⋅ 3^0 ⋅ 5^1 = 10,
-  * f(525, 63) = g(63, 3) ⋅ g(63, 5) ⋅ g(63, 7) = 3^2 ⋅ 5^0 ⋅ 7^1 = 63.
+  * f(30, 70) = g(70, 2) ⋅ g(70, 3) ⋅ g(70, 5) = 2^1 ⋅ 3^0 ⋅ 5^1 = 10, 
+  * f(525, 63) = g(63, 3) ⋅ g(63, 5) ⋅ g(63, 7) = 3^2 ⋅ 5^0 ⋅ 7^1 = 63. 
 
 
 

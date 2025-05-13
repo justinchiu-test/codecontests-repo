@@ -7,7 +7,7 @@
 
 Omkar and Akmar are playing a game on a circular board with n (2 ≤ n ≤ 10^6) cells. The cells are numbered from 1 to n so that for each i (1 ≤ i ≤ n-1) cell i is adjacent to cell i+1 and cell 1 is adjacent to cell n. Initially, each cell is empty.
 
-Omkar and Akmar take turns placing either an A or a B on the board, with Akmar going first. The letter must be placed on an empty cell. In addition, the letter cannot be placed adjacent to a cell containing the same letter.
+Omkar and Akmar take turns placing either an A or a B on the board, with Akmar going first. The letter must be placed on an empty cell. In addition, the letter cannot be placed adjacent to a cell containing the same letter. 
 
 A player loses when it is their turn and there are no more valid moves.
 

@@ -32,7 +32,7 @@ Input
 
 Output
 
-1 4 3 5
+1 4 3 5 
 
 Input
 
@@ -47,7 +47,7 @@ Input
 
 Output
 
-1 4 3 5
+1 4 3 5 
 
 ## Categories
 

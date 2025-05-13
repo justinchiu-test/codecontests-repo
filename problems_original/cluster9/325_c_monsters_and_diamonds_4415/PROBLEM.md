@@ -21,7 +21,7 @@ Each monster will have at least one split rule. Each split rule will have at lea
 
 Output
 
-For each monster, in order of their IDs, print a line with two integers: the smallest and the largest number of diamonds that can possibly be collected by starting with that monster. If Piegirl cannot possibly end up in a state without monsters, print -1 for both smallest and the largest value. If she can collect an arbitrarily large number of diamonds, print -2 as the largest number of diamonds.
+For each monster, in order of their IDs, print a line with two integers: the smallest and the largest number of diamonds that can possibly be collected by starting with that monster. If Piegirl cannot possibly end up in a state without monsters, print -1 for both smallest and the largest value. If she can collect an arbitrarily large number of diamonds, print -2 as the largest number of diamonds. 
 
 If any number in output exceeds 314000000 (but is finite), print 314000000 instead of that number.
 

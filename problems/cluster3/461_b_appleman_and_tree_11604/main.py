@@ -48,14 +48,14 @@ if __name__ == '__main__':
                                            + t[v][1] * t[u][0] * (not colors[u])) % (10**9 + 7)
                     )
 
-
+                
     dfs(0)
 
     print(t[0][1])
 
 
 
-
+    
 
 
 

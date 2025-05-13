@@ -9,10 +9,10 @@ As you probably know, Anton goes to school. One of the school subjects that Anto
 
 On the last lesson Anton learned about the regular simple bracket sequences (RSBS). A bracket sequence s of length n is an RSBS if the following conditions are met:
 
-  * It is not empty (that is n ≠ 0).
-  * The length of the sequence is even.
-  * First <image> charactes of the sequence are equal to "(".
-  * Last <image> charactes of the sequence are equal to ")".
+  * It is not empty (that is n ≠ 0). 
+  * The length of the sequence is even. 
+  * First <image> charactes of the sequence are equal to "(". 
+  * Last <image> charactes of the sequence are equal to ")". 
 
 
 
@@ -67,12 +67,12 @@ Note
 
 In the first sample the following subsequences are possible:
 
-  * If we delete characters at the positions 1 and 5 (numbering starts with one), we will get the subsequence "(())".
-  * If we delete characters at the positions 1, 2, 3 and 4, we will get the subsequence "()".
-  * If we delete characters at the positions 1, 2, 4 and 5, we will get the subsequence "()".
-  * If we delete characters at the positions 1, 2, 5 and 6, we will get the subsequence "()".
-  * If we delete characters at the positions 1, 3, 4 and 5, we will get the subsequence "()".
-  * If we delete characters at the positions 1, 3, 5 and 6, we will get the subsequence "()".
+  * If we delete characters at the positions 1 and 5 (numbering starts with one), we will get the subsequence "(())". 
+  * If we delete characters at the positions 1, 2, 3 and 4, we will get the subsequence "()". 
+  * If we delete characters at the positions 1, 2, 4 and 5, we will get the subsequence "()". 
+  * If we delete characters at the positions 1, 2, 5 and 6, we will get the subsequence "()". 
+  * If we delete characters at the positions 1, 3, 4 and 5, we will get the subsequence "()". 
+  * If we delete characters at the positions 1, 3, 5 and 6, we will get the subsequence "()". 
 
 
 

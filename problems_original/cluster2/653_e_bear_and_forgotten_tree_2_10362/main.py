@@ -69,14 +69,14 @@ def E():
         mp[b].add(a);
         if a == 1 or b == 1:
             mxDegreePossible -= 1;
-
+    
     if mxDegreePossible < k:
         print("impossible");
         return;
 
     for i in range(2,n+1):
         remaining.add(i);
-
+    
     components = 0;
     for i in range(2,n+1):
         if i in remaining and canConnect(1,i):
@@ -89,7 +89,7 @@ def E():
         return;
     print('possible');
 
-
-
-
+    
+    
+    
 main();

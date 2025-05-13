@@ -5,7 +5,7 @@
 
 ## Description
 
-You are given an undirected connected weighted graph consisting of n vertices and m edges. Let's denote the length of the shortest path from vertex 1 to vertex i as d_i.
+You are given an undirected connected weighted graph consisting of n vertices and m edges. Let's denote the length of the shortest path from vertex 1 to vertex i as d_i. 
 
 You have to erase some edges of the graph so that at most k edges remain. Let's call a vertex i good if there still exists a path from 1 to i with length d_i after erasing the edges.
 
@@ -40,7 +40,7 @@ Output
 
 
 2
-1 2
+1 2 
 
 Input
 
@@ -57,7 +57,7 @@ Output
 
 
 2
-3 2
+3 2 
 
 ## Categories
 

@@ -7,19 +7,19 @@
 
 After defeating a Blacklist Rival, you get a chance to draw 1 reward slip out of x hidden valid slips. Initially, x=3 and these hidden valid slips are Cash Slip, Impound Strike Release Marker and Pink Slip of Rival's Car. Initially, the probability of drawing these in a random guess are c, m, and p, respectively. There is also a volatility factor v. You can play any number of Rival Races as long as you don't draw a Pink Slip. Assume that you win each race and get a chance to draw a reward slip. In each draw, you draw one of the x valid items with their respective probabilities. Suppose you draw a particular item and its probability of drawing before the draw was a. Then,
 
-  * If the item was a Pink Slip, the quest is over, and you will not play any more races.
-  * Otherwise,
-    1. If a≤ v, the probability of the item drawn becomes 0 and the item is no longer a valid item for all the further draws, reducing x by 1. Moreover, the reduced probability a is distributed equally among the other remaining valid items.
-    2. If a > v, the probability of the item drawn reduces by v and the reduced probability is distributed equally among the other valid items.
+  * If the item was a Pink Slip, the quest is over, and you will not play any more races. 
+  * Otherwise, 
+    1. If a≤ v, the probability of the item drawn becomes 0 and the item is no longer a valid item for all the further draws, reducing x by 1. Moreover, the reduced probability a is distributed equally among the other remaining valid items. 
+    2. If a > v, the probability of the item drawn reduces by v and the reduced probability is distributed equally among the other valid items. 
 
 
 
 For example,
 
-  * If (c,m,p)=(0.2,0.1,0.7) and v=0.1, after drawing Cash, the new probabilities will be (0.1,0.15,0.75).
-  * If (c,m,p)=(0.1,0.2,0.7) and v=0.2, after drawing Cash, the new probabilities will be (Invalid,0.25,0.75).
-  * If (c,m,p)=(0.2,Invalid,0.8) and v=0.1, after drawing Cash, the new probabilities will be (0.1,Invalid,0.9).
-  * If (c,m,p)=(0.1,Invalid,0.9) and v=0.2, after drawing Cash, the new probabilities will be (Invalid,Invalid,1.0).
+  * If (c,m,p)=(0.2,0.1,0.7) and v=0.1, after drawing Cash, the new probabilities will be (0.1,0.15,0.75). 
+  * If (c,m,p)=(0.1,0.2,0.7) and v=0.2, after drawing Cash, the new probabilities will be (Invalid,0.25,0.75). 
+  * If (c,m,p)=(0.2,Invalid,0.8) and v=0.1, after drawing Cash, the new probabilities will be (0.1,Invalid,0.9). 
+  * If (c,m,p)=(0.1,Invalid,0.9) and v=0.2, after drawing Cash, the new probabilities will be (Invalid,Invalid,1.0). 
 
 
 
@@ -63,25 +63,25 @@ Output
 
 Note
 
-For the first test case, the possible drawing sequences are:
+For the first test case, the possible drawing sequences are: 
 
-  * P with a probability of 0.6;
-  * CP with a probability of 0.2⋅ 0.7 = 0.14;
-  * CMP with a probability of 0.2⋅ 0.3⋅ 0.9 = 0.054;
-  * CMMP with a probability of 0.2⋅ 0.3⋅ 0.1⋅ 1 = 0.006;
-  * MP with a probability of 0.2⋅ 0.7 = 0.14;
-  * MCP with a probability of 0.2⋅ 0.3⋅ 0.9 = 0.054;
-  * MCCP with a probability of 0.2⋅ 0.3⋅ 0.1⋅ 1 = 0.006.
+  * P with a probability of 0.6; 
+  * CP with a probability of 0.2⋅ 0.7 = 0.14; 
+  * CMP with a probability of 0.2⋅ 0.3⋅ 0.9 = 0.054; 
+  * CMMP with a probability of 0.2⋅ 0.3⋅ 0.1⋅ 1 = 0.006; 
+  * MP with a probability of 0.2⋅ 0.7 = 0.14; 
+  * MCP with a probability of 0.2⋅ 0.3⋅ 0.9 = 0.054; 
+  * MCCP with a probability of 0.2⋅ 0.3⋅ 0.1⋅ 1 = 0.006. 
 
 So, the expected number of races is equal to 1⋅ 0.6 + 2⋅ 0.14 + 3⋅ 0.054 + 4⋅ 0.006 + 2⋅ 0.14 + 3⋅ 0.054 + 4⋅ 0.006 = 1.532.
 
-For the second test case, the possible drawing sequences are:
+For the second test case, the possible drawing sequences are: 
 
-  * P with a probability of 0.4;
-  * CP with a probability of 0.4⋅ 0.6 = 0.24;
-  * CMP with a probability of 0.4⋅ 0.4⋅ 1 = 0.16;
-  * MP with a probability of 0.2⋅ 0.5 = 0.1;
-  * MCP with a probability of 0.2⋅ 0.5⋅ 1 = 0.1.
+  * P with a probability of 0.4; 
+  * CP with a probability of 0.4⋅ 0.6 = 0.24; 
+  * CMP with a probability of 0.4⋅ 0.4⋅ 1 = 0.16; 
+  * MP with a probability of 0.2⋅ 0.5 = 0.1; 
+  * MCP with a probability of 0.2⋅ 0.5⋅ 1 = 0.1. 
 
 
 

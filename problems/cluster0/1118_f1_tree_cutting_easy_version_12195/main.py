@@ -32,10 +32,10 @@ while len(stack):
                     answer += 1
                 count[vertex][0] += count[child][0]
                 count[vertex][1] += count[child][1]
-
+ 
         if a[vertex] != 0:
             #print(count)
             count[vertex][a[vertex]-1] += 1
             #print(count)
-
+ 
 print(answer)

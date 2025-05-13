@@ -7,7 +7,7 @@
 
 Kuro has just learned about permutations and he is really excited to create a new permutation type. He has chosen n distinct positive integers and put all of them in a set S. Now he defines a magical permutation to be:
 
-  * A permutation of integers from 0 to 2^x - 1, where x is a non-negative integer.
+  * A permutation of integers from 0 to 2^x - 1, where x is a non-negative integer. 
   * The [bitwise xor](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of any two consecutive elements in the permutation is an element in S.
 
 
@@ -39,7 +39,7 @@ Output
 
 
 2
-0 1 3 2
+0 1 3 2 
 
 Input
 
@@ -52,7 +52,7 @@ Output
 
 
 2
-0 2 1 3
+0 2 1 3 
 
 Input
 
@@ -65,7 +65,7 @@ Output
 
 
 3
-0 1 3 2 6 7 5 4
+0 1 3 2 6 7 5 4 
 
 Input
 
@@ -78,7 +78,7 @@ Output
 
 
 0
-0
+0 
 
 Input
 
@@ -91,7 +91,7 @@ Output
 
 
 0
-0
+0 
 
 Input
 
@@ -104,14 +104,14 @@ Output
 
 
 1
-0 1
+0 1 
 
 Note
 
 In the first example, 0, 1, 3, 2 is a magical permutation since:
 
-  * 0 ⊕ 1 = 1 ∈ S
-  * 1 ⊕ 3 = 2 ∈ S
+  * 0 ⊕ 1 = 1 ∈ S 
+  * 1 ⊕ 3 = 2 ∈ S 
   * 3 ⊕ 2 = 1 ∈ S
 
 
@@ -157,7 +157,7 @@ Codeforces
 
 **Output**:
 ```
-0
+0 
 0
 ```
 
@@ -171,7 +171,7 @@ Codeforces
 
 **Output**:
 ```
-0
+0 
 0
 ```
 

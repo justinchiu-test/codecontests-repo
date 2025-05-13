@@ -5,9 +5,9 @@
 
 ## Description
 
-At a break Vanya came to the class and saw an array of n k-bit integers a_1, a_2, …, a_n on the board. An integer x is called a k-bit integer if 0 ≤ x ≤ 2^k - 1.
+At a break Vanya came to the class and saw an array of n k-bit integers a_1, a_2, …, a_n on the board. An integer x is called a k-bit integer if 0 ≤ x ≤ 2^k - 1. 
 
-Of course, Vanya was not able to resist and started changing the numbers written on the board. To ensure that no one will note anything, Vanya allowed himself to make only one type of changes: choose an index of the array i (1 ≤ i ≤ n) and replace the number a_i with the number \overline{a_i}. We define \overline{x} for a k-bit integer x as the k-bit integer such that all its k bits differ from the corresponding bits of x.
+Of course, Vanya was not able to resist and started changing the numbers written on the board. To ensure that no one will note anything, Vanya allowed himself to make only one type of changes: choose an index of the array i (1 ≤ i ≤ n) and replace the number a_i with the number \overline{a_i}. We define \overline{x} for a k-bit integer x as the k-bit integer such that all its k bits differ from the corresponding bits of x. 
 
 Vanya does not like the number 0. Therefore, he likes such segments [l, r] (1 ≤ l ≤ r ≤ n) such that a_l ⊕ a_{l+1} ⊕ … ⊕ a_r ≠ 0, where ⊕ denotes the [bitwise XOR operation](https://en.wikipedia.org/wiki/Bitwise_operation#XOR). Determine the maximum number of segments he likes Vanya can get applying zero or more operations described above.
 

@@ -7,8 +7,8 @@
 
 Calculate the number of ways to place n rooks on n × n chessboard so that both following conditions are met:
 
-  * each empty cell is under attack;
-  * exactly k pairs of rooks attack each other.
+  * each empty cell is under attack; 
+  * exactly k pairs of rooks attack each other. 
 
 
 

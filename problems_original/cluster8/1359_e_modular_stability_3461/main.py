@@ -33,5 +33,5 @@ for i in range(1, n//k + 1):
     ans += (fact[a] * pow(l, m-2, m)) % m
     #print(ans)
     #print(i, ans)
-
+    
 print(int(ans) % m)

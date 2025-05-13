@@ -15,7 +15,7 @@ Maxim is now wondering, what is the average number of visitors who have come to 
 
 Input
 
-The first line contains integer n (1 ≤ n ≤ 50) — the number of guests in the restaurant. The next line contains integers a1, a2, ..., an (1 ≤ ai ≤ 50) — the guests' sizes in meters. The third line contains integer p (1 ≤ p ≤ 50) — the table's length in meters.
+The first line contains integer n (1 ≤ n ≤ 50) — the number of guests in the restaurant. The next line contains integers a1, a2, ..., an (1 ≤ ai ≤ 50) — the guests' sizes in meters. The third line contains integer p (1 ≤ p ≤ 50) — the table's length in meters. 
 
 The numbers in the lines are separated by single spaces.
 
@@ -38,14 +38,14 @@ Output
 
 Note
 
-In the first sample the people will come in the following orders:
+In the first sample the people will come in the following orders: 
 
-  * (1, 2, 3) — there will be two people in the restaurant;
-  * (1, 3, 2) — there will be one person in the restaurant;
-  * (2, 1, 3) — there will be two people in the restaurant;
-  * (2, 3, 1) — there will be one person in the restaurant;
-  * (3, 1, 2) — there will be one person in the restaurant;
-  * (3, 2, 1) — there will be one person in the restaurant.
+  * (1, 2, 3) — there will be two people in the restaurant; 
+  * (1, 3, 2) — there will be one person in the restaurant; 
+  * (2, 1, 3) — there will be two people in the restaurant; 
+  * (2, 3, 1) — there will be one person in the restaurant; 
+  * (3, 1, 2) — there will be one person in the restaurant; 
+  * (3, 2, 1) — there will be one person in the restaurant. 
 
 
 

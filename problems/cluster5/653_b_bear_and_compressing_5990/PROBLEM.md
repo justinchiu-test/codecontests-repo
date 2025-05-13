@@ -75,11 +75,11 @@ Note
 
 In the first sample, we count initial strings of length 3 from which Limak can get a required string "a". There are 4 such strings: "abb", "cab", "cca", "eea". The first one Limak can compress using operation 1 two times (changing "ab" to a single "a"). The first operation would change "abb" to "ab" and the second operation would change "ab" to "a".
 
-Other three strings may be compressed as follows:
+Other three strings may be compressed as follows: 
 
-  * "cab" <image> "ab" <image> "a"
-  * "cca" <image> "ca" <image> "a"
-  * "eea" <image> "ca" <image> "a"
+  * "cab" <image> "ab" <image> "a" 
+  * "cca" <image> "ca" <image> "a" 
+  * "eea" <image> "ca" <image> "a" 
 
 
 

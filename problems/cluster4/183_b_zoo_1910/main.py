@@ -4,7 +4,7 @@ def gcd(a,b):
     if b == 0:
         return a
     return gcd(b, a % b)
-
+    
 def normalize_rational(num,den):
     #associate the -ve with the num or cancel -ve sign when both are -ve
     if num ^ den < 0 and num > 0 or num ^ den > 0 and num < 0:
@@ -55,7 +55,7 @@ for i in range(m):
                 points.add(i); points.add(j)
                 #print("after addition: ", points)
                 continue
-
+            
             #if (i == 1 and j == 2):
             #    print(c_prime, x_intercept, dy, dx)
             if int(x_intercept) == x_intercept and x_intercept <= n and x_intercept > 0:

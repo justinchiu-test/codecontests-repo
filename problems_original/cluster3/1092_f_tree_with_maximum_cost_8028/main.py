@@ -21,7 +21,7 @@ def bootstrap(f, stack=[]):
                         break
                     to = stack[-1].send(to)
             return to
-
+ 
     return wrappedfunc
 
 n = int(input())

@@ -65,6 +65,15 @@ def func():
                 B += cnt[k]
         ans.append(str(A*B))
     print("\n".join(ans))
-
+            
 
 func()
+        
+        
+        
+            
+        
+        
+    
+        
+

@@ -7,10 +7,10 @@
 
 You are given an array a of length n that consists of zeros and ones.
 
-You can perform the following operation multiple times. The operation consists of two steps:
+You can perform the following operation multiple times. The operation consists of two steps: 
 
-  1. Choose three integers 1 ≤ x < y < z ≤ n, that form an arithmetic progression (y - x = z - y).
-  2. Flip the values a_x, a_y, a_z (i.e. change 1 to 0, change 0 to 1).
+  1. Choose three integers 1 ≤ x < y < z ≤ n, that form an arithmetic progression (y - x = z - y). 
+  2. Flip the values a_x, a_y, a_z (i.e. change 1 to 0, change 0 to 1). 
 
 
 
@@ -58,11 +58,11 @@ NO
 
 Note
 
-In the first sample the shown output corresponds to the following solution:
+In the first sample the shown output corresponds to the following solution: 
 
-  * 1 1 0 1 1 (initial state);
-  * 0 1 1 1 0 (the flipped positions are the first, the third and the fifth elements);
-  * 0 0 0 0 0 (the flipped positions are the second, the third and the fourth elements).
+  * 1 1 0 1 1 (initial state); 
+  * 0 1 1 1 0 (the flipped positions are the first, the third and the fifth elements); 
+  * 0 0 0 0 0 (the flipped positions are the second, the third and the fourth elements). 
 
 
 

@@ -8,7 +8,7 @@
 A company has n employees numbered from 1 to n. Each employee either has no immediate manager or exactly one immediate manager, who is another employee with a different number. An employee A is said to be the superior of another employee B if at least one of the following is true:
 
   * Employee A is the immediate manager of employee B
-  * Employee B has an immediate manager employee C such that employee A is the superior of employee C.
+  * Employee B has an immediate manager employee C such that employee A is the superior of employee C. 
 
 
 
@@ -22,7 +22,7 @@ Input
 
 The first line contains integer n (1 ≤ n ≤ 2000) — the number of employees.
 
-The next n lines contain the integers pi (1 ≤ pi ≤ n or pi = -1). Every pi denotes the immediate manager for the i-th employee. If pi is -1, that means that the i-th employee does not have an immediate manager.
+The next n lines contain the integers pi (1 ≤ pi ≤ n or pi = -1). Every pi denotes the immediate manager for the i-th employee. If pi is -1, that means that the i-th employee does not have an immediate manager. 
 
 It is guaranteed, that no employee will be the immediate manager of him/herself (pi ≠ i). Also, there will be no managerial cycles.
 
@@ -48,11 +48,11 @@ Output
 
 Note
 
-For the first example, three groups are sufficient, for example:
+For the first example, three groups are sufficient, for example: 
 
-  * Employee 1
-  * Employees 2 and 4
-  * Employees 3 and 5
+  * Employee 1 
+  * Employees 2 and 4 
+  * Employees 3 and 5 
 
 ## Categories
 

@@ -96,7 +96,7 @@ In the first example the diameter of the given tree is already less than or equa
 
 In the second example you have to remove the only edge. Otherwise, the diameter will be 1, which is greater than 0.
 
-Here are the trees for the third and the fourth examples:
+Here are the trees for the third and the fourth examples: 
 
 <image>
 

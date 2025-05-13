@@ -7,11 +7,11 @@
 
 You are given a tree consisting of n nodes. You generate an array from the tree by marking nodes one by one.
 
-Initially, when no nodes are marked, a node is equiprobably chosen and marked from the entire tree.
+Initially, when no nodes are marked, a node is equiprobably chosen and marked from the entire tree. 
 
-After that, until all nodes are marked, a node is equiprobably chosen and marked from the set of unmarked nodes with at least one edge to a marked node.
+After that, until all nodes are marked, a node is equiprobably chosen and marked from the set of unmarked nodes with at least one edge to a marked node. 
 
-It can be shown that the process marks all nodes in the tree.
+It can be shown that the process marks all nodes in the tree. 
 
 The final array a is the list of the nodes' labels in order of the time each node was marked.
 
@@ -87,15 +87,15 @@ This is the tree from the first sample:
 
 <image>
 
-For the first sample, the arrays are almost fixed. If node 2 is chosen initially, then the only possible array is [2, 1, 3] (1 inversion). If node 3 is chosen initially, then the only possible array is [3, 1, 2] (2 inversions). If node 1 is chosen initially, the arrays [1, 2, 3] (0 inversions) and [1, 3, 2] (1 inversion) are the only possibilities and equiprobable. In total, the expected number of inversions is 1/3⋅ 1 + 1/3 ⋅ 2 + 1/3 ⋅ (1/2 ⋅ 0 + 1/2 ⋅ 1) = 7/6.
+For the first sample, the arrays are almost fixed. If node 2 is chosen initially, then the only possible array is [2, 1, 3] (1 inversion). If node 3 is chosen initially, then the only possible array is [3, 1, 2] (2 inversions). If node 1 is chosen initially, the arrays [1, 2, 3] (0 inversions) and [1, 3, 2] (1 inversion) are the only possibilities and equiprobable. In total, the expected number of inversions is 1/3⋅ 1 + 1/3 ⋅ 2 + 1/3 ⋅ (1/2 ⋅ 0 + 1/2 ⋅ 1) = 7/6. 
 
 166666669 ⋅ 6 = 7 \pmod {10^9 + 7}, so the answer is 166666669.
 
-This is the tree from the second sample:
+This is the tree from the second sample: 
 
 <image>
 
-This is the tree from the third sample:
+This is the tree from the third sample: 
 
 <image>
 

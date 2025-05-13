@@ -17,9 +17,9 @@ When a bank is hacked, it becomes offline (and no longer online), and other bank
 
 To start his plan, Inzane will choose a bank to hack first. Indeed, the strength of such bank must not exceed the strength of his computer. After this, he will repeatedly choose some bank to hack next until all the banks are hacked, but he can continue to hack bank x if and only if all these conditions are met:
 
-  1. Bank x is online. That is, bank x is not hacked yet.
-  2. Bank x is neighboring to some offline bank.
-  3. The strength of bank x is less than or equal to the strength of Inzane's computer.
+  1. Bank x is online. That is, bank x is not hacked yet. 
+  2. Bank x is neighboring to some offline bank. 
+  3. The strength of bank x is less than or equal to the strength of Inzane's computer. 
 
 
 
@@ -89,12 +89,12 @@ Note
 
 In the first sample, Inzane can hack all banks using a computer with strength 5. Here is how:
 
-  * Initially, strengths of the banks are [1, 2, 3, 4, 5].
-  * He hacks bank 5, then strengths of the banks become [1, 2, 4, 5, - ].
-  * He hacks bank 4, then strengths of the banks become [1, 3, 5, - , - ].
-  * He hacks bank 3, then strengths of the banks become [2, 4, - , - , - ].
-  * He hacks bank 2, then strengths of the banks become [3, - , - , - , - ].
-  * He completes his goal by hacking bank 1.
+  * Initially, strengths of the banks are [1, 2, 3, 4, 5]. 
+  * He hacks bank 5, then strengths of the banks become [1, 2, 4, 5, - ]. 
+  * He hacks bank 4, then strengths of the banks become [1, 3, 5, - , - ]. 
+  * He hacks bank 3, then strengths of the banks become [2, 4, - , - , - ]. 
+  * He hacks bank 2, then strengths of the banks become [3, - , - , - , - ]. 
+  * He completes his goal by hacking bank 1. 
 
 
 

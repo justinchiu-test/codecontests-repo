@@ -7,7 +7,7 @@
 
 Leha decided to move to a quiet town Vičkopolis, because he was tired by living in Bankopolis. Upon arrival he immediately began to expand his network of hacked computers. During the week Leha managed to get access to n computers throughout the town. Incidentally all the computers, which were hacked by Leha, lie on the same straight line, due to the reason that there is the only one straight street in Vičkopolis.
 
-Let's denote the coordinate system on this street. Besides let's number all the hacked computers with integers from 1 to n. So the i-th hacked computer is located at the point xi. Moreover the coordinates of all computers are distinct.
+Let's denote the coordinate system on this street. Besides let's number all the hacked computers with integers from 1 to n. So the i-th hacked computer is located at the point xi. Moreover the coordinates of all computers are distinct. 
 
 Leha is determined to have a little rest after a hard week. Therefore he is going to invite his friend Noora to a restaurant. However the girl agrees to go on a date with the only one condition: Leha have to solve a simple task.
 

@@ -56,11 +56,11 @@ Output
 
 Note
 
-The optimal way in the first example is 2 → 1 → 3.
+The optimal way in the first example is 2 → 1 → 3. 
 
 <image>
 
-The optimal way in the second example is 2 → 4.
+The optimal way in the second example is 2 → 4. 
 
 <image>
 

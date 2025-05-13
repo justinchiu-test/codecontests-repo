@@ -15,7 +15,7 @@ Now the government wonders where to put the police station so that the average n
 
 Input
 
-The first input line contains two integers n and m (2 ≤ n ≤ 100, <image>) — the number of cities and the number of roads in Berland, correspondingly. Next m lines contain pairs of integers vi, ui (1 ≤ vi, ui ≤ n, vi ≠ ui) — the numbers of cities that are connected by the i-th road. The numbers on a line are separated by a space.
+The first input line contains two integers n and m (2 ≤ n ≤ 100, <image>) — the number of cities and the number of roads in Berland, correspondingly. Next m lines contain pairs of integers vi, ui (1 ≤ vi, ui ≤ n, vi ≠ ui) — the numbers of cities that are connected by the i-th road. The numbers on a line are separated by a space. 
 
 It is guaranteed that each pair of cities is connected with no more than one road and that it is possible to get from any city to any other one along Berland roads.
 

@@ -15,3 +15,5 @@ for i in range(n):
     for j in range(arr[i]):
         s += rev(s[-1])*(i+1)
 print(s[1:])
+
+ 				      			 	   			 	  				

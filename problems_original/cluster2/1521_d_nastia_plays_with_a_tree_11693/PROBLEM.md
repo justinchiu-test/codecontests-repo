@@ -9,8 +9,8 @@ Nastia has an unweighted tree with n vertices and wants to play with it!
 
 The girl will perform the following operation with her tree, as long as she needs:
 
-  1. Remove any existing edge.
-  2. Add an edge between any pair of vertices.
+  1. Remove any existing edge. 
+  2. Add an edge between any pair of vertices. 
 
 
 
@@ -65,7 +65,7 @@ Note
 
 Note the graph can be unconnected after a certain operation.
 
-Consider the first test case of the example:
+Consider the first test case of the example: 
 
 <image> The red edges are removed, and the green ones are added.
 

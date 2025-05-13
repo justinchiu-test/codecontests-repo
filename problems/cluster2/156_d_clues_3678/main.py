@@ -36,13 +36,13 @@ def bfs(node):
 				vis[i] = True
 				cola.append(i)
 
-
+            
 if __name__ == '__main__':
     _input = input().split()
     n = int(_input[0])
     m = int(_input[1])
     k = int(_input[2])
-
+    
     adj = []
     vis = []
     acc = []
@@ -58,17 +58,17 @@ if __name__ == '__main__':
         w = int(_in2[1]) - 1
         adj[v].append(w)
         adj[w].append(v)
-
+        
     for i in range(n):
         if not vis[i]:
             # dfs(i, cc)
             ittDfs(i)
             cc+=1
-
+    
     if cc == 1:
         print(1 % k)
         exit()
-
+        
     ans = 1
     for i in range(cc - 2):
         ans = ans * n
@@ -77,3 +77,4 @@ if __name__ == '__main__':
         ans = ans * acc[i]
         ans = ans % k
     print(ans)
+        

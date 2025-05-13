@@ -48,7 +48,7 @@ Input
 Output
 
 
-1 0 0 1 1
+1 0 0 1 1 
 
 Note
 
@@ -58,13 +58,13 @@ Root node 1
 
 Alice always wins in this case. One possible gameplay between Alice and Bob is:
 
-  * Alice moves one present from node 4 to node 3.
-  * Bob moves four presents from node 5 to node 2.
-  * Alice moves four presents from node 2 to node 1.
-  * Bob moves three presents from node 2 to node 1.
-  * Alice moves three presents from node 3 to node 1.
-  * Bob moves three presents from node 4 to node 3.
-  * Alice moves three presents from node 3 to node 1.
+  * Alice moves one present from node 4 to node 3. 
+  * Bob moves four presents from node 5 to node 2. 
+  * Alice moves four presents from node 2 to node 1. 
+  * Bob moves three presents from node 2 to node 1. 
+  * Alice moves three presents from node 3 to node 1. 
+  * Bob moves three presents from node 4 to node 3. 
+  * Alice moves three presents from node 3 to node 1. 
 
 
 
@@ -74,10 +74,10 @@ Root node 2
 
 Bob always wins in this case. One such gameplay is:
 
-  * Alice moves four presents from node 4 to node 3.
-  * Bob moves four presents from node 5 to node 2.
-  * Alice moves six presents from node 3 to node 1.
-  * Bob moves six presents from node 1 to node 2.
+  * Alice moves four presents from node 4 to node 3. 
+  * Bob moves four presents from node 5 to node 2. 
+  * Alice moves six presents from node 3 to node 1. 
+  * Bob moves six presents from node 1 to node 2. 
 
 
 

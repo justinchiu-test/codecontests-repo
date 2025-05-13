@@ -15,7 +15,7 @@ Hongcow wants to add as many edges as possible to the graph while keeping it sta
 
 Input
 
-The first line of input will contain three integers n, m and k (1 ≤ n ≤ 1 000, 0 ≤ m ≤ 100 000, 1 ≤ k ≤ n) — the number of vertices and edges in the graph, and the number of vertices that are homes of the government.
+The first line of input will contain three integers n, m and k (1 ≤ n ≤ 1 000, 0 ≤ m ≤ 100 000, 1 ≤ k ≤ n) — the number of vertices and edges in the graph, and the number of vertices that are homes of the government. 
 
 The next line of input will contain k integers c1, c2, ..., ck (1 ≤ ci ≤ n). These integers will be pairwise distinct and denote the nodes that are home to the governments in this world.
 
@@ -56,11 +56,11 @@ Output
 
 Note
 
-For the first sample test, the graph looks like this:
+For the first sample test, the graph looks like this: 
 
 <image> Vertices 1 and 3 are special. The optimal solution is to connect vertex 4 to vertices 1 and 2. This adds a total of 2 edges. We cannot add any more edges, since vertices 1 and 3 cannot have any path between them.
 
-For the second sample test, the graph looks like this:
+For the second sample test, the graph looks like this: 
 
 <image> We cannot add any more edges to this graph. Note that we are not allowed to add self-loops, and the graph must be simple.
 

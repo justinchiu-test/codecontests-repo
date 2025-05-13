@@ -15,7 +15,7 @@ Input
 
 The first line contains four integers n, a, b and k (1 ≤ n ≤ 10^{9}, 1 ≤ a, b ≤ 10^{9}, 1 ≤ k ≤ 10^{5}).
 
-The second line contains a sequence of length k consisting of characters '+' and '-'.
+The second line contains a sequence of length k consisting of characters '+' and '-'. 
 
 If the i-th character (0-indexed) is '+', then s_{i} = 1, otherwise s_{i} = -1.
 

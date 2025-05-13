@@ -162,3 +162,6 @@ for i in range(n+1):
     fin+=i^ans[i]
 print(fin)
 print(*ans)
+
+
+

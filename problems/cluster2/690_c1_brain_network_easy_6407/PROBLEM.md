@@ -5,10 +5,10 @@
 
 ## Description
 
-One particularly well-known fact about zombies is that they move and think terribly slowly. While we still don't know why their movements are so sluggish, the problem of laggy thinking has been recently resolved. It turns out that the reason is not (as previously suspected) any kind of brain defect – it's the opposite! Independent researchers confirmed that the nervous system of a zombie is highly complicated – it consists of n brains (much like a cow has several stomachs). They are interconnected by brain connectors, which are veins capable of transmitting thoughts between brains. There are two important properties such a brain network should have to function properly:
+One particularly well-known fact about zombies is that they move and think terribly slowly. While we still don't know why their movements are so sluggish, the problem of laggy thinking has been recently resolved. It turns out that the reason is not (as previously suspected) any kind of brain defect – it's the opposite! Independent researchers confirmed that the nervous system of a zombie is highly complicated – it consists of n brains (much like a cow has several stomachs). They are interconnected by brain connectors, which are veins capable of transmitting thoughts between brains. There are two important properties such a brain network should have to function properly: 
 
-  1. It should be possible to exchange thoughts between any two pairs of brains (perhaps indirectly, through other brains).
-  2. There should be no redundant brain connectors, that is, removing any brain connector would make property 1 false.
+  1. It should be possible to exchange thoughts between any two pairs of brains (perhaps indirectly, through other brains). 
+  2. There should be no redundant brain connectors, that is, removing any brain connector would make property 1 false. 
 
 
 

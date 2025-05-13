@@ -7,9 +7,9 @@
 
 You are given a tree consisting of n nodes. You want to write some labels on the tree's edges such that the following conditions hold:
 
-  * Every label is an integer between 0 and n-2 inclusive.
-  * All the written labels are distinct.
-  * The largest value among MEX(u,v) over all pairs of nodes (u,v) is as small as possible.
+  * Every label is an integer between 0 and n-2 inclusive. 
+  * All the written labels are distinct. 
+  * The largest value among MEX(u,v) over all pairs of nodes (u,v) is as small as possible. 
 
 
 

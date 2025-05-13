@@ -9,7 +9,7 @@ for i in range(len(a)):
     dp.append([0]*10)
 for i in range(10):
     dp[0][i]=1
-
+    
 for i in range(len(a)-1):
     for j in range(10):
         if dp[i][j]!=0:

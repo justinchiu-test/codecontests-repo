@@ -39,3 +39,6 @@ for t in range(tests):
         if dist[0][i]+dist[1][i]+dist[2][i] > m: continue
         min_sum = min(min_sum, partial_sums[dist[1][i]] + partial_sums[dist[0][i]+dist[1][i]+dist[2][i]])
     print(min_sum)
+
+
+

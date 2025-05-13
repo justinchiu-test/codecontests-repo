@@ -7,20 +7,20 @@
 
 A sequence of non-negative integers a_1, a_2, ..., a_n is called growing if for all i from 1 to n - 1 all ones (of binary representation) in a_i are in the places of ones (of binary representation) in a_{i + 1} (in other words, a_i \:\&\: a_{i + 1} = a_i, where \& denotes [bitwise AND](http://tiny.cc/xpy9uz)). If n = 1 then the sequence is considered growing as well.
 
-For example, the following four sequences are growing:
+For example, the following four sequences are growing: 
 
-  * [2, 3, 15, 175] — in binary it's [10_2, 11_2, 1111_2, 10101111_2];
-  * [5] — in binary it's [101_2];
-  * [1, 3, 7, 15] — in binary it's [1_2, 11_2, 111_2, 1111_2];
-  * [0, 0, 0] — in binary it's [0_2, 0_2, 0_2].
+  * [2, 3, 15, 175] — in binary it's [10_2, 11_2, 1111_2, 10101111_2]; 
+  * [5] — in binary it's [101_2]; 
+  * [1, 3, 7, 15] — in binary it's [1_2, 11_2, 111_2, 1111_2]; 
+  * [0, 0, 0] — in binary it's [0_2, 0_2, 0_2]. 
 
 
 
-The following three sequences are non-growing:
+The following three sequences are non-growing: 
 
-  * [3, 4, 5] — in binary it's [11_2, 100_2, 101_2];
-  * [5, 4, 3] — in binary it's [101_2, 100_2, 011_2];
-  * [1, 2, 4, 8] — in binary it's [0001_2, 0010_2, 0100_2, 1000_2].
+  * [3, 4, 5] — in binary it's [11_2, 100_2, 101_2]; 
+  * [5, 4, 3] — in binary it's [101_2, 100_2, 011_2]; 
+  * [1, 2, 4, 8] — in binary it's [0001_2, 0010_2, 0100_2, 1000_2]. 
 
 
 
@@ -65,11 +65,11 @@ Input
 Output
 
 
-0 0 0 0
-0 1 3 7
-0 1 0 3 2
-0 2 0 14
-0
+0 0 0 0 
+0 1 3 7 
+0 1 0 3 2 
+0 2 0 14 
+0 
 
 ## Categories
 

@@ -17,8 +17,8 @@ The truth is, these k pairs of people are actually soulmates. We index them from
 
 As we have said before, you will need to assign each of the 2k people into one of the 2k houses. You have two missions, one from the entities in The Good Place and one from the entities of The Bad Place. Here they are:
 
-  * The first mission, from The Good Place, is to assign the people into the houses such that the sum of f(i) over all pairs i is minimized. Let's define this minimized sum as G. This makes sure that soulmates can easily and efficiently visit each other;
-  * The second mission, from The Bad Place, is to assign the people into the houses such that the sum of f(i) over all pairs i is maximized. Let's define this maximized sum as B. This makes sure that soulmates will have a difficult time to visit each other.
+  * The first mission, from The Good Place, is to assign the people into the houses such that the sum of f(i) over all pairs i is minimized. Let's define this minimized sum as G. This makes sure that soulmates can easily and efficiently visit each other; 
+  * The second mission, from The Bad Place, is to assign the people into the houses such that the sum of f(i) over all pairs i is maximized. Let's define this maximized sum as B. This makes sure that soulmates will have a difficult time to visit each other. 
 
 
 
@@ -34,7 +34,7 @@ It is guaranteed that the sum of the k in a single file is at most 3 ⋅ 10^5.
 
 Output
 
-For each test case, output a single line containing two space-separated integers G and B.
+For each test case, output a single line containing two space-separated integers G and B. 
 
 Example
 
@@ -64,23 +64,23 @@ Note
 
 For the sample test case, we have a minimum sum equal to G = 15. One way this can be achieved is with the following assignment:
 
-  * The first pair of people get assigned to houses 5 and 6, giving us f(1) = 5;
-  * The second pair of people get assigned to houses 1 and 4, giving us f(2) = 6;
-  * The third pair of people get assigned to houses 3 and 2, giving us f(3) = 4.
+  * The first pair of people get assigned to houses 5 and 6, giving us f(1) = 5; 
+  * The second pair of people get assigned to houses 1 and 4, giving us f(2) = 6; 
+  * The third pair of people get assigned to houses 3 and 2, giving us f(3) = 4. 
 
 
 
-Note that the sum of the f(i) is 5 + 6 + 4 = 15.
+Note that the sum of the f(i) is 5 + 6 + 4 = 15. 
 
 We also have a maximum sum equal to B = 33. One way this can be achieved is with the following assignment:
 
-  * The first pair of people get assigned to houses 1 and 4, giving us f(1) = 6;
-  * The second pair of people get assigned to houses 6 and 2, giving us f(2) = 14;
-  * The third pair of people get assigned to houses 3 and 5, giving us f(3) = 13.
+  * The first pair of people get assigned to houses 1 and 4, giving us f(1) = 6; 
+  * The second pair of people get assigned to houses 6 and 2, giving us f(2) = 14; 
+  * The third pair of people get assigned to houses 3 and 5, giving us f(3) = 13. 
 
 
 
-Note that the sum of the f(i) is 6 + 14 + 13 = 33.
+Note that the sum of the f(i) is 6 + 14 + 13 = 33. 
 
 ## Categories
 

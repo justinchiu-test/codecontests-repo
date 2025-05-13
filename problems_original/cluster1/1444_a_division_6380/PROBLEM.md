@@ -7,10 +7,10 @@
 
 Oleg's favorite subjects are History and Math, and his favorite branch of mathematics is division.
 
-To improve his division skills, Oleg came up with t pairs of integers p_i and q_i and for each pair decided to find the greatest integer x_i, such that:
+To improve his division skills, Oleg came up with t pairs of integers p_i and q_i and for each pair decided to find the greatest integer x_i, such that: 
 
-  * p_i is divisible by x_i;
-  * x_i is not divisible by q_i.
+  * p_i is divisible by x_i; 
+  * x_i is not divisible by q_i. 
 
 Oleg is really good at division and managed to find all the answers quickly, how about you?
 
@@ -48,10 +48,10 @@ Note
 
 For the first pair, where p_1 = 10 and q_1 = 4, the answer is x_1 = 10, since it is the greatest divisor of 10 and 10 is not divisible by 4.
 
-For the second pair, where p_2 = 12 and q_2 = 6, note that
+For the second pair, where p_2 = 12 and q_2 = 6, note that 
 
-  * 12 is not a valid x_2, since 12 is divisible by q_2 = 6;
-  * 6 is not valid x_2 as well: 6 is also divisible by q_2 = 6.
+  * 12 is not a valid x_2, since 12 is divisible by q_2 = 6; 
+  * 6 is not valid x_2 as well: 6 is also divisible by q_2 = 6. 
 
 The next available divisor of p_2 = 12 is 4, which is the answer, since 4 is not divisible by 6.
 

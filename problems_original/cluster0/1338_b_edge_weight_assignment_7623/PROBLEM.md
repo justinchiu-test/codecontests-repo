@@ -7,7 +7,7 @@
 
 You have unweighted tree of n vertices. You have to assign a positive weight to each edge so that the following condition would hold:
 
-  * For every two different leaves v_{1} and v_{2} of this tree, [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of weights of all edges on the simple path between v_{1} and v_{2} has to be equal to 0.
+  * For every two different leaves v_{1} and v_{2} of this tree, [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR) of weights of all edges on the simple path between v_{1} and v_{2} has to be equal to 0. 
 
 
 
@@ -17,7 +17,7 @@ It's guaranteed that such assignment always exists under given constraints. Now 
 
 <image> In this example, assignment is valid, because bitwise XOR of all edge weights between every pair of leaves is 0. f value is 2 here, because there are 2 distinct edge weights(4 and 5).
 
-<image> In this example, assignment is invalid, because bitwise XOR of all edge weights between vertex 1 and vertex 6 (3, 4, 5, 4) is not 0.
+<image> In this example, assignment is invalid, because bitwise XOR of all edge weights between vertex 1 and vertex 6 (3, 4, 5, 4) is not 0. 
 
 What are the minimum and the maximum possible values of f for the given tree? Find and print both.
 
@@ -86,15 +86,15 @@ Output
 
 Note
 
-In the first example, possible assignments for each minimum and maximum are described in picture below. Of course, there are multiple possible assignments for each minimum and maximum.
+In the first example, possible assignments for each minimum and maximum are described in picture below. Of course, there are multiple possible assignments for each minimum and maximum. 
 
 <image>
 
-In the second example, possible assignments for each minimum and maximum are described in picture below. The f value of valid assignment of this tree is always 3.
+In the second example, possible assignments for each minimum and maximum are described in picture below. The f value of valid assignment of this tree is always 3. 
 
 <image>
 
-In the third example, possible assignments for each minimum and maximum are described in picture below. Of course, there are multiple possible assignments for each minimum and maximum.
+In the third example, possible assignments for each minimum and maximum are described in picture below. Of course, there are multiple possible assignments for each minimum and maximum. 
 
 <image>
 

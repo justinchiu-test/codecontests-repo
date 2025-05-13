@@ -11,10 +11,10 @@ Polycarp wants to choose one type of packages and then buy several (one or more)
 
 For example, if n=8 and k=7, then Polycarp will buy 2 packages of 4 shovels.
 
-Help Polycarp find the minimum number of packages that he needs to buy, given that he:
+Help Polycarp find the minimum number of packages that he needs to buy, given that he: 
 
-  * will buy exactly n shovels in total;
-  * the sizes of all packages he will buy are all the same and the number of shovels in each package is an integer from 1 to k, inclusive.
+  * will buy exactly n shovels in total; 
+  * the sizes of all packages he will buy are all the same and the number of shovels in each package is an integer from 1 to k, inclusive. 
 
 Input
 

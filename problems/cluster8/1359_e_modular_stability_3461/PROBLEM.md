@@ -9,7 +9,7 @@ We define x mod y as the remainder of division of x by y (\% operator in C++ or 
 
 Let's call an array of positive integers [a_1, a_2, ..., a_k] stable if for every permutation p of integers from 1 to k, and for every non-negative integer x, the following condition is met:
 
- (((x mod a_1) mod a_2) ... mod a_{k - 1}) mod a_k = (((x mod a_{p_1}) mod a_{p_2}) ... mod a_{p_{k - 1}}) mod a_{p_k}
+ (((x mod a_1) mod a_2) ... mod a_{k - 1}) mod a_k = (((x mod a_{p_1}) mod a_{p_2}) ... mod a_{p_{k - 1}}) mod a_{p_k}  
 
 That is, for each non-negative integer x, the value of (((x mod a_1) mod a_2) ... mod a_{k - 1}) mod a_k does not change if we reorder the elements of the array a.
 

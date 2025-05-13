@@ -25,9 +25,9 @@ for i in range(1, MAX_N):
         for k in range(0, min(studc, i * arr[j]) + 1):
             for l in range(0, studc - k + 1):
                 dp[j + 1][k + l] += dp[j][l] * ncr[studc - l][k]
-
+    
     upto[i] = dp[roomc][studc]
-
+    
 ans = 0;
 for i in range(1, MAX_N):
     ans += (upto[i] - upto[i - 1]) * i

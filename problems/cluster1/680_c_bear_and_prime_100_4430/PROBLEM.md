@@ -31,13 +31,13 @@ Up to 20 times you can ask a query — print an integer from interval [2, 100] i
 
 In any moment you can print the answer "prime" or "composite" (without the quotes). After that, flush the output and terminate your program.
 
-To flush you can use (just after printing an integer and end-of-line):
+To flush you can use (just after printing an integer and end-of-line): 
 
-  * fflush(stdout) in C++;
-  * System.out.flush() in Java;
-  * stdout.flush() in Python;
-  * flush(output) in Pascal;
-  * See the documentation for other languages.
+  * fflush(stdout) in C++; 
+  * System.out.flush() in Java; 
+  * stdout.flush() in Python; 
+  * flush(output) in Pascal; 
+  * See the documentation for other languages. 
 
 
 

@@ -5,7 +5,7 @@ def fun(a,b):
         return -1
     temp = 0
     m = a/b
-
+    
     while m % 2 == 0:
         m = m / 2
         temp += 1

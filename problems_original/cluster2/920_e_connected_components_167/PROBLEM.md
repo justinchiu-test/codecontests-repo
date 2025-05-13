@@ -13,7 +13,7 @@ Input
 
 The first line contains two integers n and m (1 ≤ n ≤ 200000, <image>).
 
-Then m lines follow, each containing a pair of integers x and y (1 ≤ x, y ≤ n, x ≠ y) denoting that there is no edge between x and y. Each pair is listed at most once; (x, y) and (y, x) are considered the same (so they are never listed in the same test). If some pair of vertices is not listed in the input, then there exists an edge between those vertices.
+Then m lines follow, each containing a pair of integers x and y (1 ≤ x, y ≤ n, x ≠ y) denoting that there is no edge between x and y. Each pair is listed at most once; (x, y) and (y, x) are considered the same (so they are never listed in the same test). If some pair of vertices is not listed in the input, then there exists an edge between those vertices. 
 
 Output
 
@@ -36,7 +36,7 @@ Input
 Output
 
 2
-1 4
+1 4 
 
 ## Categories
 

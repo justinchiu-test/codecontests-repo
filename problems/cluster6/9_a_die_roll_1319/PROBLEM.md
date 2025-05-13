@@ -19,7 +19,7 @@ The only line of the input file contains two natural numbers Y and W — the res
 
 Output
 
-Output the required probability in the form of irreducible fraction in format «A/B», where A — the numerator, and B — the denominator. If the required probability equals to zero, output «0/1». If the required probability equals to 1, output «1/1».
+Output the required probability in the form of irreducible fraction in format «A/B», where A — the numerator, and B — the denominator. If the required probability equals to zero, output «0/1». If the required probability equals to 1, output «1/1». 
 
 Examples
 

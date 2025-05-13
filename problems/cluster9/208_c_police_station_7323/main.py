@@ -77,3 +77,5 @@ for policeStation in range(2,n):
     safe=fo(policeStation)*tN(policeStation)*2
     best=max(best,safe)
 print(round(best/fo(n),10))
+
+					 	  				 		  		 	 	 				

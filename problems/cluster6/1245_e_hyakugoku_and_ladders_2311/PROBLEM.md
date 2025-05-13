@@ -5,26 +5,26 @@
 
 ## Description
 
-Hyakugoku has just retired from being the resident deity of the South Black Snail Temple in order to pursue her dream of becoming a cartoonist. She spent six months in that temple just playing "Cat's Cradle" so now she wants to try a different game — "Snakes and Ladders". Unfortunately, she already killed all the snakes, so there are only ladders left now.
+Hyakugoku has just retired from being the resident deity of the South Black Snail Temple in order to pursue her dream of becoming a cartoonist. She spent six months in that temple just playing "Cat's Cradle" so now she wants to try a different game — "Snakes and Ladders". Unfortunately, she already killed all the snakes, so there are only ladders left now. 
 
 The game is played on a 10 × 10 board as follows:
 
-  * At the beginning of the game, the player is at the bottom left square.
-  * The objective of the game is for the player to reach the Goal (the top left square) by following the path and climbing vertical ladders. Once the player reaches the Goal, the game ends.
-  * The path is as follows: if a square is not the end of its row, it leads to the square next to it along the direction of its row; if a square is the end of its row, it leads to the square above it. The direction of a row is determined as follows: the direction of the bottom row is to the right; the direction of any other row is opposite the direction of the row below it. See Notes section for visualization of path.
-  * During each turn, the player rolls a standard six-sided dice. Suppose that the number shown on the dice is r. If the Goal is less than r squares away on the path, the player doesn't move (but the turn is performed). Otherwise, the player advances exactly r squares along the path and then stops. If the player stops on a square with the bottom of a ladder, the player chooses whether or not to climb up that ladder. If she chooses not to climb, then she stays in that square for the beginning of the next turn.
-  * Some squares have a ladder in them. Ladders are only placed vertically — each one leads to the same square of some of the upper rows. In order for the player to climb up a ladder, after rolling the dice, she must stop at the square containing the bottom of the ladder. After using the ladder, the player will end up in the square containing the top of the ladder. She cannot leave the ladder in the middle of climbing. And if the square containing the top of the ladder also contains the bottom of another ladder, she is not allowed to use that second ladder.
-  * The numbers on the faces of the dice are 1, 2, 3, 4, 5, and 6, with each number having the same probability of being shown.
+  * At the beginning of the game, the player is at the bottom left square. 
+  * The objective of the game is for the player to reach the Goal (the top left square) by following the path and climbing vertical ladders. Once the player reaches the Goal, the game ends. 
+  * The path is as follows: if a square is not the end of its row, it leads to the square next to it along the direction of its row; if a square is the end of its row, it leads to the square above it. The direction of a row is determined as follows: the direction of the bottom row is to the right; the direction of any other row is opposite the direction of the row below it. See Notes section for visualization of path. 
+  * During each turn, the player rolls a standard six-sided dice. Suppose that the number shown on the dice is r. If the Goal is less than r squares away on the path, the player doesn't move (but the turn is performed). Otherwise, the player advances exactly r squares along the path and then stops. If the player stops on a square with the bottom of a ladder, the player chooses whether or not to climb up that ladder. If she chooses not to climb, then she stays in that square for the beginning of the next turn. 
+  * Some squares have a ladder in them. Ladders are only placed vertically — each one leads to the same square of some of the upper rows. In order for the player to climb up a ladder, after rolling the dice, she must stop at the square containing the bottom of the ladder. After using the ladder, the player will end up in the square containing the top of the ladder. She cannot leave the ladder in the middle of climbing. And if the square containing the top of the ladder also contains the bottom of another ladder, she is not allowed to use that second ladder. 
+  * The numbers on the faces of the dice are 1, 2, 3, 4, 5, and 6, with each number having the same probability of being shown. 
 
 
 
-Please note that:
+Please note that: 
 
-  * it is possible for ladders to overlap, but the player cannot switch to the other ladder while in the middle of climbing the first one;
-  * it is possible for ladders to go straight to the top row, but not any higher;
-  * it is possible for two ladders to lead to the same tile;
-  * it is possible for a ladder to lead to a tile that also has a ladder, but the player will not be able to use that second ladder if she uses the first one;
-  * the player can only climb up ladders, not climb down.
+  * it is possible for ladders to overlap, but the player cannot switch to the other ladder while in the middle of climbing the first one; 
+  * it is possible for ladders to go straight to the top row, but not any higher; 
+  * it is possible for two ladders to lead to the same tile; 
+  * it is possible for a ladder to lead to a tile that also has a ladder, but the player will not be able to use that second ladder if she uses the first one; 
+  * the player can only climb up ladders, not climb down. 
 
 
 

@@ -22,3 +22,4 @@ else:
     if flag:
         res=0
     print(res)
+    

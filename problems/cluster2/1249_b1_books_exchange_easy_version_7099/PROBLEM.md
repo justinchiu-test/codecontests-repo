@@ -15,10 +15,10 @@ Your task is to determine the number of the day the book of the i-th child is re
 
 Consider the following example: p = [5, 1, 2, 4, 3]. The book of the 1-st kid will be passed to the following kids:
 
-  * after the 1-st day it will belong to the 5-th kid,
-  * after the 2-nd day it will belong to the 3-rd kid,
-  * after the 3-rd day it will belong to the 2-nd kid,
-  * after the 4-th day it will belong to the 1-st kid.
+  * after the 1-st day it will belong to the 5-th kid, 
+  * after the 2-nd day it will belong to the 3-rd kid, 
+  * after the 3-rd day it will belong to the 2-nd kid, 
+  * after the 4-th day it will belong to the 1-st kid. 
 
 
 
@@ -59,12 +59,12 @@ Input
 Output
 
 
-1 1 1 1 1
-3 3 3
-2 3 3 2 1 3
-1
-2 2 2 2
-4 4 4 1 4
+1 1 1 1 1 
+3 3 3 
+2 3 3 2 1 3 
+1 
+2 2 2 2 
+4 4 4 1 4 
 
 ## Categories
 

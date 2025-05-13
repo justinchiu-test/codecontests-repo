@@ -17,7 +17,7 @@ Let's represent each of these network topologies as a connected non-directed gra
 
 <image> (1) — bus, (2) — ring, (3) — star
 
-You've got a connected non-directed graph that characterizes the computer network in Polycarpus' corporation. Help him find out, which topology type the given network is. If that is impossible to do, say that the network's topology is unknown.
+You've got a connected non-directed graph that characterizes the computer network in Polycarpus' corporation. Help him find out, which topology type the given network is. If that is impossible to do, say that the network's topology is unknown. 
 
 Input
 

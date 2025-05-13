@@ -55,11 +55,11 @@ Output
 
 Note
 
-For the first sample, one of the optimal ways to construct pipes is shown in the image below:
+For the first sample, one of the optimal ways to construct pipes is shown in the image below: 
 
 <image>
 
-For the second sample, one of the optimal ways is shown below:
+For the second sample, one of the optimal ways is shown below: 
 
 <image>
 

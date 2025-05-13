@@ -15,8 +15,8 @@ Boboniu likes to walk on the graph with some specific rules, which is represente
 
 Now Boboniu asks you to calculate the number of tuples (c_1,c_2,…,c_k) such that
 
-  * 1≤ c_i≤ i for all i (1≤ i≤ k).
-  * Starting from any vertex u, it is possible to go back to u in finite time by walking on the graph under the described rules.
+  * 1≤ c_i≤ i for all i (1≤ i≤ k). 
+  * Starting from any vertex u, it is possible to go back to u in finite time by walking on the graph under the described rules. 
 
 Input
 

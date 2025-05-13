@@ -78,13 +78,13 @@ Output
 
 Note
 
-Let's consider the first sample.
+Let's consider the first sample. 
 
-<image> The figure above shows the first sample.
+<image> The figure above shows the first sample. 
 
-  * Vertex 1 and vertex 2 are connected by color 1 and 2.
-  * Vertex 3 and vertex 4 are connected by color 3.
-  * Vertex 1 and vertex 4 are not connected by any single color.
+  * Vertex 1 and vertex 2 are connected by color 1 and 2. 
+  * Vertex 3 and vertex 4 are connected by color 3. 
+  * Vertex 1 and vertex 4 are not connected by any single color. 
 
 ## Categories
 

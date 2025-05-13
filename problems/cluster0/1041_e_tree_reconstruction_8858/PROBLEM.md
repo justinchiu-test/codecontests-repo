@@ -66,7 +66,7 @@ NO
 
 Note
 
-Possible tree from the first example. Dotted lines show edges you need to remove to get appropriate pairs.
+Possible tree from the first example. Dotted lines show edges you need to remove to get appropriate pairs. 
 
 <image>
 

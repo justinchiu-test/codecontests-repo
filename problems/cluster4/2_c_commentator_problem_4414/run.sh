@@ -7,7 +7,7 @@ CLUSTER_DIR="$(cd "$PROBLEM_DIR/.." && pwd)"
 
 # Import paths - include both repo root and cluster directory
 # This allows importing from problems/cluster{i}/library.py with: from library import *
-export PYTHONPATH="$$CLUSTER_DIR:$PYTHONPATH"
+export PYTHONPATH="$CLUSTER_DIR:$PYTHONPATH"
 
 # Default to main.py if no specific file is provided
 SOLUTION_FILE=${1:-"$PROBLEM_DIR/main.py"}

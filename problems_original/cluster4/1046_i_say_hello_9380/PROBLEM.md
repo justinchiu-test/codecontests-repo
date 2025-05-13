@@ -5,10 +5,10 @@
 
 ## Description
 
-Two friends are travelling through Bubble galaxy. They say "Hello!" via signals to each other if their distance is smaller or equal than d_1 and
+Two friends are travelling through Bubble galaxy. They say "Hello!" via signals to each other if their distance is smaller or equal than d_1 and 
 
-  * it's the first time they speak to each other or
-  * at some point in time after their last talk their distance was greater than d_2.
+  * it's the first time they speak to each other or 
+  * at some point in time after their last talk their distance was greater than d_2. 
 
 
 
@@ -18,7 +18,7 @@ Input
 
 The first line contains one integer number N (2 ≤ N ≤ 100 000) representing number of moments in which we captured positions for two friends.
 
-The second line contains two integer numbers d_1 and d_2 \ (0 < d_1 < d_2 < 1000).
+The second line contains two integer numbers d_1 and d_2 \ (0 < d_1 < d_2 < 1000). 
 
 The next N lines contains four integer numbers A_x,A_y,B_x,B_y (0 ≤ A_x, A_y, B_x, B_y ≤ 1000) representing coordinates of friends A and B in each captured moment.
 
@@ -44,7 +44,7 @@ Output
 
 Note
 
-<image> Explanation: Friends should send signals 2 times to each other, first time around point A2 and B2 and second time during A's travel from point A3 to A4 while B stays in point B3=B4.
+<image> Explanation: Friends should send signals 2 times to each other, first time around point A2 and B2 and second time during A's travel from point A3 to A4 while B stays in point B3=B4. 
 
 ## Categories
 

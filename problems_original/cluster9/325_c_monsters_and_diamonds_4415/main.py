@@ -77,7 +77,7 @@ def dijkstra(reglas, s, m, perteneceA):
     d = []
     Q, visto = [], []
     k, sumaMin = [0] * m, []
-
+            
     for u in range(n):
         d.append(_OO)
         visto.append(False)

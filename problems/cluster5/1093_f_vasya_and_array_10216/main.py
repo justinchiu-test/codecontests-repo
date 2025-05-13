@@ -11,7 +11,7 @@ def vasya_and_array():
     sumdp = [0 for _ in range(n+1)]
     sumdp[0]=1
     count = [0 for _ in range(k+1)]
-
+    
     for i in range(1,n+1):
         for j in range(1,k+1):
             if(a[i]==-1 or a[i]==j):
@@ -24,7 +24,7 @@ def vasya_and_array():
                 sumdp[i]%=mod
             else:
                 count[j]=0
-
+        
     return (sumdp[n])
-
-print(vasya_and_array())
+    
+print(vasya_and_array()) 

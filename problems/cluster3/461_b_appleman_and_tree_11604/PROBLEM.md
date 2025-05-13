@@ -13,7 +13,7 @@ Now Appleman wonders, what is the number of sets splitting the tree in such a wa
 
 Input
 
-The first line contains an integer n (2 ≤ n ≤ 105) — the number of tree vertices.
+The first line contains an integer n (2 ≤ n ≤ 105) — the number of tree vertices. 
 
 The second line contains the description of the tree: n - 1 integers p0, p1, ..., pn - 2 (0 ≤ pi ≤ i). Where pi means that there is an edge connecting vertex (i + 1) of the tree and vertex pi. Consider tree vertices are numbered from 0 to n - 1.
 

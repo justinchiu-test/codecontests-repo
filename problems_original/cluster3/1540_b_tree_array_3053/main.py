@@ -50,11 +50,11 @@ for i0 in range(N):
                 X[a].remove(i)
                 deque.append(Q, a)
                 D[a] = D[i] + 1
-
+    
     size = [1] * N
     for j in R[1:][::-1]:
         size[P[j]] += size[j]
-
+    
     for j in R:
         if j <= i0: continue
         d = D[j]
@@ -67,3 +67,4 @@ for i0 in range(N):
             k = p
 
 print(ans)
+

@@ -9,7 +9,7 @@ Vanya got bored and he painted n distinct points on the plane. After that he con
 
 Input
 
-The first line contains integer n (1 ≤ n ≤ 2000) — the number of the points painted on the plane.
+The first line contains integer n (1 ≤ n ≤ 2000) — the number of the points painted on the plane. 
 
 Next n lines contain two integers each xi, yi ( - 100 ≤ xi, yi ≤ 100) — the coordinates of the i-th point. It is guaranteed that no two given points coincide.
 

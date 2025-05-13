@@ -20,13 +20,13 @@ for u, v in edges:
 
 res = top + 2
 for i in range(n):
-    if top_cnt[i] < c[top]:
+    if top_cnt[i] < c[top]: 
         continue
     if top_cnt[i] == 1 and arr[i] == top:
-        curr = top
-    else:
-        curr = top+1
-    if sec_cnt[i] < c[sec]:
+        curr = top  
+    else: 
+        curr = top+1 
+    if sec_cnt[i] < c[sec]: 
         curr = max(curr, sec+2)
     res = min(res, curr)
 print(res)

@@ -21,7 +21,7 @@ The only line for each test case contains two integers n and k (2 ≤ k ≤ n �
 
 Output
 
-For each test case print the answer, modulo 10^9+7.
+For each test case print the answer, modulo 10^9+7. 
 
 Formally, let M = 10^9+7. It can be shown that the answer can be expressed as an irreducible fraction p/q, where p and q are integers and q not ≡ 0 \pmod{M}. Output the integer equal to p ⋅ q^{-1} mod M. In other words, output such an integer x that 0 ≤ x < M and x ⋅ q ≡ p \pmod{M}.
 
@@ -49,16 +49,16 @@ Explanation of the first sample test case:
 
 Let's write out all possible sequences of light toggles, which will make the device complete its operation:
 
-  1. (1, 2) — 2 lights are turned on
-  2. (1, 3, 2) — 3 lights are turned on
-  3. (2, 1) — 2 lights are turned on
-  4. (2, 3) — 2 lights are turned on
-  5. (3, 2) — 2 lights are turned on
-  6. (3, 1, 2) — 3 lights are turned on
+  1. (1, 2) — 2 lights are turned on 
+  2. (1, 3, 2) — 3 lights are turned on 
+  3. (2, 1) — 2 lights are turned on 
+  4. (2, 3) — 2 lights are turned on 
+  5. (3, 2) — 2 lights are turned on 
+  6. (3, 1, 2) — 3 lights are turned on 
 
 
 
-Then the final expected value will be equal to 2/6 + 3/6 + 2/6 + 2/6 + 2/6 + 3/6 = 14/6 = 7/3.
+Then the final expected value will be equal to 2/6 + 3/6 + 2/6 + 2/6 + 2/6 + 3/6 = 14/6 = 7/3. 
 
 Then the required output will be 333333338, since 333333338 ⋅ 3 ≡ 7 \pmod{10^9+7}.
 

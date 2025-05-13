@@ -34,7 +34,7 @@ Input
 Output
 
 
-0 98 49 25 114
+0 98 49 25 114 
 
 Input
 
@@ -47,7 +47,7 @@ Input
 Output
 
 
-0 -1 9
+0 -1 9 
 
 Note
 

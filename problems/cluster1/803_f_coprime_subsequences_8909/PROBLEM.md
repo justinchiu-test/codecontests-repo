@@ -57,7 +57,7 @@ Output
 
 Note
 
-In the first example coprime subsequences are:
+In the first example coprime subsequences are: 
 
   1. 1
   2. 1, 2

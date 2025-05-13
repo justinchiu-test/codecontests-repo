@@ -25,3 +25,4 @@ for i in range(m - 1):
 for i in a[1:]:
     print(i, end = " ")
     print(st)
+

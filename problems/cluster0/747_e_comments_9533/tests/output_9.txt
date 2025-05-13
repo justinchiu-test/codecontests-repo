@@ -1,4 +1,4 @@
 3
-a b a b
-aa b b aa ab
+a b a b 
+aa b b aa ab 
 a

@@ -21,7 +21,7 @@ Output
 
 Print "NO" (without quotes) in the only line if it's not possible to assign the weights in a required way.
 
-Otherwise, print "YES" in the first line. Next m lines should contain the edges of the resulting graph, with weights assigned to edges which weights were erased. i-th of them should contain three integers ui, vi and wi, denoting an edge between vertices ui and vi of weight wi. The edges of the new graph must coincide with the ones in the graph from the input. The weights that were not erased must remain unchanged whereas the new weights can be any positive integer not exceeding 1018.
+Otherwise, print "YES" in the first line. Next m lines should contain the edges of the resulting graph, with weights assigned to edges which weights were erased. i-th of them should contain three integers ui, vi and wi, denoting an edge between vertices ui and vi of weight wi. The edges of the new graph must coincide with the ones in the graph from the input. The weights that were not erased must remain unchanged whereas the new weights can be any positive integer not exceeding 1018. 
 
 The order of the edges in the output doesn't matter. The length of the shortest path between s and t must be equal to L.
 

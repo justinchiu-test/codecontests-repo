@@ -84,22 +84,22 @@ Note
 
 The number 106 + 3 is prime.
 
-In the second sample case, the five walls are:
+In the second sample case, the five walls are: 
+    
+    
+      
+                B        B  
+    B., .B, BB, B., and .B  
+    
 
-
-
-                B        B
-    B., .B, BB, B., and .B
-
-
-In the third sample case, the nine walls are the five as in the second sample case and in addition the following four:
-
-
-
-    B    B
-    B    B  B        B
-    B., .B, BB, and BB
-
+In the third sample case, the nine walls are the five as in the second sample case and in addition the following four: 
+    
+    
+      
+    B    B  
+    B    B  B        B  
+    B., .B, BB, and BB  
+    
 
 ## Categories
 

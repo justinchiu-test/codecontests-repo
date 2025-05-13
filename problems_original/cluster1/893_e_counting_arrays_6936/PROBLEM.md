@@ -7,8 +7,8 @@
 
 You are given two positive integer numbers x and y. An array F is called an y-factorization of x iff the following conditions are met:
 
-  * There are y elements in F, and all of them are integer numbers;
-  * <image>.
+  * There are y elements in F, and all of them are integer numbers; 
+  * <image>. 
 
 
 
@@ -42,12 +42,12 @@ Note
 
 In the second testcase of the example there are six y-factorizations:
 
-  * { - 4, - 1};
-  * { - 2, - 2};
-  * { - 1, - 4};
-  * {1, 4};
-  * {2, 2};
-  * {4, 1}.
+  * { - 4, - 1}; 
+  * { - 2, - 2}; 
+  * { - 1, - 4}; 
+  * {1, 4}; 
+  * {2, 2}; 
+  * {4, 1}. 
 
 ## Categories
 

@@ -13,7 +13,7 @@ Your task is — for every possible x determine the number of ways of improving 
 
 Input
 
-The first line of the input contains a single integer n (2 ≤ n ≤ 2·105) — the number of cities in the country. Next line contains n - 1 positive integers p2, p3, p4, ..., pn (1 ≤ pi ≤ i - 1) — the description of the roads in the country. Number pi means that the country has a road connecting city pi and city i.
+The first line of the input contains a single integer n (2 ≤ n ≤ 2·105) — the number of cities in the country. Next line contains n - 1 positive integers p2, p3, p4, ..., pn (1 ≤ pi ≤ i - 1) — the description of the roads in the country. Number pi means that the country has a road connecting city pi and city i. 
 
 Output
 

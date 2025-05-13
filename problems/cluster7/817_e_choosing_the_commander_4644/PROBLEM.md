@@ -13,9 +13,9 @@ Each warrior is represented by his personality — an integer number pi. Each co
 
 Initially Vova's army is empty. There are three different types of events that can happen with the army:
 
-  * 1 pi — one warrior with personality pi joins Vova's army;
-  * 2 pi — one warrior with personality pi leaves Vova's army;
-  * 3 pi li — Vova tries to hire a commander with personality pi and leadership li.
+  * 1 pi — one warrior with personality pi joins Vova's army; 
+  * 2 pi — one warrior with personality pi leaves Vova's army; 
+  * 3 pi li — Vova tries to hire a commander with personality pi and leadership li. 
 
 
 
@@ -27,9 +27,9 @@ The first line contains one integer q (1 ≤ q ≤ 100000) — the number of eve
 
 Then q lines follow. Each line describes the event:
 
-  * 1 pi (1 ≤ pi ≤ 108) — one warrior with personality pi joins Vova's army;
-  * 2 pi (1 ≤ pi ≤ 108) — one warrior with personality pi leaves Vova's army (it is guaranteed that there is at least one such warrior in Vova's army by this moment);
-  * 3 pi li (1 ≤ pi, li ≤ 108) — Vova tries to hire a commander with personality pi and leadership li. There is at least one event of this type.
+  * 1 pi (1 ≤ pi ≤ 108) — one warrior with personality pi joins Vova's army; 
+  * 2 pi (1 ≤ pi ≤ 108) — one warrior with personality pi leaves Vova's army (it is guaranteed that there is at least one such warrior in Vova's army by this moment); 
+  * 3 pi li (1 ≤ pi, li ≤ 108) — Vova tries to hire a commander with personality pi and leadership li. There is at least one event of this type. 
 
 Output
 

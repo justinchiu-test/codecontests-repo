@@ -28,7 +28,7 @@ if n - m != ncomp or maxpwr > 2:
         print("NO")
 else:
     print("YES")
-    print(n - m)
+    print(n - m)    
     leaves = []
     for v in range(n):
         if len(graph[v]) == 1:
@@ -42,7 +42,7 @@ else:
             continue
         for j in range(i + 1, len(leaves)):
             if leaves[j][0] == 0:
-                continue
+                continue            
             if leaves[i][1] == leaves[j][1]:
                 continue
             seti = -1
@@ -65,7 +65,7 @@ else:
                         sets[seti].add(leaves[j][1])
                 else:
                     if setj >= 0:
-                        sets[setj].add(leaves[i][1])
+                        sets[setj].add(leaves[i][1])   
                     else:
                         sets.append(set([leaves[i][1], leaves[j][1]]))
                 leaves[i][0] = 0
@@ -76,7 +76,7 @@ else:
             continue
         for j in range(i + 1, len(leaves)):
             if leaves[j][0] == 0:
-                continue
+                continue            
             print(leaves[i][0], leaves[j][0])
             break
         else:

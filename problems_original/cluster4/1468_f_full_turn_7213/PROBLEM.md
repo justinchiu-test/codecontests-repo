@@ -7,7 +7,7 @@
 
 There are n persons located on a plane. The i-th person is located at the point (x_i, y_i) and initially looks at the point (u_i, v_i).
 
-At the same moment of time, all persons will start to rotate clockwise synchronously with the same angular speed. They will rotate until they do one full 360-degree turn.
+At the same moment of time, all persons will start to rotate clockwise synchronously with the same angular speed. They will rotate until they do one full 360-degree turn. 
 
 It is said that persons A and B made eye contact if person A looks in person B's direction at the same moment when person B looks in person A's direction. If there is a person C located between persons A and B, that will not obstruct A and B from making eye contact. A person can make eye contact with more than one person at the same time.
 

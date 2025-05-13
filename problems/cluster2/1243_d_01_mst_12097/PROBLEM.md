@@ -13,7 +13,7 @@ Since Ujan doesn't really want to organize his notes, he decided to find the wei
 
 Input
 
-The first line of the input contains two integers n and m (1 ≤ n ≤ 10^5, 0 ≤ m ≤ min((n(n-1))/(2),10^5)), the number of vertices and the number of edges of weight 1 in the graph.
+The first line of the input contains two integers n and m (1 ≤ n ≤ 10^5, 0 ≤ m ≤ min((n(n-1))/(2),10^5)), the number of vertices and the number of edges of weight 1 in the graph. 
 
 The i-th of the next m lines contains two integers a_i and b_i (1 ≤ a_i, b_i ≤ n, a_i ≠ b_i), the endpoints of the i-th edge of weight 1.
 

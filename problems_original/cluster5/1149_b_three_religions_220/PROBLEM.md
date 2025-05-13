@@ -17,10 +17,10 @@ Input
 
 The first line of the input contains two integers n, q (1 ≤ n ≤ 100 000, 1 ≤ q ≤ 1000) — the length of the Word of Universe and the number of religion evolutions, respectively. The following line contains the Word of Universe — a string of length n consisting of lowercase English characters.
 
-Each of the following line describes a single evolution and is in one of the following formats:
+Each of the following line describes a single evolution and is in one of the following formats: 
 
-  * + i c (i ∈ \{1, 2, 3\}, c ∈ \{a, b, ..., z\}: append the character c to the end of i-th religion description.
-  * - i (i ∈ \{1, 2, 3\}) – remove the last character from the i-th religion description. You can assume that the pattern is non-empty.
+  * + i c (i ∈ \{1, 2, 3\}, c ∈ \{a, b, ..., z\}: append the character c to the end of i-th religion description. 
+  * - i (i ∈ \{1, 2, 3\}) – remove the last character from the i-th religion description. You can assume that the pattern is non-empty. 
 
 
 

@@ -21,7 +21,7 @@ The numbers in the lines are separated by single spaces.
 
 Output
 
-Print a single integer — the answer to the problem.
+Print a single integer — the answer to the problem. 
 
 Please, do not use the %lld specifier to read or write 64-bit integers in C++. It is preferred to use the cin, cout streams or the %I64d specifier.
 

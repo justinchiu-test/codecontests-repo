@@ -7,7 +7,7 @@
 
 Breaking Good is a new video game which a lot of gamers want to have. There is a certain level in the game that is really difficult even for experienced gamers.
 
-Walter William, the main character of the game, wants to join a gang called Los Hermanos (The Brothers). The gang controls the whole country which consists of n cities with m bidirectional roads connecting them. There is no road is connecting a city to itself and for any two cities there is at most one road between them. The country is connected, in the other words, it is possible to reach any city from any other city using the given roads.
+Walter William, the main character of the game, wants to join a gang called Los Hermanos (The Brothers). The gang controls the whole country which consists of n cities with m bidirectional roads connecting them. There is no road is connecting a city to itself and for any two cities there is at most one road between them. The country is connected, in the other words, it is possible to reach any city from any other city using the given roads. 
 
 The roads aren't all working. There are some roads which need some more work to be performed to be completely functioning.
 
@@ -15,7 +15,7 @@ The gang is going to rob a bank! The bank is located in city 1. As usual, the ha
 
 First of all the path which they are going to use on their way back from city 1 to their headquarters n must be as short as possible, since it is important to finish operation as fast as possible.
 
-Then, gang has to blow up all other roads in country that don't lay on this path, in order to prevent any police reinforcements. In case of non-working road, they don't have to blow up it as it is already malfunctional.
+Then, gang has to blow up all other roads in country that don't lay on this path, in order to prevent any police reinforcements. In case of non-working road, they don't have to blow up it as it is already malfunctional. 
 
 If the chosen path has some roads that doesn't work they'll have to repair those roads before the operation.
 
@@ -33,7 +33,7 @@ Output
 
 In the first line output one integer k, the minimum possible number of roads affected by gang.
 
-In the following k lines output three integers describing roads that should be affected. Each line should contain three integers x, y, z (1 ≤ x, y ≤ n, <image>), cities connected by a road and the new state of a road. z = 1 indicates that the road between cities x and y should be repaired and z = 0 means that road should be blown up.
+In the following k lines output three integers describing roads that should be affected. Each line should contain three integers x, y, z (1 ≤ x, y ≤ n, <image>), cities connected by a road and the new state of a road. z = 1 indicates that the road between cities x and y should be repaired and z = 0 means that road should be blown up. 
 
 You may output roads in any order. Each affected road should appear exactly once. You may output cities connected by a single road in any order. If you output a road, it's original state should be different from z.
 

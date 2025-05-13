@@ -5,7 +5,7 @@
 
 ## Description
 
-Evlampiy was gifted a rooted tree. The vertices of the tree are numbered from 1 to n. Each of its vertices also has an integer a_i written on it. For each vertex i, Evlampiy calculated c_i — the number of vertices j in the subtree of vertex i, such that a_j < a_i.
+Evlampiy was gifted a rooted tree. The vertices of the tree are numbered from 1 to n. Each of its vertices also has an integer a_i written on it. For each vertex i, Evlampiy calculated c_i — the number of vertices j in the subtree of vertex i, such that a_j < a_i. 
 
 <image>Illustration for the second example, the first integer is a_i and the integer in parentheses is c_i
 
@@ -42,7 +42,7 @@ Output
 
 
 YES
-1 2 1
+1 2 1 
 
 Input
 

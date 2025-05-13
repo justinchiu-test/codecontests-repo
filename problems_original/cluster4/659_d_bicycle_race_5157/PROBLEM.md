@@ -23,12 +23,12 @@ The following (n + 1)-th line contains pairs of integers (xi, yi) ( - 10 000 ≤
 
 It is guaranteed that:
 
-  * the first straight section is directed to the north;
-  * the southernmost (and if there are several, then the most western of among them) point of the track is the first point;
-  * the last point coincides with the first one (i.e., the start position);
-  * any pair of straight sections of the track has no shared points (except for the neighboring ones, they share exactly one point);
-  * no pair of points (except for the first and last one) is the same;
-  * no two adjacent straight sections are directed in the same direction or in opposite directions.
+  * the first straight section is directed to the north; 
+  * the southernmost (and if there are several, then the most western of among them) point of the track is the first point; 
+  * the last point coincides with the first one (i.e., the start position); 
+  * any pair of straight sections of the track has no shared points (except for the neighboring ones, they share exactly one point); 
+  * no pair of points (except for the first and last one) is the same; 
+  * no two adjacent straight sections are directed in the same direction or in opposite directions. 
 
 Output
 

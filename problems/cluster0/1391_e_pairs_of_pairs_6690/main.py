@@ -54,3 +54,4 @@ for _ in range(t):
         print(len(pair))
         for elem in pair:
             print(str(elem[0] + 1)+" "+str(elem[1] + 1))
+

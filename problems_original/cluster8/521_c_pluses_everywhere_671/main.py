@@ -24,7 +24,7 @@ if k:
 
         p[i + 1] = (10 * p[i]) % d
 
-    for i in range(n):
+    for i in range(n): 
 
         v = u[n - 2 - i] + p[n - 1 - i] * c(k, i)
 

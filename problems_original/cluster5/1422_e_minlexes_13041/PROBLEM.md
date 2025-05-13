@@ -7,13 +7,13 @@
 
 Some time ago Lesha found an entertaining string s consisting of lowercase English letters. Lesha immediately developed an unique algorithm for this string and shared it with you. The algorithm is as follows.
 
-Lesha chooses an arbitrary (possibly zero) number of pairs on positions (i, i + 1) in such a way that the following conditions are satisfied:
+Lesha chooses an arbitrary (possibly zero) number of pairs on positions (i, i + 1) in such a way that the following conditions are satisfied: 
 
-  * for each pair (i, i + 1) the inequality 0 ≤ i < |s| - 1 holds;
-  * for each pair (i, i + 1) the equality s_i = s_{i + 1} holds;
-  * there is no index that is contained in more than one pair.
+  * for each pair (i, i + 1) the inequality 0 ≤ i < |s| - 1 holds; 
+  * for each pair (i, i + 1) the equality s_i = s_{i + 1} holds; 
+  * there is no index that is contained in more than one pair. 
 
-After that Lesha removes all characters on indexes contained in these pairs and the algorithm is over.
+After that Lesha removes all characters on indexes contained in these pairs and the algorithm is over. 
 
 Lesha is interested in the lexicographically smallest strings he can obtain by applying the algorithm to the suffixes of the given string.
 
@@ -39,7 +39,7 @@ Output
 3 abc
 2 bc
 1 c
-0
+0 
 1 d
 
 
@@ -74,18 +74,18 @@ Output
 3 ytw
 2 tw
 1 w
-0
+0 
 1 o
 
 Note
 
 Consider the first example.
 
-  * The longest suffix is the whole string "abcdd". Choosing one pair (4, 5), Lesha obtains "abc".
-  * The next longest suffix is "bcdd". Choosing one pair (3, 4), we obtain "bc".
-  * The next longest suffix is "cdd". Choosing one pair (2, 3), we obtain "c".
-  * The next longest suffix is "dd". Choosing one pair (1, 2), we obtain "" (an empty string).
-  * The last suffix is the string "d". No pair can be chosen, so the answer is "d".
+  * The longest suffix is the whole string "abcdd". Choosing one pair (4, 5), Lesha obtains "abc". 
+  * The next longest suffix is "bcdd". Choosing one pair (3, 4), we obtain "bc". 
+  * The next longest suffix is "cdd". Choosing one pair (2, 3), we obtain "c". 
+  * The next longest suffix is "dd". Choosing one pair (1, 2), we obtain "" (an empty string). 
+  * The last suffix is the string "d". No pair can be chosen, so the answer is "d". 
 
 
 
@@ -116,7 +116,7 @@ abcdd
 3 abc
 2 bc
 1 c
-0
+0 
 1 d
 ```
 
@@ -151,7 +151,7 @@ abbcdddeaaffdfouurtytwoo
 3 ytw
 2 tw
 1 w
-0
+0 
 1 o
 ```
 

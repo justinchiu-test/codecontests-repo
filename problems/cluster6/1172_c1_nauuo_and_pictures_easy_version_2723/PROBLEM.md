@@ -13,7 +13,7 @@ One day she made a random picture website by herself which includes n pictures.
 
 When Nauuo visits the website, she sees exactly one picture. The website does not display each picture with equal probability. The i-th picture has a non-negative weight w_i, and the probability of the i-th picture being displayed is \frac{w_i}{∑_{j=1}^nw_j}. That is to say, the probability of a picture to be displayed is proportional to its weight.
 
-However, Nauuo discovered that some pictures she does not like were displayed too often.
+However, Nauuo discovered that some pictures she does not like were displayed too often. 
 
 To solve this problem, she came up with a great idea: when she saw a picture she likes, she would add 1 to its weight; otherwise, she would subtract 1 from its weight.
 

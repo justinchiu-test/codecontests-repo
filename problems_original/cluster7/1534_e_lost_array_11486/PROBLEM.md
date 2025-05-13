@@ -35,7 +35,7 @@ Output
 
 If it is impossible to recover the XOR-sum of the array, output -1 immediately after taking n and k. Do not begin interaction.
 
-Otherwise, when your program finds the XOR-sum of the lost array a_1, a_2, …, a_n, report the answer in the following format: "! x", where x is the XOR sum of the array a_1, a_2, …, a_n, and terminate your program normally immediately after flushing the output stream.
+Otherwise, when your program finds the XOR-sum of the lost array a_1, a_2, …, a_n, report the answer in the following format: "! x", where x is the XOR sum of the array a_1, a_2, …, a_n, and terminate your program normally immediately after flushing the output stream. 
 
 Note that answering does not count as a query.
 
@@ -47,10 +47,10 @@ You will then receive an integer x, the XOR sum of the queried elements. It can 
 
 After printing a query do not forget to output end of line and flush the output. Otherwise, you will get Idleness limit exceeded. To do this, use:
 
-  * fflush(stdout) or cout.flush() in C++;
-  * System.out.flush() in Java;
-  * flush(output) in Pascal;
-  * stdout.flush() in Python;
+  * fflush(stdout) or cout.flush() in C++; 
+  * System.out.flush() in Java; 
+  * flush(output) in Pascal; 
+  * stdout.flush() in Python; 
   * see documentation for other languages.
 
 
@@ -104,7 +104,7 @@ Output
 
 Note
 
-In the first example interaction, the array a_1, a_2, …, a_n is 2, 1, 7, 5, 6 and its XOR-sum is 7.
+In the first example interaction, the array a_1, a_2, …, a_n is 2, 1, 7, 5, 6 and its XOR-sum is 7. 
 
 The first query made asks for indices 1,2,3, so the response is a_1 ⊕ a_2 ⊕ a_3 = 2 ⊕ 1 ⊕ 7 = 4.
 

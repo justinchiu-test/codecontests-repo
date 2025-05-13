@@ -23,3 +23,6 @@ for _ in range(int(input())):
     dp(c, m, p, v, 1.0, 1.0)
     print("%.12f" % round(a, 12))
     a = 0
+
+
+

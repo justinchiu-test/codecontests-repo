@@ -5,9 +5,9 @@
 
 ## Description
 
-Baby Ehab is known for his love for a certain operation. He has an array a of length n, and he decided to keep doing the following operation on it:
+Baby Ehab is known for his love for a certain operation. He has an array a of length n, and he decided to keep doing the following operation on it: 
 
-  * he picks 2 adjacent elements; he then removes them and places a single integer in their place: their [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR). Note that the length of the array decreases by one.
+  * he picks 2 adjacent elements; he then removes them and places a single integer in their place: their [bitwise XOR](https://en.wikipedia.org/wiki/Bitwise_operation#XOR). Note that the length of the array decreases by one. 
 
 
 

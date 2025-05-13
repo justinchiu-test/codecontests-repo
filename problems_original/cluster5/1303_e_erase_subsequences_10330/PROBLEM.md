@@ -5,15 +5,15 @@
 
 ## Description
 
-You are given a string s. You can build new string p from s using the following operation no more than two times:
+You are given a string s. You can build new string p from s using the following operation no more than two times: 
 
-  1. choose any subsequence s_{i_1}, s_{i_2}, ..., s_{i_k} where 1 ≤ i_1 < i_2 < ... < i_k ≤ |s|;
-  2. erase the chosen subsequence from s (s can become empty);
-  3. concatenate chosen subsequence to the right of the string p (in other words, p = p + s_{i_1}s_{i_2}... s_{i_k}).
+  1. choose any subsequence s_{i_1}, s_{i_2}, ..., s_{i_k} where 1 ≤ i_1 < i_2 < ... < i_k ≤ |s|; 
+  2. erase the chosen subsequence from s (s can become empty); 
+  3. concatenate chosen subsequence to the right of the string p (in other words, p = p + s_{i_1}s_{i_2}... s_{i_k}). 
 
 
 
-Of course, initially the string p is empty.
+Of course, initially the string p is empty. 
 
 For example, let s = ababcd. At first, let's choose subsequence s_1 s_4 s_5 = abc — we will get s = bad and p = abc. At second, let's choose s_1 s_2 = ba — we will get s = d and p = abcba. So we can build abcba from ababcd.
 

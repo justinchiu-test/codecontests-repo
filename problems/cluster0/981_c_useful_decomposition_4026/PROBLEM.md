@@ -23,9 +23,9 @@ Output
 
 If there are no decompositions, print the only line containing "No".
 
-Otherwise in the first line print "Yes", and in the second line print the number of paths in the decomposition m.
+Otherwise in the first line print "Yes", and in the second line print the number of paths in the decomposition m. 
 
-Each of the next m lines should contain two integers u_i, v_i (1 ≤ u_i, v_i ≤ n, u_i ≠ v_i) denoting that one of the paths in the decomposition is the simple path between nodes u_i and v_i.
+Each of the next m lines should contain two integers u_i, v_i (1 ≤ u_i, v_i ≤ n, u_i ≠ v_i) denoting that one of the paths in the decomposition is the simple path between nodes u_i and v_i. 
 
 Each pair of paths in the decomposition should have at least one common vertex, and each edge of the tree should be presented in exactly one path. You can print the paths and the ends of each path in arbitrary order.
 

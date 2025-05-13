@@ -7,8 +7,8 @@
 
 You are given an array a of length n. We define fa the following way:
 
-  * Initially fa = 0, M = 1;
-  * for every 2 ≤ i ≤ n if aM < ai then we set fa = fa + aM and then set M = i.
+  * Initially fa = 0, M = 1; 
+  * for every 2 ≤ i ≤ n if aM < ai then we set fa = fa + aM and then set M = i. 
 
 
 
@@ -52,12 +52,12 @@ Note
 
 For the second example all the permutations are:
 
-  * p = [1, 2, 3] : fa is equal to 1;
-  * p = [1, 3, 2] : fa is equal to 1;
-  * p = [2, 1, 3] : fa is equal to 1;
-  * p = [2, 3, 1] : fa is equal to 1;
-  * p = [3, 1, 2] : fa is equal to 0;
-  * p = [3, 2, 1] : fa is equal to 0.
+  * p = [1, 2, 3] : fa is equal to 1; 
+  * p = [1, 3, 2] : fa is equal to 1; 
+  * p = [2, 1, 3] : fa is equal to 1; 
+  * p = [2, 3, 1] : fa is equal to 1; 
+  * p = [3, 1, 2] : fa is equal to 0; 
+  * p = [3, 2, 1] : fa is equal to 0. 
 
 
 

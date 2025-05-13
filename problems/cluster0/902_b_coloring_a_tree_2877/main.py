@@ -16,7 +16,7 @@ l=list(map(int,input().split()))
 color={}
 for i in range(1,n+1):
     color[i]=l[i-1]
-
+    
 q=Queue()
 q.put(1)
 ans=0
@@ -31,5 +31,11 @@ while(not(q.empty())):
         ans+=1
     for i in child[e]:
         q.put(i)
-
+        
 print(ans)
+
+
+    
+    
+    
+    

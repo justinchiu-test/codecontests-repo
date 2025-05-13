@@ -6,7 +6,7 @@ graph_b = [[] for _ in range(n+1)]
 
 double_graph_a = [[0 for _ in range(n+1)] for _ in range(n+1)]
 double_graph_b = [[0 for _ in range(n+1)] for _ in range(n+1)]
-
+ 
 for i in range(m):
     u, v, t = map(int, input().split())
     graph_a[v].append(u)

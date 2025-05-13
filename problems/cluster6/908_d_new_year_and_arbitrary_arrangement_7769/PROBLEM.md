@@ -42,9 +42,9 @@ Output
 
 Note
 
-The first sample, we will keep appending to our sequence until we get the subsequence 'ab' at least once. For instance, we get the sequence 'ab' with probability 1/4, 'bbab' with probability 1/16, and 'aab' with probability 1/8. Note, it's impossible for us to end with a sequence like 'aabab', since we would have stopped our algorithm once we had the prefix 'aab'.
+The first sample, we will keep appending to our sequence until we get the subsequence 'ab' at least once. For instance, we get the sequence 'ab' with probability 1/4, 'bbab' with probability 1/16, and 'aab' with probability 1/8. Note, it's impossible for us to end with a sequence like 'aabab', since we would have stopped our algorithm once we had the prefix 'aab'. 
 
-The expected amount of times that 'ab' will occur across all valid sequences is 2.
+The expected amount of times that 'ab' will occur across all valid sequences is 2. 
 
 For the second sample, the answer is equal to <image>.
 

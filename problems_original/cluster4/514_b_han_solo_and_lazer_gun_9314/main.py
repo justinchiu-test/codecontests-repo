@@ -21,5 +21,6 @@ for i in range(n):
                 found = True
         if found == False:
             slopes[(num, den)] = 1
-
+        
 print(slopes.__len__())
+    

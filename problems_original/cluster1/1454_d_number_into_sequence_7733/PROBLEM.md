@@ -9,10 +9,10 @@ You are given an integer n (n > 1).
 
 Your task is to find a sequence of integers a_1, a_2, …, a_k such that:
 
-  * each a_i is strictly greater than 1;
-  * a_1 ⋅ a_2 ⋅ … ⋅ a_k = n (i. e. the product of this sequence is n);
-  * a_{i + 1} is divisible by a_i for each i from 1 to k-1;
-  * k is the maximum possible (i. e. the length of this sequence is the maximum possible).
+  * each a_i is strictly greater than 1; 
+  * a_1 ⋅ a_2 ⋅ … ⋅ a_k = n (i. e. the product of this sequence is n); 
+  * a_{i + 1} is divisible by a_i for each i from 1 to k-1; 
+  * k is the maximum possible (i. e. the length of this sequence is the maximum possible). 
 
 
 
@@ -50,13 +50,13 @@ Output
 
 
 1
-2
+2 
 3
-2 2 90
+2 2 90 
 1
-4999999937
+4999999937 
 1
-4998207083
+4998207083 
 
 ## Categories
 
@@ -84,11 +84,11 @@ Codeforces
 **Output**:
 ```
 1
-2
+2 
 3
-2 2 90
+2 2 90 
 1
-4999999937
+4999999937 
 1
 4998207083
 ```

@@ -9,7 +9,7 @@ import random
 import bisect as bi
 def yes():print('YES')
 def no():print('NO')
-if (path.exists('input.txt')):
+if (path.exists('input.txt')): 
     #------------------Sublime--------------------------------------#
     sys.stdin=open('input.txt','r');sys.stdout=open('output.txt','w');
     def I():return (int(input()))
@@ -20,7 +20,7 @@ else:
     def In():return(map(int,stdin.readline().split()))
 #sys.setrecursionlimit(1500)
 def dict(a):
-    d={}
+    d={} 
     for x in a:
         if d.get(x,-1)!=-1:
             d[x]+=1
@@ -32,9 +32,9 @@ def find_gt(a, x):
     i = bi.bisect_left(a, x)
     if i != len(a):
         return i
-    else:
+    else:            
         return -1
-
+        
 def main():
     try:
         n=I()
@@ -57,10 +57,10 @@ def main():
             stdout.write(s+'\n')
     except:
         pass
-
+        
 M = 998244353
 P = 1000000007
-
+ 
 if __name__ == '__main__':
     #for _ in range(I()):main()
     for _ in range(1):main()

@@ -11,7 +11,7 @@ read = lambda: list(map(int, input().strip().split()))
 sys.setrecursionlimit(200000)
 
 
-def main():
+def main(): 
 	n, m = read()
 	adj = defaultdict(list)
 	visited = defaultdict(int)
@@ -44,12 +44,12 @@ def main():
 			ans += dfs(i)
 			# print(i, visited)
 	print(ans)
-		#
+		# 
 
 
 
 
-
+			
 
 
 

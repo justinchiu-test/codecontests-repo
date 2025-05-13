@@ -5,13 +5,13 @@
 
 ## Description
 
-Now Serval is a junior high school student in Japari Middle School, and he is still thrilled on math as before.
+Now Serval is a junior high school student in Japari Middle School, and he is still thrilled on math as before. 
 
 As a talented boy in mathematics, he likes to play with numbers. This time, he wants to play with numbers on a rooted tree.
 
 A tree is a connected graph without cycles. A rooted tree has a special vertex called the root. A parent of a node v is the last different from v vertex on the path from the root to the vertex v. Children of vertex v are all nodes for which v is the parent. A vertex is a leaf if it has no children.
 
-The rooted tree Serval owns has n nodes, node 1 is the root. Serval will write some numbers into all nodes of the tree. However, there are some restrictions. Each of the nodes except leaves has an operation max or min written in it, indicating that the number in this node should be equal to the maximum or minimum of all the numbers in its sons, respectively.
+The rooted tree Serval owns has n nodes, node 1 is the root. Serval will write some numbers into all nodes of the tree. However, there are some restrictions. Each of the nodes except leaves has an operation max or min written in it, indicating that the number in this node should be equal to the maximum or minimum of all the numbers in its sons, respectively. 
 
 Assume that there are k leaves in the tree. Serval wants to put integers 1, 2, …, k to the k leaves (each number should be used exactly once). He loves large numbers, so he wants to maximize the number in the root. As his best friend, can you help him?
 

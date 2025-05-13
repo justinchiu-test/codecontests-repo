@@ -54,13 +54,13 @@ Note
 
 The sequence of actions of Tanya for the first example:
 
-  * move from the box 3 to the box 2;
-  * eat candies from the box 2;
-  * move from the box 2 to the box 3;
-  * eat candy from the box 3;
-  * move from the box 3 to the box 4;
-  * move from the box 4 to the box 5;
-  * eat candies from the box 5.
+  * move from the box 3 to the box 2; 
+  * eat candies from the box 2; 
+  * move from the box 2 to the box 3; 
+  * eat candy from the box 3; 
+  * move from the box 3 to the box 4; 
+  * move from the box 4 to the box 5; 
+  * eat candies from the box 5. 
 
 
 

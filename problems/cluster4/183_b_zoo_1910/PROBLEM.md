@@ -15,7 +15,7 @@ Input
 
 The first line contains two space-separated integers n and m (1 ≤ n ≤ 106, 1 ≤ m ≤ 250), denoting the number of binoculars and the number of flamingos, respectively.
 
-Then m lines follow, the i-th line will contain two space-separated integers xi and yi (1 ≤ xi, yi ≤ 109), which means that the i-th flamingo is located at point (xi, yi).
+Then m lines follow, the i-th line will contain two space-separated integers xi and yi (1 ≤ xi, yi ≤ 109), which means that the i-th flamingo is located at point (xi, yi). 
 
 All flamingos will be located at distinct points.
 
@@ -41,7 +41,7 @@ Output
 
 Note
 
-This picture shows the answer to the example test case.
+This picture shows the answer to the example test case. 
 
 <image>
 

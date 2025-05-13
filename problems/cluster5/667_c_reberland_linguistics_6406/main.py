@@ -21,16 +21,16 @@ if n >= 5:
     mu.add(s[3:5][::-1])
     can2[5] = 1
     can3[5] = 1
-
+        
 for i in range(6, n+1):
     if can2[i-3]:
         mu.add(s[i-3:i][::-1])
         can3[i] = 1
     if can2[i-2]:
-
+        
         if s[i-2:i] != s[i-4:i-2]:
             mu.add(s[i-2:i][::-1])
-            can2[i] = 1
+            can2[i] = 1  
     if can3[i-2]:
         mu.add(s[i-2:i][::-1])
         can2[i] = 1

@@ -40,12 +40,12 @@ Output
 
 
 YES
-2 4 8
+2 4 8 
 NO
 NO
 NO
 YES
-3 5 823
+3 5 823 
 
 ## Categories
 

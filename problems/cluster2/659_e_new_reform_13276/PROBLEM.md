@@ -15,7 +15,7 @@ Help the Ministry of Transport to find the minimum possible number of separate c
 
 Input
 
-The first line of the input contains two positive integers, n and m — the number of the cities and the number of roads in Berland (2 ≤ n ≤ 100 000, 1 ≤ m ≤ 100 000).
+The first line of the input contains two positive integers, n and m — the number of the cities and the number of roads in Berland (2 ≤ n ≤ 100 000, 1 ≤ m ≤ 100 000). 
 
 Next m lines contain the descriptions of the roads: the i-th road is determined by two distinct integers xi, yi (1 ≤ xi, yi ≤ n, xi ≠ yi), where xi and yi are the numbers of the cities connected by the i-th road.
 

@@ -12,7 +12,7 @@ for i in range(tc):
         except:
             kamus[2] = 1
         k /= 2
-
+    
     for i in range(3,int(math.sqrt(k))+1,2):
         while k % i == 0:
             try:

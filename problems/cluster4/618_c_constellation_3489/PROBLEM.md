@@ -7,7 +7,7 @@
 
 Cat Noku has obtained a map of the night sky. On this map, he found a constellation with n stars numbered from 1 to n. For each i, the i-th star is located at coordinates (xi, yi). No two stars are located at the same position.
 
-In the evening Noku is going to take a look at the night sky. He would like to find three distinct stars and form a triangle. The triangle must have positive area. In addition, all other stars must lie strictly outside of this triangle. He is having trouble finding the answer and would like your help. Your job is to find the indices of three stars that would form a triangle that satisfies all the conditions.
+In the evening Noku is going to take a look at the night sky. He would like to find three distinct stars and form a triangle. The triangle must have positive area. In addition, all other stars must lie strictly outside of this triangle. He is having trouble finding the answer and would like your help. Your job is to find the indices of three stars that would form a triangle that satisfies all the conditions. 
 
 It is guaranteed that there is no line such that all stars lie on that line. It can be proven that if the previous condition is satisfied, there exists a solution to this problem.
 
@@ -58,7 +58,7 @@ Note
 
 In the first sample, we can print the three indices in any order.
 
-In the second sample, we have the following picture.
+In the second sample, we have the following picture. 
 
 <image>
 

@@ -23,5 +23,5 @@ def main():
         y += i * sum(dp[i])
     else:
         print(-1)
-
+    
 main()

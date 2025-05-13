@@ -19,17 +19,17 @@ x,n=map(int,input().split())
 
 n1=x
 L=[]
-while(n1%2==0):
-    L.append(2)
+while(n1%2==0): 
+    L.append(2) 
     n1=n1//2
 
-for i in range(3,int(math.sqrt(n1))+1,2):
+for i in range(3,int(math.sqrt(n1))+1,2): 
 
-    while(n1%i==0):
-        L.append(i)
-        n1=n1//i
-
-if(n1>2):
+    while(n1%i==0): 
+        L.append(i) 
+        n1=n1//i 
+ 
+if(n1>2): 
     L.append(n1)
 
 L=list(set(L))
@@ -64,23 +64,23 @@ def powr(n,N):
 def MODI(a,b):
     ans=(powr(a,b)%MOD)
     return ans
-
+ 
 
 x,n=map(int,input().split())
 
 n1=x
 L=[]
-while(n1%2==0):
-    L.append(2)
+while(n1%2==0): 
+    L.append(2) 
     n1=n1//2
 
-for i in range(3,int(math.sqrt(n1))+1,2):
+for i in range(3,int(math.sqrt(n1))+1,2): 
 
-    while(n1%i==0):
-        L.append(i)
-        n1=n1//i
-
-if(n1>2):
+    while(n1%i==0): 
+        L.append(i) 
+        n1=n1//i 
+ 
+if(n1>2): 
     L.append(n1)
 
 L=list(set(L))
@@ -95,7 +95,7 @@ for i in range(0,len(L)):
         nn=(nn*t)%MOD
         mul=(mul*powr(d,nn))%MOD
 
-
+    
 
 print(mul)
 
@@ -118,17 +118,17 @@ x,n=map(int,input().split())
 
 n1=x
 L=[]
-while(n1%2==0):
-    L.append(2)
+while(n1%2==0): 
+    L.append(2) 
     n1=n1//2
 
-for i in range(3,int(math.sqrt(n1))+1,2):
+for i in range(3,int(math.sqrt(n1))+1,2): 
 
-    while(n1%i==0):
-        L.append(i)
-        n1=n1//i
-
-if(n1>2):
+    while(n1%i==0): 
+        L.append(i) 
+        n1=n1//i 
+ 
+if(n1>2): 
     L.append(n1)
 
 L=list(set(L))
@@ -141,3 +141,4 @@ for i in range(0,len(L)):
         nn=nn//d
 
 print(mul)
+

@@ -26,11 +26,11 @@ while len(leafs) > 0:
             l += 1
         if deep[parent] < l:
             deep[parent] = l
-
+            
         deps[parent] -= 1
         if deps[parent] == 0:
             leafs.add(parent)
 ##        print(leaf, parent, l, deps[parent], leafs, deep)
-
-
+    
+    
 print(res)

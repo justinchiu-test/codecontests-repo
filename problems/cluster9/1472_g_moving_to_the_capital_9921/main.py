@@ -8,7 +8,7 @@ def NC_Dij(lis,start):
 
     ret = [float("inf")] * len(lis)
     ret[start] = 0
-
+    
     q = deque([start])
     plis = [i for i in range(len(lis))]
 

@@ -26,7 +26,7 @@ while stk:
     else:
         x = stk.pop()
         F[x] = 1
-        for y in G[x]:
+        for y in G[x]:                
             F[x] += F[y]
 
 DP = [0]*n
@@ -56,8 +56,9 @@ while stk:
     for y in G[x]:
         if not ans[y]:
             ay = ans[x] + n - 2 * F[y]
-            ans[y] = ay
+            ans[y] = ay 
             Z = max(Z,ay)
             stk.append(y)
 
 print(Z)
+

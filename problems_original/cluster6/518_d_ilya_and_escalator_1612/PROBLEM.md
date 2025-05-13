@@ -5,11 +5,11 @@
 
 ## Description
 
-Ilya got tired of sports programming, left university and got a job in the subway. He was given the task to determine the escalator load factor.
+Ilya got tired of sports programming, left university and got a job in the subway. He was given the task to determine the escalator load factor. 
 
 Let's assume that n people stand in the queue for the escalator. At each second one of the two following possibilities takes place: either the first person in the queue enters the escalator with probability p, or the first person in the queue doesn't move with probability (1 - p), paralyzed by his fear of escalators and making the whole queue wait behind him.
 
-Formally speaking, the i-th person in the queue cannot enter the escalator until people with indices from 1 to i - 1 inclusive enter it. In one second only one person can enter the escalator. The escalator is infinite, so if a person enters it, he never leaves it, that is he will be standing on the escalator at any following second. Ilya needs to count the expected value of the number of people standing on the escalator after t seconds.
+Formally speaking, the i-th person in the queue cannot enter the escalator until people with indices from 1 to i - 1 inclusive enter it. In one second only one person can enter the escalator. The escalator is infinite, so if a person enters it, he never leaves it, that is he will be standing on the escalator at any following second. Ilya needs to count the expected value of the number of people standing on the escalator after t seconds. 
 
 Your task is to help him solve this complicated task.
 

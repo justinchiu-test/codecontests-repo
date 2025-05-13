@@ -7,7 +7,7 @@
 
 This is the easy version of the problem. The difference between the versions is the constraints on a_i. You can make hacks only if all versions of the problem are solved.
 
-Little Dormi has recently received a puzzle from his friend and needs your help to solve it.
+Little Dormi has recently received a puzzle from his friend and needs your help to solve it. 
 
 The puzzle consists of an upright board with n rows and m columns of cells, some empty and some filled with blocks of sand, and m non-negative integers a_1,a_2,…,a_m (0 ≤ a_i ≤ n). In this version of the problem, a_i will be equal to the number of blocks of sand in column i.
 

@@ -21,11 +21,11 @@ Bob wants to salvage at least some information from the message. Since he is not
 
 More precisely, for given A and P, find the lexicographically smallest message O, for which there exists a permutation π such that <image> for every i.
 
-Note that the sequence S is lexicographically smaller than the sequence T, if there is an index i such that Si < Ti and for all j < i the condition Sj = Tj holds.
+Note that the sequence S is lexicographically smaller than the sequence T, if there is an index i such that Si < Ti and for all j < i the condition Sj = Tj holds. 
 
 Input
 
-The first line contains a single integer N (1 ≤ N ≤ 300000), the length of the message.
+The first line contains a single integer N (1 ≤ N ≤ 300000), the length of the message. 
 
 The second line contains N integers A1, A2, ..., AN (0 ≤ Ai < 230) representing the encrypted message.
 
@@ -100,15 +100,15 @@ Codeforces
 
 **Output**:
 ```
-128965467
-243912600
-4281110
-112029883
-223689619
-76924724
-429589
-119397893
-613490433
+128965467 
+243912600 
+4281110 
+112029883 
+223689619 
+76924724 
+429589 
+119397893 
+613490433 
 362863284
 ```
 
@@ -123,10 +123,10 @@ Codeforces
 
 **Output**:
 ```
-0
-14
-69
-6
+0 
+14 
+69 
+6 
 44
 ```
 
@@ -141,8 +141,8 @@ Codeforces
 
 **Output**:
 ```
-10
-3
+10 
+3 
 28
 ```
 

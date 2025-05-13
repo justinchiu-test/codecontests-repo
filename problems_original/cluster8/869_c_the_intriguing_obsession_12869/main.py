@@ -27,7 +27,7 @@ def cnk(n,k):
 def factorial(n):
 	s = 1
 	for i in range(1, n+1):
-		s*=i
+		s*=i	
 	return s
 
 

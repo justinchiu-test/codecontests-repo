@@ -9,7 +9,7 @@ for i in range(n-1):
     occ[y-1]+=1
     graph[i][0] = x-1
     graph[i][1] = y-1
-
+    
 fin = [-1 for i in range(n-1)]
 for i in range(n):
     if occ[i] >= 3 :

@@ -67,10 +67,10 @@ In the first sample it is optimal to leave the array as it is by choosing x = 0.
 
 In the second sample the selection of x = 14 results in b: [4, 9, 7, 4, 9, 11, 11, 13, 11]. It has 4 inversions:
 
-  * i = 2, j = 3;
-  * i = 2, j = 4;
-  * i = 3, j = 4;
-  * i = 8, j = 9.
+  * i = 2, j = 3; 
+  * i = 2, j = 4; 
+  * i = 3, j = 4; 
+  * i = 8, j = 9. 
 
 
 

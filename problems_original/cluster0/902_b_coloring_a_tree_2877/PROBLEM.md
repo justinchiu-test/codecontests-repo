@@ -23,7 +23,7 @@ The second line contains n - 1 integers p2, p3, ..., pn (1 ≤ pi < i), where pi
 
 The third line contains n integers c1, c2, ..., cn (1 ≤ ci ≤ n), where ci is the color you should color the i-th vertex into.
 
-It is guaranteed that the given graph is a tree.
+It is guaranteed that the given graph is a tree. 
 
 Output
 

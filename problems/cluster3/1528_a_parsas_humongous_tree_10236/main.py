@@ -38,7 +38,7 @@ def main():
                     par[u] = v
                     stack.append(~u)
                     stack.append(u)
-
+            
             else:
                 u = ~v #child
                 v = par[u] #parent

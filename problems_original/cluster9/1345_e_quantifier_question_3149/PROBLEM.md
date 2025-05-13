@@ -9,22 +9,22 @@ Logical quantifiers are very useful tools for expressing claims about a set. For
 
 The universal quantifier is used to make a claim that a statement holds for all real numbers. For example:
 
-  * ∀ x,x<100 is read as: for all real numbers x, x is less than 100. This statement is false.
-  * ∀ x,x>x-1 is read as: for all real numbers x, x is greater than x-1. This statement is true.
+  * ∀ x,x<100 is read as: for all real numbers x, x is less than 100. This statement is false. 
+  * ∀ x,x>x-1 is read as: for all real numbers x, x is greater than x-1. This statement is true. 
 
 
 
 The existential quantifier is used to make a claim that there exists some real number for which the statement holds. For example:
 
-  * ∃ x,x<100 is read as: there exists a real number x such that x is less than 100. This statement is true.
-  * ∃ x,x>x-1 is read as: there exists a real number x such that x is greater than x-1. This statement is true.
+  * ∃ x,x<100 is read as: there exists a real number x such that x is less than 100. This statement is true. 
+  * ∃ x,x>x-1 is read as: there exists a real number x such that x is greater than x-1. This statement is true. 
 
 
 
 Moreover, these quantifiers can be nested. For example:
 
-  * ∀ x,∃ y,x<y is read as: for all real numbers x, there exists a real number y such that x is less than y. This statement is true since for every x, there exists y=x+1.
-  * ∃ y,∀ x,x<y is read as: there exists a real number y such that for all real numbers x, x is less than y. This statement is false because it claims that there is a maximum real number: a number y larger than every x.
+  * ∀ x,∃ y,x<y is read as: for all real numbers x, there exists a real number y such that x is less than y. This statement is true since for every x, there exists y=x+1. 
+  * ∃ y,∀ x,x<y is read as: there exists a real number y such that for all real numbers x, x is less than y. This statement is false because it claims that there is a maximum real number: a number y larger than every x. 
 
 
 

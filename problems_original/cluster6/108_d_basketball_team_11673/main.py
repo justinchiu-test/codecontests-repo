@@ -4,7 +4,7 @@ import sys
 import math
 
 
-n,m,h = [int(x) for x in input().split()]
+n,m,h = [int(x) for x in input().split()]  
 arr = [int(x) for x in input().split()]
 
 total = sum(arr)
@@ -35,6 +35,6 @@ for i in range(n-1):
 
 #print (ans)
 
-ans = float(ans)
+ans = float(ans) 
 
 print("{0:.10f}".format(round(1-ans,10)))

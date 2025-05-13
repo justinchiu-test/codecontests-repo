@@ -5,7 +5,7 @@
 
 ## Description
 
-One day Vasya painted a Cartesian coordinate system on a piece of paper and marked some set of points (x1, y1), (x2, y2), ..., (xn, yn). Let's define neighbors for some fixed point from the given set (x, y):
+One day Vasya painted a Cartesian coordinate system on a piece of paper and marked some set of points (x1, y1), (x2, y2), ..., (xn, yn). Let's define neighbors for some fixed point from the given set (x, y): 
 
   * point (x', y') is (x, y)'s right neighbor, if x' > x and y' = y
   * point (x', y') is (x, y)'s left neighbor, if x' < x and y' = y

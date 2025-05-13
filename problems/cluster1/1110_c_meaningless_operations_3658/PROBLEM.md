@@ -15,13 +15,13 @@ Here ⊕ denotes the [bitwise XOR operation](https://en.wikipedia.org/wiki/Bitwi
 
 The greatest common divisor of two integers x and y is the largest integer g such that both x and y are divided by g without remainder.
 
-You are given q integers a_1, a_2, …, a_q. For each of these integers compute the largest possible value of the greatest common divisor (when b is chosen optimally).
+You are given q integers a_1, a_2, …, a_q. For each of these integers compute the largest possible value of the greatest common divisor (when b is chosen optimally). 
 
 Input
 
 The first line contains an integer q (1 ≤ q ≤ 10^3) — the number of integers you need to compute the answer for.
 
-After that q integers are given, one per line: a_1, a_2, …, a_q (2 ≤ a_i ≤ 2^{25} - 1) — the integers you need to compute the answer for.
+After that q integers are given, one per line: a_1, a_2, …, a_q (2 ≤ a_i ≤ 2^{25} - 1) — the integers you need to compute the answer for. 
 
 Output
 
