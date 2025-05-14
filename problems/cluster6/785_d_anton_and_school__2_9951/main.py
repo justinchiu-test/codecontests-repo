@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 mod = 10 ** 9 + 7
 

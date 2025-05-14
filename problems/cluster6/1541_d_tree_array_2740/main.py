@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 from functools import lru_cache
 from collections import deque

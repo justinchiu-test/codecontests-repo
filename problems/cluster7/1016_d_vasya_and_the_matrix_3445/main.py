@@ -1,28 +1,22 @@
 #!/usr/bin/env python3
 
-def sum(x):
-    ans = 0
-    for i in x:
-        ans ^= i
-    return ans
+from library import rints, xor_sum
 
-i = lambda: [*map(int, input().split())]
-n, m = i()
-a = i()
-b = i()
-if sum(a) != sum(b):
+n, m = rints()
+a = rints()
+b = rints()
+if xor_sum(a) != xor_sum(b):
     print("NO")
-    quit()
+    exit()
 print("YES")
-one = sum(a[1:]) ^ b[0]
+one = xor_sum(a[1:]) ^ b[0]
 print(one, end = " ")
 for i in b[1:]:
-    print(i, end = " ")
+    print(i, end=" ")
 print()
 st = ""
-for i in range(m - 1):
+for _ in range(m - 1):
     st += "0 "
 for i in a[1:]:
-    print(i, end = " ")
+    print(i, end=" ")
     print(st)
-

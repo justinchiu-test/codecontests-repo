@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+from library import *
 
 x, y = input().split()
 x = int(x)
@@ -17,6 +17,3 @@ elif ans == (5/6):
     print("5/6")
 else:
     print("1/1")
-
-
-

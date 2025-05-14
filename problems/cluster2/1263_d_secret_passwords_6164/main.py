@@ -1,33 +1,21 @@
-#!/usr/bin/env python3
+from library import readint, readstr, DSU
 
-from sys import stdin
-inp = lambda: stdin.readline().strip()
-
-n = int(inp())
-
-
-def dfs(visited, graph, node):
-    if not visited[node]:
-        visited[node] = True
-        for neighbour in graph[node]:
-            dfs(visited, graph, neighbour)
-
-
-adj = [set() for x in range(26)]
-visited = [True]*26
-for i in range(n):
-    s = list(set(inp()))
-    for j in range(len(s)):
-        visited[ord(s[j])-97] = False
-        for k in range(len(s)):
-            if s[k] != s[j]:
-                adj[ord(s[j])-97].add(ord(s[k])-97)
-
-for i in range(26):
-    adj[i] = list(adj[i])
-counter = 0
-for i in range(26):
-    if not visited[i]:
-        dfs(visited,adj,i)
-        counter += 1
-print(counter)
+# Secret Passwords: union letters appearing in same string
+n = readint()
+dsu = DSU(26)
+present = [False] * 26
+for _ in range(n):
+    # unique characters in the password
+    letters = set(readstr())
+    if not letters:
+        continue
+    # pick a representative
+    rep = ord(next(iter(letters))) - 97
+    present[rep] = True
+    for c in letters:
+        idx = ord(c) - 97
+        present[idx] = True
+        dsu.union(rep, idx)
+# count connected components among present letters
+roots = {dsu.find(i) for i, v in enumerate(present) if v}
+print(len(roots))

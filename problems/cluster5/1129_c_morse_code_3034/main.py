@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-
-import os, sys
-nums = list(map(int, os.read(0, os.fstat(0).st_size).split()))
+from library import ri, rl
+# Read entire sequence modifications
+m = ri()
 
 MOD = 10 ** 9 + 7
 BAD = ([0, 0, 1, 1], [0, 1, 0, 1], [1, 1, 1, 0], [1, 1, 1, 1])
@@ -18,12 +18,13 @@ def zfunc(s):
             l, r = i, i + z[i] - 1
     return z
 
-n = nums[0]
+# initialize
 s = []
 sm = 0
 ans = []
-for i in range(1, n + 1):
-    s.append(nums[i])
+for _ in range(m):
+    s.append(int(rl()))
+    i = len(s)
     cur = 0
     f = [0] * (i + 1)
     f[i] = 1

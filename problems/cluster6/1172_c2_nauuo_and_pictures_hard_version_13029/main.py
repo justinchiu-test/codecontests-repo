@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 P = 998244353
 N, M = map(int, input().split())

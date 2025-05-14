@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 from sys import stdin
 MOD = 1000000007

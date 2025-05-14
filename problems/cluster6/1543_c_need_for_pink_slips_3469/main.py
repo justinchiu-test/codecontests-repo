@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 a = 0
 
@@ -23,6 +24,3 @@ for _ in range(int(input())):
     dp(c, m, p, v, 1.0, 1.0)
     print("%.12f" % round(a, 12))
     a = 0
-
-
-

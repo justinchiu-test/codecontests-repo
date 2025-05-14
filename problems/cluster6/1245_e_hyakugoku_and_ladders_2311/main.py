@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 X = [[int(a) for a in input().split()] for _ in range(10)]
 Y = [(i//10, 9-i%10 if (i//10)&1 else i%10) for i in range(100)]

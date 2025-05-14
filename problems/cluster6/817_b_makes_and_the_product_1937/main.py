@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 n=int(input())
 a=list(map(int,(input().split(' '))))

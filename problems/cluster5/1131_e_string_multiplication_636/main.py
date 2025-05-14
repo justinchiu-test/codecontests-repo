@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import rl, ri
 
 ALPH = 'abcdefghijklmnopqrstuvwxyz'
 MAX = 10 ** 9
@@ -35,8 +36,8 @@ def nxt(c, t):
         nc[t[-1]] = max(nc[t[-1]], r + (c[t[-1]] > 0))
     return {x : min(MAX, y) for x, y in nc.items()}
 
-n = int(input())
-c = cnt(input())
-for i in range(n - 1):
-    c = nxt(c, input())
+n = ri()
+c = cnt(rl())
+for _ in range(n - 1):
+    c = nxt(c, rl())
 print(max(c.values()))

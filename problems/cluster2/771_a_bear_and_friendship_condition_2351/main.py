@@ -1,36 +1,22 @@
-#!/usr/bin/env python3
-
-n,m = map(int,input().split())
-dic = {}
-edges = []
+from library import readint, readints, DSU
 from collections import Counter
-def find(node):
-    tmp = node
-    while node!=dic[node]:
-        node = dic[node]
-    while tmp!=dic[tmp]:
-        dic[tmp],tmp=node,dic[tmp]
-    return node
+
+# Bear Friendship Condition: each component must be complete graph
+n, m = readints(2)
+dsu = DSU(n + 1)
+edges = []
 for _ in range(m):
-    p1,p2 = map(int,input().split())
-    dic.setdefault(p1,p1)
-    dic.setdefault(p2,p2)
-    edges.append(p1)
-    lp = find(p1)
-    rp = find(p2)
-    if lp!=rp:
-        dic[rp] = lp
-for k in dic:
-    find(k)
-def judge():
-    counter = Counter([dic[i] for i in edges])
-    s = Counter(dic.values())
-    for k in counter:
-        en,nn = counter[k],s[k]
-        if (nn**2-nn)//2!=en:
-            return False
-    return True
-if judge():
-    print("YES")
+    u, v = readints(2)
+    edges.append((u, v))
+    dsu.union(u, v)
+# count edges per component root
+edge_count = Counter(dsu.find(u) for u, _ in edges)
+# count nodes per component
+node_count = Counter(dsu.find(i) for i in range(1, n + 1))
+for r, cnt in node_count.items():
+    # expected edges in complete graph
+    if edge_count.get(r, 0) != cnt * (cnt - 1) // 2:
+        print("NO")
+        break
 else:
-    print("NO")
+    print("YES")

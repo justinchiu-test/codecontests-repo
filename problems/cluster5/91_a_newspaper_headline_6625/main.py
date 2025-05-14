@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+from library import rl
 
 import math
-a, b = input(), input()
+a, b = rl(), rl()
 na = len(a)
 nb = len(b)
 dp = [[-1 for _ in range(26)] for _ in range(na+1)]
@@ -25,4 +26,4 @@ while i < nb:
             break
     cp = dp[cp][ord(b[i]) - 97] + 1
     i += 1
-print(ans if ans != math.inf else -1)    
+print(ans if ans != math.inf else -1)

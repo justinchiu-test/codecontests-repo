@@ -1,36 +1,22 @@
-#!/usr/bin/env python3
+from library import readint, readints, DSU
 
-from sys import stdin
-from collections import deque
-
-
-def bfs(x):
-    vis[x] = True
-    q = deque([x])
-    ans = 1
-    while q:
-        cur = q.popleft()
-        ans &= len(g[cur]) == 2
-        for x in g[cur]:
-            if not vis[x]:
-                vis[x] = True
-                q.append(x)
-    return ans
-
-
-n, m = map(int, stdin.readline().split())
-g = [[] for _ in range(n)]
-vis = [False]*n
-ans = 0
+# Count components where every node has degree 2 (simple cycle)
+n, m = readints(2)
+dsu = DSU(n)
+deg = [0] * n
 for _ in range(m):
-    u, v = map(lambda x: int(x) - 1, stdin.readline().split())
-    g[u].append(v)
-    g[v].append(u)
-
-for x in range(n):
-    if not vis[x]:
-        ans += bfs(x)
-
+    u, v = readints(2)
+    u -= 1; v -= 1
+    deg[u] += 1; deg[v] += 1
+    dsu.union(u, v)
+# mark invalid components
+bad = {}
+for i in range(n):
+    r = dsu.find(i)
+    if r not in bad:
+        bad[r] = False
+    if deg[i] != 2:
+        bad[r] = True
+# count good cycles
+ans = sum(1 for ok in bad.values() if not ok)
 print(ans)
-
-  		 		 	   	 				 	     	   	

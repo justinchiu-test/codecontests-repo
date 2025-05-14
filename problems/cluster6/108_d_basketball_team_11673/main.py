@@ -1,40 +1,29 @@
 #!/usr/bin/env python3
-
+from library import ria
 import sys
-import math
 
+def main():
+    n, m, h = ria()
+    arr = ria()
+    if sum(arr) < n:
+        print(-1)
+        sys.exit()
 
-n,m,h = [int(x) for x in input().split()]  
-arr = [int(x) for x in input().split()]
+    total = sum(arr)
+    total1 = total - arr[h-1]
+    total -= 1
+    ans = 1.0
+    for i in range(n-1):
+        x = total1 - i
+        y = total - i
+        ans *= x / y
 
-total = sum(arr)
+    p = 1 - ans
+    # Print as integer 1 if p is effectively 1; otherwise print 10 decimal places
+    if p > 1 - 1e-12:
+        print(1)
+    else:
+        print("{:.10f}".format(p))
 
-if (total < n):
-	print ("-1")
-	sys.exit()
-
-total1 = total - arr[h-1]
-rem  = total - total1-1
-total = total - 1
-ans = 1
-'''
-#start = total - (n-1)
-#print (start)
-x = start
-#print (rem)
-for i in range(rem-1):
-	start = float(float(start) * float(x-(i+1)))
-
-print (start)
-'''
-for i in range(n-1):
-	x = float(total1 - i)
-	y = float(total - i)
-	#print (i,x,y)
-	ans = float(ans * float(x/y))
-
-#print (ans)
-
-ans = float(ans) 
-
-print("{0:.10f}".format(round(1-ans,10)))
+if __name__ == "__main__":
+    main()

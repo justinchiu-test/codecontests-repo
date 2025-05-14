@@ -1,14 +1,21 @@
 #!/usr/bin/env python3
 
-n=int(input())
-p=[0,0]+list(map(int,input().split()))#tomamos la entrada
-d=[0]*(n+1)#aki vamos a contar la cantidad d colores q necesita cada union
-for i in range(n,1,-1):#empezamos x las hojas hasta llegar a la raiz
-    if d[i]==0:#si no estas visitado eres una hoja => solo necesitas un color
-        d[i]=1
-    d[p[i]]+=d[i]#si no necesitas tantos colores como la cantidad q necesitan tus hijos
-if n==1:#si la entrada es 1 solo necesitas un color
-    d[1]=1
-d=d[1:]#quitamos el vertice 0(al final todo empieza en 1-n)
-d.sort()#ordenamos para dar la cantidad d colores en orden d los vertices(o sea, de k)
-print(*d)
+from library import ni, read_ints
+
+def main():
+    n = ni()
+    if n == 1:
+        print(1)
+        return
+    p = [0, 0] + read_ints(n-1)
+    d = [0] * (n+1)
+    for i in range(n, 1, -1):
+        if d[i] == 0:
+            d[i] = 1
+        d[p[i]] += d[i]
+    ans = d[1:]
+    ans.sort()
+    print(*ans)
+
+if __name__ == "__main__":
+    main()

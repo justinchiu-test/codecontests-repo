@@ -1,40 +1,16 @@
-#!/usr/bin/env python3
+from library import readint, DSU
 
-
-inp = input().split()
-
-n = int(inp[0])
-m = int(inp[1])
-
-def dfs(x):
-
-    visited.add(x)
-
-    for y in e[x]:
-
-        if not y in visited:
-
-            dfs(y)
-
-if n >= 3 and n == m:
-
-    visited = set()
-
-    e = [[] for i in range(n + 1)]
-    
-    for i in range(m):
-    
-        x, y = map(int, input().split())
-    
-        e[x].append(y)
-    
-        e[y].append(x)
-
-    dfs(1)
- 
-    print('FHTAGN!' if len(visited) == n else 'NO')
+# Check if graph is a single cycle and connected
+n = readint(); m = readint()
+if n < 3 or m != n:
+    print("NO")
 else:
-    print('NO')
-
- 
- 
+    dsu = DSU(n)
+    cycles = 0
+    for _ in range(m):
+        u = readint() - 1
+        v = readint() - 1
+        if not dsu.union(u, v):
+            cycles += 1
+    roots = {dsu.find(i) for i in range(n)}
+    print("FHTAGN!" if cycles == 1 and len(roots) == 1 else "NO")

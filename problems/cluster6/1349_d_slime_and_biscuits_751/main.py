@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
+from library import *
 
 import os
 import sys
 input = sys.stdin.buffer.readline
-#sys.setrecursionlimit(int(2e5)) 
+#sys.setrecursionlimit(int(2e5))
 from collections import deque
 import math
 #  list(map(int, input().split()))
@@ -27,11 +28,11 @@ class CF(object):
             temp = self.inv(self.tot-k)
             self.dp[k+1][0] = -self.tot*(self.n - 1) - self.dp[k][0] * (2*k - self.tot- k*self.n) - self.dp[k-1][0] *k*(self.n-1)
             self.dp[k+1][0] *= temp
-            self.dp[k+1][0] = (self.dp[k+1][0] %self.mod+self.mod)%self.mod            
+            self.dp[k+1][0] = (self.dp[k+1][0] %self.mod+self.mod)%self.mod
             self.dp[k+1][1] = -self.dp[k][1]*(2*k - self.tot- k*self.n) - self.dp[k-1][1]*k*(self.n-1)
             self.dp[k+1][1] *= temp
             self.dp[k+1][1] = (self.dp[k+1][1] %self.mod+self.mod)%self.mod
-        
+
         alpha = -self.dp[self.tot][0]*self.inv(self.dp[self.tot][1])
         alpha = (alpha%self.mod + self.mod)%self.mod
         #print(alpha)
@@ -46,7 +47,7 @@ class CF(object):
         print(ans)
 
 
-    def main(self):            
+    def main(self):
         self.gao()
         pass
 

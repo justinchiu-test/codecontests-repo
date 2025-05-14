@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 def euclid(a, b):
 	if b == 0:

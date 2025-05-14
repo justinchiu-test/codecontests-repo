@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import rl, ril
 
 def f(x):
     z=[0 for i in range(len(x))]
@@ -12,9 +13,9 @@ def f(x):
         if i+z[i]-1>r:
             l,r=i,i+z[i]-1
     return z
-a=list(map(int,input('').split()))
+a = ril()
 n,a,b=a[0],a[1],a[2]
-s=input('')
+s = rl()
 dp=[0 for i in range(n)]
 dp[0]=a
 for i in range(1,n):
@@ -29,4 +30,3 @@ for i in range(1,n):
         if maxs[j]>=i-j:
             dp[i]=min(dp[i],dp[j]+b)
 print(dp[len(dp)-1])
-            

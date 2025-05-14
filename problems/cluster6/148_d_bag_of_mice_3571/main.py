@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 w,b = list( map(int, input().split()) )
 p = []

@@ -1,21 +1,14 @@
-#!/usr/bin/env python3
+from library import readint, readints, DSU
 
-n = int(input())
-g = []
+# Ice Skating: connect drifts sharing x or y coordinate
+n = readint()
+coords = [tuple(readints(2)) for _ in range(n)]
+dsu = DSU(n)
 for i in range(n):
-    t = input().split()
-    g.append([ int(t[0]), int(t[1]), False ])
-
-def visita(i):
-    g[i][2] = True
-    for j in range(n):
-        if g[j][2] == False and (g[i][0] == g[j][0] or g[i][1] == g[j][1]):
-            visita(j)
-
-cnt = -1
-for i in range(n):
-    if g[i][2] == False:
-        cnt += 1
-        visita(i)
-
-print(cnt)
+    xi, yi = coords[i]
+    for j in range(i+1, n):
+        xj, yj = coords[j]
+        if xi == xj or yi == yj:
+            dsu.union(i, j)
+roots = set(dsu.find(i) for i in range(n))
+print(len(roots) - 1)

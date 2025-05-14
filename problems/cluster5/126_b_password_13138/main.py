@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import rl
 
 from fractions import Fraction
 import bisect
@@ -23,24 +24,6 @@ from itertools import accumulate
 # input = io.BytesIO(os.read(0, os.fstat(0).st_size)).readline
 
 
-def input():
-    return sys.stdin.readline().strip()
-
-
-def iinput():
-    return int(input())
-
-
-def tinput():
-    return input().split()
-
-
-def rinput():
-    return map(int, tinput())
-
-
-def rlinput():
-    return list(rinput())
 
 
 mod = int(1e9)+7
@@ -70,7 +53,7 @@ def zfunction(s):
     return Z
 
 
-s = input()
+s = rl()
 n = len(s)
 Z = zfunction(s)
 # for i in range(n):

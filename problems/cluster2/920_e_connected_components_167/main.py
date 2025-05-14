@@ -1,27 +1,10 @@
-#!/usr/bin/env python3
+from library import readint, read_graph, complement_components
 
-n,m=map(int,input().split())
-non=[{i} for i in range(n)]
-for i in range(m):
-    u,v=map(int,input().split())
-    u,v=u-1,v-1
-    non[u].add(v)
-    non[v].add(u)
-vertex=set(range(n))
-ans=[]
-while(vertex):
-    a=next(iter(vertex))
-    vertex.remove(a)
-    stk=[a]
-    cou=1
-    while(stk):
-        v=stk.pop()
-        s=vertex-non[v]
-        cou+=len(s)
-        stk.extend(s)
-        vertex&=non[v]
-    ans.append(cou)
-ans.sort()
-print(len(ans))
-print(" ".join(map(str,ans)))
-    
+# Connected components in complement graph: output sorted sizes
+n, m = readint(), readint()
+edges = read_graph(n, m)
+adj_sets = [set(neigh) for neigh in edges]
+comps = complement_components(n, adj_sets)
+comps.sort()
+print(len(comps))
+print(*comps)

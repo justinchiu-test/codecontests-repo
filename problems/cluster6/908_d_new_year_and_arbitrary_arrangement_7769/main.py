@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 k, pa, pb = map(int, input().split())
 

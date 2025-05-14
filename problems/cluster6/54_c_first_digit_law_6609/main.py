@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 def num_ones(a,b):
     '''returns how many nums start
@@ -21,8 +22,8 @@ def num_ones(a,b):
             ans+=10**(len(b)-1)
         return ans
     return num_ones(0,b)-num_ones(0,a-1)
-        
-        
+
+
 def dp(far,need):
     '''returns prob that the first
     far vars have at least need 1s'''
@@ -53,5 +54,3 @@ for i in range(n):
     DP.append([-1]*(atLeast+5))
 
 print(round(dp(n-1,atLeast),10))
-
-

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import *
 
 # by the authority of GOD     author: manhar singh sachdev #
 

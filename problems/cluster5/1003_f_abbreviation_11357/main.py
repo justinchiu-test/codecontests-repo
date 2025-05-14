@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from library import rl, ri
 
 # import time
 N = 303
@@ -8,8 +9,8 @@ for i in range(N):
     eq.append([False] * N)
 for i in range(N):
     dp.append([0] * N)
-n = int(input())
-s = input()
+n = ri()
+s = rl()
 # t = time.time()
 allsum = len(s)
 s = s.split()
