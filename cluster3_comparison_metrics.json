@@ -1,0 +1,951 @@
+{
+    "cluster_name": "cluster3",
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "logprobs_enabled": true,
+    "refactored_library": {
+        "file_path": "problems/cluster3/library.py",
+        "metrics": {
+            "loc": 137,
+            "sloc": 98,
+            "lloc": 126,
+            "comments": 3,
+            "multi": 4,
+            "blank": 17,
+            "cyclomatic": 41
+        },
+        "logprobs": -666.9666072453434,
+        "tokens": 1076
+    },
+    "refactored_programs": {
+        "1336_a_linova_and_kingdom_8768": {
+            "file_path": "problems/cluster3/1336_a_linova_and_kingdom_8768/main.py",
+            "metrics": {
+                "loc": 99,
+                "sloc": 77,
+                "lloc": 82,
+                "comments": 2,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 23
+            },
+            "logprobs": -302.62812006214466,
+            "tokens": 729,
+            "problem_name": "1336_a_linova_and_kingdom_8768"
+        },
+        "1153_d_serval_and_rooted_tree_2202": {
+            "file_path": "problems/cluster3/1153_d_serval_and_rooted_tree_2202/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -188.25234533147022,
+            "tokens": 208,
+            "problem_name": "1153_d_serval_and_rooted_tree_2202"
+        },
+        "1281_e_jeremy_bearimy_9704": {
+            "file_path": "problems/cluster3/1281_e_jeremy_bearimy_9704/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 46,
+                "lloc": 46,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 11
+            },
+            "logprobs": -338.05006116303423,
+            "tokens": 365,
+            "problem_name": "1281_e_jeremy_bearimy_9704"
+        },
+        "1528_a_parsas_humongous_tree_10236": {
+            "file_path": "problems/cluster3/1528_a_parsas_humongous_tree_10236/main.py",
+            "metrics": {
+                "loc": 56,
+                "sloc": 42,
+                "lloc": 48,
+                "comments": 12,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 11
+            },
+            "logprobs": -370.7527768466333,
+            "tokens": 462,
+            "problem_name": "1528_a_parsas_humongous_tree_10236"
+        },
+        "700_b_connecting_universities_5263": {
+            "file_path": "problems/cluster3/700_b_connecting_universities_5263/main.py",
+            "metrics": {
+                "loc": 81,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 3,
+                "multi": 0,
+                "blank": 42,
+                "cyclomatic": 7
+            },
+            "logprobs": -386.4738870708683,
+            "tokens": 366,
+            "problem_name": "700_b_connecting_universities_5263"
+        },
+        "1187_e_tree_painting_12718": {
+            "file_path": "problems/cluster3/1187_e_tree_painting_12718/main.py",
+            "metrics": {
+                "loc": 64,
+                "sloc": 51,
+                "lloc": 51,
+                "comments": 1,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 0
+            },
+            "logprobs": -263.00959180774686,
+            "tokens": 379,
+            "problem_name": "1187_e_tree_painting_12718"
+        },
+        "543_d_road_improvement_5673": {
+            "file_path": "problems/cluster3/543_d_road_improvement_5673/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 114,
+                "lloc": 111,
+                "comments": 3,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 40
+            },
+            "logprobs": -746.111300930656,
+            "tokens": 1001,
+            "problem_name": "543_d_road_improvement_5673"
+        },
+        "461_b_appleman_and_tree_11604": {
+            "file_path": "problems/cluster3/461_b_appleman_and_tree_11604/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 41,
+                "lloc": 37,
+                "comments": 2,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 14
+            },
+            "logprobs": -415.0343847325652,
+            "tokens": 419,
+            "problem_name": "461_b_appleman_and_tree_11604"
+        },
+        "275_d_zero_tree_12948": {
+            "file_path": "problems/cluster3/275_d_zero_tree_12948/main.py",
+            "metrics": {
+                "loc": 55,
+                "sloc": 45,
+                "lloc": 45,
+                "comments": 5,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 1
+            },
+            "logprobs": -450.5024241212149,
+            "tokens": 447,
+            "problem_name": "275_d_zero_tree_12948"
+        },
+        "1324_f_maximum_white_subtree_3668": {
+            "file_path": "problems/cluster3/1324_f_maximum_white_subtree_3668/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 106,
+                "lloc": 110,
+                "comments": 3,
+                "multi": 0,
+                "blank": 25,
+                "cyclomatic": 23
+            },
+            "logprobs": -324.792890108198,
+            "tokens": 936,
+            "problem_name": "1324_f_maximum_white_subtree_3668"
+        },
+        "1083_a_the_fair_nut_and_the_best_path_12817": {
+            "file_path": "problems/cluster3/1083_a_the_fair_nut_and_the_best_path_12817/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 40,
+                "lloc": 40,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 12
+            },
+            "logprobs": -208.61015188024578,
+            "tokens": 347,
+            "problem_name": "1083_a_the_fair_nut_and_the_best_path_12817"
+        },
+        "80_e_beavermuncher0xff_11410": {
+            "file_path": "problems/cluster3/80_e_beavermuncher0xff_11410/main.py",
+            "metrics": {
+                "loc": 67,
+                "sloc": 50,
+                "lloc": 52,
+                "comments": 2,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 1
+            },
+            "logprobs": -420.91793223384485,
+            "tokens": 495,
+            "problem_name": "80_e_beavermuncher0xff_11410"
+        },
+        "696_b_puzzles_9008": {
+            "file_path": "problems/cluster3/696_b_puzzles_9008/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 18,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -190.08376204893307,
+            "tokens": 203,
+            "problem_name": "696_b_puzzles_9008"
+        },
+        "23_e_tree_4723": {
+            "file_path": "problems/cluster3/23_e_tree_4723/main.py",
+            "metrics": {
+                "loc": 66,
+                "sloc": 55,
+                "lloc": 55,
+                "comments": 2,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 10
+            },
+            "logprobs": -448.624176247243,
+            "tokens": 491,
+            "problem_name": "23_e_tree_4723"
+        },
+        "1084_d_the_fair_nut_and_the_best_path_3448": {
+            "file_path": "problems/cluster3/1084_d_the_fair_nut_and_the_best_path_3448/main.py",
+            "metrics": {
+                "loc": 46,
+                "sloc": 42,
+                "lloc": 44,
+                "comments": 3,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -396.49537900824055,
+            "tokens": 368,
+            "problem_name": "1084_d_the_fair_nut_and_the_best_path_3448"
+        },
+        "697_d_puzzles_7551": {
+            "file_path": "problems/cluster3/697_d_puzzles_7551/main.py",
+            "metrics": {
+                "loc": 44,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 9
+            },
+            "logprobs": -196.67817709744355,
+            "tokens": 286,
+            "problem_name": "697_d_puzzles_7551"
+        },
+        "1332_f_independent_set_12309": {
+            "file_path": "problems/cluster3/1332_f_independent_set_12309/main.py",
+            "metrics": {
+                "loc": 62,
+                "sloc": 54,
+                "lloc": 54,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 7
+            },
+            "logprobs": -399.03595598355133,
+            "tokens": 556,
+            "problem_name": "1332_f_independent_set_12309"
+        },
+        "1092_f_tree_with_maximum_cost_8028": {
+            "file_path": "problems/cluster3/1092_f_tree_with_maximum_cost_8028/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 57,
+                "lloc": 58,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 4
+            },
+            "logprobs": -349.0455790794472,
+            "tokens": 487,
+            "problem_name": "1092_f_tree_with_maximum_cost_8028"
+        },
+        "1499_f_diameter_cuts_11692": {
+            "file_path": "problems/cluster3/1499_f_diameter_cuts_11692/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 39,
+                "lloc": 42,
+                "comments": 1,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 5
+            },
+            "logprobs": -308.04332507076214,
+            "tokens": 396,
+            "problem_name": "1499_f_diameter_cuts_11692"
+        },
+        "1453_e_dog_snacks_5757": {
+            "file_path": "problems/cluster3/1453_e_dog_snacks_5757/main.py",
+            "metrics": {
+                "loc": 121,
+                "sloc": 93,
+                "lloc": 100,
+                "comments": 14,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 20
+            },
+            "logprobs": -555.4446823536513,
+            "tokens": 1015,
+            "problem_name": "1453_e_dog_snacks_5757"
+        },
+        "1436_d_bandit_in_a_city_4611": {
+            "file_path": "problems/cluster3/1436_d_bandit_in_a_city_4611/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 5,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": -233.66843106306956,
+            "tokens": 225,
+            "problem_name": "1436_d_bandit_in_a_city_4611"
+        },
+        "1280_c_jeremy_bearimy_11057": {
+            "file_path": "problems/cluster3/1280_c_jeremy_bearimy_11057/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 39,
+                "lloc": 40,
+                "comments": 3,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -333.1827887400311,
+            "tokens": 432,
+            "problem_name": "1280_c_jeremy_bearimy_11057"
+        },
+        "846_e_chemistry_in_berland_60": {
+            "file_path": "problems/cluster3/846_e_chemistry_in_berland_60/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 12,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 7
+            },
+            "logprobs": -317.16157041980364,
+            "tokens": 347,
+            "problem_name": "846_e_chemistry_in_berland_60"
+        },
+        "1056_d_decorate_apple_tree_1782": {
+            "file_path": "problems/cluster3/1056_d_decorate_apple_tree_1782/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 4
+            },
+            "logprobs": -141.13911640110499,
+            "tokens": 169,
+            "problem_name": "1056_d_decorate_apple_tree_1782"
+        },
+        "1540_b_tree_array_3053": {
+            "file_path": "problems/cluster3/1540_b_tree_array_3053/main.py",
+            "metrics": {
+                "loc": 70,
+                "sloc": 60,
+                "lloc": 62,
+                "comments": 1,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": -480.53824472715866,
+            "tokens": 575,
+            "problem_name": "1540_b_tree_array_3053"
+        },
+        "1076_e_vasya_and_a_tree_11985": {
+            "file_path": "problems/cluster3/1076_e_vasya_and_a_tree_11985/main.py",
+            "metrics": {
+                "loc": 122,
+                "sloc": 96,
+                "lloc": 102,
+                "comments": 1,
+                "multi": 0,
+                "blank": 25,
+                "cyclomatic": 22
+            },
+            "logprobs": -337.78106175535737,
+            "tokens": 838,
+            "problem_name": "1076_e_vasya_and_a_tree_11985"
+        },
+        "538_e_demiurges_play_again_12023": {
+            "file_path": "problems/cluster3/538_e_demiurges_play_again_12023/main.py",
+            "metrics": {
+                "loc": 56,
+                "sloc": 50,
+                "lloc": 50,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 13
+            },
+            "logprobs": -277.0891719738316,
+            "tokens": 414,
+            "problem_name": "538_e_demiurges_play_again_12023"
+        },
+        "735_e_ostap_and_tree_2037": {
+            "file_path": "problems/cluster3/735_e_ostap_and_tree_2037/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 6
+            },
+            "logprobs": -281.94238486325855,
+            "tokens": 498,
+            "problem_name": "735_e_ostap_and_tree_2037"
+        },
+        "274_b_zero_tree_3163": {
+            "file_path": "problems/cluster3/274_b_zero_tree_3163/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 39,
+                "lloc": 44,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -317.5023897659554,
+            "tokens": 471,
+            "problem_name": "274_b_zero_tree_3163"
+        },
+        "1498_f_christmas_game_5029": {
+            "file_path": "problems/cluster3/1498_f_christmas_game_5029/main.py",
+            "metrics": {
+                "loc": 67,
+                "sloc": 49,
+                "lloc": 49,
+                "comments": 4,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 0
+            },
+            "logprobs": -419.0154955489427,
+            "tokens": 474,
+            "problem_name": "1498_f_christmas_game_5029"
+        }
+    },
+    "original_programs": {
+        "1336_a_linova_and_kingdom_8768": {
+            "file_path": "problems_original/cluster3/1336_a_linova_and_kingdom_8768/main.py",
+            "metrics": {
+                "loc": 99,
+                "sloc": 77,
+                "lloc": 82,
+                "comments": 2,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 23
+            },
+            "logprobs": -391.7343454204723,
+            "tokens": 721,
+            "problem_name": "1336_a_linova_and_kingdom_8768"
+        },
+        "1153_d_serval_and_rooted_tree_2202": {
+            "file_path": "problems_original/cluster3/1153_d_serval_and_rooted_tree_2202/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -273.1648172098269,
+            "tokens": 201,
+            "problem_name": "1153_d_serval_and_rooted_tree_2202"
+        },
+        "1281_e_jeremy_bearimy_9704": {
+            "file_path": "problems_original/cluster3/1281_e_jeremy_bearimy_9704/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 46,
+                "lloc": 46,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 11
+            },
+            "logprobs": -414.6190131980459,
+            "tokens": 358,
+            "problem_name": "1281_e_jeremy_bearimy_9704"
+        },
+        "1528_a_parsas_humongous_tree_10236": {
+            "file_path": "problems_original/cluster3/1528_a_parsas_humongous_tree_10236/main.py",
+            "metrics": {
+                "loc": 56,
+                "sloc": 42,
+                "lloc": 48,
+                "comments": 12,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 11
+            },
+            "logprobs": -463.44659045228553,
+            "tokens": 455,
+            "problem_name": "1528_a_parsas_humongous_tree_10236"
+        },
+        "700_b_connecting_universities_5263": {
+            "file_path": "problems_original/cluster3/700_b_connecting_universities_5263/main.py",
+            "metrics": {
+                "loc": 81,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 3,
+                "multi": 0,
+                "blank": 42,
+                "cyclomatic": 7
+            },
+            "logprobs": -467.463182555073,
+            "tokens": 358,
+            "problem_name": "700_b_connecting_universities_5263"
+        },
+        "1187_e_tree_painting_12718": {
+            "file_path": "problems_original/cluster3/1187_e_tree_painting_12718/main.py",
+            "metrics": {
+                "loc": 64,
+                "sloc": 51,
+                "lloc": 51,
+                "comments": 1,
+                "multi": 0,
+                "blank": 12,
+                "cyclomatic": 0
+            },
+            "logprobs": -361.094781881671,
+            "tokens": 372,
+            "problem_name": "1187_e_tree_painting_12718"
+        },
+        "543_d_road_improvement_5673": {
+            "file_path": "problems_original/cluster3/543_d_road_improvement_5673/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 114,
+                "lloc": 111,
+                "comments": 3,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 40
+            },
+            "logprobs": -813.1995618081481,
+            "tokens": 994,
+            "problem_name": "543_d_road_improvement_5673"
+        },
+        "461_b_appleman_and_tree_11604": {
+            "file_path": "problems_original/cluster3/461_b_appleman_and_tree_11604/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 41,
+                "lloc": 37,
+                "comments": 2,
+                "multi": 0,
+                "blank": 20,
+                "cyclomatic": 14
+            },
+            "logprobs": -494.3119197581969,
+            "tokens": 411,
+            "problem_name": "461_b_appleman_and_tree_11604"
+        },
+        "275_d_zero_tree_12948": {
+            "file_path": "problems_original/cluster3/275_d_zero_tree_12948/main.py",
+            "metrics": {
+                "loc": 55,
+                "sloc": 45,
+                "lloc": 45,
+                "comments": 5,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 1
+            },
+            "logprobs": -514.9754228472311,
+            "tokens": 440,
+            "problem_name": "275_d_zero_tree_12948"
+        },
+        "1324_f_maximum_white_subtree_3668": {
+            "file_path": "problems_original/cluster3/1324_f_maximum_white_subtree_3668/main.py",
+            "metrics": {
+                "loc": 134,
+                "sloc": 106,
+                "lloc": 110,
+                "comments": 3,
+                "multi": 0,
+                "blank": 25,
+                "cyclomatic": 23
+            },
+            "logprobs": -407.5194403009681,
+            "tokens": 929,
+            "problem_name": "1324_f_maximum_white_subtree_3668"
+        },
+        "1083_a_the_fair_nut_and_the_best_path_12817": {
+            "file_path": "problems_original/cluster3/1083_a_the_fair_nut_and_the_best_path_12817/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 40,
+                "lloc": 40,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 12
+            },
+            "logprobs": -300.9471043556576,
+            "tokens": 340,
+            "problem_name": "1083_a_the_fair_nut_and_the_best_path_12817"
+        },
+        "80_e_beavermuncher0xff_11410": {
+            "file_path": "problems_original/cluster3/80_e_beavermuncher0xff_11410/main.py",
+            "metrics": {
+                "loc": 67,
+                "sloc": 50,
+                "lloc": 52,
+                "comments": 2,
+                "multi": 0,
+                "blank": 16,
+                "cyclomatic": 1
+            },
+            "logprobs": -503.8639090810398,
+            "tokens": 488,
+            "problem_name": "80_e_beavermuncher0xff_11410"
+        },
+        "696_b_puzzles_9008": {
+            "file_path": "problems_original/cluster3/696_b_puzzles_9008/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 18,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -274.90084574629424,
+            "tokens": 196,
+            "problem_name": "696_b_puzzles_9008"
+        },
+        "23_e_tree_4723": {
+            "file_path": "problems_original/cluster3/23_e_tree_4723/main.py",
+            "metrics": {
+                "loc": 66,
+                "sloc": 55,
+                "lloc": 55,
+                "comments": 2,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 10
+            },
+            "logprobs": -542.5246628187334,
+            "tokens": 484,
+            "problem_name": "23_e_tree_4723"
+        },
+        "1084_d_the_fair_nut_and_the_best_path_3448": {
+            "file_path": "problems_original/cluster3/1084_d_the_fair_nut_and_the_best_path_3448/main.py",
+            "metrics": {
+                "loc": 46,
+                "sloc": 42,
+                "lloc": 44,
+                "comments": 3,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -470.2676592229291,
+            "tokens": 361,
+            "problem_name": "1084_d_the_fair_nut_and_the_best_path_3448"
+        },
+        "697_d_puzzles_7551": {
+            "file_path": "problems_original/cluster3/697_d_puzzles_7551/main.py",
+            "metrics": {
+                "loc": 44,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 9
+            },
+            "logprobs": -293.0198688657381,
+            "tokens": 279,
+            "problem_name": "697_d_puzzles_7551"
+        },
+        "1332_f_independent_set_12309": {
+            "file_path": "problems_original/cluster3/1332_f_independent_set_12309/main.py",
+            "metrics": {
+                "loc": 62,
+                "sloc": 54,
+                "lloc": 54,
+                "comments": 1,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 7
+            },
+            "logprobs": -487.6060672914707,
+            "tokens": 549,
+            "problem_name": "1332_f_independent_set_12309"
+        },
+        "1092_f_tree_with_maximum_cost_8028": {
+            "file_path": "problems_original/cluster3/1092_f_tree_with_maximum_cost_8028/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 57,
+                "lloc": 58,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 4
+            },
+            "logprobs": -442.53800620454103,
+            "tokens": 480,
+            "problem_name": "1092_f_tree_with_maximum_cost_8028"
+        },
+        "1499_f_diameter_cuts_11692": {
+            "file_path": "problems_original/cluster3/1499_f_diameter_cuts_11692/main.py",
+            "metrics": {
+                "loc": 51,
+                "sloc": 39,
+                "lloc": 42,
+                "comments": 1,
+                "multi": 0,
+                "blank": 11,
+                "cyclomatic": 5
+            },
+            "logprobs": -402.7765995726851,
+            "tokens": 389,
+            "problem_name": "1499_f_diameter_cuts_11692"
+        },
+        "1453_e_dog_snacks_5757": {
+            "file_path": "problems_original/cluster3/1453_e_dog_snacks_5757/main.py",
+            "metrics": {
+                "loc": 121,
+                "sloc": 93,
+                "lloc": 100,
+                "comments": 14,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 20
+            },
+            "logprobs": -627.0590250551397,
+            "tokens": 1008,
+            "problem_name": "1453_e_dog_snacks_5757"
+        },
+        "1436_d_bandit_in_a_city_4611": {
+            "file_path": "problems_original/cluster3/1436_d_bandit_in_a_city_4611/main.py",
+            "metrics": {
+                "loc": 24,
+                "sloc": 16,
+                "lloc": 16,
+                "comments": 5,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": -324.2062392387206,
+            "tokens": 218,
+            "problem_name": "1436_d_bandit_in_a_city_4611"
+        },
+        "1280_c_jeremy_bearimy_11057": {
+            "file_path": "problems_original/cluster3/1280_c_jeremy_bearimy_11057/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 39,
+                "lloc": 40,
+                "comments": 3,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -427.7653005150294,
+            "tokens": 425,
+            "problem_name": "1280_c_jeremy_bearimy_11057"
+        },
+        "846_e_chemistry_in_berland_60": {
+            "file_path": "problems_original/cluster3/846_e_chemistry_in_berland_60/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 12,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 7
+            },
+            "logprobs": -407.44197569941906,
+            "tokens": 340,
+            "problem_name": "846_e_chemistry_in_berland_60"
+        },
+        "1056_d_decorate_apple_tree_1782": {
+            "file_path": "problems_original/cluster3/1056_d_decorate_apple_tree_1782/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 13,
+                "comments": 9,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -551.4400609064617,
+            "tokens": 238,
+            "problem_name": "1056_d_decorate_apple_tree_1782"
+        },
+        "1540_b_tree_array_3053": {
+            "file_path": "problems_original/cluster3/1540_b_tree_array_3053/main.py",
+            "metrics": {
+                "loc": 70,
+                "sloc": 60,
+                "lloc": 62,
+                "comments": 1,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": -594.3678118173675,
+            "tokens": 568,
+            "problem_name": "1540_b_tree_array_3053"
+        },
+        "1076_e_vasya_and_a_tree_11985": {
+            "file_path": "problems_original/cluster3/1076_e_vasya_and_a_tree_11985/main.py",
+            "metrics": {
+                "loc": 122,
+                "sloc": 96,
+                "lloc": 102,
+                "comments": 1,
+                "multi": 0,
+                "blank": 25,
+                "cyclomatic": 22
+            },
+            "logprobs": -425.493736189994,
+            "tokens": 830,
+            "problem_name": "1076_e_vasya_and_a_tree_11985"
+        },
+        "538_e_demiurges_play_again_12023": {
+            "file_path": "problems_original/cluster3/538_e_demiurges_play_again_12023/main.py",
+            "metrics": {
+                "loc": 56,
+                "sloc": 50,
+                "lloc": 50,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 13
+            },
+            "logprobs": -380.52148333336675,
+            "tokens": 407,
+            "problem_name": "538_e_demiurges_play_again_12023"
+        },
+        "735_e_ostap_and_tree_2037": {
+            "file_path": "problems_original/cluster3/735_e_ostap_and_tree_2037/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 6
+            },
+            "logprobs": -380.00430249589965,
+            "tokens": 491,
+            "problem_name": "735_e_ostap_and_tree_2037"
+        },
+        "274_b_zero_tree_3163": {
+            "file_path": "problems_original/cluster3/274_b_zero_tree_3163/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 39,
+                "lloc": 44,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -411.54736507030964,
+            "tokens": 464,
+            "problem_name": "274_b_zero_tree_3163"
+        },
+        "1498_f_christmas_game_5029": {
+            "file_path": "problems_original/cluster3/1498_f_christmas_game_5029/main.py",
+            "metrics": {
+                "loc": 67,
+                "sloc": 49,
+                "lloc": 49,
+                "comments": 4,
+                "multi": 0,
+                "blank": 14,
+                "cyclomatic": 0
+            },
+            "logprobs": -498.95913039088913,
+            "tokens": 467,
+            "problem_name": "1498_f_christmas_game_5029"
+        }
+    },
+    "aggregated_metrics_refactored": {
+        "logprobs": -11064.574165681752,
+        "tokens": 15475,
+        "loc": 2007,
+        "sloc": 1584,
+        "lloc": 1651,
+        "comments": 95,
+        "multi": 4,
+        "blank": 315,
+        "cyclomatic": 291
+    },
+    "aggregated_metrics_original": {
+        "logprobs": -13348.780229303606,
+        "tokens": 14261,
+        "loc": 1863,
+        "sloc": 1481,
+        "lloc": 1520,
+        "comments": 100,
+        "multi": 0,
+        "blank": 296,
+        "cyclomatic": 246
+    },
+    "comparison_ratios": {
+        "tokens_refactored_div_original": 1.0851272701774068,
+        "logprobs_refactored_div_original": 0.8288827874619209,
+        "avg_logprob_per_token_original": -0.9360339547930444,
+        "avg_logprob_per_token_refactored": -0.7149967150682877
+    }
+}

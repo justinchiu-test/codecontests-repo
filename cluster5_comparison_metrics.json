@@ -1,0 +1,951 @@
+{
+    "cluster_name": "cluster5",
+    "model": "Qwen/Qwen2.5-7B-Instruct-Turbo",
+    "logprobs_enabled": true,
+    "refactored_library": {
+        "file_path": "problems/cluster5/library.py",
+        "metrics": {
+            "loc": 25,
+            "sloc": 11,
+            "lloc": 17,
+            "comments": 0,
+            "multi": 4,
+            "blank": 5,
+            "cyclomatic": 5
+        },
+        "logprobs": -376.3060904860814,
+        "tokens": 173
+    },
+    "refactored_programs": {
+        "126_b_password_13138": {
+            "file_path": "problems/cluster5/126_b_password_13138/main.py",
+            "metrics": {
+                "loc": 83,
+                "sloc": 56,
+                "lloc": 58,
+                "comments": 12,
+                "multi": 0,
+                "blank": 15,
+                "cyclomatic": 9
+            },
+            "logprobs": -461.33062586291356,
+            "tokens": 562,
+            "problem_name": "126_b_password_13138"
+        },
+        "14_e_camels_3676": {
+            "file_path": "problems/cluster5/14_e_camels_3676/main.py",
+            "metrics": {
+                "loc": 28,
+                "sloc": 17,
+                "lloc": 17,
+                "comments": 5,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 0
+            },
+            "logprobs": -229.97499458021898,
+            "tokens": 296,
+            "problem_name": "14_e_camels_3676"
+        },
+        "805_d_minimum_number_of_steps_8284": {
+            "file_path": "problems/cluster5/805_d_minimum_number_of_steps_8284/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 14,
+                "lloc": 14,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 4
+            },
+            "logprobs": -231.62881266856243,
+            "tokens": 154,
+            "problem_name": "805_d_minimum_number_of_steps_8284"
+        },
+        "1303_e_erase_subsequences_10330": {
+            "file_path": "problems/cluster5/1303_e_erase_subsequences_10330/main.py",
+            "metrics": {
+                "loc": 79,
+                "sloc": 68,
+                "lloc": 73,
+                "comments": 5,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 32
+            },
+            "logprobs": -367.7265205423234,
+            "tokens": 783,
+            "problem_name": "1303_e_erase_subsequences_10330"
+        },
+        "682_d_alyona_and_strings_1931": {
+            "file_path": "problems/cluster5/682_d_alyona_and_strings_1931/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 14,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": -244.38174741244316,
+            "tokens": 216,
+            "problem_name": "682_d_alyona_and_strings_1931"
+        },
+        "1120_c_compress_string_7093": {
+            "file_path": "problems/cluster5/1120_c_compress_string_7093/main.py",
+            "metrics": {
+                "loc": 32,
+                "sloc": 30,
+                "lloc": 32,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 7
+            },
+            "logprobs": -267.2294798168645,
+            "tokens": 309,
+            "problem_name": "1120_c_compress_string_7093"
+        },
+        "633_c_spy_syndrome_2_3594": {
+            "file_path": "problems/cluster5/633_c_spy_syndrome_2_3594/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 14,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -284.32975639398705,
+            "tokens": 185,
+            "problem_name": "633_c_spy_syndrome_2_3594"
+        },
+        "91_a_newspaper_headline_6625": {
+            "file_path": "problems/cluster5/91_a_newspaper_headline_6625/main.py",
+            "metrics": {
+                "loc": 29,
+                "sloc": 26,
+                "lloc": 26,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -238.0578449771235,
+            "tokens": 300,
+            "problem_name": "91_a_newspaper_headline_6625"
+        },
+        "597_c_subsequences_6091": {
+            "file_path": "problems/cluster5/597_c_subsequences_6091/main.py",
+            "metrics": {
+                "loc": 81,
+                "sloc": 71,
+                "lloc": 75,
+                "comments": 3,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 28
+            },
+            "logprobs": -411.267869101377,
+            "tokens": 757,
+            "problem_name": "597_c_subsequences_6091"
+        },
+        "1188_c_array_beauty_9595": {
+            "file_path": "problems/cluster5/1188_c_array_beauty_9595/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 25,
+                "lloc": 26,
+                "comments": 3,
+                "multi": 8,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": -370.91356584548834,
+            "tokens": 377,
+            "problem_name": "1188_c_array_beauty_9595"
+        },
+        "667_c_reberland_linguistics_6406": {
+            "file_path": "problems/cluster5/667_c_reberland_linguistics_6406/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 46,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -273.21691417522334,
+            "tokens": 402,
+            "problem_name": "667_c_reberland_linguistics_6406"
+        },
+        "1422_e_minlexes_13041": {
+            "file_path": "problems/cluster5/1422_e_minlexes_13041/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 21,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -262.21040571325915,
+            "tokens": 254,
+            "problem_name": "1422_e_minlexes_13041"
+        },
+        "44_h_phone_number_12435": {
+            "file_path": "problems/cluster5/44_h_phone_number_12435/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 3,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": -247.54677725187048,
+            "tokens": 321,
+            "problem_name": "44_h_phone_number_12435"
+        },
+        "404_d_minesweeper_1d_2023": {
+            "file_path": "problems/cluster5/404_d_minesweeper_1d_2023/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -208.7217604436503,
+            "tokens": 192,
+            "problem_name": "404_d_minesweeper_1d_2023"
+        },
+        "1131_e_string_multiplication_636": {
+            "file_path": "problems/cluster5/1131_e_string_multiplication_636/main.py",
+            "metrics": {
+                "loc": 43,
+                "sloc": 38,
+                "lloc": 40,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 17
+            },
+            "logprobs": -342.0952166416099,
+            "tokens": 425,
+            "problem_name": "1131_e_string_multiplication_636"
+        },
+        "477_c_dreamoon_and_strings_12540": {
+            "file_path": "problems/cluster5/477_c_dreamoon_and_strings_12540/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 14,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -222.32460369016337,
+            "tokens": 191,
+            "problem_name": "477_c_dreamoon_and_strings_12540"
+        },
+        "774_h_repairing_of_string_9638": {
+            "file_path": "problems/cluster5/774_h_repairing_of_string_9638/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 15,
+                "lloc": 16,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 2
+            },
+            "logprobs": -248.21914184247566,
+            "tokens": 168,
+            "problem_name": "774_h_repairing_of_string_9638"
+        },
+        "1183_h_subsequences_hard_version_3870": {
+            "file_path": "problems/cluster5/1183_h_subsequences_hard_version_3870/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 22,
+                "lloc": 23,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 7
+            },
+            "logprobs": -240.67441976544038,
+            "tokens": 249,
+            "problem_name": "1183_h_subsequences_hard_version_3870"
+        },
+        "61_e_enemy_is_weak_2240": {
+            "file_path": "problems/cluster5/61_e_enemy_is_weak_2240/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 42,
+                "lloc": 45,
+                "comments": 4,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 13
+            },
+            "logprobs": -393.86778554313327,
+            "tokens": 456,
+            "problem_name": "61_e_enemy_is_weak_2240"
+        },
+        "1337_e_kaavi_and_magic_spell_10539": {
+            "file_path": "problems/cluster5/1337_e_kaavi_and_magic_spell_10539/main.py",
+            "metrics": {
+                "loc": 41,
+                "sloc": 31,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": -227.26760364618985,
+            "tokens": 330,
+            "problem_name": "1337_e_kaavi_and_magic_spell_10539"
+        },
+        "1149_b_three_religions_220": {
+            "file_path": "problems/cluster5/1149_b_three_religions_220/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 34,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 9
+            },
+            "logprobs": -386.663843489187,
+            "tokens": 543,
+            "problem_name": "1149_b_three_religions_220"
+        },
+        "476_e_dreamoon_and_strings_2026": {
+            "file_path": "problems/cluster5/476_e_dreamoon_and_strings_2026/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 14,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -222.69916060942697,
+            "tokens": 191,
+            "problem_name": "476_e_dreamoon_and_strings_2026"
+        },
+        "1499_e_chaotic_merge_7526": {
+            "file_path": "problems/cluster5/1499_e_chaotic_merge_7526/main.py",
+            "metrics": {
+                "loc": 399,
+                "sloc": 297,
+                "lloc": 323,
+                "comments": 13,
+                "multi": 38,
+                "blank": 57,
+                "cyclomatic": 127
+            },
+            "logprobs": -1785.7074917965588,
+            "tokens": 2932,
+            "problem_name": "1499_e_chaotic_merge_7526"
+        },
+        "1093_f_vasya_and_array_10216": {
+            "file_path": "problems/cluster5/1093_f_vasya_and_array_10216/main.py",
+            "metrics": {
+                "loc": 31,
+                "sloc": 26,
+                "lloc": 26,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 11
+            },
+            "logprobs": -288.8859897959282,
+            "tokens": 294,
+            "problem_name": "1093_f_vasya_and_array_10216"
+        },
+        "118_d_caesars_legions_2724": {
+            "file_path": "problems/cluster5/118_d_caesars_legions_2724/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 14,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -163.9698888240498,
+            "tokens": 295,
+            "problem_name": "118_d_caesars_legions_2724"
+        },
+        "1003_f_abbreviation_11357": {
+            "file_path": "problems/cluster5/1003_f_abbreviation_11357/main.py",
+            "metrics": {
+                "loc": 45,
+                "sloc": 39,
+                "lloc": 39,
+                "comments": 5,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -363.20556154751125,
+            "tokens": 395,
+            "problem_name": "1003_f_abbreviation_11357"
+        },
+        "900_e_maximum_questions_7560": {
+            "file_path": "problems/cluster5/900_e_maximum_questions_7560/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 15,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -312.7434301341995,
+            "tokens": 285,
+            "problem_name": "900_e_maximum_questions_7560"
+        },
+        "653_b_bear_and_compressing_5990": {
+            "file_path": "problems/cluster5/653_b_bear_and_compressing_5990/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 16,
+                "lloc": 17,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -252.3396578957501,
+            "tokens": 201,
+            "problem_name": "653_b_bear_and_compressing_5990"
+        },
+        "666_a_reberland_linguistics_4325": {
+            "file_path": "problems/cluster5/666_a_reberland_linguistics_4325/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 17,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 6
+            },
+            "logprobs": -252.5107033234637,
+            "tokens": 211,
+            "problem_name": "666_a_reberland_linguistics_4325"
+        },
+        "1129_c_morse_code_3034": {
+            "file_path": "problems/cluster5/1129_c_morse_code_3034/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 34,
+                "lloc": 35,
+                "comments": 3,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 6
+            },
+            "logprobs": -354.1726813662904,
+            "tokens": 414,
+            "problem_name": "1129_c_morse_code_3034"
+        }
+    },
+    "original_programs": {
+        "126_b_password_13138": {
+            "file_path": "problems_original/cluster5/126_b_password_13138/main.py",
+            "metrics": {
+                "loc": 100,
+                "sloc": 65,
+                "lloc": 67,
+                "comments": 12,
+                "multi": 0,
+                "blank": 23,
+                "cyclomatic": 14
+            },
+            "logprobs": -561.9998101286634,
+            "tokens": 603,
+            "problem_name": "126_b_password_13138"
+        },
+        "14_e_camels_3676": {
+            "file_path": "problems_original/cluster5/14_e_camels_3676/main.py",
+            "metrics": {
+                "loc": 33,
+                "sloc": 20,
+                "lloc": 20,
+                "comments": 6,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 1
+            },
+            "logprobs": -347.1179976178245,
+            "tokens": 322,
+            "problem_name": "14_e_camels_3676"
+        },
+        "805_d_minimum_number_of_steps_8284": {
+            "file_path": "problems_original/cluster5/805_d_minimum_number_of_steps_8284/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 14,
+                "lloc": 14,
+                "comments": 2,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 4
+            },
+            "logprobs": -315.9494577730837,
+            "tokens": 148,
+            "problem_name": "805_d_minimum_number_of_steps_8284"
+        },
+        "1303_e_erase_subsequences_10330": {
+            "file_path": "problems_original/cluster5/1303_e_erase_subsequences_10330/main.py",
+            "metrics": {
+                "loc": 79,
+                "sloc": 68,
+                "lloc": 73,
+                "comments": 5,
+                "multi": 0,
+                "blank": 6,
+                "cyclomatic": 32
+            },
+            "logprobs": -444.4279480023206,
+            "tokens": 777,
+            "problem_name": "1303_e_erase_subsequences_10330"
+        },
+        "682_d_alyona_and_strings_1931": {
+            "file_path": "problems_original/cluster5/682_d_alyona_and_strings_1931/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 14,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 8,
+                "cyclomatic": 0
+            },
+            "logprobs": -336.1053047036095,
+            "tokens": 210,
+            "problem_name": "682_d_alyona_and_strings_1931"
+        },
+        "1120_c_compress_string_7093": {
+            "file_path": "problems_original/cluster5/1120_c_compress_string_7093/main.py",
+            "metrics": {
+                "loc": 32,
+                "sloc": 29,
+                "lloc": 31,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 7
+            },
+            "logprobs": -394.0029708352754,
+            "tokens": 298,
+            "problem_name": "1120_c_compress_string_7093"
+        },
+        "633_c_spy_syndrome_2_3594": {
+            "file_path": "problems_original/cluster5/633_c_spy_syndrome_2_3594/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 14,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -358.34898543590845,
+            "tokens": 179,
+            "problem_name": "633_c_spy_syndrome_2_3594"
+        },
+        "91_a_newspaper_headline_6625": {
+            "file_path": "problems_original/cluster5/91_a_newspaper_headline_6625/main.py",
+            "metrics": {
+                "loc": 28,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -344.1718341146857,
+            "tokens": 290,
+            "problem_name": "91_a_newspaper_headline_6625"
+        },
+        "597_c_subsequences_6091": {
+            "file_path": "problems_original/cluster5/597_c_subsequences_6091/main.py",
+            "metrics": {
+                "loc": 81,
+                "sloc": 71,
+                "lloc": 75,
+                "comments": 3,
+                "multi": 0,
+                "blank": 7,
+                "cyclomatic": 28
+            },
+            "logprobs": -477.2652366441984,
+            "tokens": 751,
+            "problem_name": "597_c_subsequences_6091"
+        },
+        "1188_c_array_beauty_9595": {
+            "file_path": "problems_original/cluster5/1188_c_array_beauty_9595/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 25,
+                "lloc": 26,
+                "comments": 3,
+                "multi": 8,
+                "blank": 7,
+                "cyclomatic": 0
+            },
+            "logprobs": -446.7782747637221,
+            "tokens": 371,
+            "problem_name": "1188_c_array_beauty_9595"
+        },
+        "667_c_reberland_linguistics_6406": {
+            "file_path": "problems_original/cluster5/667_c_reberland_linguistics_6406/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 46,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -363.0788866630666,
+            "tokens": 396,
+            "problem_name": "667_c_reberland_linguistics_6406"
+        },
+        "1422_e_minlexes_13041": {
+            "file_path": "problems_original/cluster5/1422_e_minlexes_13041/main.py",
+            "metrics": {
+                "loc": 23,
+                "sloc": 21,
+                "lloc": 22,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -369.75109038611396,
+            "tokens": 248,
+            "problem_name": "1422_e_minlexes_13041"
+        },
+        "44_h_phone_number_12435": {
+            "file_path": "problems_original/cluster5/44_h_phone_number_12435/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 36,
+                "lloc": 36,
+                "comments": 3,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 0
+            },
+            "logprobs": -324.25383378232226,
+            "tokens": 315,
+            "problem_name": "44_h_phone_number_12435"
+        },
+        "404_d_minesweeper_1d_2023": {
+            "file_path": "problems_original/cluster5/404_d_minesweeper_1d_2023/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 17,
+                "lloc": 18,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -307.8616391592363,
+            "tokens": 186,
+            "problem_name": "404_d_minesweeper_1d_2023"
+        },
+        "1131_e_string_multiplication_636": {
+            "file_path": "problems_original/cluster5/1131_e_string_multiplication_636/main.py",
+            "metrics": {
+                "loc": 42,
+                "sloc": 37,
+                "lloc": 39,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 17
+            },
+            "logprobs": -412.763391282614,
+            "tokens": 412,
+            "problem_name": "1131_e_string_multiplication_636"
+        },
+        "477_c_dreamoon_and_strings_12540": {
+            "file_path": "problems_original/cluster5/477_c_dreamoon_and_strings_12540/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 14,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -313.3846828957503,
+            "tokens": 185,
+            "problem_name": "477_c_dreamoon_and_strings_12540"
+        },
+        "774_h_repairing_of_string_9638": {
+            "file_path": "problems_original/cluster5/774_h_repairing_of_string_9638/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 15,
+                "lloc": 16,
+                "comments": 1,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 2
+            },
+            "logprobs": -344.1424879879305,
+            "tokens": 161,
+            "problem_name": "774_h_repairing_of_string_9638"
+        },
+        "1183_h_subsequences_hard_version_3870": {
+            "file_path": "problems_original/cluster5/1183_h_subsequences_hard_version_3870/main.py",
+            "metrics": {
+                "loc": 27,
+                "sloc": 22,
+                "lloc": 23,
+                "comments": 2,
+                "multi": 0,
+                "blank": 3,
+                "cyclomatic": 7
+            },
+            "logprobs": -328.309090173312,
+            "tokens": 243,
+            "problem_name": "1183_h_subsequences_hard_version_3870"
+        },
+        "61_e_enemy_is_weak_2240": {
+            "file_path": "problems_original/cluster5/61_e_enemy_is_weak_2240/main.py",
+            "metrics": {
+                "loc": 63,
+                "sloc": 42,
+                "lloc": 45,
+                "comments": 4,
+                "multi": 0,
+                "blank": 17,
+                "cyclomatic": 13
+            },
+            "logprobs": -464.6945650333679,
+            "tokens": 450,
+            "problem_name": "61_e_enemy_is_weak_2240"
+        },
+        "1337_e_kaavi_and_magic_spell_10539": {
+            "file_path": "problems_original/cluster5/1337_e_kaavi_and_magic_spell_10539/main.py",
+            "metrics": {
+                "loc": 41,
+                "sloc": 31,
+                "lloc": 33,
+                "comments": 1,
+                "multi": 0,
+                "blank": 9,
+                "cyclomatic": 0
+            },
+            "logprobs": -311.16164100410816,
+            "tokens": 324,
+            "problem_name": "1337_e_kaavi_and_magic_spell_10539"
+        },
+        "1149_b_three_religions_220": {
+            "file_path": "problems_original/cluster5/1149_b_three_religions_220/main.py",
+            "metrics": {
+                "loc": 40,
+                "sloc": 34,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 9
+            },
+            "logprobs": -478.7247183552623,
+            "tokens": 537,
+            "problem_name": "1149_b_three_religions_220"
+        },
+        "476_e_dreamoon_and_strings_2026": {
+            "file_path": "problems_original/cluster5/476_e_dreamoon_and_strings_2026/main.py",
+            "metrics": {
+                "loc": 14,
+                "sloc": 12,
+                "lloc": 14,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -313.3846828957503,
+            "tokens": 185,
+            "problem_name": "476_e_dreamoon_and_strings_2026"
+        },
+        "1499_e_chaotic_merge_7526": {
+            "file_path": "problems_original/cluster5/1499_e_chaotic_merge_7526/main.py",
+            "metrics": {
+                "loc": 399,
+                "sloc": 297,
+                "lloc": 323,
+                "comments": 13,
+                "multi": 38,
+                "blank": 57,
+                "cyclomatic": 127
+            },
+            "logprobs": -1870.1043997779414,
+            "tokens": 2926,
+            "problem_name": "1499_e_chaotic_merge_7526"
+        },
+        "1093_f_vasya_and_array_10216": {
+            "file_path": "problems_original/cluster5/1093_f_vasya_and_array_10216/main.py",
+            "metrics": {
+                "loc": 30,
+                "sloc": 25,
+                "lloc": 25,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 13
+            },
+            "logprobs": -381.8854944966121,
+            "tokens": 300,
+            "problem_name": "1093_f_vasya_and_array_10216"
+        },
+        "118_d_caesars_legions_2724": {
+            "file_path": "problems_original/cluster5/118_d_caesars_legions_2724/main.py",
+            "metrics": {
+                "loc": 16,
+                "sloc": 14,
+                "lloc": 15,
+                "comments": 1,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -237.46484473305955,
+            "tokens": 289,
+            "problem_name": "118_d_caesars_legions_2724"
+        },
+        "1003_f_abbreviation_11357": {
+            "file_path": "problems_original/cluster5/1003_f_abbreviation_11357/main.py",
+            "metrics": {
+                "loc": 44,
+                "sloc": 38,
+                "lloc": 38,
+                "comments": 5,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -448.4777649894208,
+            "tokens": 383,
+            "problem_name": "1003_f_abbreviation_11357"
+        },
+        "900_e_maximum_questions_7560": {
+            "file_path": "problems_original/cluster5/900_e_maximum_questions_7560/main.py",
+            "metrics": {
+                "loc": 21,
+                "sloc": 15,
+                "lloc": 19,
+                "comments": 1,
+                "multi": 0,
+                "blank": 5,
+                "cyclomatic": 0
+            },
+            "logprobs": -408.59733464084997,
+            "tokens": 279,
+            "problem_name": "900_e_maximum_questions_7560"
+        },
+        "653_b_bear_and_compressing_5990": {
+            "file_path": "problems_original/cluster5/653_b_bear_and_compressing_5990/main.py",
+            "metrics": {
+                "loc": 19,
+                "sloc": 16,
+                "lloc": 17,
+                "comments": 2,
+                "multi": 0,
+                "blank": 1,
+                "cyclomatic": 0
+            },
+            "logprobs": -345.08058856503425,
+            "tokens": 195,
+            "problem_name": "653_b_bear_and_compressing_5990"
+        },
+        "666_a_reberland_linguistics_4325": {
+            "file_path": "problems_original/cluster5/666_a_reberland_linguistics_4325/main.py",
+            "metrics": {
+                "loc": 20,
+                "sloc": 17,
+                "lloc": 23,
+                "comments": 1,
+                "multi": 0,
+                "blank": 2,
+                "cyclomatic": 6
+            },
+            "logprobs": -337.1242368686946,
+            "tokens": 205,
+            "problem_name": "666_a_reberland_linguistics_4325"
+        },
+        "1129_c_morse_code_3034": {
+            "file_path": "problems_original/cluster5/1129_c_morse_code_3034/main.py",
+            "metrics": {
+                "loc": 39,
+                "sloc": 34,
+                "lloc": 35,
+                "comments": 1,
+                "multi": 0,
+                "blank": 4,
+                "cyclomatic": 6
+            },
+            "logprobs": -403.90764170480264,
+            "tokens": 420,
+            "problem_name": "1129_c_morse_code_3034"
+        }
+    },
+    "aggregated_metrics_refactored": {
+        "logprobs": -10532.190345182766,
+        "tokens": 12861,
+        "loc": 1436,
+        "sloc": 1120,
+        "lloc": 1214,
+        "comments": 80,
+        "multi": 50,
+        "blank": 188,
+        "cyclomatic": 283
+    },
+    "aggregated_metrics_original": {
+        "logprobs": -12790.32083541454,
+        "tokens": 12588,
+        "loc": 1428,
+        "sloc": 1116,
+        "lloc": 1204,
+        "comments": 79,
+        "multi": 46,
+        "blank": 195,
+        "cyclomatic": 286
+    },
+    "comparison_ratios": {
+        "tokens_refactored_div_original": 1.0216873212583413,
+        "logprobs_refactored_div_original": 0.8234500510746111,
+        "avg_logprob_per_token_original": -1.0160725163182827,
+        "avg_logprob_per_token_refactored": -0.8189246827760489
+    }
+}
